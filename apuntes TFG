@@ -1,0 +1,24 @@
+-la aplicacion funcionaria en tiempo real? si ve oportunidad de ganar con x % de acierto, te manda la notificacion
+
+-la aplicacion se basa en los datos historicos
+
+-la aplicacion marca lineas de tendencia (1), zonas (2), medias moviles (3), patrones (4), maximos mayores, minimos menores (5). A raiz de cuantas de esas 5 marcas esten a favor -> tanto por ciento
+
+-la app marca SL y TP dando prioridad a datos mas recientes a la hora de ver zonas y maximos y minimos
+
+OBJETIVO DEL PROYECTO
+Software de trading algorítmico. La aplicación implementará tanto técnicas tradicionales como enfoques de inteligencia artifical. 
+Para ello el software hará uso de datos históricos de precios que se encuentran en varias páginas web de manera pública. También se aplicará inteligencia artifical para detectar patrones, líneas de tendencia o zonas donde el precio actúa de una forma u otra; de manera que la aplicación hará una recomendación de compra o venta bajo criterios o razonamientos similares a los que podría tener un humano, para luego mostrar su decisión y dichos razonamientos al usuario para que éste decida. Se hará uso también de funciones estadísticas que servirán al software de instrumento para dar una recomendación u otra.
+
+-medium -> datos, trading, etc
+-analisis tecnico y IA
+-contenedor python+django
+-montar paginas, user, autenticacion todo lo ayuda python+django. NO SPARK
+-2 tecnicas mas sencillas -> dou, waicov
+-en largo, en corto
+-series temporales, analisis, modelos
+
+IMPORTANTE:
+-Empezar con Django y DOU -> medias moviles, maximos, minimos, etc.
+
+EN ENERO TENER TODO DOCUMENTADO PERO SIN CODIGO
