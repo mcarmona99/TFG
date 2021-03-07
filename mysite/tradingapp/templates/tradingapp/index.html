@@ -1,0 +1,9 @@
+{% if currencies_list %}
+    <ul>
+    {% for c in currencies_list %}
+        <li><a href="{% url 'tradingapp:graph_form' c.id %}">{{ c.pair_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No currencies are available.</p>
+{% endif %}

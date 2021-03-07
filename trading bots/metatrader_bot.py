@@ -1,5 +1,5 @@
 # Ejemplo bot trading
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import MetaTrader5 as mt5
 import matplotlib.pyplot as plt
@@ -31,9 +31,9 @@ print(mt5.terminal_info())
 # get data on MetaTrader 5 version
 print(mt5.version())
 
-CAMBIO = "EURAUD"
+CAMBIO = "EURUSD"
 # request 1000 ticks
-ticks = mt5.copy_ticks_range(CAMBIO, datetime.now()-timedelta(days=1), datetime.now(), mt5.COPY_TICKS_ALL)
+ticks = mt5.copy_ticks_from(CAMBIO, datetime.now()-datetime.timedelta, 1000, mt5.COPY_TICKS_ALL)
 
 # UNA VEZ HEMOS ACABADO DE RECOGER INFORMACION:
 # shut down connection to MetaTrader 5

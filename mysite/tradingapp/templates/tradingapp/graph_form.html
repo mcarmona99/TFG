@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>Elige la fecha de inicio y de fin para ver el grafico:</title>
+        </head>
+    <body>
+        <h1>Grafico entre:</h1>
+        <form action="detail/" method="POST"> {% csrf_token %}
+            <p>Fecha inicio: <input type="datetime-local" name="datetimeStart"/></p>
+            <p>Fecha fin:    <input type="datetime-local" name="datetimeEnd"/></p>
+            <input type="submit" value="Ver grafico"/>
+        </form>
+    </body>
+</html>

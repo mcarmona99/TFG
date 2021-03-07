@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tradingapp.apps.TradingappConfig',  # Aplicacion trading ejemplo
     'polls.apps.PollsConfig',  # Aplicacion polls
     'django.contrib.admin',
     'django.contrib.auth',
