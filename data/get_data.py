@@ -1,11 +1,14 @@
-import json
-import os
 import datetime
-import MetaTrader5 as mt5
+import os
 
+import MetaTrader5 as mt5
+import pandas as pd
+
+print("Abriendo MetaTrader5 ...")
 if not mt5.initialize():
     print("initialize() failed")
     mt5.shutdown()
+    exit(1)
 
 # ------------ EXTRACCION DE DATOS DE MERCADOS ------------
 
@@ -143,18 +146,40 @@ path=Forex\Majors\EURUSD
 # simbol paths and names in available_symbols.txt
 
 PROPERTIES = ['time', 'bid', 'ask', 'last', 'volume', 'time_msc', 'flags', 'volume_real']
-YEARS_BEFORE = 1
+YEARS_BEFORE = 2
 
 symbols = mt5.symbols_get()
 end_data = datetime.datetime.now()
 start_data = end_data - datetime.timedelta(days=YEARS_BEFORE * 365)
 
 """
-A partir de aqui recojo los datos y los meto en la BBDD que utilice
+Creo base de datos y meto los datos de cada mercado de MT5
 """
 
-for symbol in symbols:
+for i, symbol in enumerate(symbols[:100]):
+    # crear directorios con symbol path
+    symbol_path = symbol.path
+    os.makedirs(os.path.dirname(symbol_path), exist_ok=True)
+
+    # obtener ticks en el rango y crear dataframe
+    print(f"Copiando ticks de {symbol.path} ... ({i}/{len(symbols)})")
     ticks = mt5.copy_ticks_range(symbol.name, start_data, end_data, mt5.COPY_TICKS_ALL)
+    ticks_df = pd.DataFrame(ticks)
+    try:
+        ticks_df['time'] = pd.to_datetime(ticks_df['time'], unit='s')
+
+        # crear dataframe por horas, cojo las de xx:00:00,
+        # quito duplicadas quedandome con las primeras
+        ticks_df = ticks_df[ticks_df['time'].dt.minute == 0]
+        ticks_df = ticks_df[ticks_df['time'].dt.second == 0]
+        ticks_df.drop_duplicates(subset='time', keep='first', inplace=True)
+
+        # pasar al csv de la ruta del simbolo
+        ticks_df.to_csv(symbol_path)
+    except KeyError:
+        # mode="a" to append to error.txt
+        with open("error.txt", mode="a") as f:
+            f.write(f"Key Error en {symbol.name}")
 
 # array de ticks:    (1584648312, 1.06769, 1.06771, 0.,   0,      1584648312000, 134,   0.         )
 # representan:       (time,       bid,     ask,     last, volume, time_msc,      flags, volume_real)
