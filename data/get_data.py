@@ -156,30 +156,31 @@ start_data = end_data - datetime.timedelta(days=YEARS_BEFORE * 365)
 Creo base de datos y meto los datos de cada mercado de MT5
 """
 
-for i, symbol in enumerate(symbols[:100]):
-    # crear directorios con symbol path
+for i, symbol in enumerate(symbols):
     symbol_path = symbol.path
-    os.makedirs(os.path.dirname(symbol_path), exist_ok=True)
+    if not os.path.exists(symbol_path):
+        # crear directorios con symbol path
+        os.makedirs(os.path.dirname(symbol_path), exist_ok=True)
 
-    # obtener ticks en el rango y crear dataframe
-    print(f"Copiando ticks de {symbol.path} ... ({i}/{len(symbols)})")
-    ticks = mt5.copy_ticks_range(symbol.name, start_data, end_data, mt5.COPY_TICKS_ALL)
-    ticks_df = pd.DataFrame(ticks)
-    try:
-        ticks_df['time'] = pd.to_datetime(ticks_df['time'], unit='s')
+        # obtener ticks en el rango y crear dataframe
+        print(f"Copiando ticks de {symbol.path} ... ({i}/{len(symbols)})")
+        ticks = mt5.copy_ticks_range(symbol.name, start_data, end_data, mt5.COPY_TICKS_ALL)
+        ticks_df = pd.DataFrame(ticks)
+        try:
+            ticks_df['time'] = pd.to_datetime(ticks_df['time'], unit='s')
 
-        # crear dataframe por horas, cojo las de xx:00:00,
-        # quito duplicadas quedandome con las primeras
-        ticks_df = ticks_df[ticks_df['time'].dt.minute == 0]
-        ticks_df = ticks_df[ticks_df['time'].dt.second == 0]
-        ticks_df.drop_duplicates(subset='time', keep='first', inplace=True)
+            # crear dataframe por horas, cojo las de xx:00:00,
+            # quito duplicadas quedandome con las primeras
+            ticks_df = ticks_df[ticks_df['time'].dt.minute == 0]
+            ticks_df = ticks_df[ticks_df['time'].dt.second == 0]
+            ticks_df.drop_duplicates(subset='time', keep='first', inplace=True)
 
-        # pasar al csv de la ruta del simbolo
-        ticks_df.to_csv(symbol_path)
-    except KeyError:
-        # mode="a" to append to error.txt
-        with open("error.txt", mode="a") as f:
-            f.write(f"Key Error en {symbol.name}")
+            # pasar al csv de la ruta del simbolo
+            ticks_df.to_csv(symbol_path)
+        except KeyError:
+            # mode="a" to append to error.txt
+            with open("error.txt", mode="a") as f:
+                f.write(f"Key Error en {symbol.name}")
 
 # array de ticks:    (1584648312, 1.06769, 1.06771, 0.,   0,      1584648312000, 134,   0.         )
 # representan:       (time,       bid,     ask,     last, volume, time_msc,      flags, volume_real)
