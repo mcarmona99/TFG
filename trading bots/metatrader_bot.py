@@ -33,7 +33,7 @@ print(mt5.version())
 
 CAMBIO = "EURUSD"
 # request 1000 ticks
-ticks = mt5.copy_ticks_from(CAMBIO, datetime.now()-datetime.timedelta, 1000, mt5.COPY_TICKS_ALL)
+ticks = mt5.copy_ticks_from(CAMBIO, datetime.now(), 1000, mt5.COPY_TICKS_ALL)
 
 # UNA VEZ HEMOS ACABADO DE RECOGER INFORMACION:
 # shut down connection to MetaTrader 5

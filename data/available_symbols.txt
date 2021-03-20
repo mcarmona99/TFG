@@ -1,0 +1,570 @@
+Forex\Majors\EURUSD -> Euro vs US Dollar
+Forex\Majors\GBPUSD -> Great Britain Pound vs US Dollar
+Forex\Majors\USDCHF -> US Dollar vs Swiss Franc
+Forex\Majors\USDJPY -> US Dollar vs Japanese Yen
+Forex\Majors\USDCAD -> US Dollar vs Canadian Dollar
+Forex\Majors\AUDUSD -> Australian Dollar vs US Dollar
+Forex\Minors\AUDNZD -> Australian Dollar vs New Zealand Dollar
+Forex\Minors\AUDCAD -> Australian Dollar vs Canadian Dollar
+Forex\Minors\AUDCHF -> Australian Dollar vs Swiss Franc
+Forex\Minors\AUDJPY -> Australian Dollar vs Japanese Yen
+Forex\Minors\CHFJPY -> Swiss Franc vs Japanese Yen
+Forex\Minors\EURGBP -> Euro vs Great Britain Pound
+Forex\Minors\EURAUD -> Euro vs Australian Dollar
+Forex\Minors\EURCHF -> Euro vs Swiss Franc
+Forex\Minors\EURJPY -> Euro vs Japanese Yen
+Forex\Minors\EURNZD -> Euro vs New Zealand Dollar
+Forex\Minors\EURCAD -> Euro vs Canadian Dollar
+Forex\Minors\GBPCHF -> Great Britain Pound vs Swiss Franc
+Forex\Minors\GBPJPY -> Great Britain Pound vs Japanese Yen
+Forex\Minors\CADCHF -> Canadian Dollar vs Swiss Franc
+Forex\Minors\CADJPY -> Canadian Dollar vs Japanese Yen
+Forex\Minors\GBPAUD -> Great Britain Pound vs Australian Dollar
+Forex\Minors\GBPCAD -> Great Britain Pound vs Canadian Dollar
+Forex\Minors\GBPNZD -> Great Britain Pound vs New Zealand Dollar
+Forex\Minors\NZDCAD -> New Zealand Dollar vs Canadian Dollar
+Forex\Minors\NZDCHF -> New Zealand Dollar vs Swiss Franc
+Forex\Minors\NZDJPY -> New Zealand Dollar vs Japanese Yen
+Forex\Minors\NZDUSD -> New Zealand Dollar vs US Dollar
+Forex\Minors\USDSGD -> US Dollar vs Singapore Dollar
+Forex\Exotics\AUDSGD -> Australian Dollar vs Singpore Dollar
+Forex\Exotics\CHFSGD -> Swiss Franc vs Singapore Dollar
+Forex\Exotics\EURDKK -> Euro vs Danish Korner
+Forex\Exotics\EURHKD -> Euro vs Hong Kong Dollar
+Forex\Exotics\EURNOK -> Euro vs Norwegian Krona
+Forex\Exotics\EURPLN -> Euro vs Polish Zloty
+Forex\Exotics\EURSEK -> Euro vs Swedish Kronor
+Forex\Exotics\EURSGD -> Euro vs Singapore Dollar
+Forex\Exotics\EURTRY -> Euro vs Turkish Lira
+Forex\Exotics\EURZAR -> Euro vs South African Rand
+Forex\Exotics\GBPDKK -> Great Britain Pound vs Danish Kroner
+Forex\Exotics\GBPNOK -> Great Britain Pound vs Norwegian Krona
+Forex\Exotics\GBPSEK -> Great Britain Pound vs Swedish Kronor
+Forex\Exotics\GBPSGD -> Great Britain Pound vs Singapore Dollar
+Forex\Exotics\GBPTRY -> Great Britain Pound vs Turkish Lira
+Forex\Exotics\NOKJPY -> Norwegian Kroner vs Japanese Yen
+Forex\Exotics\NOKSEK -> Norwegian Kroner vs Swedish Kronor
+Forex\Exotics\SEKJPY -> Swedish Kronor vs. Japanese Yen
+Forex\Exotics\SGDJPY -> Singapore Dollar vs. Japanese Yen
+Forex\Exotics\USDCNH -> US Dollar vs Chinese Renminbi
+Forex\Exotics\USDCZK -> US Dollar vs Czech Republic Korunas
+Forex\Exotics\USDDKK -> US Dollar vs Danish Kroner
+Forex\Exotics\USDHKD -> US Dollar vs Hong Kong Dollar
+Forex\Exotics\USDHUF -> US Dollar vs Hungarian Forints
+Forex\Exotics\USDMXN -> US Dollar vs Mexican Peso
+Forex\Exotics\USDNOK -> US Dollar vs Norwegian Kroner
+Forex\Exotics\USDPLN -> US Dollar vs Polish Zlotys
+Forex\Exotics\USDRUB -> US Dollar vs Russian Ruble
+Forex\Exotics\USDSEK -> US Dollar vs Swedish Kroner
+Forex\Exotics\USDTHB -> US Dollar vs Thai Baht
+Forex\Exotics\USDTRY -> US Dollar vsTurkish Lira
+Forex\Exotics\USDZAR -> US Dollar vs South African Rand
+Indices\Indices Spot\Major Spot Indices\AUS200 -> Australia 200 Index
+Indices\Indices Spot\Minor Spot Indices\CHINA50 -> FTSE China A50 Index
+Indices\Indices Spot\Major Spot Indices\DE30 -> Germany 30 Index
+Indices\Indices Spot\Minor Spot Indices\ES35 -> Spain 35 Index
+Indices\Indices Spot\Major Spot Indices\STOXX50 -> EU Stocks 50 Index
+Indices\Indices Spot\Major Spot Indices\F40 -> France 40 Index
+Indices\Indices Spot\Minor Spot Indices\HK50 -> Hong Kong 50 Index
+Indices\Indices Spot\Minor Spot Indices\IT40 -> Italy 40 Index
+Indices\Indices Spot\Major Spot Indices\JP225 -> Japan 225 Index
+Indices\Indices Spot\Major Spot Indices\UK100 -> UK 100 Index
+Indices\Indices Spot\Minor Spot Indices\US2000 -> US Small Cap 2000 Index
+Indices\Indices Spot\Major Spot Indices\US30 -> US Wall Street 30 Index
+Indices\Indices Spot\Major Spot Indices\US500 -> US SPX 500 Index
+Indices\Indices Spot\Major Spot Indices\USTEC -> US Tech 100 Index
+Commodities\Metals\XAGEUR -> Silver vs Euro
+Commodities\Metals\XAGUSD -> Silver vs US Dollar
+Commodities\Metals\XAUEUR -> Gold vs Euro
+Commodities\Metals\XAUUSD -> Gold vs US Dollar
+Commodities\Metals\XPDUSD -> Palladium vs US Dollar
+Commodities\Metals\XPTUSD -> Platinum vs US Dollar
+Commodities\Energies\Energies Spot\XBRUSD -> Brent Oil vs US Dollar
+Commodities\Energies\Energies Spot\XNGUSD -> Natural Gas vs US Dollar
+Commodities\Energies\Energies Spot\XTIUSD -> Crude Oil vs US Dollar
+Crypto\BTCUSD -> Bitcoin USD Index
+Crypto\BCHUSD -> Bitcoin Cash US Dollar
+Crypto\DSHUSD -> Dash US Dollar
+Crypto\ETHUSD -> Ethereum US Dollar
+Crypto\LTCUSD -> Litecoin US Dollar
+Stock CFD's\Nasdaq\AAPL.NAS -> Apple Inc CFD
+Stock CFD's\Nasdaq\ADBE.NAS -> Adobe Systems CFD
+Stock CFD's\Nasdaq\ADI.NAS -> Analog Devices CFD
+Stock CFD's\Nasdaq\ADP.NAS -> Automatic Data Processing (ADP) CFD
+Stock CFD's\Nasdaq\AMAT.NAS -> Applied Materials CFD
+Stock CFD's\Nasdaq\AMGN.NAS -> Amgen CFD
+Stock CFD's\Nasdaq\AMZN.NAS -> Amazon.com CFD
+Stock CFD's\Nasdaq\ATVI.NAS -> Activision Blizzard CFD
+Stock CFD's\Nasdaq\AVGO.NAS -> Broadcom Ltd CFD
+Stock CFD's\Nasdaq\BKNG.NAS -> Booking Holdings Inc CFD
+Stock CFD's\Nasdaq\BIIB.NAS -> Biogen Inc CFD
+Stock CFD's\Nasdaq\CELG.NAS -> Celgene Corp CFD
+Stock CFD's\Nasdaq\CHTR.NAS -> Charter Communications Inc CFD
+Stock CFD's\Nasdaq\CMCSA.NAS -> Comcast Corp A CFD
+Stock CFD's\Nasdaq\CME.NAS -> CME Group CFD
+Stock CFD's\Nasdaq\COST.NAS -> Costco Wholesale CFD
+Stock CFD's\Nasdaq\CRON.NAS -> Cronos Group Inc CFD
+Stock CFD's\Nasdaq\CSCO.NAS -> Cisco Systems CFD
+Stock CFD's\Nasdaq\CSX.NAS -> CSX Corp CFD
+Stock CFD's\Nasdaq\CTSH.NAS -> Cognizant Technology Solutions CFD
+Stock CFD's\Nasdaq\DISH.NAS -> Dish Network Corp CFD
+Stock CFD's\Nasdaq\EA.NAS -> Electronic Arts CFD
+Stock CFD's\Nasdaq\EBAY.NAS -> Ebay CFD
+Stock CFD's\Nasdaq\EQIX.NAS -> Equinix CFD
+Stock CFD's\Nasdaq\FB.NAS -> Facebook CFD
+Stock CFD's\Nasdaq\FOX.NAS -> Fox Corp - Class B CFD
+Stock CFD's\Nasdaq\FOXA.NAS -> Fox Corp - Class A CFD
+Stock CFD's\Nasdaq\GILD.NAS -> Gilead Sciences CFD
+Stock CFD's\Nasdaq\GOOG.NAS -> Alphabet Inc C CFD
+Stock CFD's\Nasdaq\INTC.NAS -> Intel Corp CFD
+Stock CFD's\Nasdaq\INTU.NAS -> Intuit CFD
+Stock CFD's\Nasdaq\ISRG.NAS -> Intuitive Surgical CFD
+Stock CFD's\Nasdaq\KHC.NAS -> Kraft Heinz Co CFD
+Stock CFD's\Nasdaq\MAR.NAS -> Marriott Intl CFD
+Stock CFD's\Nasdaq\MDLZ.NAS -> Mondelez International CFD
+Stock CFD's\Nasdaq\MSFT.NAS -> Microsoft Corp CFD
+Stock CFD's\Nasdaq\MU.NAS -> Micron Technology Inc CFD
+Stock CFD's\Nasdaq\NFLX.NAS -> Netflix CFD
+Stock CFD's\Nasdaq\NVDA.NAS -> Nvidia Corp CFD
+Stock CFD's\Nasdaq\PEP.NAS -> Pepsico CFD
+Stock CFD's\Nasdaq\PYPL.NAS -> Paypal Holdings Inc CFD
+Stock CFD's\Nasdaq\QCOM.NAS -> Qualcomm CFD
+Stock CFD's\Nasdaq\REGN.NAS -> Regeneron Pharmaceuticals Inc CFD
+Stock CFD's\Nasdaq\SBUX.NAS -> Starbucks Corp CFD
+Stock CFD's\Nasdaq\SHPG.NAS -> Shire Plc ADR CFD
+Stock CFD's\Nasdaq\TFCF.NAS -> Twenty-First Century Fox (USD) B CFD
+Stock CFD's\Nasdaq\TFCFA.NAS -> Twenty-First Century Fox (USD) A CFD
+Stock CFD's\Nasdaq\TLRY.NAS -> Tilray Inc CFD
+Stock CFD's\Nasdaq\TMUS.NAS -> T-Mobile US CFD
+Stock CFD's\Nasdaq\TSLA.NAS -> Tesla Motors CFD
+Stock CFD's\Nasdaq\TXN.NAS -> Texas Instruments CFD
+Stock CFD's\Nasdaq\VRTX.NAS -> Vertex Pharma CFD
+Stock CFD's\Nasdaq\WBA.NAS -> Walgreens Boots Alliance Inc CFD
+Stock CFD's\NYSE\ABBV.NYSE -> AbbVie Inc CFD
+Stock CFD's\NYSE\ABT.NYSE -> Abbott Labs CFD
+Stock CFD's\NYSE\ACB.NYSE -> Aurora Cannabis Inc. CFD
+Stock CFD's\NYSE\AGN.NYSE -> Allergan plc CFD
+Stock CFD's\NYSE\AXP.NYSE -> American Express CFD
+Stock CFD's\NYSE\BA.NYSE -> Boeing Co CFD
+Stock CFD's\NYSE\BAC.NYSE -> Bank Of America CFD
+Stock CFD's\NYSE\BLK.NYSE -> Blackrock Inc CFD
+Stock CFD's\NYSE\BMY.NYSE -> Bristol Myers Sq CFD
+Stock CFD's\NYSE\C.NYSE -> Citigroup CFD
+Stock CFD's\NYSE\CGC.NYSE -> Canopy Growth Corp. CFD
+Stock CFD's\NYSE\CVS.NYSE -> CVS Health Corp CFD
+Stock CFD's\NYSE\CVX.NYSE -> Chevron Corp CFD
+Stock CFD's\NYSE\DD.NYSE -> DuPont de Nemours Inc CFD
+Stock CFD's\NYSE\DIS.NYSE -> Walt Disney Co CFD
+Stock CFD's\NYSE\DWDP.NYSE -> DowDuPont Inc CFD
+Stock CFD's\NYSE\DOW.NYSE -> Dow Inc.
+Stock CFD's\NYSE\GE.NYSE -> General Elec Co CFD
+Stock CFD's\NYSE\GS.NYSE -> Goldman Sachs CFD
+Stock CFD's\NYSE\HD.NYSE -> Home Depot CFD
+Stock CFD's\NYSE\HON.NYSE -> Honeywell International Inc CFD
+Stock CFD's\NYSE\IBM.NYSE -> IBM CFD
+Stock CFD's\NYSE\JNJ.NYSE -> Johnson and Johnson CFD
+Stock CFD's\NYSE\JPM.NYSE -> J.P. Morgan Chase CFD
+Stock CFD's\NYSE\KO.NYSE -> Coca Cola Co CFD
+Stock CFD's\NYSE\LLY.NYSE -> Eli Lilly CFD
+Stock CFD's\NYSE\LMT.NYSE -> Lockheed Martin CFD
+Stock CFD's\NYSE\MA.NYSE -> Mastercard CFD
+Stock CFD's\NYSE\MCD.NYSE -> McDonald's Corp CFD
+Stock CFD's\NYSE\MMM.NYSE -> 3M Company CFD
+Stock CFD's\NYSE\MO.NYSE -> Altria Group Inc CFD
+Stock CFD's\NYSE\MRK.NYSE -> Merck and Co CFD
+Stock CFD's\NYSE\MS.NYSE -> Morgan Stanley CFD
+Stock CFD's\NYSE\NKE.NYSE -> Nike CL B CFD
+Stock CFD's\NYSE\ORCL.NYSE -> Oracle CFD
+Stock CFD's\NYSE\PFE.NYSE -> Pfizer CFD
+Stock CFD's\NYSE\PG.NYSE -> Procter and Gamble CFD
+Stock CFD's\NYSE\PM.NYSE -> Philip Morris CFD
+Stock CFD's\NYSE\SLB.NYSE -> Schlumberger CFD
+Stock CFD's\NYSE\SPOT.NYSE -> Spotify Technology SA CFD
+Stock CFD's\NYSE\T.NYSE -> AT and T CFD
+Stock CFD's\NYSE\TWX.NYSE -> Time Warner CFD
+Stock CFD's\NYSE\UNH.NYSE -> UnitedHealth Group CFD
+Stock CFD's\NYSE\UNP.NYSE -> Union Pacific Cp CFD
+Stock CFD's\NYSE\UPS.NYSE -> United Parcel Services CFD
+Stock CFD's\NYSE\USB.NYSE -> US Bancorp CFD
+Stock CFD's\NYSE\UTX.NYSE -> United Tech Cp CFD
+Stock CFD's\NYSE\V.NYSE -> Visa CFD
+Stock CFD's\NYSE\VZ.NYSE -> Verizon Communications Inc CFD
+Stock CFD's\NYSE\WFC.NYSE -> Wells Fargo and Co CFD
+Stock CFD's\NYSE\WMT.NYSE -> Wal-Mart Stores CFD
+Stock CFD's\NYSE\XOM.NYSE -> Exxon Mobil CFD
+Crypto\XRPUSD -> Ripple US Dollar
+Crypto\EOSUSD -> EOS US Dollar
+Crypto\EMCUSD -> Emercoin US Dollar
+Crypto\NMCUSD -> NameCoin US Dollar
+Crypto\PPCUSD -> PeerCoin US Dollar
+Stock CFD's\NYSE\ETF\DBA.NYSE -> Invesco DB Agriculture ETF CFD
+Stock CFD's\NYSE\ETF\EEM.NYSE -> Shares MSCI Emerging Markets ETF CFD
+Stock CFD's\NYSE\ETF\EWH.NYSE -> iShares MSCI Hong Kong ETF CFD
+Stock CFD's\NYSE\ETF\EWW.NYSE -> iShares MSCI Mexico Capped ETF CFD
+Stock CFD's\NYSE\ETF\EWZ.NYSE -> iShares MSCI Brazil Capped ETF CFD
+Stock CFD's\NYSE\ETF\FXI.NYSE -> iShares China Large-Cap ETF CFD
+Stock CFD's\NYSE\ETF\GDX.NYSE -> Vaneck Vectors Gold Miners ETF CFD
+Stock CFD's\NYSE\ETF\GDXJ.NYSE -> VanEck Vectors Junior Gold Miners ETF CFD
+Stock CFD's\NYSE\ETF\IEMG.NYSE -> iShares Core MSCI Emerging Markets ETF CFD
+Stock CFD's\NYSE\ETF\LQD.NYSE -> iShares iBoxx $ Invmt Grade Corp Bd ETF CFD
+Stock CFD's\NYSE\ETF\MOO.NYSE -> VanEck Vectors Agribusiness ETF CFD
+Stock CFD's\NYSE\ETF\MJ.NYSE -> ETFMG Alternative Harvest ETF CFD
+Stock CFD's\NYSE\ETF\RSX.NYSE -> VanEck Vectors Russia ETF CFD
+Stock CFD's\NYSE\ETF\SIL.NYSE -> Global X Silver Miners ETF CFD
+Stock CFD's\NYSE\ETF\UNG.NYSE -> United States Natural Gas ETF CFD
+Stock CFD's\NYSE\ETF\URA.NYSE -> Global X Uranium ETF CFD
+Stock CFD's\NYSE\ETF\USO.NYSE -> United States Oil ETF CFD
+Stock CFD's\NYSE\ETF\VXX.NYSE -> iPath S&P 500 VIX ST Futures ETN CFD
+Stock CFD's\NYSE\ETF\VXXB.NYSE -> iPath B S&P 500 VIX S/T Futs ETN
+Stock CFD's\NYSE\ETF\VYM.NYSE -> Vanguard High Dividend Yield ETF CFD
+Stock CFD's\NYSE\ETF\XLE.NYSE -> Energy Select Sector SPDR ETF CFD
+Stock CFD's\NYSE\ETF\XLF.NYSE -> Financial Select Sector SPDR ETF CFD
+Stock CFD's\NYSE\ETF\XLI.NYSE -> Industrial Select Sector SPDR ETF CFD
+Stock CFD's\NYSE\ETF\XLP.NYSE -> Consumer Staples Select Sector SPDR ETF CFD
+Stock CFD's\NYSE\ETF\XLU.NYSE -> Utilities Select Sector SPDR ETF CFD
+Stock CFD's\NYSE\ETF\XOP.NYSE -> SPDR S&P Oil & Gas Explor & Prodtn ETF CFD
+Stock CFD's\Nasdaq\ETF\QQQ.NAS -> Invesco QQQ Trust ETF CFD
+Stock CFD's\Nasdaq\ETF\TLT.NAS -> iShares 20+ Year Treasury Bond ETF CFD
+Commodities\Metals\XAUAUD -> Gold vs Australian Dollar
+Stock CFD's\NYSE\LIN.NYSE -> Linde plc CFD
+Stock CFD's\NYSE\DEO.NYSE -> Diageo plc CFD
+Stock CFD's\NYSE\NEE.NYSE -> NextEra Energy, Inc. CFD
+Stock CFD's\NYSE\AMT.NYSE -> American Tower Corporation (REIT) CFD
+Stock CFD's\NYSE\BABA.NYSE -> Alibaba Group Holding Limited CFD
+Stock CFD's\NYSE\BRK-B.NYSE -> Berkshire Hathaway Inc - B Shares CFD
+Stock CFD's\NYSE\TMO.NYSE -> Thermo Fisher Scientific Inc. CFD
+Stock CFD's\Nasdaq\LYFT.NAS -> Lyft, Inc. CFD
+Stock CFD's\NYSE\TM.NYSE -> Toyota Motor Corporation CFD
+Stock CFD's\NYSE\UBER.NYSE -> Uber Technologies Inc CFD
+Stock CFD's\NYSE\PINS.NYSE -> Pinterest Inc CFD
+Indices\Indices Spot\Minor Spot Indices\CA60 -> Canada 60 Index
+Indices\Indices Spot\Minor Spot Indices\NETH25 -> Netherlands 25 Index
+Indices\Indices Spot\Minor Spot Indices\SE30 -> Sweden 30 Index
+Indices\Indices Spot\Minor Spot Indices\SWI20 -> Switzerland 20 Index
+Indices\Indices Spot\Minor Spot Indices\CHINAH -> Hong Kong China H-shares Index
+Indices\Indices Spot\Minor Spot Indices\SA40 -> South Africa 40 Index
+Indices\Indices Spot\Minor Spot Indices\NOR25 -> Norway 25 Index
+Indices\Indices Spot\Minor Spot Indices\TecDE30 -> Germany Tech 30 Index
+Indices\Indices Spot\Minor Spot Indices\MidDE60 -> Germany Mid 60 Index
+Commodities\Softs\Wheat_K1 -> Wheat - May 21 CFD
+Commodities\Softs\Corn_K1 -> Corn - May 21 CFD
+Commodities\Softs\Sugar_K1 -> Sugar - May 21 CFD
+Indices\Indices Futures\DXY_M1 ->  US Dollar Index - June 21 CFD
+Bonds CFDs\EURBOBL_M1 ->  Euro Bobl - June 21 CFD
+Bonds CFDs\EURBUND_M1 ->  Euro Bund - June 21 CFD
+Bonds CFDs\EURSCHA_M1 ->  Euro Schatz - June 21 CFD
+Bonds CFDs\UST05Y_M1 ->  US T-Note 5 YR - June 21 CFD
+Bonds CFDs\UST10Y_M1 ->  US T-Note 10 YR - June 21 CFD
+Bonds CFDs\UST30Y_M1 ->  US T-Bond 30 YR - June 21 CFD
+Bonds CFDs\UKGB_M1 ->  UK Long Gilt - June 21 CFD
+Bonds CFDs\JGB10Y_M1 ->  Japan JGB 10 YR - June 21 CFD
+Bonds CFDs\ITBTP10Y_M1 ->  Euro BTP Italian 10 YR - June 21 CFD
+Indices\Indices Futures\VIX_J1 ->  Volatility Index - April 21 CFD
+Commodities\Energies\Energies Futures\WTI_J1 ->  US Crude Oil - April 21 CFD
+Commodities\Energies\Energies Futures\WTI_K1 ->  US Crude Oil - May 21 CFD
+Commodities\Softs\Soybean_K1 ->  Soybean - May 21 CFD
+Commodities\Softs\OJ_K1 ->  Orange Juice - May 21 CFD
+Commodities\Energies\Energies Futures\BRENT_K1 ->  Crude Oil Brent - May 21 CFD
+Commodities\Softs\Cocoa_K1 ->  Cocoa - May 21 CFD
+Commodities\Softs\Coffee_K1 ->  Coffee C - May 21 CFD
+Commodities\Softs\Cotton_K1 ->  Cotton No 2 - May 21 CFD
+Stock CFD's\Nasdaq\ABMD.NAS -> ABIOMED Inc
+Stock CFD's\Nasdaq\AMD.NAS -> Advanced Micro Devices Inc
+Stock CFD's\Nasdaq\AKAM.NAS -> Akamai Technologies Inc
+Stock CFD's\Nasdaq\ALXN.NAS -> Alexion Pharmaceuticals
+Stock CFD's\Nasdaq\ALGN.NAS -> Align Technology
+Stock CFD's\Nasdaq\LNT.NAS -> Alliant Energy Corp
+Stock CFD's\Nasdaq\AAL.NAS -> American Airlines Group
+Stock CFD's\Nasdaq\AEP.NAS -> American Electric Power
+Stock CFD's\Nasdaq\ANSS.NAS -> ANSYS, Inc.
+Stock CFD's\Nasdaq\APA.NAS -> Apache Corporation
+Stock CFD's\Nasdaq\ADSK.NAS -> Autodesk Inc.
+Stock CFD's\Nasdaq\CHRW.NAS -> C. H. Robinson Worldwide
+Stock CFD's\Nasdaq\CDNS.NAS -> Cadence Design Systems
+Stock CFD's\Nasdaq\CDW.NAS -> CDW
+Stock CFD's\Nasdaq\CERN.NAS -> Cerner
+Stock CFD's\Nasdaq\CINF.NAS -> Cincinnati Financial
+Stock CFD's\Nasdaq\CTAS.NAS -> Cintas Corporation
+Stock CFD's\Nasdaq\CTXS.NAS -> Citrix Systems
+Stock CFD's\Nasdaq\CPRT.NAS -> Copart Inc
+Stock CFD's\NYSE\AAP.NYSE -> Advance Auto Parts
+Stock CFD's\NYSE\AES.NYSE -> AES Corp
+Stock CFD's\NYSE\AFL.NYSE -> AFLAC Inc
+Stock CFD's\NYSE\A.NYSE -> Agilent Technologies Inc
+Stock CFD's\NYSE\APD.NYSE -> Air Products & Chemicals Inc
+Stock CFD's\NYSE\ALK.NYSE -> Alaska Air Group Inc
+Stock CFD's\NYSE\ALB.NYSE -> Albemarle Corp
+Stock CFD's\NYSE\ARE.NYSE -> Alexandria Real Estate Equities
+Stock CFD's\NYSE\ALLE.NYSE -> Allegion
+Stock CFD's\NYSE\ALL.NYSE -> Allstate Corp
+Stock CFD's\NYSE\AMCR.NYSE -> Amcor plc
+Stock CFD's\NYSE\AEE.NYSE -> Ameren Corp
+Stock CFD's\NYSE\AIG.NYSE -> American International Group
+Stock CFD's\NYSE\AWK.NYSE -> American Water Works Company Inc
+Stock CFD's\NYSE\AMP.NYSE -> Ameriprise Financial
+Stock CFD's\NYSE\ABC.NYSE -> AmerisourceBergen Corp
+Stock CFD's\NYSE\AME.NYSE -> AMETEK Inc.
+Stock CFD's\NYSE\APH.NYSE -> Amphenol Corp
+Stock CFD's\NYSE\ANTM.NYSE -> Anthem Inc
+Stock CFD's\NYSE\AON.NYSE -> Aon plc
+Stock CFD's\NYSE\AOS.NYSE -> A.O. Smith Corp
+Stock CFD's\NYSE\APTV.NYSE -> Aptiv PLC
+Stock CFD's\NYSE\ADM.NYSE -> Archer-Daniels-Midland Co
+Stock CFD's\NYSE\ANET.NYSE -> Arista Networks
+Stock CFD's\NYSE\AJG.NYSE -> Arthur J. Gallagher & Co.
+Stock CFD's\NYSE\AIZ.NYSE -> Assurant
+Stock CFD's\NYSE\ATO.NYSE -> Atmos Energy
+Stock CFD's\NYSE\AZO.NYSE -> AutoZone Inc
+Stock CFD's\NYSE\AVB.NYSE -> AvalonBay Communities
+Stock CFD's\NYSE\AVY.NYSE -> Avery Dennison Corp
+Stock CFD's\NYSE\BKR.NYSE -> Baker Hughes Co
+Stock CFD's\NYSE\BLL.NYSE -> Ball Corp
+Stock CFD's\NYSE\BK.NYSE -> The Bank of New York Mellon
+Stock CFD's\NYSE\BAX.NYSE -> Baxter International Inc.
+Stock CFD's\NYSE\BDX.NYSE -> Becton Dickinson
+Stock CFD's\NYSE\BBY.NYSE -> Best Buy Co. Inc.
+Stock CFD's\NYSE\BIO.NYSE -> Bio-Rad Laboratories
+Stock CFD's\NYSE\BWA.NYSE -> BorgWarner
+Stock CFD's\NYSE\BXP.NYSE -> Boston Properties
+Stock CFD's\NYSE\BSX.NYSE -> Boston Scientific
+Stock CFD's\NYSE\BR.NYSE -> Broadridge Financial Solutions
+Stock CFD's\NYSE\COG.NYSE -> Cabot Oil & Gas
+Stock CFD's\NYSE\CPB.NYSE -> Campbell Soup
+Stock CFD's\NYSE\COF.NYSE -> Capital One Financial
+Stock CFD's\NYSE\CAH.NYSE -> Cardinal Health Inc.
+Stock CFD's\NYSE\KMX.NYSE -> Carmax Inc
+Stock CFD's\NYSE\CCL.NYSE -> Carnival Corp.
+Stock CFD's\NYSE\CARR.NYSE -> Carrier Global
+Stock CFD's\NYSE\CTLT.NYSE -> Catalent
+Stock CFD's\NYSE\CAT.NYSE -> Caterpillar Inc.
+Stock CFD's\NYSE\CBRE.NYSE -> CBRE Group
+Stock CFD's\NYSE\CE.NYSE -> Celanese
+Stock CFD's\NYSE\CNC.NYSE -> Centene Corporation
+Stock CFD's\NYSE\CNP.NYSE -> CenterPoint Energy
+Stock CFD's\NYSE\CF.NYSE -> CF Industries Holdings Inc
+Stock CFD's\NYSE\SCHW.NYSE -> Charles Schwab Corporation
+Stock CFD's\NYSE\CMG.NYSE -> Chipotle Mexican Grill
+Stock CFD's\NYSE\CB.NYSE -> Chubb Ltd
+Stock CFD's\NYSE\CHD.NYSE -> Church & Dwight
+Stock CFD's\NYSE\CI.NYSE -> CIGNA Corp.
+Stock CFD's\NYSE\CFG.NYSE -> Citizens Financial Group
+Stock CFD's\NYSE\CLX.NYSE -> The Clorox Company
+Stock CFD's\NYSE\CMS.NYSE -> CMS Energy
+Stock CFD's\NYSE\CL.NYSE -> Colgate-Palmolive
+Stock CFD's\NYSE\CMA.NYSE -> Comerica Inc.
+Stock CFD's\NYSE\CAG.NYSE -> Conagra Brands
+Stock CFD's\NYSE\COP.NYSE -> ConocoPhillips
+Stock CFD's\NYSE\ED.NYSE -> Consolidated Edison
+Stock CFD's\NYSE\STZ.NYSE -> Constellation Brands
+Stock CFD's\NYSE\COO.NYSE -> The Cooper Companies
+Stock CFD's\NYSE\GLW.NYSE -> Corning Inc.
+Stock CFD's\NYSE\CTVA.NYSE -> Corteva
+Stock CFD's\NYSE\CCI.NYSE -> Crown Castle International Corp.
+Stock CFD's\NYSE\CMI.NYSE -> Cummins Inc.
+Stock CFD's\NYSE\DHI.NYSE -> D. R. Horton
+Stock CFD's\NYSE\DHR.NYSE -> Danaher Corp.
+Stock CFD's\NYSE\DRI.NYSE -> Darden Restaurants
+Stock CFD's\NYSE\DVA.NYSE -> DaVita Inc.
+Stock CFD's\NYSE\DE.NYSE -> Deere & Co.
+Stock CFD's\NYSE\BFB.NYSE -> Brown-Forman Corp.
+Stock CFD's\NYSE\ACN.NYSE -> Accenture plc
+Stock CFD's\NYSE\BF/B.NYSE -> Brown-Forman Corp.
+Stock CFD's\NYSE\DAL.NYSE -> Delta Air Lines Inc.
+Stock CFD's\Nasdaq\XRAY.NAS -> Dentsply Sirona
+Stock CFD's\NYSE\DVN.NYSE -> Devon Energy
+Stock CFD's\Nasdaq\DXCM.NAS -> DexCom
+Stock CFD's\Nasdaq\FANG.NAS -> Diamondback Energy
+Stock CFD's\NYSE\DLR.NYSE -> Digital Realty Trust Inc
+Stock CFD's\NYSE\DFS.NYSE -> Discover Financial Services
+Stock CFD's\NYSE\DG.NYSE -> Dollar General
+Stock CFD's\Nasdaq\DLTR.NAS -> Dollar Tree
+Stock CFD's\NYSE\D.NYSE -> Dominion Energy
+Stock CFD's\NYSE\DPZ.NYSE -> Domino's Pizza
+Stock CFD's\NYSE\DOV.NYSE -> Dover Corporation
+Stock CFD's\NYSE\DTE.NYSE -> DTE Energy Co.
+Stock CFD's\NYSE\DUK.NYSE -> Duke Energy
+Stock CFD's\NYSE\DRE.NYSE -> Duke Realty Corp
+Stock CFD's\NYSE\DXC.NYSE -> DXC Technology
+Stock CFD's\NYSE\EMN.NYSE -> Eastman Chemical
+Stock CFD's\NYSE\ETN.NYSE -> Eaton Corporation
+Stock CFD's\NYSE\ECL.NYSE -> Ecolab Inc.
+Stock CFD's\NYSE\EIX.NYSE -> Edison Int'l
+Stock CFD's\NYSE\EW.NYSE -> Edwards Lifesciences
+Stock CFD's\NYSE\EMR.NYSE -> Emerson Electric Company
+Stock CFD's\Nasdaq\ENPH.NAS -> Enphase Energy
+Stock CFD's\NYSE\ETR.NYSE -> Entergy Corp.
+Stock CFD's\NYSE\EOG.NYSE -> EOG Resources
+Stock CFD's\NYSE\EFX.NYSE -> Equifax Inc.
+Stock CFD's\NYSE\EQR.NYSE -> Equity Residential
+Stock CFD's\NYSE\ESS.NYSE -> Essex Property Trust, Inc.
+Stock CFD's\NYSE\EL.NYSE -> Estée Lauder Companies
+Stock CFD's\Nasdaq\ETSY.NAS -> Etsy
+Stock CFD's\NYSE\EVRG.NYSE -> Evergy
+Stock CFD's\NYSE\ES.NYSE -> Eversource Energy
+Stock CFD's\NYSE\RE.NYSE -> Everest Re Group Ltd.
+Stock CFD's\Nasdaq\EXC.NAS -> Exelon Corp.
+Stock CFD's\Nasdaq\EXPE.NAS -> Expedia Group
+Stock CFD's\Nasdaq\EXPD.NAS -> Expeditors
+Stock CFD's\NYSE\EXR.NYSE -> Extra Space Storage
+Stock CFD's\Nasdaq\FFIV.NAS -> F5 Networks
+Stock CFD's\Nasdaq\FAST.NAS -> Fastenal Co
+Stock CFD's\NYSE\FRT.NYSE -> Federal Realty Investment Trust
+Stock CFD's\NYSE\FDX.NYSE -> FedEx Corporation
+Stock CFD's\NYSE\FIS.NYSE -> Fidelity National Information Services
+Stock CFD's\Nasdaq\FITB.NAS -> Fifth Third Bancorp
+Stock CFD's\NYSE\FE.NYSE -> FirstEnergy Corp
+Stock CFD's\NYSE\FRC.NYSE -> First Republic Bank
+Stock CFD's\Nasdaq\FISV.NAS -> Fiserv Inc
+Stock CFD's\NYSE\FLT.NYSE -> FleetCor Technologies Inc
+Stock CFD's\Nasdaq\FLIR.NAS -> FLIR Systems
+Stock CFD's\NYSE\FLS.NYSE -> Flowserve Corporation
+Stock CFD's\NYSE\FMC.NYSE -> FMC Corporation
+Stock CFD's\NYSE\F.NYSE -> Ford Motor Company
+Stock CFD's\Nasdaq\FTNT.NAS -> Fortinet
+Stock CFD's\NYSE\FTV.NYSE -> Fortive Corp
+Stock CFD's\NYSE\FBHS.NYSE -> Fortune Brands Home & Security
+Stock CFD's\NYSE\FCX.NYSE -> Freeport-McMoRan Inc.
+Stock CFD's\NYSE\IT.NYSE -> Gartner Inc
+Stock CFD's\NYSE\BEN.NYSE -> Franklin Resources
+Stock CFD's\NYSE\GPS.NYSE -> Gap Inc.
+Stock CFD's\Nasdaq\GRMN.NAS -> Garmin Ltd.
+Stock CFD's\NYSE\GD.NYSE -> General Dynamics
+Stock CFD's\NYSE\GIS.NYSE -> General Mills
+Stock CFD's\NYSE\GM.NYSE -> General Motors
+Stock CFD's\Nasdaq\GPC.NAS -> Genuine Parts
+Stock CFD's\NYSE\GL.NYSE -> Globe Life Inc.
+Stock CFD's\NYSE\GPN.NYSE -> Global Payments Inc.
+Stock CFD's\NYSE\GWW.NYSE -> Grainger (W.W.) Inc.
+Stock CFD's\NYSE\HAL.NYSE -> Halliburton Co.
+Stock CFD's\NYSE\HBI.NYSE -> Hanesbrands Inc
+Stock CFD's\NYSE\HIG.NYSE -> Hartford Financial Svc.Gp.
+Stock CFD's\Nasdaq\HAS.NAS -> Hasbro Inc.
+Stock CFD's\NYSE\HCA.NYSE -> HCA Healthcare
+Stock CFD's\NYSE\PEAK.NYSE -> Healthpeak Properties
+Stock CFD's\Nasdaq\HSIC.NAS -> Henry Schein
+Stock CFD's\NYSE\HSY.NYSE -> The Hershey Company
+Stock CFD's\NYSE\HES.NYSE -> Hess Corporation
+Stock CFD's\NYSE\HPE.NYSE -> Hewlett Packard Enterprise
+Stock CFD's\NYSE\HLT.NYSE -> Hilton Worldwide Holdings Inc
+Stock CFD's\NYSE\HFC.NYSE -> HollyFrontier Corp
+Stock CFD's\Nasdaq\HOLX.NAS -> Hologic
+Stock CFD's\NYSE\HRL.NYSE -> Hormel Foods Corp.
+Stock CFD's\Nasdaq\HST.NAS -> Host Hotels & Resorts
+Stock CFD's\NYSE\HWM.NYSE -> Howmet Aerospace
+Stock CFD's\NYSE\HPQ.NYSE -> HP Inc.
+Stock CFD's\NYSE\HUM.NYSE -> Humana Inc.
+Stock CFD's\Nasdaq\HBAN.NAS -> Huntington Bancshares
+Stock CFD's\NYSE\HII.NYSE -> Huntington Ingalls Industries
+Stock CFD's\NYSE\IEX.NYSE -> IDEX Corporation
+Stock CFD's\Nasdaq\IDXX.NAS -> IDEXX Laboratories
+Stock CFD's\NYSE\INFO.NYSE -> IHS Markit Ltd.
+Stock CFD's\NYSE\ITW.NYSE -> Illinois Tool Works
+Stock CFD's\Nasdaq\ILMN.NAS -> Illumina Inc
+Stock CFD's\Nasdaq\INCY.NAS -> Incyte
+Stock CFD's\NYSE\IR.NYSE -> Ingersoll Rand
+Stock CFD's\NYSE\ICE.NYSE -> Intercontinental Exchange
+Stock CFD's\NYSE\IP.NYSE -> International Paper
+Stock CFD's\NYSE\IPG.NYSE -> Interpublic Group
+Stock CFD's\NYSE\IFF.NYSE -> International Flavors & Fragrances
+Stock CFD's\NYSE\IVZ.NYSE -> Invesco Ltd.
+Stock CFD's\Nasdaq\IPGP.NAS -> IPG Photonics Corp.
+Stock CFD's\NYSE\NI.NYSE -> NiSource Inc.
+Stock CFD's\NYSE\IQV.NYSE -> IQVIA Holdings Inc.
+Stock CFD's\NYSE\IRM.NYSE -> Iron Mountain Incorporated
+Stock CFD's\NYSE\J.NYSE -> Jacobs Engineering Group
+Stock CFD's\Nasdaq\JBHT.NAS -> J. B. Hunt Transport Services
+Stock CFD's\NYSE\SJM.NYSE -> JM Smucker
+Stock CFD's\NYSE\JCI.NYSE -> Johnson Controls International
+Stock CFD's\NYSE\JNPR.NYSE -> Juniper Networks
+Stock CFD's\NYSE\KSU.NYSE -> Kansas City Southern
+Stock CFD's\NYSE\K.NYSE -> Kellogg Co.
+Stock CFD's\NYSE\KEY.NYSE -> KeyCorp
+Stock CFD's\NYSE\KEYS.NYSE -> Keysight Technologies
+Stock CFD's\NYSE\KMB.NYSE -> Kimberly-Clark
+Stock CFD's\NYSE\KIM.NYSE -> Kimco Realty
+Stock CFD's\NYSE\KMI.NYSE -> Kinder Morgan
+Stock CFD's\Nasdaq\KLAC.NAS -> KLA Corporation
+Stock CFD's\NYSE\KR.NYSE -> Kroger Co.
+Stock CFD's\NYSE\LB.NYSE -> L Brands Inc.
+Stock CFD's\NYSE\LHX.NYSE -> L3Harris Technologies
+Stock CFD's\NYSE\LH.NYSE -> Laboratory Corp. of America Holding
+Stock CFD's\Nasdaq\LRCX.NAS -> Lam Research
+Stock CFD's\NYSE\LW.NYSE -> Lamb Weston Holdings Inc
+Stock CFD's\NYSE\LVS.NYSE -> Las Vegas Sands
+Stock CFD's\NYSE\LEG.NYSE -> Leggett & Platt
+Stock CFD's\NYSE\LDOS.NYSE -> Leidos Holdings
+Stock CFD's\NYSE\LEN.NYSE -> Lennar Corp.
+Stock CFD's\NYSE\LNC.NYSE -> Lincoln National
+Stock CFD's\NYSE\LYV.NYSE -> Live Nation Entertainment
+Stock CFD's\NYSE\L.NYSE -> Loews Corp.
+Stock CFD's\NYSE\LOW.NYSE -> Lowe's Cos.
+Stock CFD's\NYSE\LUMN.NYSE -> Lumen Technologies
+Stock CFD's\NYSE\LYB.NYSE -> LyondellBasell
+Stock CFD's\NYSE\MTB.NYSE -> M&T Bank Corp.
+Stock CFD's\NYSE\MRO.NYSE -> Marathon Oil Corp.
+Stock CFD's\NYSE\MPC.NYSE -> Marathon Petroleum
+Stock CFD's\NYSE\MMC.NYSE -> Marsh & McLennan
+Stock CFD's\NYSE\MLM.NYSE -> Martin Marietta Materials
+Stock CFD's\NYSE\MAS.NYSE -> Masco Corp.
+Stock CFD's\NYSE\MKC.NYSE -> McCormick & Co.
+Stock CFD's\Nasdaq\MXIM.NAS -> Maxim Integrated Products Inc
+Stock CFD's\NYSE\MCK.NYSE -> McKesson Corp.
+Stock CFD's\NYSE\MDT.NYSE -> Medtronic plc
+Stock CFD's\NYSE\MET.NYSE -> MetLife Inc.
+Stock CFD's\NYSE\MTD.NYSE -> Mettler Toledo
+Stock CFD's\NYSE\MGM.NYSE -> MGM Resorts International
+Stock CFD's\Nasdaq\MCHP.NAS -> Microchip Technology
+Stock CFD's\NYSE\MAA.NYSE -> Mid-America Apartments
+Stock CFD's\NYSE\MHK.NYSE -> Mohawk Industries
+Stock CFD's\NYSE\TAP.NYSE -> Molson Coors Beverage Company
+Stock CFD's\Nasdaq\MNST.NAS -> Monster Beverage
+Stock CFD's\NYSE\MCO.NYSE -> Moody's Corp
+Stock CFD's\NYSE\MOS.NYSE -> The Mosaic Company
+Stock CFD's\NYSE\MSI.NYSE -> Motorola Solutions Inc.
+Stock CFD's\NYSE\MSCI.NYSE -> MSCI Inc
+Stock CFD's\Nasdaq\NDAQ.NAS -> Nasdaq, Inc.
+Stock CFD's\Nasdaq\NTAP.NAS -> NetApp
+Stock CFD's\Nasdaq\NWL.NAS -> Newell Brands
+Stock CFD's\NYSE\NEM.NYSE -> Newmont Corporation
+Stock CFD's\Nasdaq\NWSA.NAS -> News Corp. Class A
+Stock CFD's\Nasdaq\NWS.NAS -> News Corp. Class B
+Stock CFD's\NYSE\NLSN.NYSE -> Nielsen Holdings
+Stock CFD's\NYSE\NSC.NYSE -> Norfolk Southern Corp.
+Stock CFD's\Nasdaq\NTRS.NAS -> Northern Trust Corp.
+Stock CFD's\NYSE\NOC.NYSE -> Northrop Grumman
+Stock CFD's\Nasdaq\NLOK.NAS -> NortonLifeLock
+Stock CFD's\NYSE\NCLH.NYSE -> Norwegian Cruise Line Holdings
+Stock CFD's\NYSE\NOV.NYSE -> NOV Inc.
+Stock CFD's\NYSE\NRG.NYSE -> NRG Energy
+Stock CFD's\NYSE\NUE.NYSE -> Nucor Corp.
+Stock CFD's\NYSE\NVR.NYSE -> NVR, Inc.
+Stock CFD's\Nasdaq\ORLY.NAS -> O'Reilly Automotive
+Stock CFD's\NYSE\OXY.NYSE -> Occidental Petroleum
+Stock CFD's\NYSE\OMC.NYSE -> Omnicom Group
+Stock CFD's\NYSE\OKE.NYSE -> ONEOK
+Stock CFD's\NYSE\OTIS.NYSE -> Otis Worldwide
+Stock CFD's\Nasdaq\PCAR.NAS -> PACCAR Inc.
+Stock CFD's\NYSE\PKG.NYSE -> Packaging Corporation of America
+Stock CFD's\NYSE\PH.NYSE -> Parker-Hannifin
+Stock CFD's\Nasdaq\PAYX.NAS -> Paychex Inc.
+Stock CFD's\NYSE\PAYC.NYSE -> Paycom
+Stock CFD's\NYSE\PNR.NYSE -> Pentair plc
+Stock CFD's\Nasdaq\PBCT.NAS -> People's United Financial
+Stock CFD's\NYSE\PKI.NYSE -> PerkinElmer
+Stock CFD's\NYSE\PRGO.NYSE -> Perrigo
+Stock CFD's\NYSE\PSX.NYSE -> Phillips 66
+Stock CFD's\NYSE\PNW.NYSE -> Pinnacle West Capital
+Stock CFD's\NYSE\PXD.NYSE -> Pioneer Natural Resources
+Stock CFD's\NYSE\PNC.NYSE -> PNC Financial Services
+Stock CFD's\NYSE\PPG.NYSE -> PPG Industries
+Stock CFD's\NYSE\PPL.NYSE -> PPL Corp.
+Stock CFD's\Nasdaq\PFG.NAS -> Principal Financial Group
+Stock CFD's\NYSE\PGR.NYSE -> Progressive Corp.
+Stock CFD's\NYSE\PLD.NYSE -> Prologis
+Stock CFD's\NYSE\PRU.NYSE -> Prudential Financial
+Stock CFD's\NYSE\PEG.NYSE -> Public Service Enterprise Group (PSEG)
+Stock CFD's\Nasdaq\JKHY.NAS -> Jack Henry & Associates
+Stock CFD's\Nasdaq\LKQ.NAS -> LKQ Corporation
+Stock CFD's\Nasdaq\MKTX.NAS -> MarketAxess
+Stock CFD's\Nasdaq\ODFL.NAS -> Old Dominion Freight Line
+Stock CFD's\Nasdaq\POOL.NAS -> Pool Corporation
