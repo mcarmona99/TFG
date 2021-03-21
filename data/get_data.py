@@ -148,7 +148,7 @@ path=Forex\Majors\EURUSD
 # PROPERTIES = ['time', 'bid', 'ask', 'last', 'volume', 'time_msc', 'flags', 'volume_real']
 YEARS_BEFORE = 2
 
-symbols = mt5.symbols_get()
+symbols = mt5.symbols_get("EURAUD")
 end_data = datetime.datetime.now()
 start_data = end_data - datetime.timedelta(days=YEARS_BEFORE * 365)
 
@@ -179,6 +179,12 @@ for i, symbol in enumerate(symbols):
 
         # obtener ticks en el rango y crear dataframe
         ticks = mt5.copy_ticks_range(symbol.name, start_data, end_data, mt5.COPY_TICKS_ALL)
+
+        # evitar errores cuando no se pueden obtener datos de dos años atras, pruebo de un año atras
+        if not ticks:
+            ticks = mt5.copy_ticks_range(symbol.name, end_data - datetime.timedelta(days=(YEARS_BEFORE - 1) * 365),
+                                         end_data, mt5.COPY_TICKS_ALL)
+
         ticks_df = pd.DataFrame(ticks)
         try:
             ticks_df['time'] = pd.to_datetime(ticks_df['time'], unit='s')
