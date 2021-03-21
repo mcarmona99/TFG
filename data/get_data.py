@@ -148,7 +148,7 @@ path=Forex\Majors\EURUSD
 # PROPERTIES = ['time', 'bid', 'ask', 'last', 'volume', 'time_msc', 'flags', 'volume_real']
 YEARS_BEFORE = 2
 
-symbols = mt5.symbols_get("EURAUD")
+symbols = mt5.symbols_get()
 end_data = datetime.datetime.now()
 start_data = end_data - datetime.timedelta(days=YEARS_BEFORE * 365)
 
