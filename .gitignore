@@ -1,8 +1,9 @@
 .idea
 .~lock.TFG apuntes mas formales.odt#
-data\Commodities
-data\Crypto
-data\Forex
-data\Indices
-data\Stock*
-data\Bonds*
+data/Commodities
+data/Crypto
+data/Forex
+data/Indices
+data/Stock*
+data/Bonds*
+data/error.txt
