@@ -93,7 +93,7 @@ if __name__ == '__main__':
     symbols_names = ['EURUSD', 'XAUUSD', 'XAGEUR', 'XNGUSD', 'XBRUSD']
 
     for symbol in symbols_names:
-        for year in range(2010, 2021):
+        for year in range(2010, 2022):
             ticks = get_data_year(year, symbol)
             if ticks is not None:
                 if len(ticks) != 0:
