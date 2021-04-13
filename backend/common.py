@@ -33,6 +33,8 @@ def get_data(symbol, data_path=DATA_PATH):
     frames = []
     for file in find_files_regex(symbol, data_path):
         df_file = pd.read_csv(file)
+        df_file['time'] = pd.to_datetime(df_file['time'], dayfirst=False, yearfirst=True)
+        df_file = df_file.sort_values(by=['time'], axis=0, ascending=True)
 
         # Eliminar columna 0 residuo de los datos
         df_file = df_file.drop(df_file.columns[[0]], axis=1)
