@@ -3,34 +3,107 @@
 # Entrada -> datos, periodo para operar y mi cartera
 # Salida -> historico de movimientos durante
 
-import pandas as pd
+import MetaTrader5 as mt5
 
 import common
 
 
-def get_data(symbol, data_path=common.DATA_PATH):
+def login():
     """
     TODO: Docstring
     """
-    frames = []
-    for file in common.find_files_regex(symbol, data_path):
-        df_file = pd.read_csv(file)
+    # if mt5.login(
+    #     login,                 # número de cuenta
+    #     password = "PASSWORD", # contraseña. No obligatorio.
+    #                            # Si no se indica la contraseña, se utilizará automáticamente la contraseña guardada
+    #                            # en la base de datos del terminal.
+    #     server = "SERVER",     # nombre del servidor como se ha establecido en el terminal
+    #     timeout = TIMEOUT      # timeout
+    # ):
+    # print(mt5.account_info())
+    # return True
+    raise NotImplementedError
 
-        # Eliminar columna 0 residuo de los datos
-        df_file = df_file.drop(df_file.columns[[0]], axis=1)
 
-        frames.append(df_file)
-
-    try:
-        df = pd.concat(frames)
-    except ValueError:
-        print(f"No se han encontrado dataframes para {symbol} en {data_path}")
+def send_request_to_mt5(symbol, action, lot=None, stop_lose=None, take_profit=None):
+    """
+    TODO: Docstring
+    """
+    if not mt5.initialize():
+        print("initialize() failed")
+        mt5.shutdown()
         # TODO: Gestion de errores
-        return None
+        return False
 
-    return df
+    # Preparamos la estructura de la solicitud de compra
+    symbol_info = mt5.symbol_info(symbol)
+    if symbol_info is None:
+        print(symbol, "not found, can not call order_check()")
+        mt5.shutdown()
+        # TODO: Gestion de errores
+        return False
+
+    # Si el símbolo no está disponible en MarketWatch, lo añadimos
+    if not symbol_info.visible:
+        print(symbol, "is not visible, trying to switch on")
+        if not mt5.symbol_select(symbol, True):
+            print("symbol_select({}}) failed, exit", symbol)
+            mt5.shutdown()
+            # TODO: Gestion de errores
+            return False
+
+    # Creo variables y peticion request a mandar
+    point = mt5.symbol_info(symbol).point
+    price = mt5.symbol_info_tick(symbol).ask
+    deviation = 20
+    request = {
+        "action": mt5.TRADE_ACTION_DEAL,
+        "symbol": symbol,
+        "volume": lot if lot else 0.01,
+        "type": mt5.ORDER_TYPE_BUY if action.lower() == "buy" else mt5.ORDER_TYPE_SELL,
+        "price": price,
+        "sl": stop_lose if stop_lose else price - 100 * point if action.lower() == "buy" else price + 100 * point,
+        "tp": take_profit if take_profit else price + 100 * point if action.lower() == "buy" else price - 100 * point,
+        "deviation": deviation,
+        "magic": 234000,
+        "comment": "python script open",
+        "type_time": mt5.ORDER_TIME_GTC,
+        "type_filling": mt5.ORDER_FILLING_IOC,
+    }
+
+    # Mando la petición a MetaTrader
+    order_result = mt5.order_send(request)
+
+    return order_result
+
+
+def buy(symbol, lot=None, stop_lose=None, take_profit=None):
+    """
+    TODO: Docstring
+    """
+    return send_request_to_mt5(symbol, "BUY", lot, stop_lose, take_profit)
+
+
+def sell(symbol, lot=None, stop_lose=None, take_profit=None):
+    """
+    TODO: Docstring
+    """
+    return send_request_to_mt5(symbol, "SELL", lot, stop_lose, take_profit)
+
+
+def get_balance():
+    """
+    TODO: Docstring
+    """
+    raise NotImplementedError
 
 
 if __name__ == '__main__':
+    # Recogida de datos de cada simbolo a tratar
     symbols_names = ['EURUSD', 'XAUUSD', 'XAGEUR', 'XNGUSD', 'XBRUSD']
-    dataframes = [get_data(symbol) for symbol in symbols_names]
+    dataframes = [common.get_data(symbol) for symbol in symbols_names]
+
+    # Ejemplos de uso con compras y ventas
+    ret = buy("EURUSD")
+    print(ret)
+    print(ret.retcode, ret.comment)
