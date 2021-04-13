@@ -3,9 +3,15 @@
 # Entrada -> datos, periodo para operar y mi cartera
 # Salida -> historico de movimientos durante
 
+
+import datetime
+
 import MetaTrader5 as mt5
+import matplotlib.pyplot as plt
 
 import common
+
+plt.style.use("fivethirtyeight")
 
 
 def login():
@@ -98,12 +104,25 @@ def get_balance():
     raise NotImplementedError
 
 
+# Primer ejemplo de algoritmo trading, usando media movil
+def automated_trading_moving_average():
+    raise NotImplementedError
+
+
 if __name__ == '__main__':
     # Recogida de datos de cada simbolo a tratar
     symbols_names = ['EURUSD', 'XAUUSD', 'XAGEUR', 'XNGUSD', 'XBRUSD']
     dataframes = [common.get_data(symbol) for symbol in symbols_names]
 
-    # Ejemplos de uso con compras y ventas
-    ret = buy("EURUSD")
-    print(ret)
-    print(ret.retcode, ret.comment)
+    # Ver datos de EURUSD para medio año 2020
+    df_2020_eurusd = dataframes[0][(dataframes[0]["time"] >= datetime.datetime(2020, 1, 1)) & (
+                dataframes[0]["time"] < datetime.datetime(2020, 12, 31))]
+
+    plt.figure(figsize=(16.5, 8.5))
+    plt.plot(df_2020_eurusd["ask"], label="ask")
+    plt.plot(df_2020_eurusd["bid"], label="bid")
+    plt.title("EUR vs USD en el año 2020")
+    plt.xlabel("Unidad de tiempo")
+    plt.ylabel("Precio")
+    plt.legend(loc="upper left")
+    plt.show()
