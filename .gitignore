@@ -7,3 +7,4 @@ data/Indices
 data/Stock*
 data/Bonds*
 data/error.txt
+backend/__pycache__
