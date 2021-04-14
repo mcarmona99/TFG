@@ -114,7 +114,13 @@ def moving_average_golden_dead_cross(data, symbol, short_window_size, long_windo
     SMA_short = pd.DataFrame()
     SMA_long = pd.DataFrame()
 
-    # Repetir time_trading_in_hour horas nuestro algoritmo
+    # Variables iniciales para controlar si estoy comprando o vendiendo
+    current_order = 0  # 0 = nada, 1 = buy, 2 = sell
+
+    # Variable a devolver, con accion, precio y tiempo al que la hicimos
+    acciones = []
+
+    # Repetir time_trading_in_hours horas nuestro algoritmo
     hours = 0
     while hours < time_trading_in_hours:
         hours += 1
@@ -129,7 +135,7 @@ def moving_average_golden_dead_cross(data, symbol, short_window_size, long_windo
         SMA_short['ask'] = df['ask'].rolling(window=short_window_size).mean()
         SMA_long['ask'] = df['ask'].rolling(window=long_window_size).mean()
 
-        # Visualizar datos del simbolo en hasta ahora y de 5 dias atras
+        # Visualizar datos del simbolo hasta ahora y de 1 dias atras
         data_to_show = df[(df["time"] >= datetime.datetime.now() - datetime.timedelta(days=1)) & (
                 df["time"] < datetime.datetime.now())]
         short_window = SMA_short[(SMA_short["time"] >= datetime.datetime.now() - datetime.timedelta(days=1)) & (
@@ -151,9 +157,51 @@ def moving_average_golden_dead_cross(data, symbol, short_window_size, long_windo
 
         # Cuando la MA a corto plazo supera a la de largo plazo → señal de compra (golden cross)
         # Cuando la MA a largo plazo supera a la de corto plazo → señal de venta (dead/death cross)
+        # Creo variables y procedimiento:
+
+        current_price = data_to_show.loc[data_to_show['time'].idxmax()]['ask']
+        short_average_price = short_window.loc[short_window['time'].idxmax()]['ask']
+        long_average_price = long_window.loc[long_window['time'].idxmax()]['ask']
+
+        last_time = data_to_show['time'].max
+
+        if current_order == 0:  # sin accion
+            if short_average_price > long_average_price:
+                # MA corta > MA larga, comprar
+                current_order = 1
+                buy(symbol)
+                acciones.append(['buy', last_time, current_price])
+            elif long_average_price < short_average_price:
+                # MA larga > MA corta, vender
+                current_order = 2
+                sell(symbol)
+                acciones.append(['sell', last_time, current_price])
+
+        elif current_order == 1:  # comprando
+            if long_average_price < short_average_price:
+                # MA larga > MA corta, vender
+                # Cierro antes la operacion de compra
+                current_order = 2
+                sell(symbol)
+                acciones.append(['sell', last_time, current_price])
+
+        elif current_order == 2:  # vendiendo
+            if short_average_price > long_average_price:
+                # MA corta > MA larga, comprar
+                # Cierro antes operacion de venta
+                current_order = 1
+                buy(symbol)
+                acciones.append(['buy', last_time, current_price])
+
+        print(f"\nAcciones hechas hasta ahora (llevo {hours} horas):")
+        for accion in acciones:
+            print(f"Accion: {accion[0]}. Fecha y hora: {accion[1]}. Precio: {accion[2]}")
 
         # Esperar una hora hasta la siguiente actualizacion de precios
         time.sleep(3600.0)
+
+    # Devuelvo el vector de acciones realizadas con su precio y datetime
+    return acciones
 
 
 if __name__ == '__main__':
@@ -162,4 +210,6 @@ if __name__ == '__main__':
     dataframes = [common.get_data(symbol) for symbol in symbols_names]
 
     # Ejemplo moving average crossover
+    # Parametrizar con las ventanas pequeña y grande que se quiera (3 y 6 por ej)
+    # Ultimo parametro indica tiempo en horas que durará el trading
     moving_average_golden_dead_cross(dataframes[0], symbols_names[0], 3, 6, 8)
