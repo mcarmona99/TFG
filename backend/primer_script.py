@@ -3,11 +3,12 @@
 # Entrada -> datos, periodo para operar y mi cartera
 # Salida -> historico de movimientos durante
 
-
 import datetime
+import time
 
 import MetaTrader5 as mt5
 import matplotlib.pyplot as plt
+import pandas as pd
 
 import common
 
@@ -104,9 +105,55 @@ def get_balance():
     raise NotImplementedError
 
 
-# Primer ejemplo de algoritmo trading, usando media movil
-def automated_trading_moving_average():
-    raise NotImplementedError
+# Primer ejemplo de algoritmo trading, usando 2 medias moviles (ver apuntes)
+def moving_average_golden_dead_cross(data, symbol, short_window_size, long_window_size, time_trading_in_hours):
+    """
+    TODO: Docstring
+    """
+    # Crear dos medias moviles con ventanas de short_window_size dias y long_window_size dias
+    SMA_short = pd.DataFrame()
+    SMA_long = pd.DataFrame()
+
+    # Repetir time_trading_in_hour horas nuestro algoritmo
+    hours = 0
+    while hours < time_trading_in_hours:
+        hours += 1
+
+        # Expando los datos hasta ahora mismo para ver en tiempo real
+        df = common.update_data_to_realtime(data, symbol)
+
+        # Ventana multiplicado por 24 ya que los datos son por hora y no por dia
+        # O no multiplico para ventanas por horas
+        SMA_short['time'] = df['time']
+        SMA_long['time'] = df['time']
+        SMA_short['ask'] = df['ask'].rolling(window=short_window_size).mean()
+        SMA_long['ask'] = df['ask'].rolling(window=long_window_size).mean()
+
+        # Visualizar datos del simbolo en hasta ahora y de 5 dias atras
+        data_to_show = df[(df["time"] >= datetime.datetime.now() - datetime.timedelta(days=1)) & (
+                df["time"] < datetime.datetime.now())]
+        short_window = SMA_short[(SMA_short["time"] >= datetime.datetime.now() - datetime.timedelta(days=1)) & (
+                df["time"] < datetime.datetime.now())]
+        long_window = SMA_long[(SMA_long["time"] >= datetime.datetime.now() - datetime.timedelta(days=1)) & (
+                df["time"] < datetime.datetime.now())]
+
+        print(data_to_show)
+
+        plt.figure(figsize=(16.5, 8.5))
+        plt.plot(data_to_show['time'], data_to_show["ask"], label="ask")
+        plt.plot(short_window['time'], short_window["ask"], label="Short moving average")
+        plt.plot(long_window['time'], long_window["ask"], label="Long moving average")
+        plt.title("EUR vs USD en el año 2020")
+        plt.xlabel("Unidad de tiempo")
+        plt.ylabel("Precio")
+        plt.legend(loc="upper left")
+        plt.show()
+
+        # Cuando la MA a corto plazo supera a la de largo plazo → señal de compra (golden cross)
+        # Cuando la MA a largo plazo supera a la de corto plazo → señal de venta (dead/death cross)
+
+        # Esperar una hora hasta la siguiente actualizacion de precios
+        time.sleep(3600.0)
 
 
 if __name__ == '__main__':
@@ -114,15 +161,5 @@ if __name__ == '__main__':
     symbols_names = ['EURUSD', 'XAUUSD', 'XAGEUR', 'XNGUSD', 'XBRUSD']
     dataframes = [common.get_data(symbol) for symbol in symbols_names]
 
-    # Ver datos de EURUSD para medio año 2020
-    df_2020_eurusd = dataframes[0][(dataframes[0]["time"] >= datetime.datetime(2020, 1, 1)) & (
-                dataframes[0]["time"] < datetime.datetime(2020, 12, 31))]
-
-    plt.figure(figsize=(16.5, 8.5))
-    plt.plot(df_2020_eurusd["ask"], label="ask")
-    plt.plot(df_2020_eurusd["bid"], label="bid")
-    plt.title("EUR vs USD en el año 2020")
-    plt.xlabel("Unidad de tiempo")
-    plt.ylabel("Precio")
-    plt.legend(loc="upper left")
-    plt.show()
+    # Ejemplo moving average crossover
+    moving_average_golden_dead_cross(dataframes[0], symbols_names[0], 3, 6, 8)
