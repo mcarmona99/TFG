@@ -69,8 +69,8 @@ def send_request_to_mt5(symbol, action, lot=None, stop_lose=None, take_profit=No
         "volume": lot if lot else 0.01,
         "type": mt5.ORDER_TYPE_BUY if action.lower() == "buy" else mt5.ORDER_TYPE_SELL,
         "price": price,
-        "sl": stop_lose if stop_lose else price - 100 * point if action.lower() == "buy" else price + 100 * point,
-        "tp": take_profit if take_profit else price + 100 * point if action.lower() == "buy" else price - 100 * point,
+        # "sl": stop_lose if stop_lose else price - 100 * point if action.lower() == "buy" else price + 100 * point,
+        # "tp": take_profit if take_profit else price + 100 * point if action.lower() == "buy" else price - 100 * point,
         "deviation": deviation,
         "magic": 234000,
         "comment": "python script open",
@@ -143,8 +143,6 @@ def moving_average_golden_dead_cross(data, symbol, short_window_size, long_windo
         long_window = SMA_long[(SMA_long["time"] >= datetime.datetime.now() - datetime.timedelta(days=1)) & (
                 df["time"] < datetime.datetime.now())]
 
-        print(data_to_show)
-
         plt.figure(figsize=(16.5, 8.5))
         plt.plot(data_to_show['time'], data_to_show["ask"], label="ask")
         plt.plot(short_window['time'], short_window["ask"], label="Short moving average")
@@ -163,7 +161,7 @@ def moving_average_golden_dead_cross(data, symbol, short_window_size, long_windo
         short_average_price = short_window.loc[short_window['time'].idxmax()]['ask']
         long_average_price = long_window.loc[long_window['time'].idxmax()]['ask']
 
-        last_time = data_to_show['time'].max
+        last_time = data_to_show['time'].max()
 
         if current_order == 0:  # sin accion
             if short_average_price > long_average_price:
@@ -195,7 +193,7 @@ def moving_average_golden_dead_cross(data, symbol, short_window_size, long_windo
 
         print(f"\nAcciones hechas hasta ahora (llevo {hours} horas):")
         for accion in acciones:
-            print(f"Accion: {accion[0]}. Fecha y hora: {accion[1]}. Precio: {accion[2]}")
+            print(f"Accion: {accion[0]} | Fecha y hora: {accion[1]} | Precio: {accion[2]}")
 
         # Esperar una hora hasta la siguiente actualizacion de precios
         time.sleep(3600.0)
