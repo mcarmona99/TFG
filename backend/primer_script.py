@@ -176,7 +176,7 @@ def moving_average_golden_dead_cross(data, symbol, short_window_size, long_windo
                 acciones.append(['sell', last_time, current_price])
 
         elif current_order == 1:  # comprando
-            if long_average_price < short_average_price:
+            if long_average_price > short_average_price:
                 # MA larga > MA corta, vender
                 # Cierro antes la operacion de compra
                 current_order = 2
