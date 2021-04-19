@@ -30,6 +30,15 @@ def find_files_regex(filename, search_path):
     return files_found
 
 
+def get_hours_from_timedelta(td):
+    """
+    TODO: Docstring
+    """
+    # Ignoro los minutos y segundos
+    days, hours = td.days, td.seconds // 3600
+    return hours + days * 24
+
+
 def get_data(symbol, data_path=DATA_PATH):
     """
     TODO: Docstring
@@ -75,3 +84,27 @@ def update_data_to_realtime(old_dataframe, symbol):
     ticks_df = ticks_to_df_with_time(ticks)
 
     return pd.concat([old_dataframe, ticks_df])
+
+
+def adapt_data_to_backtesting(old_dataframe, end_data):
+    """
+    TODO: Docstring
+    """
+    return old_dataframe[old_dataframe['time'] < end_data]
+
+
+def get_actions_results(acciones, ultimo_precio):
+    comprando = False
+    if acciones[0][0] == 'buy':
+        comprando = True
+
+    beneficio = 0.0
+    for i in range(0, len(acciones) - 1):
+        beneficio = beneficio + acciones[i + 1][2] - acciones[i][2] if comprando \
+            else beneficio + acciones[i][2] - acciones[i + 1][2]
+        comprando = False if comprando else True
+
+    beneficio = beneficio + ultimo_precio - acciones[len(acciones) - 1][2] if comprando \
+        else beneficio + acciones[len(acciones) - 1][2] - ultimo_precio
+
+    return beneficio
