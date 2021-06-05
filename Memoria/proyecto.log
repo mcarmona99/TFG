@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  17 MAY 2021 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  5 JUN 2021 19:17
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -483,7 +483,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 (portada/portada.tex
 \centeroffset=\skip69
-<imagenes/logo_ugr.jpg, id=55, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=59, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -499,7 +499,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=56, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=60, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 32.
@@ -519,7 +519,7 @@ _ugr.jpg> <./imagenes/etsiit_logo.png>]) (prefacios/prefacio.tex [2
 (portada/portada_2.tex [3] [4
 
 ]
-<imagenes/logo.png, id=81, 123.46124pt x 45.92157pt>
+<imagenes/logo.png, id=85, 123.46124pt x 45.92157pt>
 File: imagenes/logo.png Graphic file (type png)
 <use imagenes/logo.png>
 Package pdftex.def Info: imagenes/logo.png  used on input line 21.
@@ -694,21 +694,52 @@ l.1 \begin{titlepage}
 
 ]
 Cap\'{\i }tulo 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+<imagenes/arquitectura general.png, id=170, 688.5725pt x 568.1225pt>
+File: imagenes/arquitectura general.png Graphic file (type png)
+<use imagenes/arquitectura general.png>
+Package pdftex.def Info: imagenes/arquitectura general.png  used on input line 
+11.
+(pdftex.def)             Requested size: 360.0pt x 297.02913pt.
+
+Overfull \hbox (17.0pt too wide) in paragraph at lines 11--12
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7 \end{titlepage}
-                    [1
+l.14 
+      [1
 
-]) (capitulos/06_Implementacion.texpdfTeX warning (ext4): destination with the 
-same identifier (name{page.2}) has been already used, duplicate ignored
+ <./imagenes/arquitectura general.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \begin{titlepage}
-                      [2
-
-]
+l.25 \end{titlepage}
+                     [2]) (capitulos/06_Implementacion.tex
 Cap\'{\i }tulo 6.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -716,6 +747,7 @@ been already used, duplicate ignored
                    \relax 
 l.7 \end{titlepage}
                     [1
+
 
 ]) (capitulos/07_Pruebas.texpdfTeX warning (ext4): destination with the same id
 entifier (name{page.2}) has been already used, duplicate ignored
@@ -766,16 +798,16 @@ LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 266924D99BB9CC44072815F986C72D1A;1811.
+(rerunfilecheck)             Checksum: 7A4297264AC70AB5ADC27122A163A403;1997.
  ) 
 Here is how much of TeX's memory you used:
- 11916 strings out of 479173
- 179774 string characters out of 2854167
- 506279 words of memory out of 3000000
- 29285 multiletter control sequences out of 15000+600000
+ 11925 strings out of 479173
+ 180053 string characters out of 2854167
+ 506282 words of memory out of 3000000
+ 29292 multiletter control sequences out of 15000+600000
  410547 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,63p,393b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,63p,433b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\masus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -784,9 +816,9 @@ ype1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/masus/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/masus/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/masus/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on proyecto.pdf (35 pages, 230868 bytes).
+Output written on proyecto.pdf (35 pages, 244922 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 234 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
