@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  6 JUN 2021 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  8 JUN 2021 17:24
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -809,7 +809,7 @@ been already used, duplicate ignored
                    \relax 
 l.54 
       [4 <./imagenes/menu_login.jpg>]
-<imagenes/menu_principal_logued.jpg, id=191, 904.37875pt x 463.7325pt>
+<imagenes/menu_principal_logued.jpg, id=190, 904.37875pt x 463.7325pt>
 File: imagenes/menu_principal_logued.jpg Graphic file (type jpg)
 <use imagenes/menu_principal_logued.jpg>
 Package pdftex.def Info: imagenes/menu_principal_logued.jpg  used on input line
@@ -901,13 +901,13 @@ Package rerunfilecheck Info: File `proyecto.out' has not changed.
 (rerunfilecheck)             Checksum: FC2C361A6348EBD05C96F971192E4F37;2169.
  ) 
 Here is how much of TeX's memory you used:
- 11972 strings out of 479173
- 181397 string characters out of 2854167
+ 11966 strings out of 479173
+ 181319 string characters out of 2854167
  506282 words of memory out of 3000000
- 29335 multiletter control sequences out of 15000+600000
+ 29329 multiletter control sequences out of 15000+600000
  410547 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,63p,465b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,63p,464b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\masus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -915,11 +915,10 @@ ic/amsfonts/cm/cmbx12.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/masus/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/masus/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/masus/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/masus/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on proyecto.pdf (39 pages, 322883 bytes).
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on proyecto.pdf (39 pages, 315071 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
+ 256 PDF objects out of 1000 (max. 8388607)
  33 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
