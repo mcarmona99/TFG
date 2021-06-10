@@ -1,11 +1,12 @@
 .idea
 .~lock.Apuntes TFG.odt#
-data/Commodities
-data/Crypto
-data/Forex
-data/Indices
-data/Stock*
-data/Bonds*
-data/error.txt
-data/__pycache__
-backend/__pycache__
+.~lock.hoja_planificación.ods#
+Primeros codigos de ejemplo/data/Commodities
+Primeros codigos de ejemplo/data/Crypto
+Primeros codigos de ejemplo/data/Forex
+Primeros codigos de ejemplo/data/Indices
+Primeros codigos de ejemplo/data/Stock*
+Primeros codigos de ejemplo/data/Bonds*
+Primeros codigos de ejemplo/data/error.txt
+Primeros codigos de ejemplo/data/__pycache__
+Primeros codigos de ejemplo/backend/__pycache__
