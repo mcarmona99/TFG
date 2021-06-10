@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+
+class IndexView(generic.View):
+    template_name = 'TradingAPP/index.html'
+
+
+def menu_principal(request):
+    return render(request, "TradingAPP/menu_principal.html")
