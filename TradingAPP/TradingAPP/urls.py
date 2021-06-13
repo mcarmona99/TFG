@@ -19,5 +19,6 @@ from Interface import views
 urlpatterns = [
     path('', views.menu_principal, name='Menu Principal'),
     path('estrategias/', views.estrategias_trading, name='Estrategias Trading'),
-    path('estrategias/<int:algoritmo_id>/', views.estrategias_trading_elegir, name='Elegir Estrategias Trading'),
+    path('estrategias/<int:algoritmo_id>/', views.estrategias_trading_descripcion, name='Elegir Estrategias Trading'),
+    path('estrategias/<int:algoritmo_id>/elegir_estrategia_trading', views.elegir_estrategia),
 ]
