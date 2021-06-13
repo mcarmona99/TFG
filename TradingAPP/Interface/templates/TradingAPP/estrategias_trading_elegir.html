@@ -12,21 +12,23 @@
 
 <H1 align="center">TradingAPP</H1>
 
-<body align>
+<p align="left">
 
 
-{% if algoritmo.nombre %} <b>Nombre</b>: {{ algoritmo.nombre }}<br> {% endif %}
-{% if algoritmo.nombre %} <b>Descripcion</b>: {{ algoritmo.descripcion }}<br> {% endif %}
-{% if algoritmo.autor %} <b>Autor</b>: {{ algoritmo.autor }} <br> {% endif %}
-{% if algoritmo.imagen %} {{ algoritmo.imagen }} {% endif %}
+    {% if algoritmo.nombre %} <b>Nombre</b>: {{ algoritmo.nombre }}<br><br> {% endif %}
+    {% if algoritmo.nombre %} <b>Descripcion</b>: {{ algoritmo.descripcion }}<br><br> {% endif %}
+    {% if algoritmo.autor %} <b>Autor</b>: {{ algoritmo.autor }} <br><br> {% endif %}
+</p>
+<p>
+    {% if algoritmo.imagen %} <img src="{% static algoritmo.imagen %}" alt="Imagen desriptiva del algoritmo" width="700"
+                                   align="center">
+    {% endif %}
 
-</body>
+</p>
 
 <body class="center">
 
-<br><br>
-
-<br><br><br><br><br>
+<br><br><br>
 
 <a class="boton" href="{% url 'Menu Principal'%}">Elegir</a>
 <br><br><br><br>
@@ -35,7 +37,8 @@
 <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
 
 <br><br><br><br><br><br>
-Actualmente elegida: {% if sesion_actual.algoritmo_elegido %} <p>{{ sesion_actual.algoritmo_elegido }}</p> {% else %} <p>Ninguna</p> {% endif %}
+Actualmente elegida: {% if sesion_actual.algoritmo_elegido %} <p>{{ sesion_actual.algoritmo_elegido }}</p> {% else %}
+<p>Ninguna</p> {% endif %}
 
 
 </body>

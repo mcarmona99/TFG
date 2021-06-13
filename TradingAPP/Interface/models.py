@@ -14,7 +14,7 @@ class AlgoritmoTrading(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.CharField(max_length=10000)
     autor = models.CharField(max_length=200)
-    imagen = models.ImageField()
+    imagen = models.CharField(max_length=200)
 
     def __str__(self):
         return self.nombre
