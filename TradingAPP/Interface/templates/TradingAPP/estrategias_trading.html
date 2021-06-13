@@ -16,31 +16,31 @@
 
 <body class="center">
 
-Selecciona una de las estrategias de Trading del menu desplegable mostrado a continuación.<br>
+Selecciona una de las estrategias de Trading mostradas a continuación.<br>
 Una vez elegida una estrategia, se mostrará su descripción.<br>
 Haz click en "Elegir" para seleccionar la estrategia de trading algorítmico.
 
 <br><br>
 
+{% if algoritmos %}
 
-<select name="estrategia">
+{% for algoritmo in algoritmos %}
+<a href="{{ algoritmo.id }}">{{ algoritmo.nombre }}</a><br>
+{% endfor %}
 
-	<option value="1">Medias móviles</option>
-	<!--<option value="2">Estrategia de Wyckoff</option>-->
+{% else %}
+<p>No hay algoritmos disponibles.</p>
+{% endif %}
 
-</select>
 
 <br><br><br><br><br>
 
-<a class="boton" href="{% url 'Menu Principal'%}">Elegir</a> <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
 
 <br><br><br><br><br><br>
-Actualmente elegida: {% if algoritmo_elegido %} <p>{{ algoritmo_elegido }}</p> {% else %} <p>Ninguna</p> {% endif %}
+Actualmente elegida: {% if sesion_actual.algoritmo_elegido %} <p>{{ sesion_actual.algoritmo_elegido }}</p> {% else %} <p>Ninguna</p> {% endif %}
 
 </body>
-
-
-
 
 
 </html>
