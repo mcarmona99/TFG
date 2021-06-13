@@ -1,27 +1,8 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
 <!DOCTYPE html>
 <html>
-
-<style type="text/css">
-    .boton {
-        border: 1px solid #000000; /*anchura, estilo y color borde*/
-        padding: 10px; /*espacio alrededor texto*/
-        background-color: #e9e9e9; /*color botón*/
-        color: #000000; /*color texto*/
-        text-decoration: none; /*decoración texto*/
-        text-transform: uppercase; /*capitalización texto*/
-        font-family: 'Helvetica', sans-serif; /*tipografía texto*/
-        border-radius: 15px; /*bordes redondos*/
-        font-size: 14px;
-        text-align: center;
-    }
-    .body_centrado {
-        text-align: center;
-    }
-    table.center {
-        margin-left: auto;
-        margin-right: auto;
-    }
-</style>
 
 <title>TradingAPP</title>
 
@@ -29,10 +10,10 @@
 
 <br>
 
-<body class="body_centrado">
+<body class="center">
 
-<a class="boton" href="{% url 'Menu Principal'%}">LOGIN</a>
-<a class="boton" href="{% url 'Menu Principal'%}">LOGOUT</a>
+<a class="boton" href="{% url 'Menu Principal'%}">LOGIN MT5</a>
+<a class="boton" href="{% url 'Menu Principal'%}">LOGOUT MT5</a>
 
 <br>
 <br>
@@ -66,7 +47,7 @@
 
     <tr>
         <td>
-            <a class="boton" href="{% url 'Menu Principal'%}">Estrategias de trading</a>
+            <a class="boton" href="{% url 'Estrategias Trading'%}">Estrategias de trading</a>
             <br><br><br>
         </td>
         <td>

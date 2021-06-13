@@ -1,10 +1,15 @@
 from django.shortcuts import render
-from django.views import generic
 
+from .models import Sesion
 
-class IndexView(generic.View):
-    template_name = 'TradingAPP/index.html'
+sesion = Sesion.create(algoritmo_elegido=None)
 
 
 def menu_principal(request):
     return render(request, "TradingAPP/menu_principal.html")
+
+
+def estrategias_trading(request):
+    algoritmo_elegido = sesion.algoritmo_elegido
+    context = {'algoritmo_elegido': algoritmo_elegido}
+    return render(request, "TradingAPP/estrategias_trading.html", context)
