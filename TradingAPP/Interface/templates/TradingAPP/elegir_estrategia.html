@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<br>
+
+<body class="center">
+
+{% if sesion_actual.algoritmo_elegido %} Algoritmo de Trading elegido con éxito! <br><br><br> {% endif %}
+
+
+
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+<br><br><br><br><br><br>
+
+Algoritmo de trading elegido: {% if sesion_actual.algoritmo_elegido %} <p> {{ sesion_actual.algoritmo_elegido }} </p> {% else %} <p> Ninguno </p>{% endif %}
+
+</html>
