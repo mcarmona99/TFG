@@ -10,18 +10,36 @@
 
 <H2 align="center">Backtesting Automático</H2>
 
+<body class="center">
+
 Algoritmo de trading elegido: <b> {{ sesion_actual.algoritmo_elegido }} </b>
 
 <br><br><br>
 
 FIN de backtesting, resultados:
 
+<br><br><br>
+
+ACCIONES REALIZADAS:
 <br><br>
+{% for accion in acciones %}
+<p>{{ accion }}</p>
+{% endfor %}
+<br><br><br>
 
-{{ salida }}
+BALANCE OBTENIDO:
+<br><br>
+{% if balance > 0.0 %}
+<p style="color:#049404">{{ balance }}</p>
+{% else %}
+<p style="color:#a50707">{{ balance }}</p>
+{% endif %}
 
+<br><br><br><br>
+<a class="boton" href="{% url 'Backtesting Automatico'%}">Volver a backtesting con estrategia</a>
 <br><br><br><br>
 <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
 
+</body>
 
 </html>
