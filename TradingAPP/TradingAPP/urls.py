@@ -28,4 +28,5 @@ urlpatterns = [
     # Urls de backtesting
     path('backtesting/', views.menu_backtesting, name='Backtesting'),
     path('backtesting/automatico/', views.backtesting_auto, name='Backtesting Automatico'),
+    path('backtesting/automatico/operar_backtesting/', views.operar_backtesting, name='Operar Backtesting'),
 ]
