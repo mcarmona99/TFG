@@ -5,6 +5,7 @@ from django.db import models
 
 class Sesion(models.Model):
     algoritmo_elegido = models.ForeignKey('AlgoritmoTrading', on_delete=models.SET_NULL, null=True)
+    logued_MT5 = models.BooleanField(default=True)
 
     def __str__(self):
         return self.algoritmo_elegido.__str__()

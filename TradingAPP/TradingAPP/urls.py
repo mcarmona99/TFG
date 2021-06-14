@@ -17,8 +17,15 @@ from django.urls import path
 from Interface import views
 
 urlpatterns = [
+    # Menu principal
     path('', views.menu_principal, name='Menu Principal'),
+
+    # Urls de selección de estrategia
     path('estrategias/', views.estrategias_trading, name='Estrategias Trading'),
     path('estrategias/<int:algoritmo_id>/', views.estrategias_trading_descripcion, name='Elegir Estrategias Trading'),
     path('estrategias/<int:algoritmo_id>/elegir_estrategia_trading', views.elegir_estrategia),
+
+    # Urls de backtesting
+    path('backtesting/', views.menu_backtesting, name='Backtesting'),
+    path('backtesting/automatico/', views.backtesting_auto, name='Backtesting Automatico'),
 ]

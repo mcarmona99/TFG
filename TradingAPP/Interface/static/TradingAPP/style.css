@@ -10,6 +10,18 @@
     font-size: 14px;
     text-align: center;
 }
+.boton_inhabilitado {
+    border: 1px solid #737373; /*anchura, estilo y color borde*/
+    padding: 10px; /*espacio alrededor texto*/
+    background-color: #fafafa; /*color botón*/
+    color: #737373; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform: uppercase; /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+    border-radius: 15px; /*bordes redondos*/
+    font-size: 14px;
+    text-align: center;
+}
 body.center {
     text-align: center;
 }

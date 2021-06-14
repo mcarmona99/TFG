@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<br>
+
+<body class="center">
+
+¿Quieres operar manualmente o usando tu algoritmo de trading?
+
+<a class="boton_inhabilitado">Backtesting Manual</a>
+
+<a class="boton" href="{% url 'Backtesting Automatico'%}">Backtesting Automático</a>
+
+
+</body>
+
+
+<br><br><br><br><br><br>
+{% if sesion_actual.algoritmo_elegido %} <p>Algoritmo de trading elegido: {{ sesion_actual.algoritmo_elegido }}</p>{% endif %}
+
+
+
+</html>

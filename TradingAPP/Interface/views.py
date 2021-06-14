@@ -3,10 +3,10 @@ from django.shortcuts import render
 from .models import AlgoritmoTrading, Sesion
 
 sesion_actual = Sesion.objects.all()[0]
+context = {'sesion_actual': sesion_actual}
 
 
 def menu_principal(request):
-    context = {'sesion_actual': sesion_actual}
     return render(request, "TradingAPP/menu_principal.html", context)
 
 
@@ -30,5 +30,12 @@ def elegir_estrategia(request, algoritmo_id):
         sesion_actual.algoritmo_elegido = algoritmo
         sesion_actual.save()
 
-    context = {'sesion_actual': sesion_actual}
     return render(request, "TradingAPP/elegir_estrategia.html", context)
+
+
+def menu_backtesting(request):
+    return render(request, "TradingAPP/menu_backtesting.html", context)
+
+
+def backtesting_auto(request):
+    return render(request, "TradingAPP/backtesting_auto.html", context)
