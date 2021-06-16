@@ -1,0 +1,61 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<H2 align="center">Backtesting Automático</H2>
+
+Algoritmo de trading elegido: <b> {{ sesion_actual.algoritmo_elegido }} </b>
+
+<br><br><br>
+
+<body class="center">
+
+Elige la fecha de inicio y de fin entre las que se quiere operar:<br>
+
+<form action="operar_backtesting/" method="POST"> {% csrf_token %}
+    <p>Fecha inicio:     <input type="datetime-local" name="fecha_inicio"/></p>
+    <p>Horas durante las que se operará:     <input type="number" name="horas"/></p>
+    <p>Mercado a operar:
+        <label>
+            <select name="mercado">
+                <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
+                <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
+                <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
+                <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
+                <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
+            </select>
+        </label>
+    </p>
+
+    <br>
+
+    {% if sesion_actual.algoritmo_elegido.nombre == 'Medias moviles' %}
+    <p>PARAMETROS</p>
+    <p>Tamaño ventana pequeña:     <input type="number" name="ventana_pequena" value="5" min="1" /></p>
+    <p>Tamaño ventana grande:      <input type="number" name="ventana_grande" value="15" min="1" /></p>
+    {% endif %}
+
+    <br>
+
+    <input class="boton" type="submit" value="Operar"/>
+</form>
+
+
+</body>
+
+<br><br><br><br>
+
+<a class="boton" href="{% url 'Backtesting'%}">Volver a elección de método de Backtesting</a>
+
+<br><br><br><br>
+
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+
+</html>
