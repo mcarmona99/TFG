@@ -60,12 +60,15 @@ def operar_backtesting(request):
         beneficios = 0.0
 
         if sesion_actual.algoritmo_elegido.nombre == 'Medias moviles':
+            ventana_pequena = int(request.POST["ventana_pequena"])
+            ventana_grande = int(request.POST["ventana_grande"])
+
             # Moving average crossover
             # Parametrizar con las ventanas pequeña y grande que se quiera (3 y 6 por ej)
             # Ultimo parametro indica tiempo en horas que durará el trading
 
             acciones, ultimo_precio = \
-                moving_average.moving_average(data, mercado, 5, 15, backtesting=True,
+                moving_average.moving_average(data, mercado, ventana_pequena, ventana_grande, backtesting=True,
                                               backtesting_start_date=utils.transform_date(inicio),
                                               time_trading_in_hours=int(horas))
             beneficios = common.get_actions_results(acciones, ultimo_precio)
