@@ -11,6 +11,8 @@ import pandas as pd
 
 DATA_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)),
                          '..', '..', '..', 'Primeros codigos de ejemplo', 'data')
+DATA_PATH_OHLC = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                              '..', '..', '..', 'data')
 
 
 # FUNCIONES
@@ -68,6 +70,33 @@ def get_data(symbol, data_path=DATA_PATH):
 
         # Eliminar columna 0 residuo de los datos
         df_file = df_file.drop(df_file.columns[[0]], axis=1)
+
+        frames.append(df_file)
+
+    try:
+        df = pd.concat(frames)
+    except ValueError:
+        print(f"No se han encontrado dataframes para {symbol} en {data_path}")
+        # TODO: Gestion de errores
+        return None
+
+    return df
+
+
+def get_data_ohlc(symbol, data_path=DATA_PATH_OHLC):
+    """
+    TODO: Docstring
+    """
+    frames = []
+    for file in find_files_regex(symbol, data_path):
+        df_file = pd.read_csv(file, header=2)
+
+        # Rename columns
+        df_file.columns = ['time',
+                           'ask_open', 'ask_high', 'ask_low', 'ask_close',
+                           'bid_open', 'bid_high', 'bid_low', 'bid_close']
+
+        df_file['time'] = pd.to_datetime(df_file['time'], dayfirst=False, yearfirst=True)
 
         frames.append(df_file)
 

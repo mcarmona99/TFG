@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 
 from .backend import common, utils
 from .models import AlgoritmoTrading, Sesion, Mercado
-from .strategies import moving_average
+from .strategies import moving_average, metodo_wyckoff
 
 sesion_actual = Sesion.objects.all()[0]
 context = {'sesion_actual': sesion_actual}
@@ -54,12 +54,13 @@ def operar_backtesting(request):
         # ESTO SE DEBE ACTUALIZAR PARA COGER LOS DATOS QUE INSERTA EL USUARIO
         # Y GUARDAMOS EN BASE DE DATOS. AHORA MISMO COJO DATOS LOCALES
 
-        # Recogida de datos del simbolo a tratar
-        data = common.get_data(mercado)
         acciones = []
         beneficios = 0.0
 
-        if sesion_actual.algoritmo_elegido.nombre == 'Medias moviles':
+        if sesion_actual.algoritmo_elegido.id == 1:  # Medias moviles
+            # Recogida de datos del simbolo a tratar
+            data = common.get_data(mercado)
+
             ventana_pequena = int(request.POST["ventana_pequena"])
             ventana_grande = int(request.POST["ventana_grande"])
 
@@ -72,6 +73,17 @@ def operar_backtesting(request):
                                               backtesting_start_date=utils.transform_date(inicio),
                                               time_trading_in_hours=int(horas))
             beneficios = common.get_actions_results(acciones, ultimo_precio)
+
+        if sesion_actual.algoritmo_elegido.id == 2:  # Metodo Wyckoff
+            # Recogida de datos del simbolo a tratar
+            # en formato ohlc con columnas
+            # time  ask_open  ask_high  ask_low  ask_close  bid_open  bid_high  bid_low  bid_close
+            data = common.get_data_ohlc(mercado)
+
+            acciones, ultimo_precio = metodo_wyckoff.metodo_wyckoff_backtesting(data, mercado,
+                                                                                start_date=utils.transform_date(inicio),
+                                                                                time_trading_in_hours=int(horas))
+            # beneficios = common.get_actions_results(acciones, ultimo_precio)
 
         context['acciones'] = acciones
         context['balance'] = beneficios
