@@ -146,6 +146,7 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         self.take_profit = None
 #         self.dataframe = None
 #         self.valor_actual = 0
+#         self.punto_compra = None
 #
 #     def reiniciar_analisis(self, acciones=None):
 #         self.acciones = acciones if acciones else []
@@ -167,22 +168,31 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         self.take_profit = None
 #         self.dataframe = None
 #         self.valor_actual = 0
+#         self.punto_compra = None
 #
 #     def inicializar_valor_actual(self):
 #         self.valor_actual = self.dataframe['ask_close'][self.dataframe.index[-1]]
 #
-#     def imprimir_dataframe(self, intervalos, horas_hasta_completo, hours):
-#         self.dataframe['upper_band'], self.dataframe['middle_band'], self.dataframe['lower_band'] = \
-#             ta.BBANDS(self.dataframe['ask_close'], timeperiod=20)
+#     def imprimir_dataframe(self, intervalos, horas_hasta_completo, hours, horas_hasta_compra = 0, ver_bandas_bollinguer=False):
 #         len_x = range(len(self.dataframe))
+#         if ver_bandas_bollinguer:
+#             self.dataframe['upper_band'], self.dataframe['middle_band'], self.dataframe['lower_band'] = \
+#                 ta.BBANDS(self.dataframe['ask_close'], timeperiod=20)
+#             plt.plot(len_x, self.dataframe['upper_band'])
+#             plt.plot(len_x, self.dataframe['lower_band'])
 #         plt.plot(len_x, self.dataframe['ask_close'])
-#         plt.plot(len_x, self.dataframe['upper_band'])
-#         plt.plot(len_x, self.dataframe['lower_band'])
 #         if self.media_calculada and self.accion_actual == 0:
 #             plt.plot(len_x, self.dataframe['SMA'])
 #         if self.objetivo_cumplido:
 #             plt.axvspan(intervalos[-1][0] + horas_hasta_completo - hours,
 #                         intervalos[-1][-1] + horas_hasta_completo - hours, facecolor='b', alpha=0.5)
+#         if self.punto_compra:
+#             plt.plot(self.punto_compra[0] + horas_hasta_compra - hours, self.punto_compra[1], marker="^", c='purple', label='Compra')
+#         if self.stop_lose:
+#             plt.axhline(y=self.stop_lose, c="red", label='Stop Lose')
+#         if self.take_profit:
+#             plt.axhline(y=self.take_profit, c="green", label='Take Profit')
+#         plt.legend()
 #         plt.show()
 #
 #     def comprobar_objetivo_cumplido(self):
@@ -310,6 +320,7 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #             # A OJOS DE LA IMPLEMENTACION, EL NUMERO DE TESTS MAXIMO ES 7
 #             if self.accion_actual == 0:  # sin accion
 #                 self.accion_actual = 1  # compro
+#                 self.punto_compra = [len(self.dataframe), self.valor_actual]
 #                 self.stop_lose = self.zona_inferior[0]
 #                 # El take profit debe ser x 3, pero pongo x 2 para ver resultados mas facilmente
 #                 self.take_profit = (self.valor_actual - self.stop_lose) * 2 + self.valor_actual
@@ -364,6 +375,8 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #             # Si la tendencia ha sido bajista, 9 test de compra en una acumulación
 #             if WTB.tendencia == BAJISTA:
 #                 WTB.test_compra_wyckoff()
+#                 if WTB.accion_actual == 1:
+#                     horas_hasta_compra = hours
 #
 #             # else:  # TENDENCIA ALCISTA
 #             #     return None
@@ -377,12 +390,12 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         if WTB.accion_actual == 1:
 #             if WTB.valor_actual <= WTB.stop_lose:
 #                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
-#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours)
+#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours, horas_hasta_compra=horas_hasta_compra)
 #                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
 #                 WTB.reiniciar_analisis(WTB.acciones)
 #             elif WTB.valor_actual >= WTB.take_profit:
 #                 print("ORDEN ACERTADA, HEMOS LLEGADO AL TAKE PROFIT")
-#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours)
+#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours, horas_hasta_compra=horas_hasta_compra)
 #                 WTB.acciones[len(WTB.acciones) - 1].extend(['ACIERTO'])
 #                 WTB.reiniciar_analisis(WTB.acciones)
 #         hours += 1
@@ -392,8 +405,8 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #     return WTB.acciones
 #
 #
-# inicio = datetime.datetime(2019, 5, 6, 7)
-# horas = 500
+# inicio = datetime.datetime(2020, 5, 26, 7)
+# horas = 200
 # nombre_mercado = 'EURUSD'
 #
 # # Recogida de datos del simbolo a tratar
