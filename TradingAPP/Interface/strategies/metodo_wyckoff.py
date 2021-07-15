@@ -146,9 +146,9 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         self.take_profit = None
 #         self.dataframe = None
 #         self.valor_actual = 0
-#         self.punto_compra = None
+#         self.punto_operacion = None
 #
-#     def reiniciar_analisis(self, acciones=None):
+#     def reiniciar_analisis(self, acciones=None, flag=0):
 #         self.acciones = acciones if acciones else []
 #         self.accion_actual = 0
 #         self.intervalo = []
@@ -161,19 +161,20 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         self.indicadores_operar = 0
 #         self.ultimo_maximo = 0.0
 #         self.ultimo_minimo = 0.0
-#         self.flag = 0
+#         self.flag = flag
 #         self.zona_inferior = []
 #         self.zona_superior = []
 #         self.stop_lose = None
 #         self.take_profit = None
 #         self.dataframe = None
 #         self.valor_actual = 0
-#         self.punto_compra = None
+#         self.punto_operacion = None
 #
 #     def inicializar_valor_actual(self):
 #         self.valor_actual = self.dataframe['ask_close'][self.dataframe.index[-1]]
 #
-#     def imprimir_dataframe(self, intervalos, horas_hasta_completo, hours, horas_hasta_compra = 0, ver_bandas_bollinguer=False):
+#     def imprimir_dataframe(self, intervalos, horas_hasta_completo, hours, horas_hasta_operacion=0,
+#                            ver_bandas_bollinguer=False):
 #         len_x = range(len(self.dataframe))
 #         if ver_bandas_bollinguer:
 #             self.dataframe['upper_band'], self.dataframe['middle_band'], self.dataframe['lower_band'] = \
@@ -186,8 +187,10 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         if self.objetivo_cumplido:
 #             plt.axvspan(intervalos[-1][0] + horas_hasta_completo - hours,
 #                         intervalos[-1][-1] + horas_hasta_completo - hours, facecolor='b', alpha=0.5)
-#         if self.punto_compra:
-#             plt.plot(self.punto_compra[0] + horas_hasta_compra - hours, self.punto_compra[1], marker="^", c='purple', label='Compra')
+#         if self.punto_operacion:
+#             plt.plot(self.punto_operacion[0] + horas_hasta_operacion - hours, self.punto_operacion[1],
+#                      marker="^" if self.accion_actual == 1 else "v", c='purple',
+#                      label='Compra' if self.accion_actual == 1 else "Venta")
 #         if self.stop_lose:
 #             plt.axhline(y=self.stop_lose, c="red", label='Stop Lose')
 #         if self.take_profit:
@@ -234,7 +237,12 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         for intervalo_i_global in intervalos_indice_global:
 #             self.objetivo_cumplido = self.dataframe.index[-2] in intervalo_i_global
 #
-#         self.intervalo = intervalos_indice_global[-1]
+#         # Coger el último intervalo siempre y cuando no sea de longitud 1,
+#         # ya que sería un único valor
+#         for i in range(1, len(intervalos_indice_global)):
+#             if len(intervalos_indice_global[-i]) > 1:
+#                 self.intervalo = intervalos_indice_global[-i]
+#                 break
 #         return intervalos
 #
 #     def test_compra_wyckoff(self):
@@ -244,7 +252,7 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         if self.puntos_clave_calculados and self.valor_actual < self.zona_inferior[0]:
 #             # Corresponde al test 9, se ha creado un suelo
 #             # (si se ha creado, nunca llegamos a reiniciar el analisis)
-#             self.reiniciar_analisis(self.acciones)
+#             self.reiniciar_analisis(self.acciones, self.flag)
 #             print("DECISION: reinicio el análisis, no se ve una acumulación clara")
 #             return
 #
@@ -320,7 +328,7 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #             # A OJOS DE LA IMPLEMENTACION, EL NUMERO DE TESTS MAXIMO ES 7
 #             if self.accion_actual == 0:  # sin accion
 #                 self.accion_actual = 1  # compro
-#                 self.punto_compra = [len(self.dataframe), self.valor_actual]
+#                 self.punto_operacion = [len(self.dataframe), self.valor_actual]
 #                 self.stop_lose = self.zona_inferior[0]
 #                 # El take profit debe ser x 3, pero pongo x 2 para ver resultados mas facilmente
 #                 self.take_profit = (self.valor_actual - self.stop_lose) * 2 + self.valor_actual
@@ -329,6 +337,101 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #                 # ACCION, TIMESTAMP, VALOR_ACTUAL, STOP_LOSE, TAKE_PROFIT
 #                 self.acciones.append(['buy', self.dataframe['time'][self.dataframe.index[-1]],
 #                                       f"Valor compra = {self.valor_actual}",
+#                                       f"SL = {self.stop_lose}",
+#                                       f"TP = {self.take_profit}"])
+#
+#     def test_venta_wyckoff(self):
+#         # Si el nuevo punto está por encima de la zona considerada para ST,
+#         # ignoro este rango de distribucion ya que supongo que aún no es uno bueno para compra
+#         # Reinicio la clase y vuelvo a buscar un objetivo bajista o alcista cumplido
+#         if self.puntos_clave_calculados and self.valor_actual > self.zona_superior[1]:
+#             # Corresponde al test 9, se ha creado un suelo
+#             # (si se ha creado, nunca llegamos a reiniciar el analisis)
+#             self.reiniciar_analisis(self.acciones, self.flag)
+#             print("DECISION: reinicio el análisis, no se ve una distribución clara")
+#             return
+#
+#         if self.puntos_clave_calculados and not self.secondary_test_encontrado:
+#             # Compruebo si el valor actual es un ST (lo es si esta en la zona superior)
+#             if self.zona_superior[0] < self.valor_actual < self.zona_superior[1]:
+#                 self.secondary_test_encontrado = True
+#                 self.indicadores_operar += 1
+#                 print(
+#                     f"- PS, SC, AR y ST encontrados después del objetivo bajista, indicadores cumplidos = {self.indicadores_operar}")
+#
+#         if not self.puntos_clave_calculados:
+#             # 1- El objetivo potencial alcista ya se ha cumplido
+#             self.indicadores_operar += 1
+#             print(f"- Objetivo potencial alcista cumplido, indicadores cumplidos = {self.indicadores_operar}")
+#
+#             # 2- PS, BC, AR y ST
+#             # BC: Buying climax
+#             vector_bc = [valor for valor in [self.dataframe.loc[i, 'ask_close'] for i in self.intervalo]]
+#             buying_climax = max(vector_bc)
+#             indice_bc = self.intervalo[vector_bc.index(buying_climax)]
+#
+#             # AR: automatic reaction, será el minimo obtenido despues del BC en lo que consideramos
+#             # la tendencia, que la hemos sacado con anomalias
+#             vector_ar = [valor for valor in
+#                          [self.dataframe.loc[i, 'ask_close'] for i in
+#                           self.intervalo[self.intervalo.index(indice_bc):]]]
+#             automatic_reaction = min(vector_ar)
+#
+#             self.ultimo_maximo = buying_climax
+#             self.ultimo_minimo = automatic_reaction
+#
+#             # ST: Declaro rangos o zonas para determinar STs
+#             bc_menos_ar = buying_climax - automatic_reaction
+#
+#             # La zona marcada en el BC será un 20 % arriba y abajo de la línea superior
+#             # que hace de techo
+#             tam_rango = 0.2 * bc_menos_ar
+#             self.zona_inferior = [automatic_reaction - tam_rango, automatic_reaction + tam_rango]
+#
+#             # Hago lo mismo para la superior, aunque no se usa para los STs
+#             self.zona_superior = [buying_climax - tam_rango, buying_climax + tam_rango]
+#
+#             self.puntos_clave_calculados = True
+#
+#         # 4- La tendencia alcista se ha roto
+#         # (es decir, línea de oferta o línea de tendencia alcista ha sido rota)
+#         # Implementado con media movil
+#         self.dataframe['SMA'] = ta.SMA(self.dataframe.ask_close.values, 10)  # 21 periodos
+#         self.media_calculada = True
+#
+#         if not self.tendencia_rota and self.valor_actual < self.dataframe['SMA'][self.dataframe.index[-1]]:
+#             # La tendencia alcista se ha roto
+#             self.indicadores_operar += 1
+#             print(f"- Tendencia alcista se ha roto, indicadores cumplidos = {self.indicadores_operar}")
+#             self.tendencia_rota = True
+#
+#         # 6- Maximos mas bajos
+#         if self.ultimo_minimo < self.valor_actual < self.ultimo_maximo:
+#             self.indicadores_operar += 1
+#             print(f"- Maximo mas bajo, indicadores cumplidos = {self.indicadores_operar}")
+#             self.ultimo_maximo = self.valor_actual
+#
+#         # 5- Minimos mas bajos
+#         elif self.ultimo_minimo > self.valor_actual:
+#             self.indicadores_operar += 1
+#             print(f"- Minimo mas bajo, indicadores cumplidos = {self.indicadores_operar}")
+#             self.ultimo_minimo = self.valor_actual
+#
+#         # COMPRO SI HE CUMPLIDO LOS INDICADORES
+#         if self.indicadores_operar == 5:
+#             # TODO ME FALTAN LOS TESTS 3 y 7
+#             # A OJOS DE LA IMPLEMENTACION, EL NUMERO DE TESTS MAXIMO ES 7
+#             if self.accion_actual == 0:  # sin accion
+#                 self.accion_actual = 2  # venta
+#                 self.punto_operacion = [len(self.dataframe), self.valor_actual]
+#                 self.stop_lose = self.zona_superior[1]
+#                 # El take profit debe ser x 3, pero pongo x 2 para ver resultados mas facilmente
+#                 self.take_profit = self.valor_actual - (self.stop_lose - self.valor_actual) * 2
+#                 print("DECISION: Decido vender tras superar los tests de Wyckoff")
+#                 print(f"SL = {self.stop_lose},  TP = {self.take_profit}, valor actual = {self.valor_actual}")
+#                 # ACCION, TIMESTAMP, VALOR_ACTUAL, STOP_LOSE, TAKE_PROFIT
+#                 self.acciones.append(['sell', self.dataframe['time'][self.dataframe.index[-1]],
+#                                       f"Valor venta = {self.valor_actual}",
 #                                       f"SL = {self.stop_lose}",
 #                                       f"TP = {self.take_profit}"])
 #
@@ -348,6 +451,8 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #         # que es la fecha en la que empezaríamos a operar + horas que llevamos
 #         df = adapt_data_to_backtesting(data, start_date + datetime.timedelta(hours=hours + WTB.flag))
 #         if (start_date + datetime.timedelta(hours=hours + WTB.flag)).weekday() >= 5:
+#             # La suma no es 48, ya que estaríamos repitiendo valores (último de la semana y primero de la semana)
+#             # Tenemos que sumar 49 horas
 #             WTB.flag += 48
 #         df = df[df.time.dt.weekday < 5]  # Elimino fines de semana
 #
@@ -376,28 +481,48 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #             if WTB.tendencia == BAJISTA:
 #                 WTB.test_compra_wyckoff()
 #                 if WTB.accion_actual == 1:
-#                     horas_hasta_compra = hours
+#                     horas_hasta_operacion = hours
 #
-#             # else:  # TENDENCIA ALCISTA
-#             #     return None
+#             if WTB.tendencia == ALCISTA:
+#                 WTB.test_venta_wyckoff()
+#                 if WTB.accion_actual == 2:
+#                     horas_hasta_operacion = hours
 #
-#         # DIBUJAR EL PLOT POR HORA,
+#         # DIBUJAR EL PLOT POR HORA, SOLO PARA DEBUG
 #         # SEA CUAL SEA LA ACCION O SI ESTOY EN FASE DE ANALISIS O NO
-#         if imprimir_plot_por_hora:
-#             WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours)
+#         # if imprimir_plot_por_hora:
+#         #     WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours)
 #
-#         # Simulo que pasa una hora (estoy en backtesting)
+#         # Imprimo resultados de compra o venta
 #         if WTB.accion_actual == 1:
 #             if WTB.valor_actual <= WTB.stop_lose:
 #                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
-#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours, horas_hasta_compra=horas_hasta_compra)
+#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
+#                                        horas_hasta_operacion=horas_hasta_operacion)
 #                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
-#                 WTB.reiniciar_analisis(WTB.acciones)
+#                 WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
 #             elif WTB.valor_actual >= WTB.take_profit:
 #                 print("ORDEN ACERTADA, HEMOS LLEGADO AL TAKE PROFIT")
-#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours, horas_hasta_compra=horas_hasta_compra)
+#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
+#                                        horas_hasta_operacion=horas_hasta_operacion)
 #                 WTB.acciones[len(WTB.acciones) - 1].extend(['ACIERTO'])
-#                 WTB.reiniciar_analisis(WTB.acciones)
+#                 WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+#
+#         if WTB.accion_actual == 2:
+#             if WTB.valor_actual >= WTB.stop_lose:
+#                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
+#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
+#                                        horas_hasta_operacion=horas_hasta_operacion)
+#                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
+#                 WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+#             elif WTB.valor_actual <= WTB.take_profit:
+#                 print("ORDEN ACERTADA, HEMOS LLEGADO AL TAKE PROFIT")
+#                 WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
+#                                        horas_hasta_operacion=horas_hasta_operacion)
+#                 WTB.acciones[len(WTB.acciones) - 1].extend(['ACIERTO'])
+#                 WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+#
+#         # Simulo que pasa una hora (estoy en backtesting)
 #         hours += 1
 #         # input(" INTRO ")
 #
@@ -405,8 +530,12 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 #     return WTB.acciones
 #
 #
-# inicio = datetime.datetime(2020, 5, 26, 7)
-# horas = 200
+# inicio = datetime.datetime(2016, 9, 7, 10)
+# if inicio.weekday() >= 5:
+#     print("ERROR: introduce una fecha de inicio que no sea sabado o domingo")
+#     exit(1)
+#
+# horas = 288
 # nombre_mercado = 'EURUSD'
 #
 # # Recogida de datos del simbolo a tratar
@@ -417,4 +546,5 @@ def metodo_wyckoff_backtesting(data, symbol, start_date=None, time_trading_in_ho
 # acciones = metodo_wyckoff_backtesting(data,
 #                                       start_date=inicio,
 #                                       time_trading_in_hours=int(horas))
-# print(acciones)
+# for accion in acciones:
+#     print(accion)
