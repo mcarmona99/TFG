@@ -13,6 +13,8 @@ DATA_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)),
                          '..', '..', '..', 'Primeros codigos de ejemplo', 'data')
 DATA_PATH_OHLC = os.path.join(os.path.dirname(os.path.realpath(__file__)),
                               '..', '..', '..', 'data')
+BAJISTA = 'bajista'
+ALCISTA = 'alcista'
 
 
 # FUNCIONES
