@@ -1,4 +1,5 @@
 import datetime
+import warnings
 
 from django.shortcuts import render, get_object_or_404
 
@@ -8,6 +9,8 @@ from .strategies import moving_average, metodo_wyckoff
 
 sesion_actual = Sesion.objects.all()[0]
 context = {'sesion_actual': sesion_actual}
+
+warnings.simplefilter("ignore", category=RuntimeWarning)
 
 
 def menu_principal(request):
