@@ -1,0 +1,54 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("id_password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<br>
+
+<body class="center">
+
+<form action="/" method="POST"> {% csrf_token %}
+
+    <p>Usuario: <input type="number" name="account" min="0"/></p>
+    <p>Contraseña: <input type="password" name="password" id="id_password"/>
+                   <input type="checkbox" onclick="myFunction()"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <i class="far fa-eye" id="togglePassword"></i>
+
+    </p>
+    <p>Servidor: <input type="text" name="servidor" value="ICMarketsSC-Demo"/></p>
+
+    <br>
+
+    <input class="boton" type="submit" value="Login MT5"/>
+</form>
+
+
+</body>
+
+<br><br><br><br><br><br><br><br><br>
+
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+<br><br><br><br><br><br>
+{% if sesion_actual.algoritmo_elegido %} <p>Algoritmo de trading elegido: {{ sesion_actual.algoritmo_elegido }}</p>{% endif %}
+
+
+</html>
+
