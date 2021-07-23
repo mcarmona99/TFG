@@ -19,6 +19,8 @@ from Interface import views
 urlpatterns = [
     # Menu principal
     path('', views.menu_principal, name='Menu Principal'),
+    path('logout/', views.menu_principal_logout, name='Menu Principal Logout'),
+    path('login/', views.menu_login, name='Menu Login'),
 
     # Urls de selección de estrategia
     path('estrategias/', views.estrategias_trading, name='Estrategias Trading'),

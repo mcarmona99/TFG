@@ -3,7 +3,7 @@ import warnings
 
 from django.shortcuts import render, get_object_or_404
 
-from .backend import common, utils
+from .backend import common, utils, login
 from .models import AlgoritmoTrading, Sesion, Mercado
 from .strategies import moving_average, metodo_wyckoff
 
@@ -13,17 +13,49 @@ context = {'sesion_actual': sesion_actual}
 warnings.simplefilter("ignore", category=RuntimeWarning)
 
 
+def clear_context_status():
+    context['error'] = None
+    context['exito'] = None
+
+
 def menu_principal(request):
+    clear_context_status()
+    if request.method == "POST":
+        account = 0
+        try:
+            account = int(request.POST["account"])
+        except ValueError:
+            pass
+        password = request.POST["password"]
+        servidor = request.POST["servidor"]
+        salida = login.login_mt5(account=account, password=password, servidor=servidor, sesion_actual=sesion_actual)
+        if salida[0] == 1:
+            context['error'] = salida[1]
+        if salida[0] == 0:
+            context['exito'] = salida[1]
+    return render(request, "TradingAPP/menu_principal.html", context)
+
+
+def menu_login(request):
+    clear_context_status()
+    return render(request, "TradingAPP/menu_login.html", context)
+
+
+def menu_principal_logout(request):
+    clear_context_status()
+    login.logout_mt5(sesion_actual=sesion_actual)
     return render(request, "TradingAPP/menu_principal.html", context)
 
 
 def estrategias_trading(request):
+    clear_context_status()
     algoritmos = AlgoritmoTrading.objects.all()
     context = {'algoritmos': algoritmos, 'sesion_actual': sesion_actual}
     return render(request, "TradingAPP/estrategias_trading.html", context)
 
 
 def estrategias_trading_descripcion(request, algoritmo_id):
+    clear_context_status()
     algoritmo = AlgoritmoTrading.objects.get(id=algoritmo_id)
     alg = {'id': algoritmo_id, 'nombre': algoritmo.nombre, 'descripcion': algoritmo.descripcion,
            'autor': algoritmo.autor, 'imagen': algoritmo.imagen}
@@ -32,6 +64,7 @@ def estrategias_trading_descripcion(request, algoritmo_id):
 
 
 def elegir_estrategia(request, algoritmo_id):
+    clear_context_status()
     if request.method == "POST":
         algoritmo = AlgoritmoTrading.objects.get(id=algoritmo_id)
         sesion_actual.algoritmo_elegido = algoritmo
@@ -41,18 +74,24 @@ def elegir_estrategia(request, algoritmo_id):
 
 
 def menu_backtesting(request):
+    clear_context_status()
     return render(request, "TradingAPP/menu_backtesting.html", context)
 
 
 def backtesting_auto(request):
+    clear_context_status()
     return render(request, "TradingAPP/backtesting_auto.html", context)
 
 
 def operar_backtesting(request):
+    clear_context_status()
     if request.method == "POST":
         inicio = request.POST["fecha_inicio"]
         fecha_inicio_datetime = utils.transform_date(inicio)
-        horas = int(request.POST["horas"])
+        try:
+            horas = int(request.POST["horas"])
+        except ValueError:
+            horas = -1
 
         # Compruebo que el número de horas es válido y que la fecha no cae en fin de semana y
         # no sale del rango de datos disponible
