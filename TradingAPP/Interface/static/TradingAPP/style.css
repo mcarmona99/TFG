@@ -10,6 +10,7 @@
     font-size: 14px;
     text-align: center;
 }
+
 .boton_inhabilitado {
     border: 1px solid #737373; /*anchura, estilo y color borde*/
     padding: 10px; /*espacio alrededor texto*/
@@ -22,9 +23,11 @@
     font-size: 14px;
     text-align: center;
 }
+
 body.center {
     text-align: center;
 }
+
 table.center {
     margin-left: auto;
     margin-right: auto;

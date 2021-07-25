@@ -47,6 +47,27 @@ def menu_principal_logout(request):
     return render(request, "TradingAPP/menu_principal.html", context)
 
 
+def ver_datos_mercados(request):
+    clear_context_status()
+    return render(request, "TradingAPP/ver_datos_mercados.html", context)
+
+
+def ver_datos_antiguos(request):
+    clear_context_status()
+    if request.method == "POST":
+        # Cojo las variables de la requerst
+        nombre_mercado = request.POST["mercado"]
+        fecha_inicio = request.POST["fecha_inicio"]
+        fecha_fin = request.POST["fecha_fin"]
+
+        # Cojo el objeto de la clase Mercado
+        mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=nombre_mercado).id)
+
+        # Genero el gráfico
+        context["grafico"] = mercado.obtener_grafico_datos_antiguos(fecha_inicio, fecha_fin)
+    return render(request, "TradingAPP/ver_datos_antiguos.html", context)
+
+
 def estrategias_trading(request):
     clear_context_status()
     algoritmos = AlgoritmoTrading.objects.all()

@@ -1,0 +1,95 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<H2 align="center">Backtesting Automático</H2>
+
+<br>
+
+<body>
+
+<div style="float: left; width: 45%;">
+    <form action="./" method="POST"> {% csrf_token %}
+
+        <!-- SELECCIONAR MERCADO -->
+
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccionar el mercado a operar:</b> <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>
+                <select name="mercado">
+                    <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
+                    <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
+                    <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
+                    <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
+                    <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
+                </select>
+            </label> <br> <br>
+        </p>
+
+        <!-- SELECCIONAR FECHA INICIO -->
+
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha inicio:</b> <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="datetime-local" name="fecha_inicio"/> <br> <br>
+        </p>
+
+        <!-- SELECCIONAR FECHA FIN O NUMERO HORAS-->
+
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicar fecha de fin o número de horas:</b> <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="horas_o_fecha" value="horas" id="ver_con_horas" checked> Horas
+            <input type="radio" name="horas_o_fecha" value="fecha" id="ver_con_fecha"> Fecha Fin
+        </p>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Horas: <input type="number" name="horas" min="24"
+                                                                      id="inputHoras"/>
+        <!-- El minimo es 24, equivalente a un dia completeo -->
+
+        <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha fin: <input type="datetime-local" name="fecha_fin"
+                                                                          id="inputFecha" disabled/>
+
+
+        <br> <br> <br> <br> <br>
+
+
+        <!-- BOTON FINAL -->
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="boton" type="submit" value="Ver gráfica"/>
+    </form>
+</div>
+<div style="float: right; width: 45%; border-left: thick solid #000000;">
+    {% if grafico %}
+    {{grafico}}
+    {%endif%}
+</div>
+
+</body>
+
+
+<script>
+    // Accedemos a los botones
+    var input_fecha = document.getElementById('inputFecha');
+    var input_horas = document.getElementById('inputHoras');
+
+    // evento para el input radio "horas"
+    document.getElementById('ver_con_horas').addEventListener('click', function (e) {
+        input_horas.disabled = false;
+        input_fecha.disabled = true;
+    });
+
+    // evento para el input radio "fecha"
+    document.getElementById('ver_con_fecha').addEventListener('click', function (e) {
+        input_fecha.disabled = false;
+        input_horas.disabled = true;
+    });
+</script>
+
+</html>
