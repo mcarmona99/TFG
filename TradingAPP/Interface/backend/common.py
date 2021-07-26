@@ -141,6 +141,13 @@ def adapt_data_to_backtesting(old_dataframe, end_data):
     return old_dataframe[old_dataframe['time'] < end_data]
 
 
+def adapt_data_to_range(old_dataframe, start, end):
+    """
+    TODO: Docstring
+    """
+    return old_dataframe[(old_dataframe['time'] < end) & (old_dataframe['time'] > start)]
+
+
 def get_actions_results(acciones, ultimo_precio):
     comprando = False
     if acciones[0][0] == 'buy':

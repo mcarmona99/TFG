@@ -16,6 +16,8 @@ warnings.simplefilter("ignore", category=RuntimeWarning)
 def clear_context_status():
     context['error'] = None
     context['exito'] = None
+    context['grafico'] = None
+    context['flag'] = 0
 
 
 def menu_principal(request):
@@ -53,18 +55,57 @@ def ver_datos_mercados(request):
 
 
 def ver_datos_antiguos(request):
-    clear_context_status()
+    # Si no estoy actualizando el grafico con los botones tras haber entrado aqui, limpio el contexto
+    if not ('mas_uno' in request.POST or 'menos_uno' in request.POST):
+        clear_context_status()
+
     if request.method == "POST":
-        # Cojo las variables de la requerst
-        nombre_mercado = request.POST["mercado"]
-        fecha_inicio = request.POST["fecha_inicio"]
-        fecha_fin = request.POST["fecha_fin"]
+        # Cojo las variables de la requests
+        if not context.get('mercado'):
+            nombre_mercado = request.POST["mercado"]
+            context['mercado'] = nombre_mercado
+
+        if not context.get('fecha_inicio'):
+            fecha_inicio = request.POST["fecha_inicio"]
+            context['fecha_inicio'] = fecha_inicio
+
+        try:
+            if not context.get('fecha_fin'):
+                fecha_fin = request.POST["fecha_fin"]
+                context['fecha_fin'] = fecha_fin
+        except:
+            fecha_fin = ''
+            context['fecha_fin'] = fecha_fin
+
+        try:
+            if not context.get('horas'):
+                horas = int(request.POST["horas"])
+                context['horas'] = horas
+        except:
+            horas = 0
+            context['horas'] = horas
 
         # Cojo el objeto de la clase Mercado
-        mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=nombre_mercado).id)
+        mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=context.get('mercado')).id)
+
+        # Parametro para actualizar el contador de horas
+        if 'flag' not in context:
+            context['flag'] = 0
+        if 'mas_uno' in request.POST:
+            comparar = context['horas'] if context['horas'] else (utils.transform_date(
+                context['fecha_fin']) - utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
+            if context['flag'] + 1 <= int(comparar) - 24:
+                context['flag'] += 1
+        if 'menos_uno' in request.POST:
+            if context['flag'] - 1 >= 0:
+                context['flag'] -= 1
 
         # Genero el gráfico
-        context["grafico"] = mercado.obtener_grafico_datos_antiguos(fecha_inicio, fecha_fin)
+        context["grafico"], context["exito"] = mercado.obtener_grafico_datos_antiguos(start=context.get('fecha_inicio'),
+                                                                                      end=context.get('fecha_fin'),
+                                                                                      horas=context.get('horas'),
+                                                                                      flag=context.get('flag', 0))
+
     return render(request, "TradingAPP/ver_datos_antiguos.html", context)
 
 

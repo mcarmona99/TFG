@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}" xmlns="http://www.w3.org/1999/html">
 
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
     <form action="./" method="POST"> {% csrf_token %}
 
         <!-- SELECCIONAR MERCADO -->
-
+        <br>
         <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccionar el mercado a operar:</b> <br> <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <label>
@@ -47,14 +47,12 @@
             <input type="radio" name="horas_o_fecha" value="fecha" id="ver_con_fecha"> Fecha Fin
         </p>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Horas: <input type="number" name="horas" min="24"
-                                                                      id="inputHoras"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Horas: <input type="number" name="horas" min="24" id="inputHoras"/>
         <!-- El minimo es 24, equivalente a un dia completeo -->
 
         <br> <br>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha fin: <input type="datetime-local" name="fecha_fin"
-                                                                          id="inputFecha" disabled/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha fin: <input type="datetime-local" name="fecha_fin" id="inputFecha" disabled/>
 
 
         <br> <br> <br> <br> <br>
@@ -65,10 +63,41 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="boton" type="submit" value="Ver gráfica"/>
     </form>
 </div>
-<div style="float: right; width: 45%; border-left: thick solid #000000;">
+<div style="float: left; width: 45%;">
     {% if grafico %}
-    {{grafico}}
+    {{ grafico|safe }}
     {%endif%}
+</div>
+
+<div style="float: left; width: 45%;">
+    <br><br>
+    <form action="./" method="POST"> {% csrf_token %}
+        {% if grafico %}
+        <input class="boton" type="submit" value="-1" name="menos_uno"/>
+        <input class="boton" type="submit" value="+1" name="mas_uno"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="boton" type="submit" value="-5" name="menos_uno"/>
+        <input class="boton" type="submit" value="+5" name="mas_uno"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="boton" type="submit" value="-10" name="menos_uno"/>
+        <input class="boton" type="submit" value="+10" name="mas_uno"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="boton" type="submit" value="-20" name="menos_uno"/>
+        <input class="boton" type="submit" value="+20" name="mas_uno"/>
+        {% endif %}
+    </form>
+    {% if exito %}
+    {{exito}}
+    {%endif%}
+    <br>
+</div>
+
+<div style="float: right; width: 45%;">
+    <br><br><br><br>
+    <br><br><br><br>
+    <a class="boton" href="{% url 'Menu Ver Datos'%}">Volver a visualización</a>
+    <br><br><br><br>
+    <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
 </div>
 
 </body>
@@ -91,5 +120,7 @@
         input_horas.disabled = true;
     });
 </script>
+
+
 
 </html>
