@@ -77,14 +77,12 @@ class Mercado(models.Model):
 
         # Obtener los datos en formato ohlc (velas)
         data = common.get_data_ohlc(self.nombre)
+        data = data[data.time.dt.weekday < 5]
 
         # Adaptamos los datos al rango que tenemos, df sera un dataframe de pandas con todas las horas desde start
         # hasta end o desde start hasta el numero horas dado
         df = common.adapt_data_to_range(data, start, start + datetime.timedelta(
             hours=horas)) if horas else common.adapt_data_to_range(data, start, end)
-
-        # Elimino los fines de semana
-        df = df[df.time.dt.weekday < 5]
 
         # Creo la variable necesaria para la funcion candlestick_ohlc
         data_array = [[date2num(rev.time), rev['ask_open'], rev['ask_high'], rev['ask_low'], rev['ask_close']] for

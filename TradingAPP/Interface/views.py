@@ -16,8 +16,15 @@ warnings.simplefilter("ignore", category=RuntimeWarning)
 def clear_context_status():
     context['error'] = None
     context['exito'] = None
-    context['grafico'] = None
+
+
+def clear_context_ver_grafico():
     context['flag'] = 0
+    context['mercado'] = None
+    context['fecha_inicio'] = None
+    context['fecha_fin'] = None
+    context['horas'] = 0
+    context['grafico'] = None
 
 
 def menu_principal(request):
@@ -56,8 +63,8 @@ def ver_datos_mercados(request):
 
 def ver_datos_antiguos(request):
     # Si no estoy actualizando el grafico con los botones tras haber entrado aqui, limpio el contexto
-    if not ('mas_uno' in request.POST or 'menos_uno' in request.POST):
-        clear_context_status()
+    if 'actualizar_grafico' not in request.POST:
+        clear_context_ver_grafico()
 
     if request.method == "POST":
         # Cojo las variables de la requests
@@ -88,17 +95,26 @@ def ver_datos_antiguos(request):
         # Cojo el objeto de la clase Mercado
         mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=context.get('mercado')).id)
 
-        # Parametro para actualizar el contador de horas
-        if 'flag' not in context:
-            context['flag'] = 0
-        if 'mas_uno' in request.POST:
+        # Actualizar el contador de horas
+        if 'actualizar_grafico' in request.POST:
             comparar = context['horas'] if context['horas'] else (utils.transform_date(
                 context['fecha_fin']) - utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
-            if context['flag'] + 1 <= int(comparar) - 24:
-                context['flag'] += 1
-        if 'menos_uno' in request.POST:
-            if context['flag'] - 1 >= 0:
-                context['flag'] -= 1
+            valor_flag = int(request.POST.get('actualizar_grafico', 0))
+
+            if context['horas']:
+                # En el caso de horas, a la hora de comparar, el maximo es el
+                # numero de horas - 24 y - el numero de horas en fines de semana
+                lista_datetimes_por_hora = [(utils.transform_date(context['fecha_inicio']) + datetime.timedelta(hours=i)) for
+                                            i
+                                            in range(int(context['horas']))]
+                lista_dias_fin_semana = [dt for dt in lista_datetimes_por_hora if dt.weekday() in [5, 6]]
+                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24 - len(
+                    lista_dias_fin_semana) - 1
+            else:
+                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24
+
+            if condicion_comparar:
+                context['flag'] = context['flag'] + valor_flag
 
         # Genero el gráfico
         context["grafico"], context["exito"] = mercado.obtener_grafico_datos_antiguos(start=context.get('fecha_inicio'),

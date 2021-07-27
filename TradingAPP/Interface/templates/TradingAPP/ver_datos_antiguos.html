@@ -73,17 +73,17 @@
     <br><br>
     <form action="./" method="POST"> {% csrf_token %}
         {% if grafico %}
-        <input class="boton" type="submit" value="-1" name="menos_uno"/>
-        <input class="boton" type="submit" value="+1" name="mas_uno"/>
+        <input class="boton" type="submit" value="-1" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+1" name="actualizar_grafico"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input class="boton" type="submit" value="-5" name="menos_uno"/>
-        <input class="boton" type="submit" value="+5" name="mas_uno"/>
+        <input class="boton" type="submit" value="-5" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+5" name="actualizar_grafico"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input class="boton" type="submit" value="-10" name="menos_uno"/>
-        <input class="boton" type="submit" value="+10" name="mas_uno"/>
+        <input class="boton" type="submit" value="-10" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+10" name="actualizar_grafico"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input class="boton" type="submit" value="-20" name="menos_uno"/>
-        <input class="boton" type="submit" value="+20" name="mas_uno"/>
+        <input class="boton" type="submit" value="-20" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+20" name="actualizar_grafico"/>
         {% endif %}
     </form>
     {% if exito %}
