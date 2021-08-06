@@ -1,0 +1,126 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}" xmlns="http://www.w3.org/1999/html">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<H2 align="center">Ver anteriores datos de mercado</H2>
+
+<br>
+
+<body>
+
+<div style="float: left; width: 45%;">
+    <form action="./" method="POST"> {% csrf_token %}
+
+        <!-- SELECCIONAR MERCADO -->
+        <br>
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccionar el mercado a operar:</b> <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>
+                <select name="mercado">
+                    <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
+                    <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
+                    <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
+                    <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
+                    <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
+                </select>
+            </label> <br> <br>
+        </p>
+
+        <!-- SELECCIONAR FECHA INICIO -->
+
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha inicio:</b> <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="datetime-local" name="fecha_inicio"/> <br> <br>
+        </p>
+
+        <!-- SELECCIONAR FECHA FIN O NUMERO HORAS-->
+
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicar fecha de fin o número de horas:</b> <br> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="horas_o_fecha" value="horas" id="ver_con_horas" checked> Horas
+            <input type="radio" name="horas_o_fecha" value="fecha" id="ver_con_fecha"> Fecha Fin
+        </p>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Horas: <input type="number" name="horas" min="24" id="inputHoras"/>
+        <!-- El minimo es 24, equivalente a un dia completeo -->
+
+        <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha fin: <input type="datetime-local" name="fecha_fin" id="inputFecha" disabled/>
+
+
+        <br> <br> <br> <br> <br>
+
+
+        <!-- BOTON FINAL -->
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="boton" type="submit" value="Ver gráfica"/>
+    </form>
+</div>
+<div style="float: left; width: 45%;">
+    {% if grafico %}
+    {{ grafico|safe }}
+    {%endif%}
+</div>
+
+<div style="float: left; width: 45%;">
+    <br><br>
+    <form action="./" method="POST"> {% csrf_token %}
+        {% if grafico %}
+        <input class="boton" type="submit" value="-1" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+1" name="actualizar_grafico"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="boton" type="submit" value="-5" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+5" name="actualizar_grafico"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="boton" type="submit" value="-10" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+10" name="actualizar_grafico"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="boton" type="submit" value="-20" name="actualizar_grafico"/>
+        <input class="boton" type="submit" value="+20" name="actualizar_grafico"/>
+        {% endif %}
+    </form>
+    {% if exito %}
+    {{exito}}
+    {%endif%}
+    <br>
+</div>
+
+<div style="float: right; width: 45%;">
+    <br><br><br><br>
+    <br><br><br><br>
+    <a class="boton" href="{% url 'Menu Ver Datos'%}">Volver a visualización</a>
+    <br><br><br><br>
+    <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+</div>
+
+</body>
+
+
+<script>
+    // Accedemos a los botones
+    var input_fecha = document.getElementById('inputFecha');
+    var input_horas = document.getElementById('inputHoras');
+
+    // evento para el input radio "horas"
+    document.getElementById('ver_con_horas').addEventListener('click', function (e) {
+        input_horas.disabled = false;
+        input_fecha.disabled = true;
+    });
+
+    // evento para el input radio "fecha"
+    document.getElementById('ver_con_fecha').addEventListener('click', function (e) {
+        input_fecha.disabled = false;
+        input_horas.disabled = true;
+    });
+</script>
+
+
+
+</html>

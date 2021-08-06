@@ -18,6 +18,16 @@ def clear_context_status():
     context['exito'] = None
 
 
+def clear_context_ver_grafico():
+    context['flag'] = 0
+    context['mercado'] = None
+    context['fecha_inicio'] = None
+    context['fecha_fin'] = None
+    context['horas'] = 0
+    context['grafico'] = None
+    context['marco_tiempo'] = None
+
+
 def menu_principal(request):
     clear_context_status()
     if request.method == "POST":
@@ -45,6 +55,99 @@ def menu_principal_logout(request):
     clear_context_status()
     login.logout_mt5(sesion_actual=sesion_actual)
     return render(request, "TradingAPP/menu_principal.html", context)
+
+
+def ver_datos_mercados(request):
+    clear_context_status()
+    return render(request, "TradingAPP/ver_datos_mercados.html", context)
+
+
+def ver_datos_antiguos(request):
+    # Si no estoy actualizando el grafico con los botones tras haber entrado aqui, limpio el contexto
+    if 'actualizar_grafico' not in request.POST:
+        clear_context_ver_grafico()
+
+    if request.method == "POST":
+        # Cojo las variables de la requests
+        if not context.get('mercado'):
+            nombre_mercado = request.POST["mercado"]
+            context['mercado'] = nombre_mercado
+
+        if not context.get('fecha_inicio'):
+            fecha_inicio = request.POST["fecha_inicio"]
+            context['fecha_inicio'] = fecha_inicio
+
+        try:
+            if not context.get('fecha_fin'):
+                fecha_fin = request.POST["fecha_fin"]
+                context['fecha_fin'] = fecha_fin
+        except:
+            fecha_fin = ''
+            context['fecha_fin'] = fecha_fin
+
+        try:
+            if not context.get('horas'):
+                horas = int(request.POST["horas"])
+                context['horas'] = horas
+        except:
+            horas = 0
+            context['horas'] = horas
+
+        # Cojo el objeto de la clase Mercado
+        mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=context.get('mercado')).id)
+
+        # Actualizar el contador de horas
+        if 'actualizar_grafico' in request.POST:
+            comparar = context['horas'] if context['horas'] else (utils.transform_date(
+                context['fecha_fin']) - utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
+            valor_flag = int(request.POST.get('actualizar_grafico', 0))
+
+            if context['horas']:
+                # En el caso de horas, a la hora de comparar, el maximo es el
+                # numero de horas - 24 y - el numero de horas en fines de semana
+                lista_datetimes_por_hora = [
+                    (utils.transform_date(context['fecha_inicio']) + datetime.timedelta(hours=i)) for
+                    i
+                    in range(int(context['horas']))]
+                lista_dias_fin_semana = [dt for dt in lista_datetimes_por_hora if dt.weekday() in [5, 6]]
+                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24 - len(
+                    lista_dias_fin_semana) - 1
+            else:
+                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24
+
+            if condicion_comparar:
+                context['flag'] = context['flag'] + valor_flag
+
+        # Genero el gráfico
+        context["grafico"], context["exito"] = mercado.obtener_grafico_datos_antiguos(start=context.get('fecha_inicio'),
+                                                                                      end=context.get('fecha_fin'),
+                                                                                      horas=context.get('horas'),
+                                                                                      flag=context.get('flag', 0))
+
+    return render(request, "TradingAPP/ver_datos_antiguos.html", context)
+
+
+def ver_datos_tiempo_real(request):
+    clear_context_ver_grafico()
+    if request.method == 'POST':
+        # Cojo las variables de la requests
+        nombre_mercado = 'EURUSD'  # Por defecto EURUSD por si hay algun error
+        if not context.get('mercado'):
+            nombre_mercado = request.POST["mercado"]
+            context['mercado'] = nombre_mercado
+
+        marco_tiempo = '1H'  # Por defecto 1H por si hay algun error
+        if not context.get('marco_tiempo'):
+            marco_tiempo = request.POST["marco_tiempo"]
+            context['marco_tiempo'] = marco_tiempo
+
+        # Cojo el objeto de la clase Mercado
+        mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=nombre_mercado).id)
+
+        # Genero el gráfico
+        context["grafico"], context["exito"] = mercado.obtener_grafico_datos_tiempo_real(marco_tiempo=marco_tiempo)
+
+    return render(request, "TradingAPP/ver_datos_tiempo_real.html", context)
 
 
 def estrategias_trading(request):

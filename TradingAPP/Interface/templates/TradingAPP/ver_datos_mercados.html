@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<br>
+
+<body class="center">
+
+¿Quieres ver gráficas de datos de mercados antiguos o en tiempo real?
+
+<br><br><br>
+
+<a class="boton" href="{% url 'Ver Datos Tiempo Real'%}">Tiempo Real</a>
+
+<a class="boton" href="{% url 'Ver Datos Antiguos'%}">Datos antiguos</a>
+
+
+<br><br><br><br><br><br><br><br><br>
+
+
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+</body>
+
+</html>

@@ -25,13 +25,7 @@ def ticks_to_df_with_time(ticks):
     try:
         print("Creando DataFrame de Pandas...")
         ticks_df['time'] = pd.to_datetime(ticks_df['time'], unit='s')
-
-        # creo una columna en el dataframe con la fecha sin minutos y segundos (solo la hora), para
-        # quitar ticks duplicados en la misma hora, quedandome solo con el primero de cada hora
-        ticks_df['time'] = pd.to_datetime(ticks_df['time'].dt.date) + \
-                           pd.to_timedelta(ticks_df['time'].dt.hour, unit='H')
-
-        ticks_df.drop_duplicates(subset='time', keep='first', inplace=True)
+        ticks_df = ticks_df.set_index(['time'])
         return ticks_df
     except KeyError:
         return None
@@ -83,6 +77,30 @@ def get_data(symbol, data_path=DATA_PATH):
         return None
 
     return df
+
+
+def transform_data_to_ohlc(data_frame, marco_tiempo='1H'):
+    # Uso la funcion ohlc de pandas para generar las velas, la salida sera similar a:
+    #
+    # time                  open    high    low     close
+    # 2016-01-04 00:00:00   87.651  87.696  87.630  87.687
+    # ...
+    #
+    # En este caso, velas de rango 1 hora por defecto
+
+    # Creo el df en ohld y renombro columnas
+    data_ask = data_frame['ask'].resample(marco_tiempo).ohlc()
+    data_ask.columns = ['ask_open',  'ask_high', 'ask_low', 'ask_close']
+
+    data_bid = data_frame['bid'].resample(marco_tiempo).ohlc()
+    data_bid.columns = ['bid_open', 'bid_high', 'bid_low', 'bid_close']
+
+    data_ask_bid = pd.concat([data_ask, data_bid], axis=1)
+
+    # Reset index to set time as a column
+    data_ask_bid.reset_index(level=0, inplace=True)
+
+    return data_ask_bid
 
 
 def get_data_ohlc(symbol, data_path=DATA_PATH_OHLC):
@@ -139,6 +157,13 @@ def adapt_data_to_backtesting(old_dataframe, end_data):
     TODO: Docstring
     """
     return old_dataframe[old_dataframe['time'] < end_data]
+
+
+def adapt_data_to_range(old_dataframe, start, end):
+    """
+    TODO: Docstring
+    """
+    return old_dataframe[(old_dataframe['time'] < end) & (old_dataframe['time'] > start)]
 
 
 def get_actions_results(acciones, ultimo_precio):
