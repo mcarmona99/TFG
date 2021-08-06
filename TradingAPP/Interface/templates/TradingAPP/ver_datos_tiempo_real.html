@@ -34,12 +34,12 @@
 
     <p><b>Selecciona el marco de tiempo:</b> <br> <br>
         <select name="marco_tiempo">
-            <option value="1M">1 Minuto</option>
-            <option value="3M">3 Minutos</option>
-            <option value="5M">5 Minutos</option>
-            <option value="15M">15 Minutos</option>
-            <option value="30M">30 Minutos</option>
-            <option value="45M">45 Minutos</option>
+            <option value="1Min">1 Minuto</option>
+            <option value="3Min">3 Minutos</option>
+            <option value="5Min">5 Minutos</option>
+            <option value="15Min">15 Minutos</option>
+            <option value="30Min">30 Minutos</option>
+            <option value="45Min">45 Minutos</option>
             <option value="1H">1 Hora</option>
             <option value="2H">2 Horas</option>
             <option value="3H">3 Horas</option>
@@ -59,6 +59,11 @@
 
 
 <br><br><br><br>
+
+{% if exito %}
+{{exito}}
+{%endif%}
+
 <br><br><br><br>
 <a class="boton" href="{% url 'Menu Ver Datos'%}">Volver a visualización</a>
 <br><br><br><br>

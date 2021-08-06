@@ -25,6 +25,7 @@ def clear_context_ver_grafico():
     context['fecha_fin'] = None
     context['horas'] = 0
     context['grafico'] = None
+    context['marco_tiempo'] = None
 
 
 def menu_principal(request):
@@ -127,6 +128,7 @@ def ver_datos_antiguos(request):
 
 
 def ver_datos_tiempo_real(request):
+    clear_context_ver_grafico()
     if request.method == 'POST':
         # Cojo las variables de la requests
         nombre_mercado = 'EURUSD'  # Por defecto EURUSD por si hay algun error

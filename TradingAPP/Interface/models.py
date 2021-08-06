@@ -53,16 +53,28 @@ class Mercado(models.Model):
         # Obtener los datos en formato ohlc (velas)
         df = common.transform_data_to_ohlc(df, marco_tiempo=marco_tiempo)
 
+        # Elimino fines de semana
+        df = df[df.time.dt.weekday < 5]
+
+        # TOMO SOLO 24 VELAS, QUE ES LO QUE VOY A MOSTRAR
+        df = df[-24:]
+        df.reset_index(level=0, inplace=True)
+
         # Creo la variable necesaria para la funcion candlestick_ohlc
         data_array = [[date2num(rev.time), rev['ask_open'], rev['ask_high'], rev['ask_low'], rev['ask_close']] for
                       index, rev in df.iterrows()]
 
         # Genero el plot con su personalización
+        # multiplicador es la variable para modificar width
+        multiplicador = int(marco_tiempo.replace('H', '')) if 'H' in marco_tiempo else \
+            int(marco_tiempo.replace('D', '')) * 24 if 'D' in marco_tiempo else \
+                int(marco_tiempo.replace('Min', '')) / 60 if 'Min' in marco_tiempo else 1
+
         fig, ax = plt.subplots()
         fig.subplots_adjust(bottom=0.3, left=0.2)
-        candlestick_ohlc(ax, data_array, width=0.015, colorup='green', colordown='red')
+        candlestick_ohlc(ax, data_array, width=0.015 * multiplicador, colorup='green', colordown='red')
         plt.setp(plt.gca().get_xticklabels(), rotation=30, horizontalalignment='right')
-        plt.title(f"{titulo} - {self.nombre}")
+        plt.title(f"{titulo} - {self.nombre} - {marco_tiempo}")
         ax.xaxis.set_major_formatter(DateFormatter('%H:%M  %d-%m-%y'))
         plt.ylabel("Precio de compra")
 
@@ -71,7 +83,9 @@ class Mercado(models.Model):
         imgdata.seek(0)
 
         grafico = imgdata.getvalue()
-        return grafico, f"Mostrando desde {inicio} hasta {ahora}"
+        print(df)
+        return grafico, f"Mostrando desde {df.at[0, 'time']} hasta {df.at[len(df)-1, 'time']}\n" \
+                        f"Actualizando gráfico en {marco_tiempo} ..."
 
     def obtener_grafico_datos_antiguos(self, start="", end="", horas=0, titulo="Gráfico OHLC", flag=0):
         start = utils.transform_date(start)
