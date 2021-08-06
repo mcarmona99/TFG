@@ -1,0 +1,70 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}" xmlns="http://www.w3.org/1999/html">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center">TradingAPP</H1>
+
+<H2 align="center">Ver datos de mercado en tiempo real</H2>
+
+<br>
+
+<body class="center">
+
+<form action="./" method="POST"> {% csrf_token %}
+
+    <!-- SELECCIONAR MERCADO -->
+    <br>
+    <p><b>Seleccionar el mercado a ver:</b> <br> <br>
+        <label>
+            <select name="mercado">
+                <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
+                <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
+                <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
+                <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
+                <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
+            </select>
+        </label> <br> <br>
+    </p>
+
+    <!-- SELECCIONAR TIMEFRAME -->
+
+    <p><b>Selecciona el marco de tiempo:</b> <br> <br>
+        <select name="marco_tiempo">
+            <option value="1M">1 Minuto</option>
+            <option value="3M">3 Minutos</option>
+            <option value="5M">5 Minutos</option>
+            <option value="15M">15 Minutos</option>
+            <option value="30M">30 Minutos</option>
+            <option value="45M">45 Minutos</option>
+            <option value="1H">1 Hora</option>
+            <option value="2H">2 Horas</option>
+            <option value="3H">3 Horas</option>
+            <option value="4H">4 Horas</option>
+            <option value="1D">1 Dia</option>
+        </select>
+    </p>
+
+    <!-- BOTON FINAL -->
+
+    <input class="boton" type="submit" value="Ver gráfica"/>
+</form>
+
+{% if grafico %}
+{{ grafico|safe }}
+{%endif%}
+
+
+<br><br><br><br>
+<br><br><br><br>
+<a class="boton" href="{% url 'Menu Ver Datos'%}">Volver a visualización</a>
+<br><br><br><br>
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+</body>
+
+
+</html>

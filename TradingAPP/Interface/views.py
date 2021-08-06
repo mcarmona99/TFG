@@ -104,9 +104,10 @@ def ver_datos_antiguos(request):
             if context['horas']:
                 # En el caso de horas, a la hora de comparar, el maximo es el
                 # numero de horas - 24 y - el numero de horas en fines de semana
-                lista_datetimes_por_hora = [(utils.transform_date(context['fecha_inicio']) + datetime.timedelta(hours=i)) for
-                                            i
-                                            in range(int(context['horas']))]
+                lista_datetimes_por_hora = [
+                    (utils.transform_date(context['fecha_inicio']) + datetime.timedelta(hours=i)) for
+                    i
+                    in range(int(context['horas']))]
                 lista_dias_fin_semana = [dt for dt in lista_datetimes_por_hora if dt.weekday() in [5, 6]]
                 condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24 - len(
                     lista_dias_fin_semana) - 1
@@ -123,6 +124,28 @@ def ver_datos_antiguos(request):
                                                                                       flag=context.get('flag', 0))
 
     return render(request, "TradingAPP/ver_datos_antiguos.html", context)
+
+
+def ver_datos_tiempo_real(request):
+    if request.method == 'POST':
+        # Cojo las variables de la requests
+        nombre_mercado = 'EURUSD'  # Por defecto EURUSD por si hay algun error
+        if not context.get('mercado'):
+            nombre_mercado = request.POST["mercado"]
+            context['mercado'] = nombre_mercado
+
+        marco_tiempo = '1H'  # Por defecto 1H por si hay algun error
+        if not context.get('marco_tiempo'):
+            marco_tiempo = request.POST["marco_tiempo"]
+            context['marco_tiempo'] = marco_tiempo
+
+        # Cojo el objeto de la clase Mercado
+        mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=nombre_mercado).id)
+
+        # Genero el gráfico
+        context["grafico"], context["exito"] = mercado.obtener_grafico_datos_tiempo_real(marco_tiempo=marco_tiempo)
+
+    return render(request, "TradingAPP/ver_datos_tiempo_real.html", context)
 
 
 def estrategias_trading(request):

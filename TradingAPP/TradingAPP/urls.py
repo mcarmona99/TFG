@@ -35,4 +35,5 @@ urlpatterns = [
     # Urls de ver datos de mercados
     path('mercados/', views.ver_datos_mercados, name="Menu Ver Datos"),
     path('mercados/ver_datos_antiguos/', views.ver_datos_antiguos, name="Ver Datos Antiguos"),
+    path('mercados/ver_datos_tiempo_real/', views.ver_datos_tiempo_real, name="Ver Datos Tiempo Real"),
 ]

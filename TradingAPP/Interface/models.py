@@ -3,7 +3,6 @@ from io import StringIO
 
 import MetaTrader5 as mt5
 import matplotlib.pyplot as plt
-import pandas as pd
 from django.db import models
 from matplotlib.dates import date2num, DateFormatter
 from mplfinance.original_flavor import candlestick_ohlc
@@ -37,38 +36,42 @@ class Mercado(models.Model):
     def __str__(self):
         return self.nombre
 
-    def obtener_grafico_tiempo_real(self, start, end):
-        # TODO FUNCION A MODIFICAR
-        start = utils.transform_date(start)
-        end = utils.transform_date(end)
+    def obtener_grafico_datos_tiempo_real(self, marco_tiempo='1H', titulo="Gráfico OHLC"):
+        # Obtengo un rago de 2 meses, para que sea valido para todos los marcos de tiempo
+        ahora = datetime.datetime.now()
+        inicio = ahora - datetime.timedelta(days=60)
+
+        # Inicializo MT5
+        mt5.initialize()
 
         # DATA
-        ticks = mt5.copy_ticks_range(self.nombre, start, end, mt5.COPY_TICKS_ALL)
+        ticks = mt5.copy_ticks_range(self.nombre, inicio, ahora, mt5.COPY_TICKS_ALL)
 
         # Create DataFrame out of the obtained data
-        ticks_frame = pd.DataFrame(ticks)
+        df = common.ticks_to_df_with_time(ticks)
 
-        # Convert time in seconds into the datetime format
-        ticks_frame['time'] = pd.to_datetime(ticks_frame['time'], unit='s')
+        # Obtener los datos en formato ohlc (velas)
+        df = common.transform_data_to_ohlc(df, marco_tiempo=marco_tiempo)
 
-        fig = plt.figure()
+        # Creo la variable necesaria para la funcion candlestick_ohlc
+        data_array = [[date2num(rev.time), rev['ask_open'], rev['ask_high'], rev['ask_low'], rev['ask_close']] for
+                      index, rev in df.iterrows()]
 
-        # Display ticks on the chart
-        plt.plot(ticks_frame['time'], ticks_frame['ask'], 'r-', label='ask')
-        plt.plot(ticks_frame['time'], ticks_frame['bid'], 'b-', label='bid')
-
-        # Display the legends
-        plt.legend(loc='upper left')
-
-        # add the header
-        plt.title(f'{self.nombre} ticks')
+        # Genero el plot con su personalización
+        fig, ax = plt.subplots()
+        fig.subplots_adjust(bottom=0.3, left=0.2)
+        candlestick_ohlc(ax, data_array, width=0.015, colorup='green', colordown='red')
+        plt.setp(plt.gca().get_xticklabels(), rotation=30, horizontalalignment='right')
+        plt.title(f"{titulo} - {self.nombre}")
+        ax.xaxis.set_major_formatter(DateFormatter('%H:%M  %d-%m-%y'))
+        plt.ylabel("Precio de compra")
 
         imgdata = StringIO()
         fig.savefig(imgdata, format='svg')
         imgdata.seek(0)
 
-        graph = imgdata.getvalue()
-        return graph
+        grafico = imgdata.getvalue()
+        return grafico, f"Mostrando desde {inicio} hasta {ahora}"
 
     def obtener_grafico_datos_antiguos(self, start="", end="", horas=0, titulo="Gráfico OHLC", flag=0):
         start = utils.transform_date(start)
@@ -103,4 +106,4 @@ class Mercado(models.Model):
 
         grafico = imgdata.getvalue()
         return grafico, f"Mostrando desde {start + datetime.timedelta(hours=flag)} hasta " \
-                        f"{start + datetime.timedelta(hours=flag+24)}"
+                        f"{start + datetime.timedelta(hours=flag + 24)}"
