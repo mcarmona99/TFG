@@ -13,6 +13,8 @@ context = {'sesion_actual': sesion_actual}
 warnings.simplefilter("ignore", category=RuntimeWarning)
 
 
+# Funciones auxiliares
+
 def clear_context_status():
     context['error'] = None
     context['exito'] = None
@@ -26,6 +28,31 @@ def clear_context_ver_grafico():
     context['horas'] = 0
     context['grafico'] = None
     context['marco_tiempo'] = None
+
+
+# Vistas
+
+
+def login_page(request):
+    message = None
+    if request.method == "POST":
+        username = request.POST.get('username','')
+        password = request.POST.get('password','')
+
+        # Cojo el objeto de la clase Sesion
+        sesion = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=context.get('mercado')).id)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                message = "Identificado correctamente"
+            else:
+                message = "Tu usuario está inactivo"
+        else:
+            message = "Nombre de usuario y/o password incorrecto"
+    else:
+        form = LoginForm()
+    context = {'message': message, 'form': form}
+    return render('login.html', context)
 
 
 def menu_principal(request):

@@ -1,0 +1,48 @@
+{% extends "base_generic_login.html" %}
+
+{% block content %}
+
+<H1 align="center">TradingAPP</H1>
+<p style="font-size: 20px;">
+    <br>
+    Bienvenido a TradingAPP, tu aplicación de trading automático que te permite realizar operaciones de
+    compra y venta usando Trading algorítmico.
+    <br><br>
+    Para continuar, identifícate con tu usuario y contraseña.<br><br>
+</p>
+
+{% if form.errors %}
+<p style="color:red;">Usuario o contraseña erróneos, por favor, intenta identificarte de nuevo.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p style="color:red;">Tu cuenta no tiene acceso a esta página. Para continuar,
+    por favor, identifícate con una cuenta que tenga acceso.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+<div>
+  <td><b>Usuario: </b></td>
+  <td>{{ form.username }}</td>
+</div>
+    <br>
+<div>
+  <td><b>Contraseña: </b></td>
+  <td>{{ form.password }}</td>
+</div>
+    <br>
+
+<div>
+  <input type="submit" value="Login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</div>
+</form>
+
+<!--{# Assumes you setup the password_reset view in your URLconf #}-->
+<!--<p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
+
+{% endblock %}
