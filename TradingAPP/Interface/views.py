@@ -7,13 +7,18 @@ from .backend import common, utils, login
 from .models import AlgoritmoTrading, Sesion, Mercado
 from .strategies import moving_average, metodo_wyckoff
 
-sesion_actual = Sesion.objects.all()[0]
-context = {'sesion_actual': sesion_actual}
+context = {}
 
 warnings.simplefilter("ignore", category=RuntimeWarning)
 
 
 # Funciones auxiliares
+
+def add_sesion_to_context(request):
+    context['sesion'] = \
+        get_object_or_404(Sesion, user=request.user) \
+            if request.user.username and request.user.username != 'admin' else None
+
 
 def clear_context_status():
     context['error'] = None
@@ -32,30 +37,8 @@ def clear_context_ver_grafico():
 
 # Vistas
 
-
-def login_page(request):
-    message = None
-    if request.method == "POST":
-        username = request.POST.get('username','')
-        password = request.POST.get('password','')
-
-        # Cojo el objeto de la clase Sesion
-        sesion = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=context.get('mercado')).id)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                message = "Identificado correctamente"
-            else:
-                message = "Tu usuario está inactivo"
-        else:
-            message = "Nombre de usuario y/o password incorrecto"
-    else:
-        form = LoginForm()
-    context = {'message': message, 'form': form}
-    return render('login.html', context)
-
-
 def menu_principal(request):
+    add_sesion_to_context(request)
     clear_context_status()
     if request.method == "POST":
         account = 0
@@ -65,7 +48,7 @@ def menu_principal(request):
             pass
         password = request.POST["password"]
         servidor = request.POST["servidor"]
-        salida = login.login_mt5(account=account, password=password, servidor=servidor, sesion_actual=sesion_actual)
+        salida = login.login_mt5(account=account, password=password, servidor=servidor, sesion_actual=context['sesion'])
         if salida[0] == 1:
             context['error'] = salida[1]
         if salida[0] == 0:
@@ -74,22 +57,26 @@ def menu_principal(request):
 
 
 def menu_login(request):
+    add_sesion_to_context(request)
     clear_context_status()
     return render(request, "TradingAPP/menu_login.html", context)
 
 
 def menu_principal_logout(request):
+    add_sesion_to_context(request)
     clear_context_status()
-    login.logout_mt5(sesion_actual=sesion_actual)
+    login.logout_mt5(sesion_actual=context['sesion'])
     return render(request, "TradingAPP/menu_principal.html", context)
 
 
 def ver_datos_mercados(request):
+    add_sesion_to_context(request)
     clear_context_status()
     return render(request, "TradingAPP/ver_datos_mercados.html", context)
 
 
 def ver_datos_antiguos(request):
+    add_sesion_to_context(request)
     # Si no estoy actualizando el grafico con los botones tras haber entrado aqui, limpio el contexto
     if 'actualizar_grafico' not in request.POST:
         clear_context_ver_grafico()
@@ -155,6 +142,7 @@ def ver_datos_antiguos(request):
 
 
 def ver_datos_tiempo_real(request):
+    add_sesion_to_context(request)
     clear_context_ver_grafico()
     if request.method == 'POST':
         # Cojo las variables de la requests
@@ -178,42 +166,48 @@ def ver_datos_tiempo_real(request):
 
 
 def estrategias_trading(request):
+    add_sesion_to_context(request)
     clear_context_status()
     algoritmos = AlgoritmoTrading.objects.all()
-    context = {'algoritmos': algoritmos, 'sesion_actual': sesion_actual}
+    context.update({'algoritmos': algoritmos})
     return render(request, "TradingAPP/estrategias_trading.html", context)
 
 
 def estrategias_trading_descripcion(request, algoritmo_id):
+    add_sesion_to_context(request)
     clear_context_status()
     algoritmo = AlgoritmoTrading.objects.get(id=algoritmo_id)
     alg = {'id': algoritmo_id, 'nombre': algoritmo.nombre, 'descripcion': algoritmo.descripcion,
            'autor': algoritmo.autor, 'imagen': algoritmo.imagen}
-    context = {'algoritmo': alg, 'sesion_actual': sesion_actual}
+    context.update({'algoritmo': alg})
     return render(request, "TradingAPP/estrategias_trading_descripcion.html", context)
 
 
 def elegir_estrategia(request, algoritmo_id):
+    add_sesion_to_context(request)
     clear_context_status()
     if request.method == "POST":
         algoritmo = AlgoritmoTrading.objects.get(id=algoritmo_id)
-        sesion_actual.algoritmo_elegido = algoritmo
-        sesion_actual.save()
+        context['sesion'].algoritmo_elegido = algoritmo
+        context['sesion'].save()
 
     return render(request, "TradingAPP/elegir_estrategia.html", context)
 
 
 def menu_backtesting(request):
+    add_sesion_to_context(request)
     clear_context_status()
     return render(request, "TradingAPP/menu_backtesting.html", context)
 
 
 def backtesting_auto(request):
+    add_sesion_to_context(request)
     clear_context_status()
     return render(request, "TradingAPP/backtesting_auto.html", context)
 
 
 def operar_backtesting(request):
+    add_sesion_to_context(request)
     clear_context_status()
     if request.method == "POST":
         inicio = request.POST["fecha_inicio"]
@@ -250,7 +244,7 @@ def operar_backtesting(request):
         acciones = []
         beneficios = 0.0
 
-        if sesion_actual.algoritmo_elegido.id == 1:  # Medias moviles
+        if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
             # Recogida de datos del simbolo a tratar
             data = common.get_data(mercado)
 
@@ -267,7 +261,7 @@ def operar_backtesting(request):
                                               time_trading_in_hours=horas)
             beneficios = common.get_actions_results(acciones, ultimo_precio)
 
-        if sesion_actual.algoritmo_elegido.id == 2:  # Metodo Wyckoff
+        if context['sesion'].algoritmo_elegido.id == 2:  # Metodo Wyckoff
             # Recogida de datos del simbolo a tratar
             # en formato ohlc con columnas
             # time  ask_open  ask_high  ask_low  ask_close  bid_open  bid_high  bid_low  bid_close

@@ -14,7 +14,7 @@
 
 <H2 align="center">Backtesting Automático</H2>
 
-Algoritmo de trading elegido: <b> {{ sesion_actual.algoritmo_elegido }} </b>
+Algoritmo de trading elegido: <b> {{ sesion.algoritmo_elegido }} </b>
 
 <br><br><br>
 
@@ -39,7 +39,7 @@ Elige la fecha de inicio y de fin entre las que se quiere operar:<br>
 
     <br>
 
-    {% if sesion_actual.algoritmo_elegido.nombre == 'Medias moviles' %}
+    {% if sesion.algoritmo_elegido.nombre == 'Medias moviles' %}
     <p>PARAMETROS</p>
     <p>Tamaño ventana pequeña:     <input type="number" name="ventana_pequena" value="5" min="1" /></p>
     <p>Tamaño ventana grande:      <input type="number" name="ventana_grande" value="15" min="1" /></p>

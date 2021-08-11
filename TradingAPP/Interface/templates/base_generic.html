@@ -54,7 +54,7 @@
         <div class="column" align="right">
             <ul class="sidebar-nav">
                 {% if user.is_authenticated %}
-                {% if not sesion_actual.logued_MT5 %}
+                {% if not sesion.logued_MT5 %}
                 <li><a href="{% url 'Menu Login'%}">Login MT5</a></li>
                 <li><a href="">Gestion de datos</a></li>
                 <li><a href="">Mi perfil</a></li>
