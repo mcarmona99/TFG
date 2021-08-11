@@ -1,3 +1,7 @@
+{% extends "base_generic_login.html" %}
+
+{% block content %}
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
 
@@ -39,7 +43,7 @@
 <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
 
 <br><br><br><br>
-Actualmente elegida: {% if sesion_actual.algoritmo_elegido %} <p>{{ sesion_actual.algoritmo_elegido }}</p> {% else %}
+Actualmente elegida: {% if sesion.algoritmo_elegido %} <p>{{ sesion.algoritmo_elegido }}</p> {% else %}
 <p>Ninguna</p> {% endif %}
 
 
@@ -47,3 +51,5 @@ Actualmente elegida: {% if sesion_actual.algoritmo_elegido %} <p>{{ sesion_actua
 
 
 </html>
+
+{% endblock %}

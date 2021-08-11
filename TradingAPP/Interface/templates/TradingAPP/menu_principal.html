@@ -1,103 +1,122 @@
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
 
 <!DOCTYPE html>
 <html>
 
+<style>
+    td {
+        text-align: center;
+    }
+</style>
+
 <title>TradingAPP</title>
 
-<H1 align="center">TradingAPP</H1>
 
-<br>
+<table align="center">
 
-<body class="center">
+    <tr>
+        <td colspan="2">
+            <H1>TradingAPP</H1>
+        </td>
 
-{% if not sesion_actual.logued_MT5 %}
-<a class="boton" href="{% url 'Menu Login'%}">LOGIN MT5</a>
-{% else %}
-<a class="boton_inhabilitado">LOGIN MT5</a>
-{% endif %}
+    </tr>
 
-{% if sesion_actual.logued_MT5 %}
-<a class="boton" href="{% url 'Menu Principal Logout'%}">LOGOUT MT5</a>
-{% else %}
-<a class="boton_inhabilitado">LOGOUT MT5</a>
-{% endif %}
-
-<br>
-<br>
-<br>
-
-<a class="boton" href="{% url 'Menu Principal'%}">Gestion de datos</a>
-
-<br>
-<br>
-<br>
-
-<a class="boton" href="{% url 'Menu Principal'%}">Mi perfil</a>
-
-<br>
-<br>
-<br>
-
-<table class="center">
 
     <tr>
         <td>
-            {% if sesion_actual.logued_MT5 %}
+            <br><br><br>
+            {% if not sesion.logued_MT5 %}
+            <a class="boton" href="{% url 'Menu Login'%}">LOGIN MT5</a>
+            {% else %}
+            <a class="boton_inhabilitado">LOGIN MT5</a>
+            {% endif %}
+        </td>
+        <td>
+            <br><br><br>
+            {% if sesion.logued_MT5 %}
+            <a class="boton" href="{% url 'Menu Principal Logout'%}">LOGOUT MT5</a>
+            {% else %}
+            <a class="boton_inhabilitado">LOGOUT MT5</a>
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <br><br><br><a class="boton" href="{% url 'Menu Principal'%}">Gestion de datos</a>
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="2">
+            <br><br><br><a class="boton" href="{% url 'Menu Principal'%}">Mi perfil</a>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td style="text-align:center">
+            <br><br><br>
+            {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Ver Datos'%}">Ver datos de mercados</a>
             {% else %}
             <a class="boton_inhabilitado">Ver datos de mercados</a>
             {% endif %}
-            <br><br><br>
         </td>
-        <td>
-            {% if sesion_actual.logued_MT5 %}
+        <td style="text-align:center">
+            <br><br><br>
+            {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Principal'%}">Operar</a>
             {% else %}
             <a class="boton_inhabilitado">Operar</a>
             {% endif %}
-            <br><br><br>
+
         </td>
 
     </tr>
 
     <tr>
         <td>
-            {% if sesion_actual.logued_MT5 %}
+            <br><br><br>
+            {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Estrategias Trading'%}">Estrategias de trading</a>
             {% else %}
             <a class="boton_inhabilitado">Estrategias de trading</a>
             {% endif %}
-            <br><br><br>
         </td>
         <td>
-            {% if sesion_actual.logued_MT5 %}
+            <br><br><br>
+            {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Backtesting'%}">Backtesting</a>
             {% else %}
             <a class="boton_inhabilitado">Backtesting</a>
             {% endif %}
-            <br><br><br>
         </td>
 
     </tr>
 
     <tr>
         <td>
-            {% if sesion_actual.logued_MT5 %}
+            <br><br><br>
+            {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Principal'%}">Histórico de operaciones</a>
             {% else %}
             <a class="boton_inhabilitado">Histórico de operaciones</a>
             {% endif %}
-            <br><br><br>
         </td>
         <td>
-            {% if sesion_actual.logued_MT5 %}
+            <br><br><br>
+            {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Principal'%}">Balance y operaciones en curso</a>
             {% else %}
             <a class="boton_inhabilitado">Balance y operaciones en curso</a>
             {% endif %}
-            <br><br><br>
         </td>
 
     </tr>
@@ -105,12 +124,7 @@
 
 </table>
 
-
-
-
-</body>
-
-
+<body class="center">
 <br><br><br>
 
 {% if error %}
@@ -122,8 +136,10 @@
 {% endif %}
 
 <br><br><br>
-{% if sesion_actual.algoritmo_elegido %} <p>Algoritmo de trading elegido: {{ sesion_actual.algoritmo_elegido }}</p>{% endif %}
-
-
+{% if sesion.algoritmo_elegido %}
+<p>Algoritmo de trading elegido: {{ sesion.algoritmo_elegido }}</p>
+{% endif %}
+</body>
 
 </html>
+{% endblock %}

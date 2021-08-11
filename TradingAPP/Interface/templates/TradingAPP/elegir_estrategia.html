@@ -1,3 +1,8 @@
+{% extends "base_generic_login.html" %}
+
+{% block content %}
+
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
 
@@ -12,7 +17,7 @@
 
 <body class="center">
 
-{% if sesion_actual.algoritmo_elegido %} Algoritmo de Trading elegido con éxito! <br><br><br> {% endif %}
+{% if sesion.algoritmo_elegido %} Algoritmo de Trading elegido con éxito! <br><br><br> {% endif %}
 
 
 
@@ -20,6 +25,8 @@
 
 <br><br><br><br><br><br>
 
-Algoritmo de trading elegido: {% if sesion_actual.algoritmo_elegido %} <p> {{ sesion_actual.algoritmo_elegido }} </p> {% else %} <p> Ninguno </p>{% endif %}
+Algoritmo de trading elegido: {% if sesion.algoritmo_elegido %} <p> {{ sesion.algoritmo_elegido }} </p> {% else %} <p> Ninguno </p>{% endif %}
 
 </html>
+
+{% endblock %}

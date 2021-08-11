@@ -3,7 +3,10 @@ from io import StringIO
 
 import MetaTrader5 as mt5
 import matplotlib.pyplot as plt
+from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from matplotlib.dates import date2num, DateFormatter
 from mplfinance.original_flavor import candlestick_ohlc
 
@@ -13,11 +16,18 @@ from .backend import utils, common
 # Create your models here.
 
 class Sesion(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     algoritmo_elegido = models.ForeignKey('AlgoritmoTrading', on_delete=models.SET_NULL, null=True)
-    logued_MT5 = models.BooleanField(default=True)
+    logued_MT5 = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.algoritmo_elegido.__str__()
+        return self.user.__str__()
+
+
+@receiver(post_save, sender=User)
+def create_user_sesion(sender, instance, created, **kwargs):
+    if created:
+        Sesion.objects.create(user=instance)
 
 
 class AlgoritmoTrading(models.Model):
@@ -84,7 +94,7 @@ class Mercado(models.Model):
 
         grafico = imgdata.getvalue()
         print(df)
-        return grafico, f"Mostrando desde {df.at[0, 'time']} hasta {df.at[len(df)-1, 'time']}\n" \
+        return grafico, f"Mostrando desde {df.at[0, 'time']} hasta {df.at[len(df) - 1, 'time']}\n" \
                         f"Actualizando gráfico en {marco_tiempo} ..."
 
     def obtener_grafico_datos_antiguos(self, start="", end="", horas=0, titulo="Gráfico OHLC", flag=0):
