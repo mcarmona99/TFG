@@ -1,3 +1,7 @@
+{% extends "base_generic_login.html" %}
+
+{% block content %}
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
 
@@ -44,3 +48,5 @@ Actualmente elegida: {% if sesion_actual.algoritmo_elegido %} <p>{{ sesion_actua
 
 
 </html>
+
+{% endblock %}

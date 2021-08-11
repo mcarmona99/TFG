@@ -1,3 +1,8 @@
+{% extends "base_generic_login.html" %}
+
+{% block content %}
+
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
 
@@ -23,3 +28,5 @@
 Algoritmo de trading elegido: {% if sesion_actual.algoritmo_elegido %} <p> {{ sesion_actual.algoritmo_elegido }} </p> {% else %} <p> Ninguno </p>{% endif %}
 
 </html>
+
+{% endblock %}
