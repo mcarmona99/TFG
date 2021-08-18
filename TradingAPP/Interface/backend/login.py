@@ -49,7 +49,6 @@ def login_mt5(account, password, servidor, sesion_actual):
 
 def logout_mt5(sesion_actual):
     # finalizamos la conexión con el terminal MetaTrader 5
-    print("Cerrando la conexión con el terminal MetaTrader5...")
     mt5.shutdown()
     terminar_proceso_mt5()
     sesion_actual.logued_MT5 = False

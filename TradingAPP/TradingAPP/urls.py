@@ -31,6 +31,11 @@ urlpatterns = [
     path('estrategias/<int:algoritmo_id>/', views.estrategias_trading_descripcion, name='Elegir Estrategias Trading'),
     path('estrategias/<int:algoritmo_id>/elegir_estrategia_trading', views.elegir_estrategia),
 
+    # Urls de operar
+    path('trading/', views.menu_operar, name='Menu Trading'),
+    path('trading/automatico/', views.trading_auto, name='Trading Automatico'),
+    path('trading/automatico/operar_auto/', views.operar_auto, name='Operar Automatico'),
+
     # Urls de backtesting
     path('backtesting/', views.menu_backtesting, name='Backtesting'),
     path('backtesting/automatico/', views.backtesting_auto, name='Backtesting Automatico'),
