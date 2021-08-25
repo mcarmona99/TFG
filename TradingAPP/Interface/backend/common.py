@@ -23,7 +23,6 @@ def ticks_to_df_with_time(ticks):
     ticks_df = pd.DataFrame(ticks)
 
     try:
-        print("Creando DataFrame de Pandas...")
         ticks_df['time'] = pd.to_datetime(ticks_df['time'], unit='s')
         ticks_df = ticks_df.set_index(['time'])
         return ticks_df

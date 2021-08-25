@@ -2,39 +2,27 @@
 # Entrada -> datos, periodo para operar y mi cartera
 # Salida -> historico de movimientos durante
 
-import datetime
-
 import MetaTrader5 as mt5
-import matplotlib.pyplot as plt
-
-plt.style.use("fivethirtyeight")
 
 
-def send_request_to_mt5(symbol, action, lot=None):
+def send_request_to_mt5(symbol, action, lot, stop_lose, take_profit):
     """
     TODO: Docstring
     """
     if not mt5.initialize():
-        print("initialize() failed")
         mt5.shutdown()
-        # TODO: Gestion de errores
         return False
 
     # Preparamos la estructura de la solicitud de compra
     symbol_info = mt5.symbol_info(symbol)
     if symbol_info is None:
-        print(symbol, "not found, can not call order_check()")
         mt5.shutdown()
-        # TODO: Gestion de errores
         return False
 
     # Si el símbolo no está disponible en MarketWatch, lo añadimos
     if not symbol_info.visible:
-        print(symbol, "is not visible, trying to switch on")
         if not mt5.symbol_select(symbol, True):
-            print("symbol_select({}}) failed, exit", symbol)
             mt5.shutdown()
-            # TODO: Gestion de errores
             return False
 
     # Creo variables y peticion request a mandar
@@ -46,8 +34,8 @@ def send_request_to_mt5(symbol, action, lot=None):
         "volume": lot if lot else 0.01,
         "type": mt5.ORDER_TYPE_BUY if action.lower() == "buy" else mt5.ORDER_TYPE_SELL,
         "price": price,
-        # "sl": stop_lose if stop_lose else price - 100 * point if action.lower() == "buy" else price + 100 * point,
-        # "tp": take_profit if take_profit else price + 100 * point if action.lower() == "buy" else price - 100 * point,
+        "sl": stop_lose,
+        "tp": take_profit,
         "deviation": deviation,
         "magic": 234000,
         "comment": "python script open",
@@ -61,15 +49,15 @@ def send_request_to_mt5(symbol, action, lot=None):
     return order_result
 
 
-def buy(symbol, lot=None):
+def buy(symbol, lot=None, sl=None, tp=None):
     """
     TODO: Docstring
     """
-    return send_request_to_mt5(symbol, "BUY", lot)
+    return send_request_to_mt5(symbol, "BUY", lot=lot, take_profit=tp, stop_lose=sl)
 
 
-def sell(symbol, lot=None):
+def sell(symbol, lot=None, sl=None, tp=None):
     """
     TODO: Docstring
     """
-    return send_request_to_mt5(symbol, "SELL", lot)
+    return send_request_to_mt5(symbol, "SELL", lot=lot, take_profit=tp, stop_lose=sl)

@@ -46,6 +46,33 @@ class Mercado(models.Model):
     def __str__(self):
         return self.nombre
 
+    def obtener_datos_tiempo_real(self, marco_tiempo='1H'):
+        # Obtengo un rago de 4 meses, para que sea valido para todos los
+        # marcos de tiempo + trading (coge 1 semana atras)
+        # Es necesario meter +3 por la diferencia de horario
+        ahora = datetime.datetime.now() + datetime.timedelta(hours=3)
+        inicio = ahora - datetime.timedelta(days=120)
+
+        # Inicializo MT5
+        mt5.initialize()
+
+        # DATA
+        ticks = mt5.copy_ticks_range(self.nombre, inicio, ahora, mt5.COPY_TICKS_ALL)
+
+        # Create DataFrame out of the obtained data
+        df = common.ticks_to_df_with_time(ticks)
+
+        # Obtener los datos en formato ohlc (velas)
+        df = common.transform_data_to_ohlc(df, marco_tiempo=marco_tiempo)
+
+        # Elimino fines de semana
+        df = df[df.time.dt.weekday < 5]
+
+        # Reseteo el index para tener time como columna
+        df.reset_index(level=0, inplace=True)
+
+        return df
+
     def obtener_grafico_datos_tiempo_real(self, marco_tiempo='1H', titulo="Gráfico OHLC"):
         # Obtengo un rago de 2 meses, para que sea valido para todos los marcos de tiempo
         ahora = datetime.datetime.now()
@@ -93,7 +120,6 @@ class Mercado(models.Model):
         imgdata.seek(0)
 
         grafico = imgdata.getvalue()
-        print(df)
         return grafico, f"Mostrando desde {df.at[0, 'time']} hasta {df.at[len(df) - 1, 'time']}\n" \
                         f"Actualizando gráfico en {marco_tiempo} ..."
 

@@ -194,6 +194,68 @@ def elegir_estrategia(request, algoritmo_id):
     return render(request, "TradingAPP/elegir_estrategia.html", context)
 
 
+def menu_operar(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    return render(request, "TradingAPP/menu_operar.html", context)
+
+
+def trading_auto(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    return render(request, "TradingAPP/trading_auto.html", context)
+
+
+def operar_auto(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    if request.method == "POST":
+        # Cojo las variables de la requests
+        nombre_mercado = 'EURUSD'  # Por defecto EURUSD por si hay algun error
+        if not context.get('mercado'):
+            nombre_mercado = request.POST["mercado"]
+            context['mercado'] = nombre_mercado
+
+        marco_tiempo = '1H'  # Por defecto 1H por si hay algun error
+        if not context.get('marco_tiempo'):
+            marco_tiempo = request.POST["marco_tiempo"]
+            context['marco_tiempo'] = marco_tiempo
+
+        horas = -1  # Por defecto -1 por si hay algun error
+        if not context.get('horas'):
+            horas = request.POST["horas"]
+            context['horas'] = horas
+
+        try:
+            if context['error']:
+                return render(request, 'TradingAPP/operar_auto.html', context)
+        except KeyError:
+            pass
+
+        mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=nombre_mercado).id)
+
+        # Se operará las horas especificadas, en el marco de tiempo y mercado indicados
+
+        acciones = []
+        beneficios = 0.0
+
+        if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
+            # TODO
+            raise
+
+        if context['sesion'].algoritmo_elegido.id == 2:  # Metodo Wyckoff
+            # Recogida de datos del simbolo a tratar
+            # en formato ohlc con columnas (USANDO MT5)
+
+            acciones = metodo_wyckoff.metodo_wyckoff_tiempo_real(mercado=mercado, time_trading_in_hours=horas,
+                                                                 marco_tiempo=marco_tiempo)
+
+        context['acciones'] = acciones if acciones else [
+            'No se ha realizado ninguna operación en el tiempo transcurrido']
+        context['balance'] = beneficios
+        return render(request, 'TradingAPP/operar_auto.html', context)
+
+
 def menu_backtesting(request):
     add_sesion_to_context(request)
     clear_context_status()
