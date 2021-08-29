@@ -1,0 +1,62 @@
+
+\chapter{Análisis}
+
+
+\section{Descripción de los implicados} \label{implicados}
+
+En esta aplicación, destacamos dos principales implicados: el administrador de la aplicación y el usuario final de la aplicación.
+
+\begin{itemize}
+	\item \textbf{Desarrollador del sistema}: La responsabilidad del implicado será la de realizar las distintas actividades de desarrollo de la aplicación: corregir errores o añadir nuevas features, entre otras actualizaciones, que garantizan el correcto funcionamiento del sistema y su mantenimiento.
+	
+	\item \textbf{Usuario de la aplicación}: Este implicado representa al cliente que usa la aplicación. Este implicado hace uso de la aplicación como usuario final.
+\end{itemize}
+
+\section{Especificación de requisitos}
+
+\subsection{Requisitos Funcionales}
+
+Descripción de los requisitos más importantes a nivel de funciones que debe incluir el sistema, realizando una clasificación en categorías, a cada uno de los requisitos se le ha asignado un código y un nombre, con el fin de identificarlos fácilmente a lo largo de todo el proyecto. 
+
+\begin{itemize}
+	
+	\item \textbf{RF-1. Iniciar sesión en la aplicación.} El usuario de la aplicación deberá iniciar sesión en la APP para hacer uso de la misma. El sistema por tanto incluirá un sistema de gestión de usuarios.
+	
+	\item \textbf{RF-2. Gestiones de la plataforma de trading.} 
+	\begin{itemize}
+		\item \textbf{RF-2.1. Login en la plataforma de trading.} El usuario de la aplicación podrá conectarse con su cuenta de trading, comercial o demo, para poder hacer el uso completo de la APP.
+		\item \textbf{RF-2.2. Ver capital disponible.} El usuario podrá ver el capital disponible en su cuenta de trading.
+		\item \textbf{RF-2.3. El usuario podrá ver información de las operaciones} realizadas y de operaciones que en ese momento aún no se han cerrado.
+	\end{itemize}
+
+	\item \textbf{RF-3. Visualización de datos.} El usuario de la aplicación podrá ver información de precios de un mercado financiero específico.
+	\begin{itemize}
+		\item \textbf{RF-3.1. Ver datos de mercado en rango de tiempo específico.} El usuario de la aplicación podrá ver información de precios entre dos fechas específicas.
+		\item \textbf{RF-3.2. Ver datos de mercado con un marco de tiempo específico en tiempo real.} El usuario de la aplicación podrá ver información de precios en tiempo real con un marco de tiempo específico.
+	\end{itemize}
+
+	\item \textbf{RF-4. El usuario podrá elegir un modelo y realizar trading algorítmico.} También podrá parametrizarlo según modelo y elegir tiempo en el que quiere dejar haciendo las operaciones automáticas. 
+
+	\item \textbf{RF-5. El usuario podrá elegir un modelo y realizar trading algorítmico a modo de backtesting.} De esta forma podrá probar cada uno de los modelos en un mercado y periodo de tiempo prefijados.
+	
+\end{itemize}
+
+\subsection{Requisitos No Funcionales}
+
+\begin{itemize}
+	\item \textbf{RNF-1}. La plataforma de trading que usará la aplicación será \textit{MetaTrader5}.
+	\item \textbf{RNF-2}. La aplicación permitirá el uso de cualquier bróker aceptado por \textit{MetaTrader5}.
+	\item \textbf{RNF-3}. Para la visualización de datos, el usuario podrá elegir un marco de tiempo de entre m1, m3, m5, m15, m30 ó m45; h1, h2, h3 ó h4; d1 (minutos, horas o días, respectivamente).
+	\item \textbf{RNF-4}. La aplicación responderá a las peticiones de los usuarios en un tiempo determinado,
+	mostrando un aviso de error si el tiempo de respuesta es superior al establecido.
+	\item \textbf{RNF-5}. La aplicación deberá funcionar computadoras mediante navegador web.
+	\item \textbf{RNF-6}. Para la implementación de la aplicación, se utilizará \textit{Python} y su framework \textit{Django}.
+	\item \textbf{RNF-7}. La interfaz debe ser sencilla e intuitiva.
+\end{itemize}
+
+\subsection{Requisitos de Información}
+
+\begin{itemize}
+	\item \textbf{RI-1}. El sistema gestor de bases de datos utilizado será \textit{SQLite3}.
+\end{itemize}
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  27 AUG 2021 01:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  29 AUG 2021 20:34
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -500,7 +500,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 (portada/portada.tex
 \centeroffset=\skip69
-<imagenes/logo_ugr.jpg, id=71, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=95, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -516,7 +516,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--23
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=72, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=96, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 31.
@@ -536,12 +536,6 @@ _ugr.jpg> <./imagenes/etsiit_logo.png>]) (prefacios/prefacio.tex [2
 (portada/portada_2.tex [3] [4
 
 ]
-<imagenes/logo.png, id=97, 123.46124pt x 45.92157pt>
-File: imagenes/logo.png Graphic file (type png)
-<use imagenes/logo.png>
-Package pdftex.def Info: imagenes/logo.png  used on input line 21.
-(pdftex.def)             Requested size: 123.46092pt x 45.92145pt.
-
 Overfull \hbox (24.0pt too wide) in paragraph at lines 8--31
 | $[]$ 
  []
@@ -556,9 +550,8 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.48 \end{titlepage}
-                     [1 <./imagenes/logo.png>])pdfTeX warning (ext4): destinati
-on with the same identifier (name{page.2}) has been already used, duplicate ign
-ored
+                     [1])pdfTeX warning (ext4): destination with the same ident
+ifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.11 \cleardoublepage
@@ -659,247 +652,243 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@toc=\write5
 \openout5 = `proyecto.toc'.
 
- (capitulos/01_Introduccion.tex [13] [14
+ [13] [14
+
+] (proyecto.lof
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@lof=\write6
+\openout6 = `proyecto.lof'.
+
+
+(capitulos/01_Introduccion.tex [15] [16
 
 ]
 Cap\'{\i }tulo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.24 \section
-             {¿Qué es TradingAPP?} [1
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+[20]) (capitulos/02_Planificación.tex [21] [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.36 \end{titlepage}
-                     [2]) (capitulos/02_EspecificacionRequisitos.tex
 Cap\'{\i }tulo 2.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.28 	\item \textbf
-                   {Usuario de la aplicación}: Este implicado representa al...
-[1
 
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.56 
-      [2]pdfTeX warning (ext4): destination with the same identifier (name{page
-.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.80 \end{titlepage}
-                     [3]) (capitulos/03_Planificacion.texpdfTeX warning (ext4):
- destination with the same identifier (name{page.4}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.1 \begin{titlepage}
-                      [4
-
-]
-Cap\'{\i }tulo 3.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.7 \end{titlepage}
-                    [1
-
-]) (capitulos/04_Analisis.texpdfTeX warning (ext4): destination with the same i
-dentifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \begin{titlepage}
-                      [2
-
-]
-Cap\'{\i }tulo 4.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.7 \end{titlepage}
-                    [1
-
-]) (capitulos/05_Diseno.texpdfTeX warning (ext4): destination with the same ide
-ntifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \begin{titlepage}
-                      [2
-
-]
-Cap\'{\i }tulo 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-<imagenes/arquitectura general.png, id=209, 688.5725pt x 568.1225pt>
-File: imagenes/arquitectura general.png Graphic file (type png)
-<use imagenes/arquitectura general.png>
-Package pdftex.def Info: imagenes/arquitectura general.png  used on input line 
-11.
-(pdftex.def)             Requested size: 360.0pt x 297.02913pt.
-
-Overfull \hbox (17.0pt too wide) in paragraph at lines 11--12
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.14 
-      [1
-
- <./imagenes/arquitectura general.png>]
-Overfull \hbox (0.43495pt too wide) in paragraph at lines 22--23
-[]\OT1/cmr/m/n/10.95 El soft-wa-re con-sis-tira en una apli-ca-cion web con c
-odi-go es-cri-to en Python,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
- []
-
-<imagenes/menu_principal.jpg, id=214, 904.37875pt x 462.72874pt>
-File: imagenes/menu_principal.jpg Graphic file (type jpg)
-<use imagenes/menu_principal.jpg>
-Package pdftex.def Info: imagenes/menu_principal.jpg  used on input line 32.
-(pdftex.def)             Requested size: 431.9989pt x 221.03404pt.
-
-Overfull \hbox (88.9989pt too wide) in paragraph at lines 32--33
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Underfull \vbox (badness 4316) has occurred while \output is active []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.33 
-      [2]
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.43 	\item \textbf
-                   {Estrategias de trading}: lleva a un menú en el que se p...
-[3 <./imagenes/menu_principal.jpg>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-<imagenes/menu_login.jpg, id=222, 904.37875pt x 462.72874pt>
-File: imagenes/menu_login.jpg Graphic file (type jpg)
-<use imagenes/menu_login.jpg>
-Package pdftex.def Info: imagenes/menu_login.jpg  used on input line 51.
-(pdftex.def)             Requested size: 431.9989pt x 221.03404pt.
-
-Overfull \hbox (88.9989pt too wide) in paragraph at lines 51--52
-[][] 
- []
-
-
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.54 
-      [4 <./imagenes/menu_login.jpg>]
-<imagenes/menu_principal_logued.jpg, id=226, 904.37875pt x 463.7325pt>
-File: imagenes/menu_principal_logued.jpg Graphic file (type jpg)
-<use imagenes/menu_principal_logued.jpg>
-Package pdftex.def Info: imagenes/menu_principal_logued.jpg  used on input line
- 55.
-(pdftex.def)             Requested size: 431.9989pt x 221.51352pt.
 
-Overfull \hbox (88.9989pt too wide) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+<imagenes/gantt.png, id=263, 1024.82875pt x 354.32375pt>
+File: imagenes/gantt.png Graphic file (type png)
+<use imagenes/gantt.png>
+Package pdftex.def Info: imagenes/gantt.png  used on input line 67.
+(pdftex.def)             Requested size: 431.9989pt x 149.36101pt.
+
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 67--68
+[][] 
+ []
+
+) (capitulos/03_Analisis.tex [25 <./imagenes/gantt.png>] [26]
+Cap\'{\i }tulo 3.
+[27
+
+] [28]) (capitulos/04_Diseno.tex [29] [30
+
+]
+Cap\'{\i }tulo 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+<imagenes/arquitectura general.png, id=293, 688.5725pt x 568.1225pt>
+File: imagenes/arquitectura general.png Graphic file (type png)
+<use imagenes/arquitectura general.png>
+Package pdftex.def Info: imagenes/arquitectura general.png  used on input line 
+12.
+(pdftex.def)             Requested size: 360.0pt x 297.02913pt.
+
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
+ [31 <./imagenes/arquitectura general.png>]
+Overfull \hbox (0.43495pt too wide) in paragraph at lines 26--27
+[]\OT1/cmr/m/n/10.95 El soft-wa-re con-sis-tira en una apli-ca-cion web con c
+odi-go es-cri-to en Python,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+<imagenes/menu_principal.jpg, id=300, 904.37875pt x 462.72874pt>
+File: imagenes/menu_principal.jpg Graphic file (type jpg)
+<use imagenes/menu_principal.jpg>
+Package pdftex.def Info: imagenes/menu_principal.jpg  used on input line 37.
+(pdftex.def)             Requested size: 431.9989pt x 221.03404pt.
+
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 37--38
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.60 \end{titlepage}
-                     [5 <./imagenes/menu_principal_logued.jpg>])
-(capitulos/06_Implementacion.texpdfTeX warning (ext4): destination with the sam
-e identifier (name{page.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \begin{titlepage}
-                      [6
+[32] [33 <./imagenes/menu_principal.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+<imagenes/menu_login.jpg, id=310, 904.37875pt x 462.72874pt>
+File: imagenes/menu_login.jpg Graphic file (type jpg)
+<use imagenes/menu_login.jpg>
+Package pdftex.def Info: imagenes/menu_login.jpg  used on input line 59.
+(pdftex.def)             Requested size: 431.9989pt x 221.03404pt.
+
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 59--60
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+[34 <./imagenes/menu_login.jpg>]
+<imagenes/menu_principal_logued.jpg, id=316, 904.37875pt x 463.7325pt>
+File: imagenes/menu_principal_logued.jpg Graphic file (type jpg)
+<use imagenes/menu_principal_logued.jpg>
+Package pdftex.def Info: imagenes/menu_principal_logued.jpg  used on input line
+ 66.
+(pdftex.def)             Requested size: 431.9989pt x 221.51352pt.
+
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 66--67
+[][] 
+ []
+
+) (capitulos/05_Implementacion.tex [35 <./imagenes/menu_principal_logued.jpg>]
+[36
+
+]
+Cap\'{\i }tulo 5.
+) (capitulos/06_Pruebas.tex [37] [38
 
 ]
 Cap\'{\i }tulo 6.
@@ -910,8 +899,8 @@ been already used, duplicate ignored
 l.7 \end{titlepage}
                     [1
 
-]) (capitulos/07_Pruebas.texpdfTeX warning (ext4): destination with the same id
-entifier (name{page.2}) has been already used, duplicate ignored
+]) (capitulos/07_Conclusiones.texpdfTeX warning (ext4): destination with the sa
+me identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \begin{titlepage}
@@ -926,55 +915,33 @@ been already used, duplicate ignored
 l.7 \end{titlepage}
                     [1
 
-]) (capitulos/08_Conclusiones.texpdfTeX warning (ext4): destination with the sa
-me identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \begin{titlepage}
-                      [2
-
-]
-Cap\'{\i }tulo 8.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.7 \end{titlepage}
-                    [1
-
 ])pdfTeX warning (ext4): destination with the same identifier (name{page.2}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.218 \chapter
+l.216 \chapter
               *{} [2
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 \end{document}
+l.219 \end{document}
                      [3] (proyecto.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-
-Package rerunfilecheck Warning: File `proyecto.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proyecto.out':
-(rerunfilecheck)             Before: 9DD2CA5960CBDC64516122810A9A64BE;2431
-(rerunfilecheck)             After:  C811CE876DE6A319659BD39035FA119B;2587.
+Package rerunfilecheck Info: File `proyecto.out' has not changed.
+(rerunfilecheck)             Checksum: 59CE13B4978C65B6D65EE5ABE45E4D0C;3306.
  ) 
 Here is how much of TeX's memory you used:
- 12048 strings out of 479173
- 182467 string characters out of 2854167
- 507583 words of memory out of 3000000
- 29398 multiletter control sequences out of 15000+600000
+ 12099 strings out of 479173
+ 182856 string characters out of 2854167
+ 508749 words of memory out of 3000000
+ 29408 multiletter control sequences out of 15000+600000
  410547 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,63p,547b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,63p,651b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\masus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -983,9 +950,9 @@ ype1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/masus/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/masus/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/masus/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on proyecto.pdf (41 pages, 327315 bytes).
+Output written on proyecto.pdf (47 pages, 369320 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 172 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 396 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 220 words of extra memory for PDF output out of 10000 (max. 10000000)
 
