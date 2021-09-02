@@ -1,59 +1,31 @@
 
-\chapter{Introducción}
+\chapter{Introducción} \label{introduccion}
 
-\section{Trading y otros conceptos}
+\section{Motivación}
 
-El trading es una práctica aplicada a los mercados financieros. Realizar trading implica comprar o vender dentro de los distintos mercados financieros para vender o comprar de nuevo al cabo de un tiempo y obtener beneficio de la acción realizada. A grandes rasgos y con un ejemplo, realizar trading beneficiosamente podría ser comprar una acción de \textit{Apple} por 100 dólares y venderla en cierto tiempo por 150 dólares, obteniendo por tanto un beneficio de 50 dólares. \newline
+El trading, los mercados financieros o invertir en bolsa son conceptos clásicos que hoy día están irrumpiendo más que nunca debido a los avances tecnológicos y sobre todo, gracias a la influencia de las activos digitales como las criptomonedas y otros avances de la tecnología que afectan directamente a la economía global y la centralización o no de los capitales. \newline
 
-¿Cuándo se debe comprar o vender un activo? Los traders u operadores trabajan en torno a dos principales tipos de análisis:
+En este proyecto trataremos concretamente el \textit{trading}. El trading consiste en especular sobre distintos mercados financieros comprando o vendiendo activos para obtener un beneficio a corto o largo plazo. Estos mercados pueden ser de acciones, divisas, materias primas, índices o criptomonedas. \newline
 
-\begin{itemize}
+El trading es un concepto clásico, ya que el comprar o vender algo que se puede revalorizar o devaluar para buscar beneficio económico es algo que ya se ha hecho desde las antiguas civilizaciones. En algunos documentos se habla de que la antigua civilización mesopotámica de Sumer, actual sur de Irak, fue una de las primeras en practicar el trading. Hacia el año 600 a.C., el oro y la plata ya eran las primeras monedas del mundo, antes de que se creasen los sistemas monetarios. \newline
 
-	\item \textbf{Análisis fundamental}: El análisis fundamental consiste en operar en base a las distintas noticias que ocurren en el mundo diariamente. Estas noticias sirve de fundamento para actuar de una forma u otra en el mercado.
-	\item \textbf{Análisis técnico}: En este tipo de análisis, el operador o trader opera puramente en base al precio: su acción y movimientos. En este caso, no se tienen en cuenta las noticias. Es este el tipo de análisis interesante a la hora de automatizar. Esto ocurre porque en este método entran en juego cálculos matemáticos como medias, medias móviles, zonas de probabilidad estadística, etc. A partir de este análisis surge el trading algorítmico. \\
-	Este análisis, aunque se pueda automatizar, no te asegura que el precio vaya en la dirección resultado del análisis. A pesar de esto, si trabajamos con probabilidades y obtenemos probabilidades de ganar superiores al 50%, obtendremos un sistema que a largo plazo conseguiría grandes beneficios.
-	
-\end{itemize}
+En la actualidad, debido a la velocidad del mundo en todos los ámbitos del día a día, sobre todo en la tecnología; los procesos de compras y ventas de acciones se realizan constantemente, buscando cada operador el mayor beneficio posible y ordenando dichas operaciones a la unidad más pequeña de tiempo posible. Por esto, el trading es algo bastante avanzado y que aprovecha al máximo los recursos y conocimientos sobre la computación e inteligencia artificial actuales ya que el proceso completo se realiza de manera digital. \newline
 
-\section{Trading algorítmico}
+Una de las aplicaciones del trading en el ámbito de la informática consiste en automatizar las compras y ventas de activos financieros para obtener beneficios a corto o largo plazo. Esta aplicación es la principal motivación para la realización de este trabajo de fin de grado. \newline
 
-En pocas palabras, el trading algorítmico es implementar un sistema de trading que opere de forma automática. \newline
+En dicho trabajo el objetivo principal será desarrollar una aplicación que implemente un algoritmo para automatizar el proceso de comprar y vender activos para ganar dinero. El algoritmo a implementar estará basado en la estrategia clásica para operar de \textit{Richard Wyckoff}, escritor e inversor estadounidense fundador de \textit{The Magazine of Wall Street}. \newline
 
-El trading algorítmico analiza gráficos de precios de acuerdo a unos criterios preestablecidos, que dependerán del análisis y del propio algoritmo. Cuando el mercado se ajusta a los criterios mencionados, el algoritmo que se ha diseñado para hacer trading ejecutará una acción de compra o venta de manera automática. \newline
+Concretamente, a esto se le conoce como trading algorítmico. En pocas palabras, el trading algorítmico es implementar un sistema de trading que opere de forma automática. \newline
 
-Aparte del ahorro de tiempo y esfuerzo, que es la obvia ventaja de usar trading algorítmico, podemos encontrar otros puntos a favor que hacen de las operaciones más eficientes si las comparamos con cómo las haría un operador humano. \newline
-
-\subsection{Ventajas}
-
-\begin{itemize}
-	
-	\item \textbf{Diversificación}: existe la posibilidad de aplicar un mismo análisis a distintos mercados financieros, aunque puede existir la posibilidad de que en ciertos mercados obtengamos beneficios con una técnica específica que no obtenemos en otro mercado distinto. Esto es más complicado para un operador humano ya que los cambios de acciones de precios en los mercados financieros hacen que un análisis técnico no sea sencillo para un trader acostumbrado a ciertos mercados financieros.
-	\item \textbf{Evaluación de técnicas usadas}: debido a que el trading algorítmico automatiza la acción de realizar compras y ventas, podemos evaluar de forma fácil cuándo cierta técnica de análisis es más o menos eficiente en uno u otro mercado. Aquí podemos hablar de distintas horas del día, diferentes temporadas, mercados financieros, etc.
-	\item \textbf{Evitar las emociones}: al automatizar un sistema para comprar y vender acciones, el operador humano evita dejarse guiar por las emociones. Esto puede parecer una ventaja simbólica, pero es bastante importante ya que el mercado suele estar sujeto a estadísticas, probabilidades, etc. Si el trader opera suponiendo que cierta vez ocurrirá algo distinto, acaba dejando de lado el análisis puramente técnico. En resumen, evitamos la principal razón por la cual la mayoría de personas que empiezan a dedicarse al trading fracasan, psicología y emociones.
-	\item \textbf{Capacidad para desplegar en la nube}: al ser un algoritmo que puede ser desarrollado en un producto software, es posible desplegar o hacer deploy del mismo en un servidor, de manera que el algoritmo desarrollado siempre está conectado al mercado y aplicando reglas para comprar o vender según los criterios mencionados.
-	\item \textbf{Precisión y capacidad para realizar compras y ventas de forma simultánea}: el programa sería siempre más preciso que un humano a la hora de realizar entradas y salidas al mercado. Además, puede hacer esto de forma simultánea y operar para distintos mercados financieros a la vez.
-	\item \textbf{Posibilidad de aplicar aprendizaje automático}: no sólo podemos centrarnos en desarrollar un algorítmico basado en reglas o análisis del mercado actual sino que también es posible entrenar algoritmos con modelos usando datos históricos de los mercados financieros. Aquí destaca el uso de herramientas de BI y Big Data.
-	
-\end{itemize}
-
-\subsection{Desventajas}
-
-\begin{itemize}
-	
-	\item \textbf{Dependencia de noticias}: como se ha mencionado en anteriores apartados de esta memoria, el trading algorítmico surge principalmente del análisis técnico. Aquí destacamos una desventaja del mismo. En el trading algorítmico es muy difícil tener en cuenta noticias que afecten o puedan afectar al comportamiento del mercado en cuestión. Si se decide implementar lógica para estudiar noticias, la complejidad aumenta bastante.
-	\item \textbf{Dificultad para detectar la acción del precio}: debido a que el análisis del trading algorítmico es mayoritariamente técnica y basado en cálculos matemáticos, estadística, etc, es complejo detectar la existencia de patrones en el gráfico de precios. Esto sí es más sencillo de realizar por parte de un trader. Entre estos patrones podemos ver soportes, resistencias, líneas de tendencia, niveles, etc. En resumen, es complicado programar una detección de patrones ya que no es algo numérico sino que el operador los identifica a simple vista.
-	\item \textbf{Complejidad en la programación}: es realmente complejo programar un algoritmo de trading.
-	
-\end{itemize}
 	
 
 \section{Objetivos}
 
-El objetivo principal del proyecto es desarrollar una aplicación web para realizar trading algorítmico basándose en técnicas de análisis de mercados financieros clásicas. La aplicación se desarrollará en el lenguaje de programación \textit{Python} y usando el framework \textit{Django}. \newline
+El objetivo principal del proyecto es desarrollar una aplicación web para realizar trading algorítmico. El sistema implementará un algoritmo para operar basándose en técnicas de análisis de mercados financieros clásicas, en concreto, se basará en la estrategia o análisis de \textit{Richard Wyckoff}. La aplicación se desarrollará en el lenguaje de programación \textit{Python} y usando el framework \textit{Django}. \newline
 
-El desarrollo principal de la aplicación se encontrará en la capacidad para comprar y vender de forma automática usando una cuenta comercial real tal y como lo haría un usuario humano. Estas operaciones se realizarán según lo indique el algoritmo que elijamos, dentro de una lista de algoritmos que encontramos en la propia aplicación. \newline
+El desarrollo principal de la aplicación se encontrará en la capacidad para comprar y vender de forma automática usando una cuenta comercial real tal y como lo haría un usuario humano, a través de un bróker o plataforma comercial de trading. Estas operaciones se realizarán según lo indique el algoritmo que elijamos, dentro de una lista de algoritmos que encontramos en la propia aplicación. \newline
 
-Para hacer uso de la aplicación, primero deberemos iniciar sesión en la misma, con un usuario y contraseñas que conocemos de antemano y que nos proporciona el administrador. La aplicación permitirá al usuario identificarse con su cuenta comercial o demo (de prueba) de \textit{MetaTrader5}, que será la aplicación externa que realizará las compras y ventas en el mercado financiero seleccionado. \textbf{Ref.: OBJ 1, OBJ 2.} \newline
+Para hacer uso de la aplicación, primero deberemos iniciar sesión en la misma, con un usuario y contraseñas que conocemos de antemano y que nos proporciona el administrador. La aplicación permitirá al usuario identificarse con su cuenta \textit{comercial} o \textit{demo} (de prueba) de \textit{MetaTrader5}, que será la aplicación externa que realizará las compras y ventas en el mercado financiero seleccionado. \textbf{Ref.: OBJ 1, OBJ 2.} \newline
 
 Una vez un usuario está identificado y ha iniciado sesión en \textit{MT5}, podrá escoger un algoritmo para realizar Trading automático en tiempo real o probar las técnicas a modo de Backtesting. La aplicación también proporcionará la posibilidad de ver el histórico de operaciones realizado y el balance actual de la cuenta de \textit{MT5} en la que se ha identificado el usuario. \textbf{Ref.: OBJ 5, OBJ 6, OBJ 7, OBJ 8.} \newline
 
@@ -75,3 +47,30 @@ Más formalmente, podemos definir los objetivos del producto software de la sigu
 	
 \end{itemize}
 
+
+\section{Estructura del documento}
+
+Este documento sigue la siguiente estructura de capítulos con sus respectivas secciones:\newline \\
+
+\begin{enumerate}
+	\item \textbf{Introducción}:
+	Sección que incluye la motivación o justificación que lleva a la elección del tema para la elaboración del proyecto y los objetivos que se pretenden alcanzar con el mismo. 
+	\item \textbf{Contexto teórico}:
+	Este apartado incluye la explicación de los conceptos específicos usados a lo largo del desarrollo del proyecto. La sección habla de la teoría básica necesaria para entender ciertas decisiones y desarrollos realizados.
+	\item \textbf{Planificación}: 
+	Esta sección incluye cada una de las fases de la planificación temporal del proyecto, qué se ha hecho en cada fase, durante cuanto tiempo, etc. Esta planificación viene formalizada por medio de un diagrama de Gantt. Se incluye también en este apartado el presupuesto necesario para el desarrollo del proyecto.
+	\item \textbf{Análisis}: 
+	Este capítulo habla de la fase de análisis del proyecto. En esta fase se describen los implicados, los requerimientos del software a implementar y diagramas de casos de uso y comportamiento del producto.
+	\item \textbf{Diseño}: 
+	COMPLETAR
+	\item \textbf{Implementación}: 
+	COMPLETAR 
+	\item \textbf{Pruebas}: 
+	Esta sección contiene la batería de pruebas realizada al producto software para comprobar su correcto funcionamiento, así como rendimiento y eficacia.
+	\item \textbf{Conclusiones}: 
+	En este capítulo, se describe un resumen final de lo que se ha conseguido en la realización del proyecto. En este apartado se habla de los resultados obtenidos y se expresan posibles mejoras o avances futuros.
+	\item \textbf{Bibliografía}: 
+	En este apartado se incluyen las referencias bibliográficas usadas a lo largo del proyecto.
+	\item \textbf{Anexo}: 
+	Incluye el manual de usuario de la aplicación.
+\end{enumerate}
