@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  29 AUG 2021 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  2 SEP 2021 13:59
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -500,7 +500,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 (portada/portada.tex
 \centeroffset=\skip69
-<imagenes/logo_ugr.jpg, id=95, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=115, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -516,7 +516,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--23
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=96, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=116, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 31.
@@ -785,7 +785,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-<imagenes/gantt.png, id=263, 1024.82875pt x 354.32375pt>
+<imagenes/gantt.png, id=300, 1024.82875pt x 354.32375pt>
 File: imagenes/gantt.png Graphic file (type png)
 <use imagenes/gantt.png>
 Package pdftex.def Info: imagenes/gantt.png  used on input line 67.
@@ -799,16 +799,101 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 67--68
 Cap\'{\i }tulo 3.
 [27
 
-] [28]) (capitulos/04_Diseno.tex [29] [30
+] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
-]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+<imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png, id=324, 750.805pt x 
+502.87875pt>
+File: imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png Graphic file (ty
+pe png)
+<use imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png>
+Package pdftex.def Info: imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.p
+ng  used on input line 76.
+(pdftex.def)             Requested size: 360.0pt x 241.12584pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+<imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png, id=326, 778.91pt x 502.
+87875pt>
+File: imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png Graphic file (type 
+png)
+<use imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png>
+Package pdftex.def Info: imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png 
+ used on input line 90.
+(pdftex.def)             Requested size: 360.0pt x 232.41664pt.
+[29]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
+<imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png, id=332, 778.91pt 
+x 387.4475pt>
+File: imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png Graphic file 
+(type png)
+<use imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png>
+Package pdftex.def Info: imagenes/diagramas_casos_de_uso/CU3-visualizacion_dato
+s.png  used on input line 104.
+(pdftex.def)             Requested size: 360.0pt x 179.0675pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+[30 <./imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+<imagenes/diagramas_casos_de_uso/CU4-algoritmos.png, id=339, 778.91pt x 387.447
+5pt>
+File: imagenes/diagramas_casos_de_uso/CU4-algoritmos.png Graphic file (type png
+)
+<use imagenes/diagramas_casos_de_uso/CU4-algoritmos.png>
+Package pdftex.def Info: imagenes/diagramas_casos_de_uso/CU4-algoritmos.png  us
+ed on input line 119.
+(pdftex.def)             Requested size: 360.0pt x 179.0675pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (capitulos/04_Diseno.tex [31 <./imagenes/diagramas_casos_de_uso/CU2-gestiones
+_MT5.png>] [32 <./imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png> 
+<./imagenes/diagramas_casos_de_uso/CU4-algoritmos.png>]
 Cap\'{\i }tulo 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<imagenes/arquitectura general.png, id=293, 688.5725pt x 568.1225pt>
+<imagenes/arquitectura general.png, id=351, 688.5725pt x 568.1225pt>
 File: imagenes/arquitectura general.png Graphic file (type png)
 <use imagenes/arquitectura general.png>
 Package pdftex.def Info: imagenes/arquitectura general.png  used on input line 
@@ -817,7 +902,9 @@ Package pdftex.def Info: imagenes/arquitectura general.png  used on input line
 
 Underfull \vbox (badness 1087) has occurred while \output is active []
 
- [31 <./imagenes/arquitectura general.png>]
+ [33
+
+ <./imagenes/arquitectura general.png>]
 Overfull \hbox (0.43495pt too wide) in paragraph at lines 26--27
 []\OT1/cmr/m/n/10.95 El soft-wa-re con-sis-tira en una apli-ca-cion web con c
 odi-go es-cri-to en Python,
@@ -833,7 +920,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-<imagenes/menu_principal.jpg, id=300, 904.37875pt x 462.72874pt>
+<imagenes/menu_principal.jpg, id=359, 904.37875pt x 462.72874pt>
 File: imagenes/menu_principal.jpg Graphic file (type jpg)
 <use imagenes/menu_principal.jpg>
 Package pdftex.def Info: imagenes/menu_principal.jpg  used on input line 37.
@@ -851,12 +938,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[32] [33 <./imagenes/menu_principal.jpg>]
+[34] [35 <./imagenes/menu_principal.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
-<imagenes/menu_login.jpg, id=310, 904.37875pt x 462.72874pt>
+<imagenes/menu_login.jpg, id=368, 904.37875pt x 462.72874pt>
 File: imagenes/menu_login.jpg Graphic file (type jpg)
 <use imagenes/menu_login.jpg>
 Package pdftex.def Info: imagenes/menu_login.jpg  used on input line 59.
@@ -871,8 +958,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-[34 <./imagenes/menu_login.jpg>]
-<imagenes/menu_principal_logued.jpg, id=316, 904.37875pt x 463.7325pt>
+[36 <./imagenes/menu_login.jpg>]
+<imagenes/menu_principal_logued.jpg, id=374, 904.37875pt x 463.7325pt>
 File: imagenes/menu_principal_logued.jpg Graphic file (type jpg)
 <use imagenes/menu_principal_logued.jpg>
 Package pdftex.def Info: imagenes/menu_principal_logued.jpg  used on input line
@@ -883,12 +970,12 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 66--67
 [][] 
  []
 
-) (capitulos/05_Implementacion.tex [35 <./imagenes/menu_principal_logued.jpg>]
-[36
+) (capitulos/05_Implementacion.tex [37 <./imagenes/menu_principal_logued.jpg>]
+[38
 
 ]
 Cap\'{\i }tulo 5.
-) (capitulos/06_Pruebas.tex [37] [38
+) (capitulos/06_Pruebas.tex [39] [40
 
 ]
 Cap\'{\i }tulo 6.
@@ -932,16 +1019,16 @@ LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 59CE13B4978C65B6D65EE5ABE45E4D0C;3306.
+(rerunfilecheck)             Checksum: F05B34064D541A973E0DD689EAC80BE9;4403.
  ) 
 Here is how much of TeX's memory you used:
- 12099 strings out of 479173
- 182856 string characters out of 2854167
- 508749 words of memory out of 3000000
- 29408 multiletter control sequences out of 15000+600000
+ 12148 strings out of 479173
+ 184644 string characters out of 2854167
+ 509175 words of memory out of 3000000
+ 29441 multiletter control sequences out of 15000+600000
  410547 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,63p,651b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,63p,651b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\masus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -950,9 +1037,9 @@ ype1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/masus/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/masus/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/masus/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on proyecto.pdf (47 pages, 369320 bytes).
+Output written on proyecto.pdf (49 pages, 467802 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
- 80 named destinations out of 1000 (max. 500000)
- 220 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
+ 280 words of extra memory for PDF output out of 10000 (max. 10000000)
 

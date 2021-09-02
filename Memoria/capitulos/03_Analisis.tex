@@ -7,7 +7,7 @@
 En esta aplicación, destacamos dos principales implicados: el administrador de la aplicación y el usuario final de la aplicación.
 
 \begin{itemize}
-	\item \textbf{Desarrollador del sistema}: La responsabilidad del implicado será la de realizar las distintas actividades de desarrollo de la aplicación: corregir errores o añadir nuevas features, entre otras actualizaciones, que garantizan el correcto funcionamiento del sistema y su mantenimiento.
+	\item \textbf{Desarrollador y administrador del sistema}: La responsabilidad del implicado será la de realizar las distintas actividades de desarrollo de la aplicación: corregir errores o añadir nuevas features, entre otras actualizaciones, que garantizan el correcto funcionamiento del sistema y su mantenimiento. Se encargará también de las tareas de gestión de la base de datos como puede ser añadir nuevos usuarios.
 	
 	\item \textbf{Usuario de la aplicación}: Este implicado representa al cliente que usa la aplicación. Este implicado hace uso de la aplicación como usuario final.
 \end{itemize}
@@ -20,7 +20,7 @@ Descripción de los requisitos más importantes a nivel de funciones que debe in
 
 \begin{itemize}
 	
-	\item \textbf{RF-1. Iniciar sesión en la aplicación.} El usuario de la aplicación deberá iniciar sesión en la APP para hacer uso de la misma. El sistema por tanto incluirá un sistema de gestión de usuarios.
+	\item \textbf{RF-1. Iniciar sesión en la aplicación.} El usuario de la aplicación deberá iniciar sesión en la APP para hacer uso de la misma. El sistema por tanto incluirá un \textbf{sistema de gestión de usuarios}.
 	
 	\item \textbf{RF-2. Gestiones de la plataforma de trading.} 
 	\begin{itemize}
@@ -60,3 +60,62 @@ Descripción de los requisitos más importantes a nivel de funciones que debe in
 	\item \textbf{RI-1}. El sistema gestor de bases de datos utilizado será \textit{SQLite3}.
 \end{itemize}
 
+\section{Diagramas de casos de uso}
+
+En esta sección, muestro los distintos diagramas de cada caso de uso que implementa la aplicación. Con estos diagramas se completa la fase de análisis del proyecto y con ellos vemos los roles que tienen los implicados y cómo interactúan con el sistema. Véase punto \ref{implicados}, descripción de actores o implicados.
+
+\subsection{Gestión de sesiones de la APP}
+
+En el diagrama \ref{cu1} se representan los casos de uso referentes al sistema de gestión de usuarios de la aplicación. \newline
+
+El usuario de la aplicación deberá identificarse y cerrar sesión en \textit{TradingAPP}. Estas acciones de Login y Logout interactúan internamente con el módulo de \textit{Django}, que es el que implementa el sistema de sesiones. \newline
+
+A su vez, el administrador de la APP será quién administre los usuarios, a través del módulo de \textit{Django}. 
+
+\begin{figure}[h] 
+	\includegraphics[width=1\textwidth]{imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png} 
+	\caption{Diagrama de casos de uso referente al sistema de gestión de usuarios de la APP} \label{cu1}
+\end{figure}
+
+\subsection{Gestiones de la plataforma de trading (MT5)}
+
+En el diagrama \ref{cu2} se representan los casos de uso referentes a la gestión de la plataforma de trading. Como ya hemos mencionado en los requisitos no funcionales y en otras ocasiones, esta plataforma será \textit{MetaTrader5}. Se mencionará \textit{MetaTrader5} a lo largo del proyecto con la abreviatura \textit{MT5}. \newline
+
+El usuario deberá identificarse con su cuenta, contraseña y servidor en la plataforma en cuestión, MT5. La cuenta podrá ser comercial o demo; y podrá ser creada por cualquier bróker aceptado en MT5. A este caso de uso se le suma el de desconectarse de la cuenta en la que el usuario se ha identificado previamente. \newline
+
+El usuario podrá ver el capital disponible y las operaciones realizadas y en curso. Estos dos casos de uso interactúan internamente con MT5, que es el módulo que nos provee dicha información. La previa identificación del usuario con su cuenta de MT5 será obligatoria para los otros casos de uso.
+
+
+\begin{figure}[h] 
+	\includegraphics[width=1\textwidth]{imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png} 
+	\caption{Diagrama de casos de uso referente a la gestión de la plataforma de trading (MT5)}  \label{cu2}
+\end{figure}
+
+\subsection{Visualización de datos}
+
+El diagrama \ref{cu3} muestra los casos de uso referentes a la visualización de datos de mercados financieros. Dichos datos serán mostrados mediante un gráfico que muestra precios por medio de velas siguiendo el formato \textit{OHLC}. \newline
+
+El usuario podrá ver datos históricos de mercado en un rango de tiempo específico. Este caso de uso interactúa con los datos proporcionados previamente por el usuario. \newline
+
+El usuario de la APP podrá ver datos en tiempo real con un marco de tiempo específico, es decir, con velas generadas cada minuto, cada hora, cada día, etc. Este \textit{CU} usa el módulo de \textit{MT5} para obtener los datos y luego procesa dichos datos para ajustarlos al formato \textit{OHLC}.
+
+
+\begin{figure}[h] 
+	\includegraphics[width=1\textwidth]{imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png} 
+	\caption{Diagrama de casos de uso referente a la visualización de datos de mercados financieros} \label{cu3}
+\end{figure}
+
+
+\subsection{Funcionalidades de trading}
+
+Finalmente, el diagrama \ref{cu4} representa los casos de uso referentes al módulo de trading y elección de algoritmos. \newline
+
+El usuario podrá elegir un algoritmo de trading. A la hora de operar, el usuario podrá usar el algoritmo elegido para operar en tiempo real o realizar backtesting. El usuario también podrá operar manualmente, siguiendo su propio análisis en tiempo real, sin algoritmo. \newline
+
+Para los casos de uso de operar manualmente o de forma automática en tiempo real, la APP se conectará al módulo de MT5 para ordenar las operaciones de compra o venta.
+
+
+\begin{figure}[h] 
+	\includegraphics[width=1\textwidth]{imagenes/diagramas_casos_de_uso/CU4-algoritmos.png} 
+	\caption{Diagrama de casos de uso referente a las funcionalidades de trading} \label{cu4}
+\end{figure}
