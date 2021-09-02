@@ -37,9 +37,8 @@ urlpatterns = [
     path('trading/automatico/operar_auto/', views.operar_auto, name='Operar Automatico'),
 
     # Urls de backtesting
-    path('backtesting/', views.menu_backtesting, name='Backtesting'),
-    path('backtesting/automatico/', views.backtesting_auto, name='Backtesting Automatico'),
-    path('backtesting/automatico/operar_backtesting/', views.operar_backtesting, name='Operar Backtesting'),
+    path('backtesting/', views.backtesting_auto, name='Backtesting Automatico'),
+    path('backtesting/operar_backtesting/', views.operar_backtesting, name='Operar Backtesting'),
 
     # Urls de ver datos de mercados
     path('mercados/', views.ver_datos_mercados, name="Menu Ver Datos"),

@@ -56,16 +56,12 @@
                 {% if user.is_authenticated %}
                 {% if not sesion.logued_MT5 %}
                 <li><a href="{% url 'Menu Login'%}">Login MT5</a></li>
-                <li><a href="">Gestion de datos</a></li>
-                <li><a href="">Mi perfil</a></li>
                 {%else%}
                 <li><a href="{% url 'Menu Principal Logout'%}">Logout MT5</a></li>
-                <li><a href="">Gestion de datos</a></li>
-                <li><a href="">Mi perfil</a></li>
                 <li><a href="{% url 'Menu Ver Datos'%}">Ver datos de mercados</a></li>
                 <li><a href="">Operar</a></li>
                 <li><a href="{% url 'Estrategias Trading'%}">Estrategias de trading</a></li>
-                <li><a href="{% url 'Backtesting'%}">Backtesting</a></li>
+                <li><a href="{% url 'Backtesting Automatico'%}">Backtesting</a></li>
                 <li><a href="">Histórico de operaciones</a></li>
                 <li><a href="">Balance y operaciones en curso</a></li>
                 {%endif%}

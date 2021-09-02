@@ -256,12 +256,6 @@ def operar_auto(request):
         return render(request, 'TradingAPP/operar_auto.html', context)
 
 
-def menu_backtesting(request):
-    add_sesion_to_context(request)
-    clear_context_status()
-    return render(request, "TradingAPP/menu_backtesting.html", context)
-
-
 def backtesting_auto(request):
     add_sesion_to_context(request)
     clear_context_status()
