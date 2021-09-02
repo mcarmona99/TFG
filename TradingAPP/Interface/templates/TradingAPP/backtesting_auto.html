@@ -20,7 +20,7 @@ Algoritmo de trading elegido: <b> {{ sesion.algoritmo_elegido }} </b>
 
 <body class="center">
 
-Elige la fecha de inicio y de fin entre las que se quiere operar:<br>
+Elige la fecha de inicio y horas durante las que se quiere operar:<br>
 
 <form action="operar_backtesting/" method="POST"> {% csrf_token %}
     <p>Fecha inicio:     <input type="datetime-local" name="fecha_inicio"/></p>
@@ -28,11 +28,11 @@ Elige la fecha de inicio y de fin entre las que se quiere operar:<br>
     <p>Mercado a operar:
         <label>
             <select name="mercado">
+                <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
                 <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
                 <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
                 <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
                 <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
-                <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
             </select>
         </label>
     </p>

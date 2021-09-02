@@ -1,10 +1,12 @@
 import warnings
+from io import StringIO
 
 import numpy as np
 import talib as ta
 from matplotlib import pyplot as plt
 from pandas.core.common import SettingWithCopyWarning
 
+warnings.filterwarnings("ignore")
 warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 
 
@@ -12,6 +14,8 @@ class WyckoffTradingBacktesting:
     def __init__(self):
         # Variable a devolver, con accion, precio y tiempo al que la hicimos
         self.acciones = []
+        # Variable para guardar los plots generados
+        self.plots = []
         # Variable inicial para controlar si estoy comprando o vendiendo
         self.accion_actual = 0  # 0 = nada, 1 = buy, 2 = sell
         self.intervalo = []
@@ -24,7 +28,8 @@ class WyckoffTradingBacktesting:
         self.indicadores_operar = 0
         self.ultimo_maximo = 0.0
         self.ultimo_minimo = 0.0
-        self.flag = 0  # Flag usado para saltarme fines de semana en la adaptación de datos
+        # Flag usado para saltarme fines de semana en la adaptación de datos
+        self.flag = 0
         self.zona_inferior = []
         self.zona_superior = []
         self.stop_lose = None
@@ -33,8 +38,9 @@ class WyckoffTradingBacktesting:
         self.valor_actual = 0
         self.punto_operacion = None
 
-    def reiniciar_analisis(self, acciones=None, flag=0):
+    def reiniciar_analisis(self, acciones=None, plots=None, flag=0):
         self.acciones = acciones if acciones else []
+        self.plots = plots if plots else []
         self.accion_actual = 0
         self.intervalo = []
         self.tendencia = ''
@@ -58,8 +64,8 @@ class WyckoffTradingBacktesting:
     def inicializar_valor_actual(self):
         self.valor_actual = self.dataframe['ask_close'][self.dataframe.index[-1]]
 
-    def imprimir_dataframe(self, intervalos, horas_hasta_completo, hours, horas_hasta_operacion=0,
-                           ver_bandas_bollinguer=False):
+    def generar_dataframe(self, intervalos, horas_hasta_completo, hours, horas_hasta_operacion=0,
+                          ver_bandas_bollinguer=False):
         len_x = range(len(self.dataframe))
         if ver_bandas_bollinguer:
             self.dataframe['upper_band'], self.dataframe['middle_band'], self.dataframe['lower_band'] = \
@@ -81,7 +87,13 @@ class WyckoffTradingBacktesting:
         if self.take_profit:
             plt.axhline(y=self.take_profit, c="green", label='Take Profit')
         plt.legend()
-        plt.show()
+
+        imgdata = StringIO()
+        plt.savefig(imgdata, format='svg')
+        imgdata.seek(0)
+
+        self.plots.append(imgdata.getvalue())
+        plt.close()
 
     def comprobar_objetivo_cumplido(self):
         # Obtenemos en tiempo real un objetivo cumplido, alcista o bajista
@@ -137,7 +149,7 @@ class WyckoffTradingBacktesting:
         if self.puntos_clave_calculados and self.valor_actual < self.zona_inferior[0]:
             # Corresponde al test 9, se ha creado un suelo
             # (si se ha creado, nunca llegamos a reiniciar el analisis)
-            self.reiniciar_analisis(self.acciones, self.flag)
+            self.reiniciar_analisis(self.acciones, self.plots, self.flag)
             print("DECISION: reinicio el análisis, no se ve una acumulación clara")
             return
 
@@ -232,7 +244,7 @@ class WyckoffTradingBacktesting:
         if self.puntos_clave_calculados and self.valor_actual > self.zona_superior[1]:
             # Corresponde al test 9, se ha creado un suelo
             # (si se ha creado, nunca llegamos a reiniciar el analisis)
-            self.reiniciar_analisis(self.acciones, self.flag)
+            self.reiniciar_analisis(self.acciones, self.plots, self.flag)
             print("DECISION: reinicio el análisis, no se ve una distribución clara")
             return
 

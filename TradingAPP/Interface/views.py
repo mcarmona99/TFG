@@ -237,6 +237,7 @@ def operar_auto(request):
         # Se operará las horas especificadas, en el marco de tiempo y mercado indicados
 
         acciones = []
+        plots = []
         beneficios = 0.0
 
         if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
@@ -247,11 +248,12 @@ def operar_auto(request):
             # Recogida de datos del simbolo a tratar
             # en formato ohlc con columnas (USANDO MT5)
 
-            acciones = metodo_wyckoff.metodo_wyckoff_tiempo_real(mercado=mercado, time_trading_in_hours=horas,
-                                                                 marco_tiempo=marco_tiempo)
+            acciones, plots = metodo_wyckoff.metodo_wyckoff_tiempo_real(mercado=mercado, time_trading_in_hours=horas,
+                                                                        marco_tiempo=marco_tiempo)
 
         context['acciones'] = acciones if acciones else [
             'No se ha realizado ninguna operación en el tiempo transcurrido']
+        context['plots'] = plots if plots else ['']
         context['balance'] = beneficios
         return render(request, 'TradingAPP/operar_auto.html', context)
 
@@ -298,6 +300,7 @@ def operar_backtesting(request):
         # Y GUARDAMOS EN BASE DE DATOS. AHORA MISMO COJO DATOS LOCALES
 
         acciones = []
+        plots = []
         beneficios = 0.0
 
         if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
@@ -323,10 +326,11 @@ def operar_backtesting(request):
             # time  ask_open  ask_high  ask_low  ask_close  bid_open  bid_high  bid_low  bid_close
             data = common.get_data_ohlc(mercado)
 
-            acciones = metodo_wyckoff.metodo_wyckoff_backtesting(data, start_date=fecha_inicio_datetime,
-                                                                 time_trading_in_hours=horas)
+            acciones, plots = metodo_wyckoff.metodo_wyckoff_backtesting(data, start_date=fecha_inicio_datetime,
+                                                                        time_trading_in_hours=horas)
 
         context['acciones'] = acciones if acciones else [
             'No se ha realizado ninguna operación en el tiempo transcurrido']
+        context['plots'] = plots if plots else ['']
         context['balance'] = beneficios
         return render(request, 'TradingAPP/operar_backtesting.html', context)

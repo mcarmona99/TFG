@@ -10,7 +10,7 @@ def metodo_wyckoff_backtesting(data, start_date=None, time_trading_in_hours=None
     """
     TODO: Docstring
     """
-    # Inicializo clase para parametros de Trading (TODO parametrizar)
+    # Inicializo clase para parametros de Trading
     WTB = WyckoffTradingBacktesting()
 
     # Repetir time_trading_in_hours horas nuestro algoritmo
@@ -60,49 +60,49 @@ def metodo_wyckoff_backtesting(data, start_date=None, time_trading_in_hours=None
         # DIBUJAR EL PLOT POR HORA, SOLO PARA DEBUG
         # SEA CUAL SEA LA ACCION O SI ESTOY EN FASE DE ANALISIS O NO
         # if imprimir_plot_por_hora:
-        #     WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours)
+        #     WTB.generar_dataframe(intervalos, horas_hasta_completo, hours)
 
         # Imprimo resultados de compra o venta
         if WTB.accion_actual == 1:
             if WTB.valor_actual <= WTB.stop_lose:
                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
-                WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
-                                       horas_hasta_operacion=horas_hasta_operacion)
+                WTB.generar_dataframe(intervalos, horas_hasta_completo, hours,
+                                      horas_hasta_operacion=horas_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
             elif WTB.valor_actual >= WTB.take_profit:
                 print("ORDEN ACERTADA, HEMOS LLEGADO AL TAKE PROFIT")
-                WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
-                                       horas_hasta_operacion=horas_hasta_operacion)
+                WTB.generar_dataframe(intervalos, horas_hasta_completo, hours,
+                                      horas_hasta_operacion=horas_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['ACIERTO'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
 
         if WTB.accion_actual == 2:
             if WTB.valor_actual >= WTB.stop_lose:
                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
-                WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
-                                       horas_hasta_operacion=horas_hasta_operacion)
+                WTB.generar_dataframe(intervalos, horas_hasta_completo, hours,
+                                      horas_hasta_operacion=horas_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
             elif WTB.valor_actual <= WTB.take_profit:
                 print("ORDEN ACERTADA, HEMOS LLEGADO AL TAKE PROFIT")
-                WTB.imprimir_dataframe(intervalos, horas_hasta_completo, hours,
-                                       horas_hasta_operacion=horas_hasta_operacion)
+                WTB.generar_dataframe(intervalos, horas_hasta_completo, hours,
+                                      horas_hasta_operacion=horas_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['ACIERTO'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
 
         # Simulo que pasa una hora (estoy en backtesting)
         hours += 1
 
     # Devuelvo el vector de acciones realizadas con su precio y datetime
-    return WTB.acciones
+    return WTB.acciones, WTB.plots
 
 
 def metodo_wyckoff_tiempo_real(mercado, time_trading_in_hours=None, marco_tiempo=None):
     """
     TODO: Docstring
     """
-    # Inicializo clase para parametros de Trading (TODO parametrizar)
+    # Inicializo clase para parametros de Trading
     WTB = WyckoffTradingBacktesting()
 
     # Repetir time_trading_in_hours horas nuestro algoritmo
@@ -165,30 +165,30 @@ def metodo_wyckoff_tiempo_real(mercado, time_trading_in_hours=None, marco_tiempo
         if WTB.accion_actual == 1:
             if WTB.valor_actual <= WTB.stop_lose:
                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
-                WTB.imprimir_dataframe(intervalos, iteraciones_hasta_completo, it,
-                                       horas_hasta_operacion=iteraciones_hasta_operacion)
+                WTB.generar_dataframe(intervalos, iteraciones_hasta_completo, it,
+                                      horas_hasta_operacion=iteraciones_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
             elif WTB.valor_actual >= WTB.take_profit:
                 print("ORDEN ACERTADA, HEMOS LLEGADO AL TAKE PROFIT")
-                WTB.imprimir_dataframe(intervalos, iteraciones_hasta_completo, it,
-                                       horas_hasta_operacion=iteraciones_hasta_operacion)
+                WTB.generar_dataframe(intervalos, iteraciones_hasta_completo, it,
+                                      horas_hasta_operacion=iteraciones_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['ACIERTO'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
 
         if WTB.accion_actual == 2:
             if WTB.valor_actual >= WTB.stop_lose:
                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
-                WTB.imprimir_dataframe(intervalos, iteraciones_hasta_completo, it,
-                                       horas_hasta_operacion=iteraciones_hasta_operacion)
+                WTB.generar_dataframe(intervalos, iteraciones_hasta_completo, it,
+                                      horas_hasta_operacion=iteraciones_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
             elif WTB.valor_actual <= WTB.take_profit:
                 print("ORDEN ACERTADA, HEMOS LLEGADO AL TAKE PROFIT")
-                WTB.imprimir_dataframe(intervalos, iteraciones_hasta_completo, it,
-                                       horas_hasta_operacion=iteraciones_hasta_operacion)
+                WTB.generar_dataframe(intervalos, iteraciones_hasta_completo, it,
+                                      horas_hasta_operacion=iteraciones_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['ACIERTO'])
-                WTB.reiniciar_analisis(WTB.acciones, WTB.flag)
+                WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
 
         # Simulo que pasa una hora (estoy en backtesting)
         it += 1
@@ -197,4 +197,4 @@ def metodo_wyckoff_tiempo_real(mercado, time_trading_in_hours=None, marco_tiempo
         sleep(to_sleep)
 
     # Devuelvo el vector de acciones realizadas con su precio y datetime
-    return WTB.acciones
+    return WTB.acciones, WTB.plots
