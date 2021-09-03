@@ -14,10 +14,11 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de casos de uso referente a la visualización de datos de mercados financieros}}{46}{figure.4.3}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de casos de uso referente a las funcionalidades de trading}}{46}{figure.4.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura general del software}}{47}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Primer diseño del menú principal de la APP}}{49}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}}}{50}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) }}{51}{figure.5.4}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura general del software.}}{48}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de clases de la APP}}{51}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Primer diseño del menú principal de la APP}}{52}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}}}{52}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) }}{53}{figure.5.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

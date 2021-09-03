@@ -45,7 +45,8 @@
 \contentsline {subsection}{\numberline {4.3.4}Funcionalidades de trading}{44}{subsection.4.3.4}%
 \contentsline {chapter}{\numberline {5}Diseño}{47}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Arquitectura del software}{47}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Primer diseño de la interfaz}{48}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Implementación}{53}{chapter.6}%
+\contentsline {section}{\numberline {5.2}Diseño de clases}{48}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Primer diseño de la interfaz}{49}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Implementación}{55}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Pruebas}{1}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Conclusiones}{1}{chapter.8}%
