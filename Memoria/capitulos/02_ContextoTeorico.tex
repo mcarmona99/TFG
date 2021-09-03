@@ -1,14 +1,113 @@
 
 \chapter{Contexto teórico}
 
-\section{Trading: significado y tipos de análisis}
+\section{Trading: conceptos técnicos y análisis de mercados}
 
 Como se ha mencionado en el apartado \textit{Motivación} del capítulo \ref{introduccion}, el trading es un concepto que tiene su origen en antiguas civilizaciones de Mesopotamia. \newline
 
-
 El actual concepto de trading consiste en una práctica aplicada a los mercados financieros. Realizar trading implica comprar o vender dentro de los distintos mercados financieros para vender o comprar de nuevo al cabo de un tiempo y obtener beneficio de la acción realizada. Entre esos activos financieros destacan las acciones de empresas, divisas, materias primas, índices o criptomonedas. \newline
 
+Estas compras o ventas, llamadas operaciones, se realizan mediante plataformas digitales que proporcionan una interfaz gráfica para visualizar precios y otra información relevante. Las operaciones que realiza el operador humano con otros operadores se hacen por medio de un intermediario o bróker. \newline
+
 A grandes rasgos y con un ejemplo, realizar trading beneficiosamente podría ser comprar una acción de \textit{Apple} por 100 dólares y venderla en cierto tiempo por 150 dólares, obteniendo por tanto un beneficio de 50 dólares. \newline
+
+\subsection{Conceptos técnicos}
+
+Para profundizar en términos de análisis de mercados e implementación de los mismos, debemos de presentar previamente una serie de conceptos para entender cómo funcionan los gráficos de precios y tener un glosario más técnico sobre el tema. \newline
+
+\subsubsection{Brokers y plataformas comerciales}
+
+En primer lugar, definiremos lo que son los brokers. Un bróker es un inversor; empresa o persona que participa en el proceso del trading y que recoge la oferta y demanda de un activo y hace de intermediario en el proceso. Este broker cobra comisiones por su trabajo y hace que el proceso de compra y venta en un mercado sea más rápido y eficaz. \newline
+
+Cuando una persona pretende operar, necesita una plataforma digital para realizar las compras y ventas de activos y esto supondrá una comunicación pasiva con un bróker. Estas plataformas de trading proporcionan una interfaz gráfica para que el usuario humano pueda operar de manera sencilla. \newline
+
+Entre las actuales plataformas de trading que a su vez funcionan de brokers, destacan \textit{XTB}, \textit{eToro}, \textit{AvaTrade}, \textit{XM}, \textit{Darwinex}, \textit{Plus500}, \textit{IQ Option}, \textit{OBR Invest} o \textit{Pepperstone}. \newline
+
+Además de las plataformas mencionadas, existen plataformas comerciales que aportan la interfaz e información de mercados o activos financieros pero no funcionan como bróker. Éstas permiten el uso de distintos intermediarios, según uso o gustos del usuario. Es el caso de \textit{MetaTrader}. \newline
+
+A continuación se muestra la lista de brókers que trabajan con MetaTrader en su última versión del software, \textit{MetaTrader5}. Todos ellos proporcionan soporte para mercados de \textit{Forex}, \textit{CFD} y metales preciosos. \newline
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item XM
+		\item Hotforex
+		\item Valutrades
+		\item ForexTime
+		\item Roboforex
+		\item EXNess
+		\item Pepperstone
+		\item ICMarkets
+		\item AvaTrade
+		\item FPMarkets
+		\item Alpari
+		\item Vantage FX
+		\item OctaFX
+		\item BDSwiss
+		\item markets.com
+		\item IronFX
+		\item BlackBull Markets
+		\item Admiral Markets
+		\item FXOpen
+		\item IFC Markets
+		\item FBS
+		\item Nordfx
+	\end{itemize}
+\end{multicols}
+
+
+Debido a la versatilidad que proporciona MetaTrader5 y la posibilidad de crear cuentas \textit{Demo}, es decir, cuentas que usan dinero falso para usarlas con motivos de aprendizaje, será la plataforma comercial usada en el proyecto.
+
+\subsubsection{Representación de datos: tipos de gráficos y temporalidad}
+
+Una de las principales características de las plataformas comerciales mencionadas es que nos muestran gráficos de precios de cada uno de los activos financieros que tengan disponibles. \newline
+
+Estos precios pueden ser representados usando distintos tipos de gráficos. En todos los gráficos se representa el precio en función de la fecha o \textit{timestamp}. Los tres más comunes son el gráfico de línea, el gráfico de barras y el gráfico de velas japonesas. \newline
+
+En el caso del \textbf{gráfico de línea}, el precio se encuentra representado como la unión de los distintos precios de cierre en un determinado periodo de tiempo. El precio de cierre es el último precio disponible de un activo en una unidad de tiempo específica. Este es el gráfico más simple y aporta menos información que el gráfico de barras o el de velas. \newline
+
+El \textbf{gráfico de barras} y el \textbf{gráfico de velas japonesas} representan exactamente la misma información, pero con un diseño gráfico distinto. Ambos gráficos siguen el formato de representación de precios conocido como \textit{OHLC}. \textit{OHLC} es la abreviatura de \textit{Open High Low Close}. Como se ha mencionado anteriormente, este modo de representación es más complejo que el usado en el gráfico de línea e incluye más información. Los gráficos que usan el método OHLC muestran la información de los precios de apertura, máximo, mínimo y cierre para una unidad de tiempo específica. El precio de apertura es el primer dato de precio que tenemos del activo en la unidad de tiempo, el precio máximo es el máximo precio alcanzado en dicho tiempo, el mínimo es el mínimo precio alcanzado; y el cierre es el último registrado, como se ha mencionado en el párrafo anterior. En la figura \ref{ohlc} podemos ver un ejemplo de barra y de vela usados en los gráficos de barras y velas japonesas, respectivamente. \newline
+
+\begin{figure}[h]
+	\includegraphics[width=0.4\textwidth]{imagenes/representacion_barra_OHLC.png} 
+	\includegraphics[width=0.5\textwidth]{imagenes/representacion_vela_OHLC.png} 
+	\caption{Representación de precios usando barras y velas japonesas. Fuente: \color{blue} \label{ohlc} \href{https://efxto.com/escuela/tipos-de-graficos-de-trading}{Tipos de gráficos de trading y sus características}} 
+\end{figure} 
+
+Una vez conocemos los tipos de gráficos de precios de activos financieros, podemos presentar el concepto de temporalidad. La \textbf{temporalidad} o \textbf{marco de tiempo} es la unidad de tiempo o período que elige el trader para ver representado el mercado en el gráfico y estudiarlo. Dependiendo de la temporalidad, el mercado se actualizará cada cierto tiempo, mostrando nuevas velas, barras o puntos, dependiendo del tipo de gráfico que estemos usando. \newline
+
+Como ejemplos de temporalidad podemos ver \textit{M1}, que indica que el gráfico se actualizará con una nueva vela, barra o punto cada minuto; \textit{M5}, que indica un período de actualización de 5 minutos; \textit{H1}, que indica 1 hora; etc. Otras temporalidades son \textit{M15}, \textit{M30}, \textit{H4} (horas), \textit{D1} (días), \textit{W1} (semanas (week)), e incluso actualizaciones mensuales. \newline
+
+A la hora de estudiar los gráficos, la elección del marco de tiempo dependerá de si estamos operando a corto o largo plazo principalmente. Por ejemplo, no tendría mucho sentido estudiar un mercado en M1 si queremos ordenar una operación para una semana vista, ya que no estaremos viendo realmente las tendencias del mercado. \newline
+
+
+
+\subsubsection{Precios del mercado: ask y bid}
+
+En esta sección, presento los conceptos de \textit{ask} y \textit{bid}. El \textit{ask} y el \textit{bid} se corresponden con los dos precios que presenta un activo en todo momento. El \textit{bid} es el precio que se ofrece, es decir, el precio que pone el mercado para comprar tus acciones. Por otro lado, el \textit{ask} es el precio que se pide, es decir, el precio de venta del mercado para que el trader compre la acción del activo.  \newline
+
+No importa cuántos vendedores o compradores haya en el mercado en el período a comprar o vender, los precios ask y bid serán el más bajo de todos los ofertantes y el más alto de todos los demandantes, respectivamente. En otras palabras, como traders, venderemos siempre la acción al que más dinero ofrece y compraremos la acción al que más barato la venda. \newline
+
+\subsubsection{Spread}
+
+El \textit{spread} o separación es la diferencia en un momento dado entre los precios \textit{ask} y \textit{bid}. \newline
+
+En el trading, el spread debe de ser pequeño ya que sólo con entrar al mercado estamos perdiendo dinero por esta diferencia de precios. Siempre tendremos que salir a un precio peor con lo que minimizar el spread minimizará las pérdidas. \newline
+
+Este valor es muy alto en ocasiones donde participa muy poca gente en el mercado. En un ejemplo práctico, si sólo hay dos personas en un mercado a un determinado tiempo, y una de ellas vende una acción a 100 \euro y la otra quiere comprar a 60 \euro, el spread es de 40 \euro; probablemente no haya trato. \newline
+
+El spread es una medida de \textit{liquidez}: a menor spread, mayor liquidez. La \textit{liquidez} es en la práctica la facilidad que tienes para comprar o vender al precio que quieres. Esto se ve fácilmente en el anterior ejemplo, donde la liquidez sería baja al tener un spread alto. \newline
+
+En resumen, cuantos más participantes y más activos sean en el mercado, habrá más liquidez ya que el spread será menor; y los precios de compra y venta serán tan parecidos que el spread apenas tendrá impacto en la operativa.
+
+\subsubsection{Volatilidad}
+
+Cuando hay volatilidad en el trading, el precio se acelera. Si estamos usando velas o barras (véase figura \ref{ohlc})), éstas aparecerán más grandes y bruscas en el gráfico.\newline
+	
+Este fenómeno provoca negociaciones más impulsivas en el gráfico, lo que aumenta el spread. Esto ocurre porque las compras y ventas se realizan de forma más rápida y menos eficientes. \newline
+
+\subsubsection{Cotización}
+
+En el trading, la cotización es el precio de la última operación de un activo o bien el precio al que se vende o compra en el momento actual. En este último caso, la cotización es igual al precio de cierre en el instante. \newline
 
 \subsection{Tipos de análisis de mercados}
 
@@ -97,11 +196,13 @@ Como conclusión, Dow propuso un análisis de mercado para detectar tendencias y
 
 \subsection{Análisis de Richard Demille Wyckoff}
 
-\textit{Richard Wyckoff} propuso en sus estudios como analista de mercados financieros, un enfoque en 5 pasos:\newline
+El aporte de \textit{Wyckoff} fue un enfoque de análisis técnico basado principalmente en la relación entre las fuerzas de la oferta y la demanda. Cuando los grandes operadores quieren comprar o vender, llevan a cabo unos procesos que dejan huella. Dicha huella puede verse en los gráficos de precios de los mercados a través del precio y el volumen. En otras palabras, Wyckoff buscaba ver quién tiene el control del mercado con el objetivo de operar junto a dichos operadores. Para ver estas intenciones de los grandes traders, Wyckoff usaba gráficos de barras y gráficos de Punto y Figura. \newline
+
+\textit{Richard Wyckoff} propuso en sus estudios como analista de mercados financieros, un enfoque en 5 pasos. Este enfoque destaca por su universalidad, ya que puede ser usado en cualquier mercado con suficiente liquidex y en cualquier temporalidad o marco de tiempo. \newline
 
 \begin{enumerate}
 	\item Determinar la posición actual y la tendencia futura probable del mercado. Consiste en realizar una evaluación del mercado para ver la tendencia futura y poder tomar decisiones a corto o largo plazo.
-	\item Seleccionar acciones en armonía con la tendencia. En tendencia alcista, elegir acciones más fuertes que el mercado, es decir, acciones que produzcan mayores aumentos porcentuales que el mercado durante los repuntes y menores disminuciones durante las reacciones. En el caso de tendencia bajista, acciones más débiles que el mercado.
+	\item Seleccionar acciones acordes con la tendencia. En tendencia alcista, elegir acciones más fuertes que el mercado, es decir, acciones que produzcan mayores aumentos porcentuales que el mercado durante los repuntes y menores disminuciones durante las reacciones. En el caso de tendencia bajista, acciones más débiles que el mercado.
 	\item Elegir operaciones con una causa que iguale o exceda su objetivo mínimo. Aquí entra en juego la ley de Wyckoff de causa y efecto. Se eligen acciones que han creado una causa suficiente para su objetivo. Se utilizan proyecciones Punto y Figura.
 	\item Elegir acciones disponibles con respecto a la tendencia o fases de acumulación o distribución.
 	\item Elegir un buen activo para operar. Un buen activo será aquel que vaya en armonía con el mercado general, lo que proporcionará más probabilidades de éxito.
@@ -114,6 +215,61 @@ Uno de sus principales aportes fueron las tres leyes de su método de análisis,
 	\item \textbf{Ley de causa y efecto.} La causa se mide con el recuento de volumen en un gráfico. El efecto es la distancia que se mueve el precio correspondiente a dicha causa.
 	\item \textbf{Ley de esfuerzo y resultado.} Esta ley proporciona una advertencia de un posible cambio de tendencia en un futuro cercano.
 \end{enumerate}
+
+En la figura \ref{ciclos_wyckoff} se puede observar cómo la ley de oferta y demanda afecta en la tendencia de un gráfico. En este caso se trata de un boceto de un gráfico de línea. La imagen comienza con una fase de acumulación. Después de esta fase encontramos una clara tendencia alcista seguida de una fase de distribución. Entre la tendencia alcista y la distribución, se vería un patrón indicando una demanda mayor que la oferta. Estos patrones se pueden apreciar estudiando volúmenes, ya que es ahí donde se ve la oferta y demanda. Tras la distribución, la oferta supera a la demanda y la tendencia cambia a bajista.\newline
+
+\begin{figure}[h]
+	\includegraphics[width=1\textwidth]{imagenes/oferta_demanda_wyckoff.png} 
+	\caption{Ciclos del precio de Wyckoff. Fuente: \color{blue} \href{https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}} \label{ciclos_wyckoff}
+\end{figure}
+
+Tanto en este análisis como en el de Dow se ha hablado de \textit{acumulación} y de \textit{distribución} pero no se han introducido dichos conceptos. Tanto la fase de acumulación como la de distribución son \textit{rangos de trading}. Los rangos de trading son valores de precios en intervalos concretos en el eje x donde la tendencia que se estaba siguiendo se detiene y hay un equilibrio relativo entre oferta y demanda. La acumulación es el período de equilibrio de oferta y demanda tras venir de tendencia bajista para continuar en alcista. La distribución es la misma zona pero proviniendo de alcista para dar lugar a bajista. \newline
+
+Los rangos de trading y las tendencias serán claves en el análisis de Wyckoff puesto que en su método se estudian estos conceptos y cómo son alterados por la oferta y la demanda. A raíz de estas variables y una serie de decisiones, se ordenará una operación u otra. Concretamente, las decisiones se tomarán en los rangos de trading, puesto que son las principales causas de un cambio de tendencia. \newline
+
+Los 5 enfoques enumerados anteriormente fueron propuestos por Wyckoff de forma teórica. A continuación expongo cómo Wyckoff propuso seguir este enfoque en la práctica. Para ello, Wyckoff describió las fases de acumulación y distribución con una serie de patrones o esquemas que siempre se repetían. Ver estos esquemas nos ayudaría a conocer la tendencia futura y operar.
+
+\subsubsection{Esquemas de acumulación}
+
+A continuación enumero los patrones vistos en una fase de acumulación y que darían lugar a una tendencia alcista. En este caso, si se cumplen los patrones, podríamos entonces ordenar una COMPRA.
+
+\begin{itemize}
+	\item Vemos un \textit{PS}, Preliminary Support. Es el patrón que da comienzo a la acumulación. Es cuando la compra de un activo comienza a provocar un soporte en el gráfico. En este momento hay aumentos de volumen y amplitud en los precios, lo que indica que la venta (tendencia bajista) llega a su fin.
+	\item Vemos un \textit{SC}, Selling Climax. Es el precio mínimo que se termina formando y que forma el soporte mencionado. Indica que los grandes inversores están comenzando a comprar.
+	\item Vemos un \textit{AR}, Automatic Rally. Hay un retroceso en el precio debido a la disminución de la presión de la oferta. Este punto marcaría el techo que serviría como soporte superior del rango de acumulación.
+	\item Vemos \textit{STs}, Secondary Tests. El precio fluctúa entre el AR y el SC realizando STs. Podemos encontrar múltiples secondary tests en un mismo rango. Estas fluctuaciones comprueban el equilibrio que hay entre la oferta y demanda en el rango.
+	\item Vemos un \textit{SOS}, Sign Of Strength. Avance del precio con rangos más amplios y un mayor volumen.
+	\item Vemos un \textit{LPS}, Last Point of Support. Precio mínimo resultado de un retroceso del SOS. Suele coincidir con el techo que había generado el AR, en un menor rango de precios y volumen. Puede haber más de uno aunque se llame last. En la práctica son mínimos más altos desde el AR.
+\end{itemize}
+
+En la figura \ref{esquema_acumulacion} se muestran los patrones mencionados en la anterior lista. \newline
+
+
+\begin{figure}[h]
+	\includegraphics[width=1.1\textwidth]{imagenes/esquema_acumulacion_wyckoff.png} 
+	\caption{Esquema de acumulación en el método Wyckoff. Fuente: \color{blue} \href{https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}} \label{esquema_acumulacion}
+\end{figure}
+
+\subsubsection{Esquemas de distribución}
+
+En esta sección enumero las pautas seguidas en una fase de distribución y que darían lugar a una tendencia bajista. En este caso, si se cumplen los patrones, podríamos entonces ordenar una VENTA.
+
+\begin{itemize}
+	\item Vemos un \textit{PSY}, Preliminary Supply. Es el patrón que da comienzo a la distribución. Es cuando la venta de un activo comienza a provocar un techo en el gráfico. En este momento hay aumentos de volumen y amplitud en los precios, lo que indica que la compra (tendencia alcista) llega a su fin.
+	\item Vemos un \textit{BC}, Buying Climax. Es el precio máximo que se termina formando y que forma el techo o resistencia mencionado. Indica que los grandes inversores están comenzando a vender.
+	\item Vemos un \textit{AR}, Automatic Reaction. Hay un retroceso en la acción del precio. Este punto marcaría el suelo que serviría como soporte inferior del rango de distribución.
+	\item Vemos \textit{STs}, Secondary Tests. Misma definición que en el esquema de acumulación, fluctuaciones entre el AR y el BC, en este caso.
+	\item Vemos un \textit{SOW}, Sign Of Weakness. Se sobrepasa el suelo formado por el AR. Avance del precio con rangos más amplios y un mayor volumen.
+	\item Vemos un \textit{LPSY}, Last Point of Supply. Precio máximo resultado de un retroceso del SOW. Suele coincidir con el suelo que había generado el AR, en un menor rango de precios y volumen. Vienen a ser máximos más bajos, lo que indica el cambio de tendencia a bajista.
+\end{itemize}
+
+En la figura \ref{esquema_distribucion} se muestran los patrones mencionados en la anterior lista. \newline
+
+
+\begin{figure}[h]
+	\includegraphics[width=1\textwidth]{imagenes/esquema_distribucion_wyckoff.png} 
+	\caption{Esquema de distribución en el método Wyckoff. Fuente: \color{blue} \href{https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}} \label{esquema_distribucion}
+\end{figure}
 
 
 \section{Trading algorítmico}

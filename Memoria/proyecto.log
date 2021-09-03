@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  3 SEP 2021 00:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  3 SEP 2021 18:32
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -86,17 +86,92 @@ Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
 ))
+(C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/eurosym\eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box49
+)
+(C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\multicol.st
+y
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count199
+\mult@box=\box50
+\multicol@leftmargin=\dimen144
+\c@unbalance=\count266
+\c@collectmore=\count267
+\doublecol@number=\count268
+\multicoltolerance=\count269
+\multicolpretolerance=\count270
+\full@width=\dimen145
+\page@free=\dimen146
+\premulticols=\dimen147
+\postmulticols=\dimen148
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box51
+\last@line=\box52
+\maxbalancingoverflow=\dimen149
+\mult@rightbox=\box53
+\mult@grightbox=\box54
+\mult@gfirstbox=\box55
+\mult@firstbox=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\c@minrows=\count271
+\c@columnbadness=\count272
+\c@finalcolumnbadness=\count273
+\last@try=\dimen150
+\multicolovershoot=\dimen151
+\multicolundershoot=\dimen152
+\mult@nat@firstbox=\box94
+\colbreak@box=\box95
+\mc@col@check@num=\count274
+)
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen144
-\ar@mcellbox=\box49
-\extrarowheight=\dimen145
+\col@sep=\dimen153
+\ar@mcellbox=\box96
+\extrarowheight=\dimen154
 \NC@list=\toks20
-\extratabsurround=\skip49
-\backup@length=\skip50
-\ar@cellbox=\box50
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box97
 ))
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\verbatim.st
 y
@@ -108,15 +183,15 @@ Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip51
-\f@nch@O@elh=\skip52
-\f@nch@O@erh=\skip53
-\f@nch@O@olh=\skip54
-\f@nch@O@orh=\skip55
-\f@nch@O@elf=\skip56
-\f@nch@O@erf=\skip57
-\f@nch@O@olf=\skip58
-\f@nch@O@orf=\skip59
+\f@nch@headwidth=\skip53
+\f@nch@O@elh=\skip54
+\f@nch@O@erh=\skip55
+\f@nch@O@olh=\skip56
+\f@nch@O@orh=\skip57
+\f@nch@O@elf=\skip58
+\f@nch@O@erf=\skip59
+\f@nch@O@olf=\skip60
+\f@nch@O@orf=\skip61
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
@@ -136,33 +211,33 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen146
-\Gin@req@width=\dimen147
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\afterpage.s
 ty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@output=\toks23
-\AP@partial=\box51
-\AP@footins=\box52
+\AP@partial=\box98
+\AP@footins=\box99
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\longtable.s
 ty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip60
-\LTright=\skip61
-\LTpre=\skip62
-\LTpost=\skip63
-\LTchunksize=\count199
-\LTcapwidth=\dimen148
-\LT@head=\box53
-\LT@firsthead=\box54
-\LT@foot=\box55
-\LT@lastfoot=\box56
-\LT@cols=\count266
-\LT@rows=\count267
-\c@LT@tables=\count268
-\c@LT@chunks=\count269
+\LTleft=\skip62
+\LTright=\skip63
+\LTpre=\skip64
+\LTpost=\skip65
+\LTchunksize=\count275
+\LTcapwidth=\dimen157
+\LT@head=\box100
+\LT@firsthead=\box101
+\LT@foot=\box102
+\LT@lastfoot=\box103
+\LT@cols=\count276
+\LT@rows=\count277
+\c@LT@tables=\count278
+\c@LT@chunks=\count279
 \LT@p@ftn=\toks24
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
@@ -211,9 +286,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen149
-\Hy@linkcounter=\count270
-\Hy@pagecounter=\count271
+\@linkdim=\dimen158
+\Hy@linkcounter=\count280
+\Hy@pagecounter=\count281
  (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -230,7 +305,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count272
+\Hy@SavedSpaceFactor=\count282
  (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -248,13 +323,13 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count273
+\c@Hy@tempcnt=\count283
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen150
+\XeTeXLinkMargin=\dimen159
 
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -264,9 +339,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count274
-\Field@Width=\dimen151
-\Fld@charsize=\dimen152
+\Fld@menulength=\count284
+\Field@Width=\dimen160
+\Fld@charsize=\dimen161
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -282,9 +357,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count275
-\c@Item=\count276
-\c@Hfootnote=\count277
+\Hy@abspage=\count285
+\c@Item=\count286
+\c@Hfootnote=\count287
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -295,8 +370,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count278
-\c@bookmark@seq@number=\count279
+\Fld@listcount=\count288
+\c@bookmark@seq@number=\count289
 
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -309,19 +384,19 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip64
+\Hy@SectionHShift=\skip66
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 58.
+(hyperref)                removing `subscript' on input line 61.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 58.
+(hyperref)                removing `subscript' on input line 61.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 58.
+(hyperref)                removing `subscript' on input line 61.
 
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
@@ -335,13 +410,13 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 147.
 )
 \everycr=\toks25
-\minrowclearance=\skip65
+\minrowclearance=\skip67
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/footmisc\footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
 \FN@temptoken=\toks26
-\footnotemargin=\dimen153
-\c@pp@next@reset=\count280
+\footnotemargin=\dimen162
+\c@pp@next@reset=\count290
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
@@ -369,10 +444,10 @@ LaTeX Warning: Command \markright  has changed.
 \tf@default=\write3
 \openout3 = `proyecto.idx'.
 
-Package index Info: Writing index file proyecto.idx on input line 70.
-\c@teorema=\count281
-\c@ejemplo=\count282
-\c@definicion=\count283
+Package index Info: Writing index file proyecto.idx on input line 73.
+\c@teorema=\count291
+\c@ejemplo=\count292
+\c@definicion=\count293
  (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
 Package: pdfpages 2021/03/06 v0.5t Insert pages of external PDF documents (AM)
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
@@ -380,83 +455,83 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count284
-\calc@Bcount=\count285
-\calc@Adimen=\dimen154
-\calc@Bdimen=\dimen155
-\calc@Askip=\skip66
-\calc@Bskip=\skip67
+\calc@Acount=\count294
+\calc@Bcount=\count295
+\calc@Adimen=\dimen163
+\calc@Bdimen=\dimen164
+\calc@Askip=\skip68
+\calc@Bskip=\skip69
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count286
-\calc@Cskip=\skip68
+\calc@Ccount=\count296
+\calc@Cskip=\skip70
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen156
-\ESO@tempdimb=\dimen157
+\ESO@tempdima=\dimen165
+\ESO@tempdimb=\dimen166
 )
-\AM@pagewidth=\dimen158
-\AM@pageheight=\dimen159
-\AM@fboxrule=\dimen160
+\AM@pagewidth=\dimen167
+\AM@pageheight=\dimen168
+\AM@fboxrule=\dimen169
 
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2021/03/06 v0.5t Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count287
-\AM@pagebox=\box57
+\pdfpages@includegraphics@status=\count297
+\AM@pagebox=\box104
 \AM@global@opts=\toks29
-\AM@pagecnt=\count288
+\AM@pagecnt=\count298
 \AM@toc@title=\toks30
-\c@AM@survey=\count289
-\AM@templatesizebox=\box58
+\c@AM@survey=\count299
+\AM@templatesizebox=\box105
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count290
-\l__pdf_internal_box=\box59
+\l__color_backend_stack_int=\count300
+\l__pdf_internal_box=\box106
 ) (proyecto.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `proyecto.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-\c@lstlisting=\count291
-LaTeX Info: Redefining \. on input line 175.
-LaTeX Info: Redefining \% on input line 175.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+\c@lstlisting=\count301
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
 
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count292
-\scratchdimen=\dimen161
-\scratchbox=\box60
-\nofMPsegments=\count293
-\nofMParguments=\count294
+\scratchcounter=\count302
+\scratchdimen=\dimen170
+\scratchbox=\box107
+\nofMPsegments=\count303
+\nofMParguments=\count304
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count295
-\MPscratchDim=\dimen162
-\MPnumerator=\count296
-\makeMPintoPDFobject=\count297
+\MPscratchCnt=\count305
+\MPscratchDim=\dimen171
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
 \everyMPtoPDFconversion=\toks32
 )
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -469,7 +544,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 175.
+Package hyperref Info: Link coloring OFF on input line 178.
 
 (C:\Users\masus\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -481,11 +556,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count298
+\c@section@level=\count308
 )
-LaTeX Info: Redefining \ref on input line 175.
-LaTeX Info: Redefining \pageref on input line 175.
-LaTeX Info: Redefining \nameref on input line 175.
+LaTeX Info: Redefining \ref on input line 178.
+LaTeX Info: Redefining \pageref on input line 178.
+LaTeX Info: Redefining \nameref on input line 178.
  (proyecto.out) (proyecto.out)
 \@outlinefile=\write4
 \openout4 = `proyecto.out'.
@@ -499,8 +574,8 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 (portada/portada.tex
-\centeroffset=\skip69
-<imagenes/logo_ugr.jpg, id=143, 777.90625pt x 231.86626pt>
+\centeroffset=\skip71
+<imagenes/logo_ugr.jpg, id=147, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -516,7 +591,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--23
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=144, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=148, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 31.
@@ -738,99 +813,103 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
 [21
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
+<imagenes/representacion_barra_OHLC.png, id=361, 196.735pt x 187.70125pt>
+File: imagenes/representacion_barra_OHLC.png Graphic file (type png)
+<use imagenes/representacion_barra_OHLC.png>
+Package pdftex.def Info: imagenes/representacion_barra_OHLC.png  used on input 
+line 71.
+(pdftex.def)             Requested size: 143.9978pt x 137.3845pt.
+<imagenes/representacion_vela_OHLC.png, id=362, 301.125pt x 254.9525pt>
+File: imagenes/representacion_vela_OHLC.png Graphic file (type png)
+<use imagenes/representacion_vela_OHLC.png>
+Package pdftex.def Info: imagenes/representacion_vela_OHLC.png  used on input l
+ine 72.
+(pdftex.def)             Requested size: 180.0pt x 152.4047pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
-
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
 [23]
-<imagenes/fases_dow.png, id=343, 542.025pt x 231.11343pt>
-File: imagenes/fases_dow.png Graphic file (type png)
-<use imagenes/fases_dow.png>
-Package pdftex.def Info: imagenes/fases_dow.png  used on input line 73.
-(pdftex.def)             Requested size: 360.0pt x 153.50513pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--76
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
-[24 <./imagenes/fases_dow.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
@@ -840,32 +919,218 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+[24 <./imagenes/representacion_barra_OHLC.png (PNG copy)> <./imagenes/represent
+acion_vela_OHLC.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
-[25]
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-[26] [27]) (capitulos/03_Planificación.tex [28]
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+<imagenes/fases_dow.png, id=394, 542.025pt x 231.11343pt>
+File: imagenes/fases_dow.png Graphic file (type png)
+<use imagenes/fases_dow.png>
+Package pdftex.def Info: imagenes/fases_dow.png  used on input line 172.
+(pdftex.def)             Requested size: 360.0pt x 153.50513pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--175
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+[29 <./imagenes/fases_dow.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+<imagenes/oferta_demanda_wyckoff.png, id=422, 640.3925pt x 372.39125pt>
+File: imagenes/oferta_demanda_wyckoff.png Graphic file (type png)
+<use imagenes/oferta_demanda_wyckoff.png>
+Package pdftex.def Info: imagenes/oferta_demanda_wyckoff.png  used on input lin
+e 222.
+(pdftex.def)             Requested size: 360.0pt x 209.34454pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+[31 <./imagenes/oferta_demanda_wyckoff.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+<imagenes/esquema_acumulacion_wyckoff.png, id=437, 545.03625pt x 200.24812pt>
+File: imagenes/esquema_acumulacion_wyckoff.png Graphic file (type png)
+<use imagenes/esquema_acumulacion_wyckoff.png>
+Package pdftex.def Info: imagenes/esquema_acumulacion_wyckoff.png  used on inpu
+t line 249.
+(pdftex.def)             Requested size: 396.0022pt x 145.49242pt.
+
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 249--250
+[][] 
+ []
+
+[33 <./imagenes/esquema_acumulacion_wyckoff.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+
+ []
+
+<imagenes/esquema_distribucion_wyckoff.png, id=448, 422.32782pt x 208.52907pt>
+File: imagenes/esquema_distribucion_wyckoff.png Graphic file (type png)
+<use imagenes/esquema_distribucion_wyckoff.png>
+Package pdftex.def Info: imagenes/esquema_distribucion_wyckoff.png  used on inp
+ut line 270.
+(pdftex.def)             Requested size: 360.0pt x 177.75963pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+[34 <./imagenes/esquema_distribucion_wyckoff.png>] [35])
+(capitulos/03_Planificación.tex [36]
 Cap\'{\i }tulo 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--14
@@ -892,7 +1157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-[29
+[37
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 27--28
@@ -924,7 +1189,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-[30]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
@@ -939,7 +1204,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-<imagenes/gantt.png, id=394, 1024.82875pt x 354.32375pt>
+<imagenes/gantt.png, id=477, 1024.82875pt x 354.32375pt>
 File: imagenes/gantt.png Graphic file (type png)
 <use imagenes/gantt.png>
 Package pdftex.def Info: imagenes/gantt.png  used on input line 67.
@@ -949,11 +1214,11 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 67--68
 [][] 
  []
 
-) (capitulos/04_Analisis.tex [31 <./imagenes/gantt.png>] [32]
+) (capitulos/04_Analisis.tex [39 <./imagenes/gantt.png>] [40]
 Cap\'{\i }tulo 4.
-[33
+[41
 
-] [34]
+] [42]
 Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
  []
@@ -963,7 +1228,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-<imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png, id=418, 750.805pt x 
+<imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png, id=501, 750.805pt x 
 502.87875pt>
 File: imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png Graphic file (ty
 pe png)
@@ -984,7 +1249,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-<imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png, id=420, 778.91pt x 502.
+<imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png, id=503, 778.91pt x 502.
 87875pt>
 File: imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png Graphic file (type 
 png)
@@ -992,7 +1257,7 @@ png)
 Package pdftex.def Info: imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png 
  used on input line 90.
 (pdftex.def)             Requested size: 360.0pt x 232.41664pt.
-[35]
+[43]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1006,7 +1271,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-<imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png, id=426, 778.91pt 
+<imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png, id=509, 778.91pt 
 x 387.4475pt>
 File: imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png Graphic file 
 (type png)
@@ -1022,12 +1287,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-[36 <./imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png>]
+[44 <./imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
-<imagenes/diagramas_casos_de_uso/CU4-algoritmos.png, id=433, 778.91pt x 387.447
+<imagenes/diagramas_casos_de_uso/CU4-algoritmos.png, id=516, 778.91pt x 387.447
 5pt>
 File: imagenes/diagramas_casos_de_uso/CU4-algoritmos.png Graphic file (type png
 )
@@ -1038,8 +1303,8 @@ ed on input line 119.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (capitulos/05_Diseno.tex [37 <./imagenes/diagramas_casos_de_uso/CU2-gestiones
-_MT5.png>] [38 <./imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png> 
+) (capitulos/05_Diseno.tex [45 <./imagenes/diagramas_casos_de_uso/CU2-gestiones
+_MT5.png>] [46 <./imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png> 
 <./imagenes/diagramas_casos_de_uso/CU4-algoritmos.png>]
 Cap\'{\i }tulo 5.
 
@@ -1047,7 +1312,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<imagenes/arquitectura general.png, id=445, 688.5725pt x 568.1225pt>
+<imagenes/arquitectura general.png, id=529, 688.5725pt x 568.1225pt>
 File: imagenes/arquitectura general.png Graphic file (type png)
 <use imagenes/arquitectura general.png>
 Package pdftex.def Info: imagenes/arquitectura general.png  used on input line 
@@ -1056,7 +1321,7 @@ Package pdftex.def Info: imagenes/arquitectura general.png  used on input line
 
 Underfull \vbox (badness 1087) has occurred while \output is active []
 
- [39
+ [47
 
  <./imagenes/arquitectura general.png>]
 Overfull \hbox (0.43495pt too wide) in paragraph at lines 26--27
@@ -1074,7 +1339,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-<imagenes/menu_principal.jpg, id=453, 904.37875pt x 462.72874pt>
+<imagenes/menu_principal.jpg, id=536, 904.37875pt x 462.72874pt>
 File: imagenes/menu_principal.jpg Graphic file (type jpg)
 <use imagenes/menu_principal.jpg>
 Package pdftex.def Info: imagenes/menu_principal.jpg  used on input line 37.
@@ -1092,12 +1357,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-[40] [41 <./imagenes/menu_principal.jpg>]
+[48] [49 <./imagenes/menu_principal.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
-<imagenes/menu_login.jpg, id=462, 904.37875pt x 462.72874pt>
+<imagenes/menu_login.jpg, id=545, 904.37875pt x 462.72874pt>
 File: imagenes/menu_login.jpg Graphic file (type jpg)
 <use imagenes/menu_login.jpg>
 Package pdftex.def Info: imagenes/menu_login.jpg  used on input line 59.
@@ -1112,8 +1377,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-[42 <./imagenes/menu_login.jpg>]
-<imagenes/menu_principal_logued.jpg, id=468, 904.37875pt x 463.7325pt>
+[50 <./imagenes/menu_login.jpg>]
+<imagenes/menu_principal_logued.jpg, id=551, 904.37875pt x 463.7325pt>
 File: imagenes/menu_principal_logued.jpg Graphic file (type jpg)
 <use imagenes/menu_principal_logued.jpg>
 Package pdftex.def Info: imagenes/menu_principal_logued.jpg  used on input line
@@ -1124,12 +1389,12 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 66--67
 [][] 
  []
 
-) (capitulos/06_Implementacion.tex [43 <./imagenes/menu_principal_logued.jpg>]
-[44
+) (capitulos/06_Implementacion.tex [51 <./imagenes/menu_principal_logued.jpg>]
+[52
 
 ]
 Cap\'{\i }tulo 6.
-) (capitulos/07_Pruebas.tex [45] [46
+) (capitulos/07_Pruebas.tex [53] [54
 
 ]
 Cap\'{\i }tulo 7.
@@ -1160,29 +1425,29 @@ l.7 \end{titlepage}
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.218 \chapter
+l.221 \chapter
               *{} [2
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 \end{document}
+l.224 \end{document}
                      [3] (proyecto.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 0E794810FDB94BE1247F4C5FBE395202;5917.
+(rerunfilecheck)             Checksum: C0C8BAE3A0AE4E8C6B5AAC269816D068;6131.
  ) 
 Here is how much of TeX's memory you used:
- 12208 strings out of 479173
- 185489 string characters out of 2854167
- 510447 words of memory out of 3000000
- 29459 multiletter control sequences out of 15000+600000
- 410547 words of font info for 50 fonts, out of 8000000 for 9000
+ 12458 strings out of 479173
+ 190184 string characters out of 2854167
+ 517262 words of memory out of 3000000
+ 29675 multiletter control sequences out of 15000+600000
+ 410664 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,63p,661b,678s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,63p,1141b,699s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\masus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -1191,10 +1456,12 @@ ype1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/masus/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/masus/AppData/Local/Pr
 ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/masus/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/masus
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on proyecto.pdf (55 pages, 570925 bytes).
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Us
+ers/masus/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr10.pfb>
+
+Output written on proyecto.pdf (63 pages, 704779 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
- 341 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 651 PDF objects out of 1000 (max. 8388607)
+ 150 named destinations out of 1000 (max. 500000)
+ 374 words of extra memory for PDF output out of 10000 (max. 10000000)
 
