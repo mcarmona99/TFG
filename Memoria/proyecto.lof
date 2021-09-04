@@ -29,5 +29,17 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Logos de las principales herramientas usadas en el proyecto.\relax }}{62}{figure.caption.42}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces \textit {Issue} número 5, implementación de la estrategia de Wyckoff\relax }}{64}{figure.caption.43}%
 \contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {Pull Request} referente a la issue \ref {issue}\relax }}{65}{figure.caption.44}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Guía de puntuación scrum\relax }}{67}{figure.caption.45}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Datos de mercados obtenidos en las fases previas al desarrollo\relax }}{69}{figure.caption.46}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Media móvil con ventana de 100 días (azul claro) contra ventana de 30 días (azul oscuro). Fuente: \href {https://www.investopedia.com/}{investopedia.com/}\relax }}{72}{figure.caption.50}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Creación de objetos para el modelo \textit {Mercado}\relax }}{73}{figure.caption.51}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Árbol de directorios del proyecto\relax }}{74}{figure.caption.52}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Bandas de Bollinger en un gráfico de precios\relax }}{76}{figure.caption.55}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Gráficos que representan bandas de Bollinger y diferencia de sus valores\relax }}{77}{figure.caption.56}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Intervalos detectados con el algoritmo de detección de tendencias\relax }}{78}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Otros ejemplos de intervalos detectados con el algoritmo de detección de intervalos\relax }}{78}{figure.caption.58}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Código Python para extender el modelo de Django User\relax }}{83}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Opción a habilitar para mandar órdenes de operaciones al terminal MT5.\relax }}{84}{figure.caption.64}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
