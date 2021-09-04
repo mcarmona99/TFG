@@ -1,24 +1,33 @@
 \babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Representación de precios usando barras y velas japonesas. Fuente: \color {blue} \href {https://efxto.com/escuela/tipos-de-graficos-de-trading}{Tipos de gráficos de trading y sus características}}}{24}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Fases de acumulación y euforia para tendencia alcista. Fuente: \color {blue} \href {https://admiralmarkets.com/es/education/articles/forex-indicators/teoria-dow}{Teoría de Dow en Análisis Técnico | Dow Theory}}}{29}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ciclos del precio de Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}}}{31}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de acumulación en el método Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}}}{33}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema de distribución en el método Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}}}{34}{figure.2.5}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Representación de precios usando barras y velas japonesas. Fuente: \color {blue} \href {https://efxto.com/escuela/tipos-de-graficos-de-trading}{Tipos de gráficos de trading y sus características}\relax }}{24}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Fases de acumulación y euforia para tendencia alcista. Fuente: \color {blue} \href {https://admiralmarkets.com/es/education/articles/forex-indicators/teoria-dow}{Teoría de Dow en Análisis Técnico | Dow Theory}\relax }}{29}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ciclos del precio de Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}\relax }}{31}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de acumulación en el método Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}\relax }}{33}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema de distribución en el método Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}\relax }}{34}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de Gantt del proyecto}}{39}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de Gantt del proyecto\relax }}{39}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de casos de uso referente al sistema de gestión de usuarios de la APP}}{44}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de casos de uso referente a la gestión de la plataforma de trading (MT5)}}{45}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de casos de uso referente a la visualización de datos de mercados financieros}}{46}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de casos de uso referente a las funcionalidades de trading}}{46}{figure.4.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de casos de uso referente al sistema de gestión de usuarios de la APP\relax }}{44}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de casos de uso referente a la gestión de la plataforma de trading (MT5)\relax }}{45}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de casos de uso referente a la visualización de datos de mercados financieros\relax }}{46}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de casos de uso referente a las funcionalidades de trading\relax }}{46}{figure.caption.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura general del software.}}{48}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de clases de la APP}}{51}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Primer diseño del menú principal de la APP}}{52}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}}}{52}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) }}{53}{figure.5.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura general del software.\relax }}{48}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de clases de la APP\relax }}{52}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{53}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{53}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de secuencia de login y logout de usuarios\relax }}{54}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de secuencia de login y logout de usuarios en el bróker en MetaTrader5\relax }}{55}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama de secuencia de visualización de datos antiguos y en tiempo real\relax }}{56}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de secuencia de elección de algoritmos y trading automático y backtesting\relax }}{57}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Primer diseño del menú principal de la APP\relax }}{58}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}\relax }}{58}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) \relax }}{59}{figure.caption.41}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Logos de las principales herramientas usadas en el proyecto.\relax }}{62}{figure.caption.42}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \textit {Issue} número 5, implementación de la estrategia de Wyckoff\relax }}{64}{figure.caption.43}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {Pull Request} referente a la issue \ref {issue}\relax }}{65}{figure.caption.44}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

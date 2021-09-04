@@ -39,6 +39,52 @@ En el caso de WyckoffTrading, la clase es instanciada cuando operamos en tiempo 
 	\caption{Diagrama de clases de la APP} \label{diagrama_clases}
 \end{figure}
 
+\section{Diagramas de secuencia}
+
+En este apartado incluyo los diagramas de secuencia referentes a las distintas funcionalidades de la aplicación. Las partes del sistema referentes a vistas se han marcado con cuadros de color azul; las partes referentes a los controladores se han marcado con color azul más claro; y los modelos están señalados en gris. El objetivo de esta diferenciación es dejar claro qué cosa representa cada una de las partes del patrón de arquitectura \textit{Modelo-Vista-Controlador}. \newline
+
+En la imagen \ref{iniciar_app} se ven los pasos realizados para iniciar la aplicación. \newline
+
+\begin{figure}[h] 
+	\includegraphics[width=0.6\textwidth]{imagenes/diagramas_secuencia/iniciar_app.png}
+	\caption{Diagrama de secuencia de la creación de usuarios} \label{iniciar_app}
+\end{figure}
+
+En la figura \ref{secuencia_crear_usuario} se pueden ver los pasos realizados por el sistema para crear un usuario y cómo lo enriquece con los detalles específicos de la sesión. \newline
+
+\begin{figure}[h] 
+	\includegraphics[width=1.3\textwidth]{imagenes/diagramas_secuencia/gestion_usuarios.png}
+	\caption{Diagrama de secuencia de la creación de usuarios} \label{secuencia_crear_usuario}
+\end{figure}
+
+En el diagrama \ref{login_logout} se sigue el comportamiento de la aplicación cuando el usuario se identifica o cierra sesión en la APP. \newline
+
+\begin{figure}[h] 
+	\includegraphics[width=1\textwidth]{imagenes/diagramas_secuencia/login_logout.png}
+	\caption{Diagrama de secuencia de login y logout de usuarios} \label{login_logout}
+\end{figure}
+
+En la figura \ref{login_logout_MT5} se representan los pasos de la aplicación al identificarse y cerrar sesión en el bróker de MetaTrader5.\newline
+
+\begin{figure}[h] 
+	\includegraphics[width=1.1\textwidth]{imagenes/diagramas_secuencia/login_logout_mt5.png}
+	\caption{Diagrama de secuencia de login y logout de usuarios en el bróker en MetaTrader5} \label{login_logout_MT5}
+\end{figure}
+
+En la imagen \ref{ver_datos_secuencia} se muestran los pasos de la aplicación para las funcionalidades de visualización de datos antiguos o en tiempo real.\newline
+
+\begin{figure}[h] 
+	\includegraphics[width=1.1\textwidth]{imagenes/diagramas_secuencia/ver_datos.png}
+	\caption{Diagrama de secuencia de visualización de datos antiguos y en tiempo real} \label{ver_datos_secuencia}
+\end{figure}
+
+Por último, en la figura \ref{algoritmos_secuencia} se muestran los pasos de la aplicación para las funcionalidades de visualización de datos antiguos o en tiempo real.\newline
+
+\begin{figure}[h] 
+	\includegraphics[width=1.35\textwidth]{imagenes/diagramas_secuencia/algoritmos_secuencia.png}
+	\caption{Diagrama de secuencia de elección de algoritmos y trading automático y backtesting} \label{algoritmos_secuencia}
+\end{figure}
+
 \section{Primer diseño de la interfaz}
 
 La página web principal mostrará un menú con distintos botones que implementan funcionalidades diferentes. Previo a este menú tendremos un formulario para identificarnos como usuarios de la aplicación. A ambos lados del menú principal y durante todas las vistas de la APP tendremos hiperenlaces con accesos directos a distintas funcionalidades de la aplicación. A continuación muestro una serie de borradores con diseños de cada una de las secciones de la interfaz.\newline
