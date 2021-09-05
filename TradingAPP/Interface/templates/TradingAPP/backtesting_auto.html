@@ -20,6 +20,8 @@ Algoritmo de trading elegido: <b> {{ sesion.algoritmo_elegido }} </b>
 
 <body class="center">
 
+{% if sesion.datos_mercado%}
+
 <form action="operar_backtesting/" method="POST"> {% csrf_token %}
         <p><b>Los datos que se usarán serán aquellos encontrados en el apartado de Gestión de Datos del menú principal.</b> <br> <br>
         </p>
@@ -60,6 +62,12 @@ Algoritmo de trading elegido: <b> {{ sesion.algoritmo_elegido }} </b>
     <input class="boton" type="submit" value="Operar"/>
 </form>
 
+{% else %}
+
+<br>
+        <p><b>Nada que mostrar, no hay datos guardados para este usuario. Visita el apartado de Gestión de Datos para descargarlos de MetaTrader5.</b> <br> <br>
+        </p>
+{% endif %}
 
 </body>
 

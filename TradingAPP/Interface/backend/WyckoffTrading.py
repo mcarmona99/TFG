@@ -220,8 +220,7 @@ class WyckoffTradingBacktesting:
             self.ultimo_maximo = self.valor_actual
 
         # COMPRO SI HE CUMPLIDO LOS INDICADORES
-        if self.indicadores_operar == 5:
-            # TODO ME FALTAN LOS TESTS 3 y 7
+        if self.indicadores_operar >= 5:
             # A OJOS DE LA IMPLEMENTACION, EL NUMERO DE TESTS MAXIMO ES 7
             if self.accion_actual == 0:  # sin accion
                 self.accion_actual = 1  # compro
@@ -315,8 +314,7 @@ class WyckoffTradingBacktesting:
             self.ultimo_minimo = self.valor_actual
 
         # COMPRO SI HE CUMPLIDO LOS INDICADORES
-        if self.indicadores_operar == 5:
-            # TODO ME FALTAN LOS TESTS 3 y 7
+        if self.indicadores_operar >= 5:
             # A OJOS DE LA IMPLEMENTACION, EL NUMERO DE TESTS MAXIMO ES 7
             if self.accion_actual == 0:  # sin accion
                 self.accion_actual = 2  # venta

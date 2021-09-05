@@ -96,6 +96,7 @@ class Mercado(models.Model):
         imgdata = StringIO()
         fig.savefig(imgdata, format='svg')
         imgdata.seek(0)
+        plt.close()
 
         return imgdata.getvalue()
 

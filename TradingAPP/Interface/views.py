@@ -35,6 +35,12 @@ def clear_context_ver_grafico():
     context['marco_tiempo'] = None
 
 
+def clear_full_context(request):
+    for key in context.keys():
+        context[key] = None
+    add_sesion_to_context(request)
+
+
 # Vistas
 
 def menu_principal(request):
@@ -79,6 +85,7 @@ def ver_datos_antiguos(request):
     add_sesion_to_context(request)
     # Si no estoy actualizando el grafico con los botones tras haber entrado aqui, limpio el contexto
     if 'actualizar_grafico' not in request.POST:
+        clear_full_context(request)
         clear_context_ver_grafico()
 
     if request.method == "POST":
@@ -101,10 +108,10 @@ def ver_datos_antiguos(request):
         # Actualizar el contador de ticks
         if 'actualizar_grafico' in request.POST:
             horas_totales = (utils.transform_date(context['fecha_fin']) -
-                            utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
+                             utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
             velas_totales = horas_totales // int(marco_tiempo.replace('H', '')) if 'H' in marco_tiempo else \
                 horas_totales // (int(marco_tiempo.replace('D', '')) * 24) if 'D' in marco_tiempo else \
-                int(horas_totales / (int(marco_tiempo.replace('Min', '')) / 60)) if 'Min' in marco_tiempo else 1
+                    int(horas_totales / (int(marco_tiempo.replace('Min', '')) / 60)) if 'Min' in marco_tiempo else 1
 
             valor_flag = int(request.POST.get('actualizar_grafico', 0))
 
@@ -236,14 +243,14 @@ def operar_auto(request):
 
 
 def backtesting_auto(request):
+    clear_full_context(request)
     add_sesion_to_context(request)
-    clear_context_status()
     return render(request, "TradingAPP/backtesting_auto.html", context)
 
 
 def operar_backtesting(request):
+    clear_full_context(request)
     add_sesion_to_context(request)
-    clear_context_status()
     if request.method == "POST":
         # Cojo las variables de la requests
         context['mercado'] = context['sesion'].datos_mercado
@@ -303,7 +310,7 @@ def operar_backtesting(request):
 
             acciones, plots = metodo_wyckoff.metodo_wyckoff_backtesting(data,
                                                                         start_date=fecha_inicio_datetime,
-                                                                        horas_totales=horas_totales ,
+                                                                        horas_totales=horas_totales,
                                                                         marco_tiempo=marco_tiempo)
 
         context['acciones'] = acciones if acciones else [
@@ -320,8 +327,8 @@ def gestion_datos(request):
 
 
 def obtener_y_guardar_datos(request):
+    clear_full_context(request)
     add_sesion_to_context(request)
-    clear_context_status()
     if request.method == "POST":
         if not context['sesion'].raw_data:
             if not context.get('fecha_inicio'):

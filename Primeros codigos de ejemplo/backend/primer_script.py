@@ -16,9 +16,6 @@ plt.style.use("fivethirtyeight")
 
 
 def login():
-    """
-    TODO: Docstring
-    """
     # if mt5.login(
     #     login,                 # número de cuenta
     #     password = "PASSWORD", # contraseña. No obligatorio.
@@ -33,13 +30,9 @@ def login():
 
 
 def send_request_to_mt5(symbol, action, lot=None, stop_lose=None, take_profit=None):
-    """
-    TODO: Docstring
-    """
     if not mt5.initialize():
         print("initialize() failed")
         mt5.shutdown()
-        # TODO: Gestion de errores
         return False
 
     # Preparamos la estructura de la solicitud de compra
@@ -47,7 +40,6 @@ def send_request_to_mt5(symbol, action, lot=None, stop_lose=None, take_profit=No
     if symbol_info is None:
         print(symbol, "not found, can not call order_check()")
         mt5.shutdown()
-        # TODO: Gestion de errores
         return False
 
     # Si el símbolo no está disponible en MarketWatch, lo añadimos
@@ -56,7 +48,6 @@ def send_request_to_mt5(symbol, action, lot=None, stop_lose=None, take_profit=No
         if not mt5.symbol_select(symbol, True):
             print("symbol_select({}}) failed, exit", symbol)
             mt5.shutdown()
-            # TODO: Gestion de errores
             return False
 
     # Creo variables y peticion request a mandar
@@ -85,32 +76,20 @@ def send_request_to_mt5(symbol, action, lot=None, stop_lose=None, take_profit=No
 
 
 def buy(symbol, lot=None, stop_lose=None, take_profit=None):
-    """
-    TODO: Docstring
-    """
     return send_request_to_mt5(symbol, "BUY", lot, stop_lose, take_profit)
 
 
 def sell(symbol, lot=None, stop_lose=None, take_profit=None):
-    """
-    TODO: Docstring
-    """
     return send_request_to_mt5(symbol, "SELL", lot, stop_lose, take_profit)
 
 
 def get_balance():
-    """
-    TODO: Docstring
-    """
     raise NotImplementedError
 
 
 # Primer ejemplo de algoritmo trading, usando 2 medias moviles (ver apuntes)
 def moving_average_golden_dead_cross(data, symbol, short_window_size, long_window_size, backtesting=False,
                                      backtesting_start_date=None, time_trading_in_hours=None):
-    """
-    TODO: Docstring
-    """
     # Variable inicial para controlar si estoy comprando o vendiendo
     current_order = 0  # 0 = nada, 1 = buy, 2 = sell
     # Variable a devolver, con accion, precio y tiempo al que la hicimos

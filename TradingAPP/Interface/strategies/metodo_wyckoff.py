@@ -8,9 +8,6 @@ from ..backend.operate import buy, sell
 
 def metodo_wyckoff_backtesting(data, start_date=None, horas_totales=None, multiplicador=None,
                                imprimir_plot_por_hora=False, marco_tiempo=None):
-    """
-    TODO: Docstring
-    """
     # Inicializo clase para parametros de Trading
     WTB = WyckoffTradingBacktesting()
 
@@ -57,7 +54,6 @@ def metodo_wyckoff_backtesting(data, start_date=None, horas_totales=None, multip
 
             # El objetivo se ha cumplido, vemos si el intervalo del que venimos es alcista o bajista
             if WTB.objetivo_cumplido and not WTB.tendencia:
-                print(WTB.intervalo)
                 WTB.tendencia = common.BAJISTA if WTB.dataframe.loc[WTB.intervalo[0], 'ask_close'] - \
                                                   WTB.dataframe.loc[WTB.intervalo[-1], 'ask_close'] > 0 \
                     else common.ALCISTA
@@ -115,9 +111,6 @@ def metodo_wyckoff_backtesting(data, start_date=None, horas_totales=None, multip
 
 
 def metodo_wyckoff_tiempo_real(mercado, time_trading_in_hours=None, marco_tiempo=None):
-    """
-    TODO: Docstring
-    """
     # Inicializo clase para parametros de Trading
     WTB = WyckoffTradingBacktesting()
 
