@@ -23,15 +23,16 @@
 
     <tr>
         <td colspan="2">
-            <H1>TradingAPP</H1>
+            <H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
+
         </td>
 
     </tr>
-
-
+</table>
+<table align="center">
     <tr>
         <td>
-            <br><br><br>
+            <br>
             {% if not sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Login'%}">LOGIN MT5</a>
             {% else %}
@@ -39,7 +40,7 @@
             {% endif %}
         </td>
         <td>
-            <br><br><br>
+            <br>
             {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Principal Logout'%}">LOGOUT MT5</a>
             {% else %}
@@ -48,12 +49,12 @@
         </td>
     </tr>
 
-</table>
+
 
 <br><br><br>
-<hr>
 
-<table align="center">
+
+
 
     <tr>
         <td style="text-align:center">
