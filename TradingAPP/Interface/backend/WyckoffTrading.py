@@ -66,7 +66,12 @@ class WyckoffTradingBacktesting:
 
     def generar_dataframe(self, intervalos, horas_hasta_completo, hours, multiplicador, horas_hasta_operacion=0,
                           ver_bandas_bollinguer=False):
-        len_x = range(len(self.dataframe))
+        lista_x = self.dataframe.time.to_list()
+        len_x = [x.strftime("%d/%m %H:%M") for x in lista_x]
+        x = []
+        for i in range(len(len_x)):
+            if i % 16 == 0:
+                x.append(len_x[i])
         if ver_bandas_bollinguer:
             self.dataframe['upper_band'], self.dataframe['middle_band'], self.dataframe['lower_band'] = \
                 ta.BBANDS(self.dataframe['ask_close'], timeperiod=20)
@@ -77,7 +82,8 @@ class WyckoffTradingBacktesting:
             plt.plot(len_x, self.dataframe['SMA'])
         if self.objetivo_cumplido:
             plt.axvspan(intervalos[-1][0] + horas_hasta_operacion // multiplicador - hours // multiplicador,
-                        intervalos[-1][-1] + horas_hasta_operacion // multiplicador - hours // multiplicador, facecolor='b', alpha=0.5)
+                        intervalos[-1][-1] + horas_hasta_operacion // multiplicador - hours // multiplicador,
+                        facecolor='b', alpha=0.5)
         if self.punto_operacion:
             plt.plot(self.punto_operacion[0] + horas_hasta_operacion // multiplicador - hours // multiplicador,
                      self.punto_operacion[1],
@@ -88,6 +94,11 @@ class WyckoffTradingBacktesting:
         if self.take_profit:
             plt.axhline(y=self.take_profit, c="green", label='Take Profit')
         plt.legend()
+        plt.title(f'Operacion {len(self.plots)+1}')
+        plt.xticks(x, rotation=30)
+        plt.gcf().subplots_adjust(bottom=0.3)
+        plt.xlabel("Fecha y hora")
+        plt.ylabel("Precio")
 
         imgdata = StringIO()
         plt.savefig(imgdata, format='svg')

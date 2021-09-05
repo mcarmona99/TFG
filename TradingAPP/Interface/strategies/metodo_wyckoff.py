@@ -174,7 +174,7 @@ def metodo_wyckoff_tiempo_real(mercado, time_trading_in_hours=None, marco_tiempo
         if WTB.accion_actual == 1:
             if WTB.valor_actual <= WTB.stop_lose:
                 print("ORDEN FALLIDA, HEMOS LLEGADO AL STOP LOSE")
-                WTB.generar_dataframe(intervalos, iteraciones_hasta_completo, it, 
+                WTB.generar_dataframe(intervalos, iteraciones_hasta_completo, it,
                                       horas_hasta_operacion=iteraciones_hasta_operacion)
                 WTB.acciones[len(WTB.acciones) - 1].extend(['FALLIDA'])
                 WTB.reiniciar_analisis(WTB.acciones, WTB.plots, WTB.flag)
