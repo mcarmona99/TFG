@@ -7,39 +7,40 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de acumulación en el método Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}\relax }}{33}{figure.caption.17}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema de distribución en el método Wyckoff. Fuente: \color {blue} \href {https://www.wyckoffanalytics.com/wyckoff-method-spanish/}{El método Wyckoff}\relax }}{34}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de Gantt del proyecto\relax }}{39}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de \textit {Gantt} del proyecto\relax }}{42}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Presupuesto de ejecución del trabajo\relax }}{43}{figure.caption.27}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de casos de uso referente al sistema de gestión de usuarios de la APP\relax }}{44}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de casos de uso referente a la gestión de la plataforma de trading (MT5)\relax }}{45}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de casos de uso referente a la visualización de datos de mercados financieros\relax }}{46}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de casos de uso referente a las funcionalidades de trading\relax }}{46}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de casos de uso referente al sistema de gestión de usuarios de la APP\relax }}{48}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de casos de uso referente a la gestión de la plataforma de trading (MT5)\relax }}{49}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de casos de uso referente a la visualización de datos de mercados financieros\relax }}{50}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de casos de uso referente a las funcionalidades de trading\relax }}{50}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura general del software.\relax }}{48}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de clases de la APP\relax }}{52}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{53}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{53}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de secuencia de login y logout de usuarios\relax }}{54}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de secuencia de login y logout de usuarios en el bróker en MetaTrader5\relax }}{55}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama de secuencia de visualización de datos antiguos y en tiempo real\relax }}{56}{figure.caption.37}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de secuencia de elección de algoritmos y trading automático y backtesting\relax }}{57}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Primer diseño del menú principal de la APP\relax }}{58}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}\relax }}{58}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) \relax }}{59}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura general del software.\relax }}{52}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de clases de la APP\relax }}{56}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{57}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{57}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de secuencia de login y logout de usuarios\relax }}{58}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de secuencia de login y logout de usuarios en el bróker en MetaTrader5\relax }}{59}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama de secuencia de visualización de datos antiguos y en tiempo real\relax }}{60}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de secuencia de elección de algoritmos y trading automático y backtesting\relax }}{61}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Primer diseño del menú principal de la APP\relax }}{62}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}\relax }}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) \relax }}{63}{figure.caption.42}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Logos de las principales herramientas usadas en el proyecto.\relax }}{62}{figure.caption.42}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \textit {Issue} número 5, implementación de la estrategia de Wyckoff\relax }}{64}{figure.caption.43}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {Pull Request} referente a la issue \ref {issue}\relax }}{65}{figure.caption.44}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Guía de puntuación scrum\relax }}{67}{figure.caption.45}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Datos de mercados obtenidos en las fases previas al desarrollo\relax }}{69}{figure.caption.46}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Media móvil con ventana de 100 días (azul claro) contra ventana de 30 días (azul oscuro). Fuente: \href {https://www.investopedia.com/}{investopedia.com/}\relax }}{72}{figure.caption.50}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Creación de objetos para el modelo \textit {Mercado}\relax }}{73}{figure.caption.51}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Árbol de directorios del proyecto\relax }}{74}{figure.caption.52}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Bandas de Bollinger en un gráfico de precios\relax }}{76}{figure.caption.55}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Gráficos que representan bandas de Bollinger y diferencia de sus valores\relax }}{77}{figure.caption.56}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Intervalos detectados con el algoritmo de detección de tendencias\relax }}{78}{figure.caption.57}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Otros ejemplos de intervalos detectados con el algoritmo de detección de intervalos\relax }}{78}{figure.caption.58}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Código Python para extender el modelo de Django User\relax }}{83}{figure.caption.62}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Opción a habilitar para mandar órdenes de operaciones al terminal MT5.\relax }}{84}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Logos de las principales herramientas usadas en el proyecto.\relax }}{66}{figure.caption.43}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \textit {Issue} número 5, implementación de la estrategia de Wyckoff\relax }}{68}{figure.caption.44}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {Pull Request} referente a la issue \ref {issue}\relax }}{69}{figure.caption.45}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Guía de puntuación scrum\relax }}{71}{figure.caption.46}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Datos de mercados obtenidos en las fases previas al desarrollo\relax }}{73}{figure.caption.47}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Media móvil con ventana de 100 días (azul claro) contra ventana de 30 días (azul oscuro). Fuente: \href {https://www.investopedia.com/}{investopedia.com/}\relax }}{76}{figure.caption.51}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Creación de objetos para el modelo \textit {Mercado}\relax }}{77}{figure.caption.52}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Árbol de directorios del proyecto\relax }}{78}{figure.caption.53}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Bandas de Bollinger en un gráfico de precios\relax }}{80}{figure.caption.56}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Gráficos que representan bandas de Bollinger y diferencia de sus valores\relax }}{81}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Intervalos detectados con el algoritmo de detección de tendencias\relax }}{82}{figure.caption.58}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Otros ejemplos de intervalos detectados con el algoritmo de detección de intervalos\relax }}{82}{figure.caption.59}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Código Python para extender el modelo de Django User\relax }}{87}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Opción a habilitar para mandar órdenes de operaciones al terminal MT5.\relax }}{88}{figure.caption.65}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

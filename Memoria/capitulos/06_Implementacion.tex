@@ -98,7 +98,8 @@ Para la correcta y eficiente realización del proyecto, ha sido esencial \textit
 
 Cada tarea se ha representado mediante \textit{issues}. Una \textit{issue} es una descripción de la tarea donde se pueden incluir a miembros del grupo que estén trabajando en la misma, errores específicos de la tarea, versiones del proyecto donde hay que realizarla o aparece el error, etc. \newline
 
-Cada issue suele ser referenciada por un \textit{pull request}. Los pull request son otro tipo de herramienta que sirven para incluir el código realizado en la tarea referenciada al proyecto en producción. Los \textit{PR} explican el proceso y/o el código que se ha introducido para arreglar o implementar la tarea que se pedía. La tarea puede ser arreglar un bug, implementar nuevas funcionalidades, etc. Cada PR debe ser revisado por otro miembro del equipo antes de ser aprobado. En el PR también podemos encontrar información útil como la rama de desarrollo que se estaba usando o los commits realizados en la misma.\newline
+Cada issue suele ser referenciada por un \textit{pull request}. Los pull request son otro tipo de herramienta que sirven para incluir el código realizado en la tarea referenciada al proyecto en producción. Los \textit{PR} explican el proceso y/o el código que se ha introducido para arreglar o implementar la tarea que se pedía. La tarea puede ser arreglar un bug, implementar nuevas funcionalidades, etc. Cada PR debe ser revisado por otro miembro del equipo antes de ser aprobado. En el PR también podemos encontrar información útil como la rama de desarrollo que se estaba usando o los commits realizados en la misma.
+\newline
 
 En el caso de este proyecto, el seguimiento y revisión de Issues y PRs ha sido hecho por el mismo desarrollador, debido a que es un trabajo de una sola persona.\newline
 
@@ -129,7 +130,8 @@ Los nuevos desarrollos parten de la rama develop y se mergean en ella misma una 
 	\item \textbf{release/\#issue-descripcion}: para ramas de release.
 \end{itemize}	
 
-Cuando estos desarrollos han terminado, como hemos dicho anteriormente, sus ramas correspondientes son mergeadas a develop, por medio de un Pull Request. Lo normal es que cada PR esté asignado a una issue y a una rama.\newline
+Cuando estos desarrollos han terminado, como hemos dicho anteriormente, sus ramas correspondientes son mergeadas a develop, por medio de un Pull Request. Lo normal es que cada PR esté asignado a una issue y a una rama.
+\newline
 
 Esto no ha sido de mucha utilidad en el caso de este proyecto, ya que no ha sido un trabajo en el grupo con lo que las ventajas de \textit{GitFlow} no se han visto en gran medida. \newline
 
@@ -521,7 +523,7 @@ def create_user_sesion(sender, instance, created, **kwargs):
 	if created:
 		Sesion.objects.create(user=instance)
 	\end{lstlisting}
-	\caption{Código Python para extender el modelo de Django User} \label{bandas_bollinger}
+	\caption{Código Python para extender el modelo de Django User}
 \end{figure}
 
 Finalmente, creo dos usuarios para que sean usados en la aplicación:\newline
