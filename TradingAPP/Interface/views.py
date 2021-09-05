@@ -232,13 +232,16 @@ def operar_auto(request):
             # Recogida de datos del simbolo a tratar
             # en formato ohlc con columnas (USANDO MT5)
 
-            acciones, plots = metodo_wyckoff.metodo_wyckoff_tiempo_real(mercado=mercado, time_trading_in_hours=horas,
-                                                                        marco_tiempo=marco_tiempo)
+            acciones, plots, decisiones = metodo_wyckoff.metodo_wyckoff_tiempo_real(mercado=mercado,
+                                                                                    time_trading_in_hours=horas,
+                                                                                    marco_tiempo=marco_tiempo)
 
-        context['acciones'] = acciones if acciones else [
+        context['acciones'] = utils.acciones_to_str(utils.anadir_beneficio_acciones(acciones)) if acciones else [
             'No se ha realizado ninguna operación en el tiempo transcurrido']
         context['plots'] = plots if plots else ['']
+        beneficios = utils.calcular_balance(acciones)
         context['balance'] = beneficios
+        context['decisiones'] = decisiones
         return render(request, 'TradingAPP/operar_auto.html', context)
 
 
@@ -277,7 +280,6 @@ def operar_backtesting(request):
 
         acciones = []
         plots = []
-        beneficios = 0.0
 
         if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
             # Recogida de datos del simbolo a tratar
@@ -308,15 +310,18 @@ def operar_backtesting(request):
             horas_totales = (utils.transform_date(context['fecha_fin']) -
                              fecha_inicio_datetime).total_seconds() // 3600
 
-            acciones, plots = metodo_wyckoff.metodo_wyckoff_backtesting(data,
-                                                                        start_date=fecha_inicio_datetime,
-                                                                        horas_totales=horas_totales,
-                                                                        marco_tiempo=marco_tiempo)
+            acciones, plots, decisiones = metodo_wyckoff.metodo_wyckoff_backtesting(data,
+                                                                                    start_date=fecha_inicio_datetime,
+                                                                                    horas_totales=horas_totales,
+                                                                                    marco_tiempo=marco_tiempo)
 
-        context['acciones'] = acciones if acciones else [
+        context['acciones'] = utils.acciones_to_str(utils.anadir_beneficio_acciones(acciones)) if acciones else [
             'No se ha realizado ninguna operación en el tiempo transcurrido']
         context['plots'] = plots if plots else ['']
+        beneficios = utils.calcular_balance(acciones)
         context['balance'] = beneficios
+        context['decisiones'] = decisiones
+        print(decisiones)
         return render(request, 'TradingAPP/operar_backtesting.html', context)
 
 

@@ -37,8 +37,10 @@ class WyckoffTradingBacktesting:
         self.dataframe = None
         self.valor_actual = 0
         self.punto_operacion = None
+        self.decisiones = []
+        self.decision = ''
 
-    def reiniciar_analisis(self, acciones=None, plots=None, flag=0):
+    def reiniciar_analisis(self, acciones=None, plots=None, flag=0, decisiones=None):
         self.acciones = acciones if acciones else []
         self.plots = plots if plots else []
         self.accion_actual = 0
@@ -60,6 +62,8 @@ class WyckoffTradingBacktesting:
         self.dataframe = None
         self.valor_actual = 0
         self.punto_operacion = None
+        self.decision = ''
+        self.decisiones = decisiones if decisiones else []
 
     def inicializar_valor_actual(self):
         self.valor_actual = self.dataframe['ask_close'][self.dataframe.index[-1]]
@@ -94,7 +98,7 @@ class WyckoffTradingBacktesting:
         if self.take_profit:
             plt.axhline(y=self.take_profit, c="green", label='Take Profit')
         plt.legend()
-        plt.title(f'Operacion {len(self.plots)+1}')
+        plt.title(f'Operacion {len(self.plots) + 1}')
         plt.xticks(x, rotation=30)
         plt.gcf().subplots_adjust(bottom=0.3)
         plt.xlabel("Fecha y hora")
@@ -161,7 +165,7 @@ class WyckoffTradingBacktesting:
         if self.puntos_clave_calculados and self.valor_actual < self.zona_inferior[0]:
             # Corresponde al test 9, se ha creado un suelo
             # (si se ha creado, nunca llegamos a reiniciar el analisis)
-            self.reiniciar_analisis(self.acciones, self.plots, self.flag)
+            self.reiniciar_analisis(self.acciones, self.plots, self.flag, self.decisiones)
             print("DECISION: reinicio el análisis, no se ve una acumulación clara")
             return
 
@@ -170,13 +174,18 @@ class WyckoffTradingBacktesting:
             if self.zona_inferior[0] < self.valor_actual < self.zona_inferior[1]:
                 self.secondary_test_encontrado = True
                 self.indicadores_operar += 1
-                print(
-                    f"- PS, SC, AR y ST encontrados después del objetivo bajista, indicadores cumplidos = {self.indicadores_operar}")
+                texto = f"- PS, SC, AR y ST encontrados después del objetivo bajista, indicadores cumplidos = " \
+                        f"{self.indicadores_operar}"
+                self.decision = f'{self.decision}\n{texto}'
+                print(texto)
 
         if not self.puntos_clave_calculados:
             # 1- El objetivo potencial bajista ya se ha cumplido
             self.indicadores_operar += 1
-            print(f"- Objetivo potencial bajista cumplido, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Objetivo potencial bajista cumplido, indicadores cumplidos = {self.indicadores_operar}. " \
+                    f"En la gráfica se observa de color azul la franja en la que se ha detectado la tendencia"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
 
             # 2- PS, SC, AR y ST
             # SC: selling climax
@@ -216,19 +225,25 @@ class WyckoffTradingBacktesting:
         if not self.tendencia_rota and self.valor_actual > self.dataframe['SMA'][self.dataframe.index[-1]]:
             # La tendencia bajista se ha roto
             self.indicadores_operar += 1
-            print(f"- Tendencia bajista se ha roto, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Tendencia bajista se ha roto, indicadores cumplidos = {self.indicadores_operar}"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
             self.tendencia_rota = True
 
         # 5- Minimos mas altos
         if self.ultimo_minimo < self.valor_actual < self.ultimo_maximo:
             self.indicadores_operar += 1
-            print(f"- Minimo mas alto, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Minimo mas alto, indicadores cumplidos = {self.indicadores_operar}"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
             self.ultimo_minimo = self.valor_actual
 
         # 6- Maximos mas altos
         elif self.valor_actual > self.ultimo_maximo:
             self.indicadores_operar += 1
-            print(f"- Maximo mas alto, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Maximo mas alto, indicadores cumplidos = {self.indicadores_operar}"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
             self.ultimo_maximo = self.valor_actual
 
         # COMPRO SI HE CUMPLIDO LOS INDICADORES
@@ -240,7 +255,10 @@ class WyckoffTradingBacktesting:
                 self.stop_lose = self.zona_inferior[0]
                 # El take profit debe ser x 3, pero pongo x 2 para ver resultados mas facilmente
                 self.take_profit = (self.valor_actual - self.stop_lose) * 2 + self.valor_actual
-                print("DECISION: Decido comprar tras superar los tests de Wyckoff")
+                texto = "DECISION: Decido comprar tras superar los tests de Wyckoff"
+                self.decision = f'{self.decision}\n{texto}'
+                self.decisiones.append(self.decision)
+                print(texto)
                 print(f"SL = {self.stop_lose},  TP = {self.take_profit}, valor actual = {self.valor_actual}")
                 # ACCION, TIMESTAMP, VALOR_ACTUAL, STOP_LOSE, TAKE_PROFIT
                 self.acciones.append(['buy', self.dataframe['time'][self.dataframe.index[-1]],
@@ -255,7 +273,7 @@ class WyckoffTradingBacktesting:
         if self.puntos_clave_calculados and self.valor_actual > self.zona_superior[1]:
             # Corresponde al test 9, se ha creado un suelo
             # (si se ha creado, nunca llegamos a reiniciar el analisis)
-            self.reiniciar_analisis(self.acciones, self.plots, self.flag)
+            self.reiniciar_analisis(self.acciones, self.plots, self.flag, self.decisiones)
             print("DECISION: reinicio el análisis, no se ve una distribución clara")
             return
 
@@ -264,13 +282,18 @@ class WyckoffTradingBacktesting:
             if self.zona_superior[0] < self.valor_actual < self.zona_superior[1]:
                 self.secondary_test_encontrado = True
                 self.indicadores_operar += 1
-                print(
-                    f"- PS, SC, AR y ST encontrados después del objetivo bajista, indicadores cumplidos = {self.indicadores_operar}")
+                texto = f"- PS, SC, AR y ST encontrados después del objetivo bajista, indicadores cumplidos = " \
+                        f"{self.indicadores_operar}"
+                self.decision = f'{self.decision}\n{texto}'
+                print(texto)
 
         if not self.puntos_clave_calculados:
             # 1- El objetivo potencial alcista ya se ha cumplido
             self.indicadores_operar += 1
-            print(f"- Objetivo potencial alcista cumplido, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Objetivo potencial alcista cumplido, indicadores cumplidos = {self.indicadores_operar}. " \
+                    f"En la gráfica se observa de color azul la franja en la que se ha detectado la tendencia"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
 
             # 2- PS, BC, AR y ST
             # BC: Buying climax
@@ -310,19 +333,25 @@ class WyckoffTradingBacktesting:
         if not self.tendencia_rota and self.valor_actual < self.dataframe['SMA'][self.dataframe.index[-1]]:
             # La tendencia alcista se ha roto
             self.indicadores_operar += 1
-            print(f"- Tendencia alcista se ha roto, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Tendencia alcista se ha roto, indicadores cumplidos = {self.indicadores_operar}"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
             self.tendencia_rota = True
 
         # 6- Maximos mas bajos
         if self.ultimo_minimo < self.valor_actual < self.ultimo_maximo:
             self.indicadores_operar += 1
-            print(f"- Maximo mas bajo, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Maximo mas bajo, indicadores cumplidos = {self.indicadores_operar}"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
             self.ultimo_maximo = self.valor_actual
 
         # 5- Minimos mas bajos
         elif self.ultimo_minimo > self.valor_actual:
             self.indicadores_operar += 1
-            print(f"- Minimo mas bajo, indicadores cumplidos = {self.indicadores_operar}")
+            texto = f"- Minimo mas bajo, indicadores cumplidos = {self.indicadores_operar}"
+            self.decision = f'{self.decision}\n{texto}'
+            print(texto)
             self.ultimo_minimo = self.valor_actual
 
         # COMPRO SI HE CUMPLIDO LOS INDICADORES
@@ -334,7 +363,10 @@ class WyckoffTradingBacktesting:
                 self.stop_lose = self.zona_superior[1]
                 # El take profit debe ser x 3, pero pongo x 2 para ver resultados mas facilmente
                 self.take_profit = self.valor_actual - (self.stop_lose - self.valor_actual) * 2
-                print("DECISION: Decido vender tras superar los tests de Wyckoff")
+                texto = "DECISION: Decido vender tras superar los tests de Wyckoff"
+                self.decision = f'{self.decision}\n{texto}'
+                self.decisiones.append(self.decision)
+                print(texto)
                 print(f"SL = {self.stop_lose},  TP = {self.take_profit}, valor actual = {self.valor_actual}")
                 # ACCION, TIMESTAMP, VALOR_ACTUAL, STOP_LOSE, TAKE_PROFIT
                 self.acciones.append(['sell', self.dataframe['time'][self.dataframe.index[-1]],

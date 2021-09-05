@@ -33,13 +33,6 @@ ACCIONES REALIZADAS:
 {% endfor %}
 <br><br>
 
-PLOT DE CADA ACCION:
-<br><br>
-{% for plot in plots %}
-<p>{{ plot | safe }}</p>
-{% endfor %}
-<br><br><br>
-
 BALANCE OBTENIDO:
 <br><br>
 {% if balance > 0.0 %}
@@ -47,6 +40,31 @@ BALANCE OBTENIDO:
 {% else %}
 <p style="color:#a50707">{{ balance }}</p>
 {% endif %}
+<br><br>
+
+<table align="center">
+    <tr>
+        <td>
+            PLOT DE CADA ACCION:
+            <br><br>
+            {% for plot in plots %}
+            <p>{{ plot | safe }}</p>
+            {% endfor %}
+            <br><br><br>
+        </td>
+        <td>
+            DECISIONES DE CADA ACCION:
+            <br><br>
+            {% for decision in decisiones %}
+            <p>{{ decision }}</p>
+            <br><br><br><br><br><br><br><br><br>
+            {% endfor %}
+            <br><br><br>
+        </td>
+    </tr>
+</table>
+<br><br>
+
 
 {% else %}
 

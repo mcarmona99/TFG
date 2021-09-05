@@ -110,25 +110,6 @@
 
     </tr>
 
-    <tr>
-        <td>
-            <br><br><br>
-            {% if sesion.logued_MT5 %}
-            <a class="boton" href="{% url 'Menu Principal'%}">Histórico de operaciones</a>
-            {% else %}
-            <a class="boton_inhabilitado">Histórico de operaciones</a>
-            {% endif %}
-        </td>
-        <td>
-            <br><br><br>
-            {% if sesion.logued_MT5 %}
-            <a class="boton" href="{% url 'Menu Principal'%}">Balance y operaciones en curso</a>
-            {% else %}
-            <a class="boton_inhabilitado">Balance y operaciones en curso</a>
-            {% endif %}
-        </td>
-
-    </tr>
 
 
 </table>
