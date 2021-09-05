@@ -64,7 +64,7 @@ class WyckoffTradingBacktesting:
     def inicializar_valor_actual(self):
         self.valor_actual = self.dataframe['ask_close'][self.dataframe.index[-1]]
 
-    def generar_dataframe(self, intervalos, horas_hasta_completo, hours, horas_hasta_operacion=0,
+    def generar_dataframe(self, intervalos, horas_hasta_completo, hours, multiplicador, horas_hasta_operacion=0,
                           ver_bandas_bollinguer=False):
         len_x = range(len(self.dataframe))
         if ver_bandas_bollinguer:
@@ -72,14 +72,15 @@ class WyckoffTradingBacktesting:
                 ta.BBANDS(self.dataframe['ask_close'], timeperiod=20)
             plt.plot(len_x, self.dataframe['upper_band'])
             plt.plot(len_x, self.dataframe['lower_band'])
-        plt.plot(len_x, self.dataframe['ask_close'])
+        plt.plot(len_x, self.dataframe['ask_close'], label='Precio de cierre')
         if self.media_calculada and self.accion_actual == 0:
             plt.plot(len_x, self.dataframe['SMA'])
         if self.objetivo_cumplido:
-            plt.axvspan(intervalos[-1][0] + horas_hasta_completo - hours,
-                        intervalos[-1][-1] + horas_hasta_completo - hours, facecolor='b', alpha=0.5)
+            plt.axvspan(intervalos[-1][0] + horas_hasta_operacion // multiplicador - hours // multiplicador,
+                        intervalos[-1][-1] + horas_hasta_operacion // multiplicador - hours // multiplicador, facecolor='b', alpha=0.5)
         if self.punto_operacion:
-            plt.plot(self.punto_operacion[0] + horas_hasta_operacion - hours, self.punto_operacion[1],
+            plt.plot(self.punto_operacion[0] + horas_hasta_operacion // multiplicador - hours // multiplicador,
+                     self.punto_operacion[1],
                      marker="^" if self.accion_actual == 1 else "v", c='purple',
                      label='Compra' if self.accion_actual == 1 else "Venta")
         if self.stop_lose:
