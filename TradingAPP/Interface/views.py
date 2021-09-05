@@ -245,23 +245,17 @@ def operar_backtesting(request):
     add_sesion_to_context(request)
     clear_context_status()
     if request.method == "POST":
-        inicio = request.POST["fecha_inicio"]
-        fecha_inicio_datetime = utils.transform_date(inicio)
-        try:
-            horas = int(request.POST["horas"])
-        except ValueError:
-            horas = -1
+        # Cojo las variables de la requests
+        context['mercado'] = context['sesion'].datos_mercado
+        marco_tiempo = context['sesion'].marco_tiempo
 
-        # Compruebo que el número de horas es válido y que la fecha no cae en fin de semana y
-        # no sale del rango de datos disponible
-        if horas <= 0:
-            context['error'] = 'ERROR: selecciona un número de horas válido'
+        if not context.get('fecha_inicio'):
+            fecha_inicio = request.POST["fecha_inicio"]
+            context['fecha_inicio'] = fecha_inicio
 
-        if fecha_inicio_datetime + datetime.timedelta(hours=horas) >= datetime.datetime(2021, 6, 22, 20):
-            context['error'] = 'ERROR: selecciona un rango (fecha inicio + horas) dentro de los datos disponibles'
-
-        if fecha_inicio_datetime.weekday() >= 5:
-            context['error'] = 'ERROR: selecciona un día de inicio que sea sábado o domingo'
+        if not context.get('fecha_fin'):
+            fecha_fin = request.POST["fecha_fin"]
+            context['fecha_fin'] = fecha_fin
 
         try:
             if context['error']:
@@ -269,12 +263,10 @@ def operar_backtesting(request):
         except KeyError:
             pass
 
-        nombre_mercado = request.POST["mercado"]
+        nombre_mercado = context['mercado']
         mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=nombre_mercado).id)
 
         # OPERAR BACKTESTING ENTRE INICIO Y FIN EN LA MONEDA mercado
-        # ESTO SE DEBE ACTUALIZAR PARA COGER LOS DATOS QUE INSERTA EL USUARIO
-        # Y GUARDAMOS EN BASE DE DATOS. AHORA MISMO COJO DATOS LOCALES
 
         acciones = []
         plots = []
@@ -282,29 +274,37 @@ def operar_backtesting(request):
 
         if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
             # Recogida de datos del simbolo a tratar
-            data = common.get_data(mercado)
-
-            ventana_pequena = int(request.POST["ventana_pequena"])
-            ventana_grande = int(request.POST["ventana_grande"])
-
-            # Moving average crossover
-            # Parametrizar con las ventanas pequeña y grande que se quiera (3 y 6 por ej)
-            # Ultimo parametro indica tiempo en horas que durará el trading
-
-            acciones, ultimo_precio = \
-                moving_average.moving_average(data, mercado, ventana_pequena, ventana_grande, backtesting=True,
-                                              backtesting_start_date=fecha_inicio_datetime,
-                                              time_trading_in_hours=horas)
-            beneficios = common.get_actions_results(acciones, ultimo_precio)
+            # data = common.get_data(mercado)
+            #
+            # ventana_pequena = int(request.POST["ventana_pequena"])
+            # ventana_grande = int(request.POST["ventana_grande"])
+            #
+            # # Moving average crossover
+            # # Parametrizar con las ventanas pequeña y grande que se quiera (3 y 6 por ej)
+            # # Ultimo parametro indica tiempo en horas que durará el trading
+            #
+            # acciones, ultimo_precio = \
+            #     moving_average.moving_average(data, mercado, ventana_pequena, ventana_grande, backtesting=True,
+            #                                   backtesting_start_date=fecha_inicio_datetime,
+            #                                   time_trading_in_hours=horas)
+            # beneficios = common.get_actions_results(acciones, ultimo_precio)
+            raise
 
         if context['sesion'].algoritmo_elegido.id == 2:  # Metodo Wyckoff
             # Recogida de datos del simbolo a tratar
             # en formato ohlc con columnas
             # time  ask_open  ask_high  ask_low  ask_close  bid_open  bid_high  bid_low  bid_close
-            data = common.get_data_ohlc(mercado)
+            data = common.get_data_ohlc_str(context['sesion'].raw_data)
 
-            acciones, plots = metodo_wyckoff.metodo_wyckoff_backtesting(data, start_date=fecha_inicio_datetime,
-                                                                        time_trading_in_hours=horas)
+            fecha_inicio_datetime = utils.transform_date(context['fecha_inicio'])
+
+            horas_totales = (utils.transform_date(context['fecha_fin']) -
+                             fecha_inicio_datetime).total_seconds() // 3600
+
+            acciones, plots = metodo_wyckoff.metodo_wyckoff_backtesting(data,
+                                                                        start_date=fecha_inicio_datetime,
+                                                                        horas_totales=horas_totales ,
+                                                                        marco_tiempo=marco_tiempo)
 
         context['acciones'] = acciones if acciones else [
             'No se ha realizado ninguna operación en el tiempo transcurrido']
