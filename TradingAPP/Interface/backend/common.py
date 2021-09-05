@@ -78,7 +78,7 @@ def get_data(symbol, data_path=DATA_PATH):
     return df
 
 
-def transform_data_to_ohlc(data_frame, marco_tiempo='1H'):
+def transform_data_to_ohlc(data_frame, marco_tiempo='1H', from_app=False):
     # Uso la funcion ohlc de pandas para generar las velas, la salida sera similar a:
     #
     # time                  open    high    low     close
@@ -87,9 +87,13 @@ def transform_data_to_ohlc(data_frame, marco_tiempo='1H'):
     #
     # En este caso, velas de rango 1 hora por defecto
 
+    # Ajuste de indices
+    if from_app:
+        data_frame = data_frame.set_index('time')
+
     # Creo el df en ohld y renombro columnas
     data_ask = data_frame['ask'].resample(marco_tiempo).ohlc()
-    data_ask.columns = ['ask_open',  'ask_high', 'ask_low', 'ask_close']
+    data_ask.columns = ['ask_open', 'ask_high', 'ask_low', 'ask_close']
 
     data_bid = data_frame['bid'].resample(marco_tiempo).ohlc()
     data_bid.columns = ['bid_open', 'bid_high', 'bid_low', 'bid_close']
@@ -125,6 +129,27 @@ def get_data_ohlc(symbol, data_path=DATA_PATH_OHLC):
         print(f"No se han encontrado dataframes para {symbol} en {data_path}")
         # TODO: Gestion de errores
         return None
+
+    return df
+
+
+def get_data_ohlc_str(string_data):
+    """
+    TODO: Docstring
+    """
+    from io import StringIO
+    data = StringIO(string_data)
+    df = pd.read_csv(data, sep=',')
+
+    # Remove duplciated column of axis
+    df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+
+    # Rename columns
+    df.columns = ['time',
+                  'ask_open', 'ask_high', 'ask_low', 'ask_close',
+                  'bid_open', 'bid_high', 'bid_low', 'bid_close']
+
+    df['time'] = pd.to_datetime(df['time'], dayfirst=False, yearfirst=True)
 
     return df
 

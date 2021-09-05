@@ -29,6 +29,7 @@
 
     </tr>
 </table>
+<br><br>
 <table align="center">
     <tr>
         <td>
@@ -38,6 +39,7 @@
             {% else %}
             <a class="boton_inhabilitado">LOGIN MT5</a>
             {% endif %}
+            <br><br><br>
         </td>
         <td>
             <br>
@@ -46,12 +48,23 @@
             {% else %}
             <a class="boton_inhabilitado">LOGOUT MT5</a>
             {% endif %}
+            <br><br><br>
         </td>
     </tr>
 
 
 
-<br><br><br>
+
+     <tr>
+        <td colspan="2">
+            {% if sesion.logued_MT5 %}
+            <a class="boton" href="{% url 'Gestion Datos'%}">Gestión de datos</a>
+            {% else %}
+            <a class="boton_inhabilitado">Gestión de datos</a>
+            {% endif %}
+        </td>
+
+    </tr>
 
 
 
@@ -68,7 +81,7 @@
         <td style="text-align:center">
             <br><br><br>
             {% if sesion.logued_MT5 %}
-            <a class="boton" href="{% url 'Menu Trading'%}">Operar</a>
+            <a class="boton" href="{% url 'Trading Automatico'%}">Operar</a>
             {% else %}
             <a class="boton_inhabilitado">Operar</a>
             {% endif %}

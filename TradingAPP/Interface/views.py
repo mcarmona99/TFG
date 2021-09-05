@@ -3,7 +3,7 @@ import warnings
 
 from django.shortcuts import render, get_object_or_404
 
-from .backend import common, utils, login
+from .backend import common, utils, login, get_data_10_years
 from .models import AlgoritmoTrading, Sesion, Mercado
 from .strategies import moving_average, metodo_wyckoff
 
@@ -83,60 +83,43 @@ def ver_datos_antiguos(request):
 
     if request.method == "POST":
         # Cojo las variables de la requests
-        if not context.get('mercado'):
-            nombre_mercado = request.POST["mercado"]
-            context['mercado'] = nombre_mercado
+        context['mercado'] = context['sesion'].datos_mercado
 
         if not context.get('fecha_inicio'):
             fecha_inicio = request.POST["fecha_inicio"]
             context['fecha_inicio'] = fecha_inicio
 
-        try:
-            if not context.get('fecha_fin'):
-                fecha_fin = request.POST["fecha_fin"]
-                context['fecha_fin'] = fecha_fin
-        except:
-            fecha_fin = ''
+        if not context.get('fecha_fin'):
+            fecha_fin = request.POST["fecha_fin"]
             context['fecha_fin'] = fecha_fin
-
-        try:
-            if not context.get('horas'):
-                horas = int(request.POST["horas"])
-                context['horas'] = horas
-        except:
-            horas = 0
-            context['horas'] = horas
 
         # Cojo el objeto de la clase Mercado
         mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=context.get('mercado')).id)
 
-        # Actualizar el contador de horas
+        marco_tiempo = context['sesion'].marco_tiempo
+
+        # Actualizar el contador de ticks
         if 'actualizar_grafico' in request.POST:
-            comparar = context['horas'] if context['horas'] else (utils.transform_date(
-                context['fecha_fin']) - utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
+            horas_totales = (utils.transform_date(context['fecha_fin']) -
+                            utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
+            velas_totales = horas_totales // int(marco_tiempo.replace('H', '')) if 'H' in marco_tiempo else \
+                horas_totales // (int(marco_tiempo.replace('D', '')) * 24) if 'D' in marco_tiempo else \
+                int(horas_totales / (int(marco_tiempo.replace('Min', '')) / 60)) if 'Min' in marco_tiempo else 1
+
             valor_flag = int(request.POST.get('actualizar_grafico', 0))
 
-            if context['horas']:
-                # En el caso de horas, a la hora de comparar, el maximo es el
-                # numero de horas - 24 y - el numero de horas en fines de semana
-                lista_datetimes_por_hora = [
-                    (utils.transform_date(context['fecha_inicio']) + datetime.timedelta(hours=i)) for
-                    i
-                    in range(int(context['horas']))]
-                lista_dias_fin_semana = [dt for dt in lista_datetimes_por_hora if dt.weekday() in [5, 6]]
-                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24 - len(
-                    lista_dias_fin_semana) - 1
-            else:
-                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24
-
-            if condicion_comparar:
+            if 0 <= context['flag'] + valor_flag <= velas_totales - 24:
                 context['flag'] = context['flag'] + valor_flag
 
         # Genero el gráfico
         context["grafico"], context["exito"] = mercado.obtener_grafico_datos_antiguos(start=context.get('fecha_inicio'),
                                                                                       end=context.get('fecha_fin'),
-                                                                                      horas=context.get('horas'),
-                                                                                      flag=context.get('flag', 0))
+                                                                                      flag=context.get('flag', 0),
+                                                                                      marco_tiempo=
+                                                                                      context.get('sesion').
+                                                                                      marco_tiempo,
+                                                                                      data=
+                                                                                      context.get('sesion').raw_data)
 
     return render(request, "TradingAPP/ver_datos_antiguos.html", context)
 
@@ -192,12 +175,6 @@ def elegir_estrategia(request, algoritmo_id):
         context['sesion'].save()
 
     return render(request, "TradingAPP/elegir_estrategia.html", context)
-
-
-def menu_operar(request):
-    add_sesion_to_context(request)
-    clear_context_status()
-    return render(request, "TradingAPP/menu_operar.html", context)
 
 
 def trading_auto(request):
@@ -334,3 +311,50 @@ def operar_backtesting(request):
         context['plots'] = plots if plots else ['']
         context['balance'] = beneficios
         return render(request, 'TradingAPP/operar_backtesting.html', context)
+
+
+def gestion_datos(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    return render(request, "TradingAPP/menu_gestion_datos.html", context)
+
+
+def obtener_y_guardar_datos(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    if request.method == "POST":
+        if not context['sesion'].raw_data:
+            if not context.get('fecha_inicio'):
+                inicio = request.POST["fecha_inicio"]
+                context['fecha_inicio'] = inicio
+
+            if not context.get('mercado'):
+                nombre_mercado = request.POST["mercado"]
+                context['mercado'] = nombre_mercado
+
+            if not context.get('marco_tiempo'):
+                marco_tiempo = request.POST["marco_tiempo"]
+                context['marco_tiempo'] = marco_tiempo
+
+            # Tenemos nombre_mercado, marco_tiempo, año inicio, obtengo datos y los guardo
+            csv_text = get_data_10_years.get_data_csv_ohlc(context['fecha_inicio'], context['mercado'],
+                                                           context['marco_tiempo'])
+            context['sesion'].raw_data = csv_text
+            context['sesion'].datos_mercado = context['mercado']
+            context['sesion'].datos_inicio = context['fecha_inicio']
+            context['sesion'].marco_tiempo = context['marco_tiempo']
+            context['sesion'].save()
+
+        return render(request, 'TradingAPP/proceso_datos_exito.html', context)
+
+
+def borrar_datos(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    context['sesion'].raw_data = ''
+    context['sesion'].datos_mercado = ''
+    context['sesion'].datos_inicio = ''
+    context['sesion'].marco_tiempo = ''
+    context['sesion'].save()
+
+    return render(request, 'TradingAPP/proceso_datos_exito.html', context)
