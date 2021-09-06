@@ -370,3 +370,8 @@ def borrar_datos(request):
     context['sesion'].save()
 
     return render(request, 'TradingAPP/proceso_datos_exito.html', context)
+
+def manual_uso(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    return render(request, "TradingAPP/manual_uso.html", context)

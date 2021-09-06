@@ -29,7 +29,9 @@ Haz click en "Elegir estrategia" para seleccionar la estrategia de trading algor
 {% if algoritmos %}
 
 {% for algoritmo in algoritmos %}
+{% if algoritmo.id != 1 %}
 <a href="{{ algoritmo.id }}">{{ algoritmo.nombre }}</a><br>
+{%endif%}
 {% endfor %}
 
 {% else %}

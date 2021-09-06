@@ -49,6 +49,9 @@ urlpatterns = [
     path('datos/obtener_datos/', views.obtener_y_guardar_datos, name="Datos obtenidos"),
     path('datos/borrar_datos/', views.borrar_datos, name="Borrar datos"),
 
+    # Manual de uso
+    path('manual_uso/', views.manual_uso, name="Manual uso"),
+
     # Admin page
     path('admin/', admin.site.urls),
 ]

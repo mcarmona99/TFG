@@ -1,0 +1,50 @@
+\chapter{Anexo}
+
+En este capítulo extra de la memoria añado un manual de uso de la aplicación, para poder usarla desde cero.\newline
+
+\section{Manual de uso}
+
+El proyecto se ha desarrollado en su totalidad en el repositorio de \textit{GitHub}: \color{blue} \href{https://github.com/mcarmona99/TFG/}{https://github.com/mcarmona99/TFG/} \color{black}\newline
+	
+Una vez el proyecto sea entregado, este enlace será público y el proyecto se podrá descargar desde la web de \textit{GitHub}.\newline
+
+Para iniciar el proyecto, necesitaremos de un entorno de \textit{Python3}.\newline
+
+Desde \textit{Windows}, podemos crear un entorno virtual de Python de la siguiente forma. Se incluye también la orden para activar dicho \textit{venv}.\newline
+
+\begin{lstlisting}
+>python3 -m venv .\tradingapp_venv
+>.\tradingapp_venv\Scripts\activate
+\end{lstlisting}
+
+A este entorno tendremos que instalar las dependencias. El \textit{virtual environment} creado estará presente en los archivos del proyecto como un entorno embebido, con lo que no será necesario crear uno.\newline
+
+Para iniciar la aplicación web, tendremos que usar el siguiente comando, desde el directorio padre \textit{TradingAPP}:\newline
+
+\begin{lstlisting}
+	>python3 manage.py runserver
+\end{lstlisting}
+
+Tras esto, la aplicación estará escuchando en local en la dirección \textit{http://localhost:8000/}.\newline
+
+\subsubsection{Página principal de la aplicación:}
+
+Página de inicio, se piden las credenciales del usuario para acceder a la aplicación.\newline
+
+Podemos acceder aquí con el usuario \textbf{wyckoff} y contraseña \textbf{Trading2!}.\newline
+
+\subsubsection{Menú principal de la aplicación:}
+
+Aquí tenemos los siguientes botones:\newline
+
+\begin{itemize}
+	\item Login MT5: para loguearnos en el bróker y poder utilizar la plataforma comercial externa. Este paso es necesario para usar el resto de la aplicación. Aquí se puede crear una cuenta en el bróker ICMarkets, que dispone de cuentas Demo con dinero falso para testing.
+	\item Logout MT5: para cerrar sesión en MT5.
+	\item Gestión de datos: se usa para descargar a la base de datos los datos históricos del mercado financiero elegido que serán usados en el resto de funcionalidades de la APP. Se puede elegir el intervalo de datos y temporalidad.
+	\item Ver datos de mercados: se usa para ver gráficas en formato de velas japonesas de precios de mercados en tiempo real y antiguos. En el caso de mercados antiguos, el menú es interactivo y el usuario se puede desplazar por el gráfico. En el caso de tiempo real, se puede elegir la temporalidad.
+	\item Operar: se utiliza para lanzar el algoritmo de Wyckoff en tiempo real. Aquí se puede parametrizar el número de horas que estará funcionando, la temporalidad y el mercado a operar.
+	\item Estrategias de trading: se utiliza para elegir la estrategia de Trading usada para trading algoritmico.
+	\item Backtesting: se usa para probar los algoritmos en datos pasados de mercados financieros. Aquí se haría lo mismo que en tiempo real pero simulando el transcurso del tiempo.
+\end{itemize}
+
+Durante todas las páginas de la aplicación encontramos a los lados izquierdo y derecho accesos directos a cada una de las funcionalidades.\newline
