@@ -24,6 +24,24 @@ Como resumen, en el esquema podemos ver cuál es la estructura principal del pro
 	\item \textbf{Plataforma comercial}: Módulo externo de la aplicación, se usa para mandar órdenes de operaciones y recibir resultados e información en tiempo real.
 \end{itemize}
 
+\section{Cuestiones más relevantes: algoritmos de trading y gestión de datos de mercado}
+
+En este apartado comento el diseño de dos de las cuestiones más relevantes de la aplicación: los algoritmos de trading y la gestión de datos de mercado.\newline
+
+En cuanto al \textbf{módulo de algoritmos de trading}, se creará un modelo referente a cada uno de los algoritmos o estrategias para operar. Se implementará aquí el método de Wyckoff, mencionado en el contexto teórico del proyecto. El método de Wyckoff será uno de los objetos de este modelo. Cada uno de los objetos o algoritmos, serán como cajas negras. El usuario podrá utilizar cada uno de ellos sin saber ni tener que saber cómo funcionan.\newline
+
+Por el diseño de la aplicación, el módulo de algoritmos de trading es un módulo totalmente independiente de los demás. Esto puede verse en la figura \ref{paquetes}, arquitectura general. Que sea independiente de los demás quiere decir que en el mismo módulo se desarrollan los algoritmos. El procesado de datos, inputs y outputs es trabajo del resto de módulos. A cada estrategia le llegarán siempre unos datos de entrada, y dará unos datos de salida. En este caso, la entrada serán los datos históricos del mercado en el que queremos operar en cada caso; y la salida, las operaciones realizadas y balance obtenido.\newline
+
+En segundo lugar, tenemos el módulo de gestión de datos de mercado.\newline
+
+El usuario a través de las vistas de la APP, podrá elegir qué mercado financiero guardar en su base de datos y los parámetros a elegir: temporalidad, fecha inicio, etc. Los datos de los mercados financieros seguirán el formato \textit{OHLC} y serán usados por el módulo de trading o algoritmos de trading; y por la interfaz para la visualización de datos antiguos.\newline
+
+Los datos que el usuario guarda serán recogidos a través de la plataforma comercial usada, \textit{MetaTrader5}. Los datos guardados serán referentes a cada usuario, lo que quiere decir que otro usuario cualquiera de la aplicación tendrá que guardar los suyos propios ya que no tendrá acceso a los de los demás.\newline
+
+Las dos cuestiones presentadas en este punto: algoritmos y gestión de datos; serán explicadas de manera más técnica y desarrollada en la parte de implementación del proyecto.\newline
+
+
+
 \section{Diseño de clases}
 
 En esta sección se muestra el diagrama de clases del proyecto. Este diagrama se puede ver en la figura \ref{diagrama_clases} \newline
@@ -47,13 +65,13 @@ En la imagen \ref{iniciar_app} se ven los pasos realizados para iniciar la aplic
 
 \begin{figure}[h] 
 	\includegraphics[width=0.6\textwidth]{imagenes/diagramas_secuencia/iniciar_app.png}
-	\caption{Diagrama de secuencia de la creación de usuarios} \label{iniciar_app}
+	\caption{Diagrama de secuencia de inicio de la APP} \label{iniciar_app}
 \end{figure}
 
 En la figura \ref{secuencia_crear_usuario} se pueden ver los pasos realizados por el sistema para crear un usuario y cómo lo enriquece con los detalles específicos de la sesión. \newline
 
 \begin{figure}[h] 
-	\includegraphics[width=1.3\textwidth]{imagenes/diagramas_secuencia/gestion_usuarios.png}
+	\includegraphics[width=1.2\textwidth]{imagenes/diagramas_secuencia/gestion_usuarios.png}
 	\caption{Diagrama de secuencia de la creación de usuarios} \label{secuencia_crear_usuario}
 \end{figure}
 
@@ -71,6 +89,13 @@ En la figura \ref{login_logout_MT5} se representan los pasos de la aplicación a
 	\caption{Diagrama de secuencia de login y logout de usuarios en el bróker en MetaTrader5} \label{login_logout_MT5}
 \end{figure}
 
+En el diagrama \ref{gestion_datos} se representan los pasos de la aplicación realizados cuando un usuario guarda los datos de mercados en la database, por medio de la APP.\newline
+
+\begin{figure}[h] 
+	\includegraphics[width=1.1\textwidth]{imagenes/diagramas_secuencia/gestion_datos.png}
+	\caption{Diagrama de secuencia gestión de datos} \label{gestion_datos}
+\end{figure}
+
 En la imagen \ref{ver_datos_secuencia} se muestran los pasos de la aplicación para las funcionalidades de visualización de datos antiguos o en tiempo real.\newline
 
 \begin{figure}[h] 
@@ -78,7 +103,7 @@ En la imagen \ref{ver_datos_secuencia} se muestran los pasos de la aplicación p
 	\caption{Diagrama de secuencia de visualización de datos antiguos y en tiempo real} \label{ver_datos_secuencia}
 \end{figure}
 
-Por último, en la figura \ref{algoritmos_secuencia} se muestran los pasos de la aplicación para las funcionalidades de visualización de datos antiguos o en tiempo real.\newline
+Por último, en la figura \ref{algoritmos_secuencia} se muestran los pasos de la aplicación para la elección de estrategias de trading y trading algorítmico y backtesting.\newline
 
 \begin{figure}[h] 
 	\includegraphics[width=1.35\textwidth]{imagenes/diagramas_secuencia/algoritmos_secuencia.png}

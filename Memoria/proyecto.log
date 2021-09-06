@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  6 SEP 2021 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.17)  6 SEP 2021 19:20
 entering extended mode
 **./proyecto.tex
 (proyecto.tex
@@ -648,7 +648,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 (portada/portada.tex
 \centeroffset=\skip73
-<imagenes/logo_ugr.jpg, id=291, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=303, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -664,7 +664,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--23
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=292, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=304, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 31.
@@ -684,7 +684,7 @@ _ugr.jpg> <./imagenes/etsiit_logo.png>]) (prefacios/prefacio.tex [2
 (portada/portada_2.tex [3] [4
 
 ]
-<imagenes/logo.png, id=317, 985.43156pt x 572.89032pt>
+<imagenes/logo.png, id=329, 985.43156pt x 572.89032pt>
 File: imagenes/logo.png Graphic file (type png)
 <use imagenes/logo.png>
 Package pdftex.def Info: imagenes/logo.png  used on input line 21.
@@ -954,13 +954,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-<imagenes/representacion_barra_OHLC.png, id=631, 196.735pt x 187.70125pt>
+<imagenes/representacion_barra_OHLC.png, id=649, 196.735pt x 187.70125pt>
 File: imagenes/representacion_barra_OHLC.png Graphic file (type png)
 <use imagenes/representacion_barra_OHLC.png>
 Package pdftex.def Info: imagenes/representacion_barra_OHLC.png  used on input 
 line 73.
 (pdftex.def)             Requested size: 143.9978pt x 137.3845pt.
-<imagenes/representacion_vela_OHLC.png, id=632, 301.125pt x 254.9525pt>
+<imagenes/representacion_vela_OHLC.png, id=650, 301.125pt x 254.9525pt>
 File: imagenes/representacion_vela_OHLC.png Graphic file (type png)
 <use imagenes/representacion_vela_OHLC.png>
 Package pdftex.def Info: imagenes/representacion_vela_OHLC.png  used on input l
@@ -1103,7 +1103,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
-<imagenes/fases_dow.png, id=664, 542.025pt x 231.11343pt>
+<imagenes/fases_dow.png, id=682, 542.025pt x 231.11343pt>
 File: imagenes/fases_dow.png Graphic file (type png)
 <use imagenes/fases_dow.png>
 Package pdftex.def Info: imagenes/fases_dow.png  used on input line 174.
@@ -1146,7 +1146,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
-<imagenes/oferta_demanda_wyckoff.png, id=692, 640.3925pt x 372.39125pt>
+<imagenes/oferta_demanda_wyckoff.png, id=710, 640.3925pt x 372.39125pt>
 File: imagenes/oferta_demanda_wyckoff.png Graphic file (type png)
 <use imagenes/oferta_demanda_wyckoff.png>
 Package pdftex.def Info: imagenes/oferta_demanda_wyckoff.png  used on input lin
@@ -1167,7 +1167,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
-<imagenes/esquema_acumulacion_wyckoff.png, id=709, 545.03625pt x 200.24812pt>
+<imagenes/esquema_acumulacion_wyckoff.png, id=727, 545.03625pt x 200.24812pt>
 File: imagenes/esquema_acumulacion_wyckoff.png Graphic file (type png)
 <use imagenes/esquema_acumulacion_wyckoff.png>
 Package pdftex.def Info: imagenes/esquema_acumulacion_wyckoff.png  used on inpu
@@ -1183,7 +1183,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
-<imagenes/esquema_distribucion_wyckoff.png, id=719, 422.32782pt x 208.52907pt>
+<imagenes/esquema_distribucion_wyckoff.png, id=737, 422.32782pt x 208.52907pt>
 File: imagenes/esquema_distribucion_wyckoff.png Graphic file (type png)
 <use imagenes/esquema_distribucion_wyckoff.png>
 Package pdftex.def Info: imagenes/esquema_distribucion_wyckoff.png  used on inp
@@ -1279,7 +1279,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-<imagenes/gantt.png, id=750, 1024.82875pt x 475.7775pt>
+<imagenes/gantt.png, id=768, 1024.82875pt x 475.7775pt>
 File: imagenes/gantt.png Graphic file (type png)
 <use imagenes/gantt.png>
 Package pdftex.def Info: imagenes/gantt.png  used on input line 69.
@@ -1374,7 +1374,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-<imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png, id=794, 750.805pt x 
+<imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png, id=812, 750.805pt x 
 502.87875pt>
 File: imagenes/diagramas_casos_de_uso/CU1-gestion_usuarios.png Graphic file (ty
 pe png)
@@ -1395,7 +1395,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-<imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png, id=800, 778.91pt x 502.
+<imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png, id=818, 778.91pt x 502.
 87875pt>
 File: imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png Graphic file (type 
 png)
@@ -1416,7 +1416,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-<imagenes/diagramas_casos_de_uso/CU3-gestion_visualizacion_datos.png, id=807, 7
+<imagenes/diagramas_casos_de_uso/CU3-gestion_visualizacion_datos.png, id=825, 7
 88.9475pt x 527.9725pt>
 File: imagenes/diagramas_casos_de_uso/CU3-gestion_visualizacion_datos.png Graph
 ic file (type png)
@@ -1438,7 +1438,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
  []
 
 [51 <./imagenes/diagramas_casos_de_uso/CU2-gestiones_MT5.png>]
-<imagenes/diagramas_casos_de_uso/CU4-algoritmos.png, id=815, 778.91pt x 387.447
+<imagenes/diagramas_casos_de_uso/CU4-algoritmos.png, id=833, 778.91pt x 387.447
 5pt>
 File: imagenes/diagramas_casos_de_uso/CU4-algoritmos.png Graphic file (type png
 )
@@ -1461,7 +1461,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-<imagenes/arquitectura general.png, id=831, 785.93625pt x 701.62125pt>
+<imagenes/arquitectura general.png, id=849, 785.93625pt x 701.62125pt>
 File: imagenes/arquitectura general.png Graphic file (type png)
 <use imagenes/arquitectura general.png>
 Package pdftex.def Info: imagenes/arquitectura general.png  used on input line 
@@ -1485,6 +1485,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
+
+Package fancyhdr Warning: \headheight is too small (18.0pt): 
+(fancyhdr)                Make it at least 25.2842pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.2842pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-7.2842pt}.
+
 [56 <./imagenes/arquitectura general.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
@@ -1495,54 +1503,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-<imagenes/diagrama_clases.png, id=844, 825.0825pt x 996.72375pt>
-File: imagenes/diagrama_clases.png Graphic file (type png)
-<use imagenes/diagrama_clases.png>
-Package pdftex.def Info: imagenes/diagrama_clases.png  used on input line 38.
-(pdftex.def)             Requested size: 431.9989pt x 521.8734pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 38--39
-[][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-<imagenes/diagramas_secuencia/iniciar_app.png, id=846, 434.62375pt x 453.695pt>
 
-File: imagenes/diagramas_secuencia/iniciar_app.png Graphic file (type png)
-<use imagenes/diagramas_secuencia/iniciar_app.png>
-Package pdftex.def Info: imagenes/diagramas_secuencia/iniciar_app.png  used on 
-input line 49.
-(pdftex.def)             Requested size: 216.0022pt x 225.48314pt.
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
-<imagenes/diagramas_secuencia/gestion_usuarios.png, id=848, 949.5475pt x 493.84
+<imagenes/diagrama_clases.png, id=868, 844.15375pt x 886.31125pt>
+File: imagenes/diagrama_clases.png Graphic file (type png)
+<use imagenes/diagrama_clases.png>
+Package pdftex.def Info: imagenes/diagrama_clases.png  used on input line 56.
+(pdftex.def)             Requested size: 431.9989pt x 453.58154pt.
+
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 56--57
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+<imagenes/diagramas_secuencia/iniciar_app.png, id=870, 434.62375pt x 453.695pt>
+
+File: imagenes/diagramas_secuencia/iniciar_app.png Graphic file (type png)
+<use imagenes/diagramas_secuencia/iniciar_app.png>
+Package pdftex.def Info: imagenes/diagramas_secuencia/iniciar_app.png  used on 
+input line 67.
+(pdftex.def)             Requested size: 216.0022pt x 225.48314pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+<imagenes/diagramas_secuencia/gestion_usuarios.png, id=872, 949.5475pt x 493.84
 5pt>
 File: imagenes/diagramas_secuencia/gestion_usuarios.png Graphic file (type png)
 
 <use imagenes/diagramas_secuencia/gestion_usuarios.png>
 Package pdftex.def Info: imagenes/diagramas_secuencia/gestion_usuarios.png  use
-d on input line 56.
-(pdftex.def)             Requested size: 468.0011pt x 243.40282pt.
+d on input line 74.
+(pdftex.def)             Requested size: 431.9989pt x 224.67722pt.
 
-Overfull \hbox (108.0011pt too wide) in paragraph at lines 56--57
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 74--75
 [][] 
  []
 
@@ -1550,35 +1593,35 @@ Overfull \hbox (108.0011pt too wide) in paragraph at lines 56--57
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
-<imagenes/diagramas_secuencia/login_logout.png, id=850, 753.81625pt x 493.845pt
+<imagenes/diagramas_secuencia/login_logout.png, id=874, 753.81625pt x 493.845pt
 >
 File: imagenes/diagramas_secuencia/login_logout.png Graphic file (type png)
 <use imagenes/diagramas_secuencia/login_logout.png>
 Package pdftex.def Info: imagenes/diagramas_secuencia/login_logout.png  used on
- input line 63.
+ input line 81.
 (pdftex.def)             Requested size: 360.0pt x 235.84476pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
-<imagenes/diagramas_secuencia/login_logout_mt5.png, id=852, 857.2025pt x 885.30
+<imagenes/diagramas_secuencia/login_logout_mt5.png, id=876, 857.2025pt x 885.30
 75pt>
 File: imagenes/diagramas_secuencia/login_logout_mt5.png Graphic file (type png)
 
 <use imagenes/diagramas_secuencia/login_logout_mt5.png>
 Package pdftex.def Info: imagenes/diagramas_secuencia/login_logout_mt5.png  use
-d on input line 70.
+d on input line 88.
 (pdftex.def)             Requested size: 396.0022pt x 408.98901pt.
 
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 70--71
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 88--89
 [][] 
  []
 
@@ -1586,62 +1629,19 @@ Overfull \hbox (36.0022pt too wide) in paragraph at lines 70--71
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-
- []
-
-<imagenes/diagramas_secuencia/ver_datos.png, id=854, 804.00375pt x 895.345pt>
-File: imagenes/diagramas_secuencia/ver_datos.png Graphic file (type png)
-<use imagenes/diagramas_secuencia/ver_datos.png>
-Package pdftex.def Info: imagenes/diagramas_secuencia/ver_datos.png  used on in
-put line 77.
-(pdftex.def)             Requested size: 396.0022pt x 440.99075pt.
-
-Overfull \hbox (36.0022pt too wide) in paragraph at lines 77--78
-[][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
-
- []
-
-<imagenes/diagramas_secuencia/algoritmos_secuencia.png, id=856, 1237.62375pt x 
-1176.395pt>
-File: imagenes/diagramas_secuencia/algoritmos_secuencia.png Graphic file (type 
-png)
-<use imagenes/diagramas_secuencia/algoritmos_secuencia.png>
-Package pdftex.def Info: imagenes/diagramas_secuencia/algoritmos_secuencia.png 
- used on input line 84.
-(pdftex.def)             Requested size: 486.0022pt x 461.95148pt.
-
-Overfull \hbox (126.0022pt too wide) in paragraph at lines 84--85
-[][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-[57]
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
-<imagenes/menu_principal.png, id=862, 904.37875pt x 463.7325pt>
-File: imagenes/menu_principal.png Graphic file (type png)
-<use imagenes/menu_principal.png>
-Package pdftex.def Info: imagenes/menu_principal.png  used on input line 95.
-(pdftex.def)             Requested size: 431.9989pt x 221.51352pt.
+<imagenes/diagramas_secuencia/gestion_datos.png, id=878, 585.18625pt x 614.295p
+t>
+File: imagenes/diagramas_secuencia/gestion_datos.png Graphic file (type png)
+<use imagenes/diagramas_secuencia/gestion_datos.png>
+Package pdftex.def Info: imagenes/diagramas_secuencia/gestion_datos.png  used o
+n input line 95.
+(pdftex.def)             Requested size: 396.0022pt x 415.71854pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 95--96
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 95--96
 [][] 
  []
 
@@ -1653,18 +1653,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
+<imagenes/diagramas_secuencia/ver_datos.png, id=880, 826.08624pt x 895.345pt>
+File: imagenes/diagramas_secuencia/ver_datos.png Graphic file (type png)
+<use imagenes/diagramas_secuencia/ver_datos.png>
+Package pdftex.def Info: imagenes/diagramas_secuencia/ver_datos.png  used on in
+put line 102.
+(pdftex.def)             Requested size: 396.0022pt x 429.20059pt.
+
+Overfull \hbox (36.0022pt too wide) in paragraph at lines 102--103
+[][] 
+ []
+
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-<imagenes/menu_login.jpg, id=869, 904.37875pt x 462.72874pt>
-File: imagenes/menu_login.jpg Graphic file (type jpg)
-<use imagenes/menu_login.jpg>
-Package pdftex.def Info: imagenes/menu_login.jpg  used on input line 116.
-(pdftex.def)             Requested size: 431.9989pt x 221.03404pt.
+<imagenes/diagramas_secuencia/algoritmos_secuencia.png, id=886, 974.64125pt x 1
+176.395pt>
+File: imagenes/diagramas_secuencia/algoritmos_secuencia.png Graphic file (type 
+png)
+<use imagenes/diagramas_secuencia/algoritmos_secuencia.png>
+Package pdftex.def Info: imagenes/diagramas_secuencia/algoritmos_secuencia.png 
+ used on input line 109.
+(pdftex.def)             Requested size: 486.0022pt x 586.5985pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 116--117
+Overfull \hbox (126.0022pt too wide) in paragraph at lines 109--110
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 27.99823pt on input line 111.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+<imagenes/menu_principal.png, id=887, 904.37875pt x 463.7325pt>
+File: imagenes/menu_principal.png Graphic file (type png)
+<use imagenes/menu_principal.png>
+Package pdftex.def Info: imagenes/menu_principal.png  used on input line 120.
+(pdftex.def)             Requested size: 431.9989pt x 221.51352pt.
+
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 120--121
 [][] 
  []
 
@@ -1672,31 +1716,55 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 116--117
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-<imagenes/menu_principal_logued.png, id=871, 904.37875pt x 462.72874pt>
+[59]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+<imagenes/menu_login.jpg, id=894, 904.37875pt x 462.72874pt>
+File: imagenes/menu_login.jpg Graphic file (type jpg)
+<use imagenes/menu_login.jpg>
+Package pdftex.def Info: imagenes/menu_login.jpg  used on input line 141.
+(pdftex.def)             Requested size: 431.9989pt x 221.03404pt.
+
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 141--142
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+<imagenes/menu_principal_logued.png, id=896, 904.37875pt x 462.72874pt>
 File: imagenes/menu_principal_logued.png Graphic file (type png)
 <use imagenes/menu_principal_logued.png>
 Package pdftex.def Info: imagenes/menu_principal_logued.png  used on input line
- 123.
+ 148.
 (pdftex.def)             Requested size: 431.9989pt x 221.03404pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 123--124
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 148--149
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (capitulos/06_Implementacion.tex [59] [60 <./imagenes/diagrama_clases.png>]
-[61 <./imagenes/diagramas_secuencia/iniciar_app.png> <./imagenes/diagramas_secu
-encia/gestion_usuarios.png>] [62 <./imagenes/diagramas_secuencia/login_logout.p
-ng>] [63 <./imagenes/diagramas_secuencia/login_logout_mt5.png>] [64 <./imagenes
-/diagramas_secuencia/ver_datos.png>] [65 <./imagenes/diagramas_secuencia/algori
-tmos_secuencia.png>] [66 <./imagenes/menu_principal.png> <./imagenes/menu_login
-.jpg>] [67 <./imagenes/menu_principal_logued.png>] [68
+) (capitulos/06_Implementacion.tex [60] [61 <./imagenes/diagrama_clases.png>]
+[62 <./imagenes/diagramas_secuencia/iniciar_app.png> <./imagenes/diagramas_secu
+encia/gestion_usuarios.png>] [63 <./imagenes/diagramas_secuencia/login_logout.p
+ng>] [64 <./imagenes/diagramas_secuencia/login_logout_mt5.png>] [65 <./imagenes
+/diagramas_secuencia/gestion_datos.png>] [66 <./imagenes/diagramas_secuencia/ve
+r_datos.png>] [67 <./imagenes/diagramas_secuencia/algoritmos_secuencia.png>]
+[68 <./imagenes/menu_principal.png> <./imagenes/menu_login.jpg>] [69 <./imagene
+s/menu_principal_logued.png>] [70
 
 ]
 Cap\'{\i }tulo 6.
@@ -1725,7 +1793,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-[69]
+[71]
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
@@ -1745,7 +1813,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
-<imagenes/software_usado/icono_python.png, id=928, 225.84375pt x 225.84375pt>
+<imagenes/software_usado/icono_python.png, id=958, 225.84375pt x 225.84375pt>
 File: imagenes/software_usado/icono_python.png Graphic file (type png)
 <use imagenes/software_usado/icono_python.png>
 Package pdftex.def Info: imagenes/software_usado/icono_python.png  used on inpu
@@ -1756,7 +1824,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--27
 []\OT1/cmr/m/n/10 (a)
  []
 
-<imagenes/software_usado/icono_django.png, id=929, 225.84375pt x 225.84375pt>
+<imagenes/software_usado/icono_django.png, id=959, 225.84375pt x 225.84375pt>
 File: imagenes/software_usado/icono_django.png Graphic file (type png)
 <use imagenes/software_usado/icono_django.png>
 Package pdftex.def Info: imagenes/software_usado/icono_django.png  used on inpu
@@ -1767,7 +1835,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--32
 []\OT1/cmr/m/n/10 (b)
  []
 
-<imagenes/software_usado/pycharm_logo.png, id=930, 301.125pt x 301.125pt>
+<imagenes/software_usado/pycharm_logo.png, id=960, 301.125pt x 301.125pt>
 File: imagenes/software_usado/pycharm_logo.png Graphic file (type png)
 <use imagenes/software_usado/pycharm_logo.png>
 Package pdftex.def Info: imagenes/software_usado/pycharm_logo.png  used on inpu
@@ -1778,7 +1846,7 @@ Underfull \hbox (badness 2744) in paragraph at lines 37--37
 []\OT1/cmr/m/n/10 (c) |Py-
  []
 
-<imagenes/software_usado/icono_html.png, id=931, 225.84375pt x 225.84375pt>
+<imagenes/software_usado/icono_html.png, id=961, 225.84375pt x 225.84375pt>
 File: imagenes/software_usado/icono_html.png Graphic file (type png)
 <use imagenes/software_usado/icono_html.png>
 Package pdftex.def Info: imagenes/software_usado/icono_html.png  used on input 
@@ -1789,13 +1857,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--42
 []\OT1/cmr/m/n/10 (d)
  []
 
-<imagenes/software_usado/icono_css.png, id=932, 225.84375pt x 225.84375pt>
+<imagenes/software_usado/icono_css.png, id=962, 225.84375pt x 225.84375pt>
 File: imagenes/software_usado/icono_css.png Graphic file (type png)
 <use imagenes/software_usado/icono_css.png>
 Package pdftex.def Info: imagenes/software_usado/icono_css.png  used on input l
 ine 46.
 (pdftex.def)             Requested size: 36.00133pt x 36.00133pt.
-<imagenes/software_usado/icono_javascript.png, id=933, 451.6875pt x 451.6875pt>
+<imagenes/software_usado/icono_javascript.png, id=963, 451.6875pt x 451.6875pt>
 
 File: imagenes/software_usado/icono_javascript.png Graphic file (type png)
 <use imagenes/software_usado/icono_javascript.png>
@@ -1807,7 +1875,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--52
 []\OT1/cmr/m/n/10 (f) |Ja-
  []
 
-<imagenes/software_usado/icono_windows.png, id=934, 200.75pt x 200.75pt>
+<imagenes/software_usado/icono_windows.png, id=964, 200.75pt x 200.75pt>
 File: imagenes/software_usado/icono_windows.png Graphic file (type png)
 <use imagenes/software_usado/icono_windows.png>
 Package pdftex.def Info: imagenes/software_usado/icono_windows.png  used on inp
@@ -1823,13 +1891,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--57
 |\OT1/cmr/m/n/10 Win-
  []
 
-<imagenes/software_usado/icono_visual_studio.png, id=935, 481.8pt x 481.8pt>
+<imagenes/software_usado/icono_visual_studio.png, id=965, 481.8pt x 481.8pt>
 File: imagenes/software_usado/icono_visual_studio.png Graphic file (type png)
 <use imagenes/software_usado/icono_visual_studio.png>
 Package pdftex.def Info: imagenes/software_usado/icono_visual_studio.png  used 
 on input line 61.
 (pdftex.def)             Requested size: 36.0011pt x 36.0011pt.
-<imagenes/software_usado/icono_sqlite.png, id=936, 1204.5pt x 1204.5pt>
+<imagenes/software_usado/icono_sqlite.png, id=966, 1204.5pt x 1204.5pt>
 File: imagenes/software_usado/icono_sqlite.png Graphic file (type png)
 <use imagenes/software_usado/icono_sqlite.png>
 Package pdftex.def Info: imagenes/software_usado/icono_sqlite.png  used on inpu
@@ -1840,7 +1908,7 @@ Underfull \hbox (badness 3482) in paragraph at lines 67--67
 []\OT1/cmr/m/n/10 (i) |SQ-
  []
 
-<imagenes/software_usado/icono_github_desktop.png, id=937, 1027.84pt x 1027.84p
+<imagenes/software_usado/icono_github_desktop.png, id=967, 1027.84pt x 1027.84p
 t>
 File: imagenes/software_usado/icono_github_desktop.png Graphic file (type png)
 <use imagenes/software_usado/icono_github_desktop.png>
@@ -1857,7 +1925,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--72
 |\OT1/cmr/m/n/10 GitHub
  []
 
-<imagenes/software_usado/icono_texstudio.png, id=938, 1027.84pt x 1027.84pt>
+<imagenes/software_usado/icono_texstudio.png, id=968, 1027.84pt x 1027.84pt>
 File: imagenes/software_usado/icono_texstudio.png Graphic file (type png)
 <use imagenes/software_usado/icono_texstudio.png>
 Package pdftex.def Info: imagenes/software_usado/icono_texstudio.png  used on i
@@ -1873,7 +1941,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
 |\OT1/cmr/m/n/10 TexS-tu-
  []
 
-<imagenes/software_usado/icono_metatrader5.png, id=939, 256.96pt x 256.96pt>
+<imagenes/software_usado/icono_metatrader5.png, id=969, 256.96pt x 256.96pt>
 File: imagenes/software_usado/icono_metatrader5.png Graphic file (type png)
 <use imagenes/software_usado/icono_metatrader5.png>
 Package pdftex.def Info: imagenes/software_usado/icono_metatrader5.png  used on
@@ -1897,7 +1965,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [70 <./imagenes/software_usado/icono_python.png> <./imagenes/software_usado/ic
+ [72 <./imagenes/software_usado/icono_python.png> <./imagenes/software_usado/ic
 ono_django.png> <./imagenes/software_usado/pycharm_logo.png> <./imagenes/softwa
 re_usado/icono_html.png> <./imagenes/software_usado/icono_css.png> <./imagenes/
 software_usado/icono_javascript.png> <./imagenes/software_usado/icono_windows.p
@@ -1931,7 +1999,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-<imagenes/issue_pr/issue.png, id=960, 956.82469pt x 699.36281pt>
+<imagenes/issue_pr/issue.png, id=990, 956.82469pt x 699.36281pt>
 File: imagenes/issue_pr/issue.png Graphic file (type png)
 <use imagenes/issue_pr/issue.png>
 Package pdftex.def Info: imagenes/issue_pr/issue.png  used on input line 109.
@@ -1944,7 +2012,7 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 109--110
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/issue_pr/pr.png, id=961, 840.13875pt x 729.47531pt>
+<imagenes/issue_pr/pr.png, id=991, 840.13875pt x 729.47531pt>
 File: imagenes/issue_pr/pr.png Graphic file (type png)
 <use imagenes/issue_pr/pr.png>
 Package pdftex.def Info: imagenes/issue_pr/pr.png  used on input line 114.
@@ -1962,7 +2030,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-[71]
+[73]
 Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
@@ -1972,7 +2040,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-[72 <./imagenes/issue_pr/issue.png>]
+[74 <./imagenes/issue_pr/issue.png>]
 Overfull \hbox (2.98267pt too wide) in paragraph at lines 129--130
 []\OT1/cmr/bx/n/10.95 support/#issue-descripcion\OT1/cmr/m/n/10.95 : pa-ra so-p
 or-te de pa-go o so-por-te a usua-
@@ -1983,7 +2051,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--135
 
  []
 
-[73 <./imagenes/issue_pr/pr.png>]
+[75 <./imagenes/issue_pr/pr.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
@@ -2018,7 +2086,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
-[74]
+[76]
 Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
@@ -2038,7 +2106,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--191
 
  []
 
-[75]
+[77]
 Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
@@ -2058,7 +2126,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
-<imagenes/datos_obtenidos.png, id=990, 250.9375pt x 750.805pt>
+<imagenes/datos_obtenidos.png, id=1020, 250.9375pt x 750.805pt>
 File: imagenes/datos_obtenidos.png Graphic file (type png)
 <use imagenes/datos_obtenidos.png>
 Package pdftex.def Info: imagenes/datos_obtenidos.png  used on input line 202.
@@ -2074,7 +2142,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [76]
+ [78]
 Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
@@ -2087,7 +2155,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77 <./imagenes/datos_obtenidos.png (PNG copy)>]
+ [79 <./imagenes/datos_obtenidos.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
@@ -2127,7 +2195,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
-[78]
+[80]
 Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
@@ -2167,8 +2235,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
-[79]
-<imagenes/medias_moviles.png, id=1022, 1604.99625pt x 1133.23375pt>
+[81]
+<imagenes/medias_moviles.png, id=1053, 1604.99625pt x 1133.23375pt>
 File: imagenes/medias_moviles.png Graphic file (type png)
 <use imagenes/medias_moviles.png>
 Package pdftex.def Info: imagenes/medias_moviles.png  used on input line 261.
@@ -2183,7 +2251,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
-[80 <./imagenes/medias_moviles.png (PNG copy)>]
+[82 <./imagenes/medias_moviles.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
@@ -2226,7 +2294,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
-[81]
+[83]
 Underfull \hbox (badness 10000) in paragraph at lines 334--335
 
  []
@@ -2251,7 +2319,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 344--345
 
  []
 
-[82]
+[84]
 Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
@@ -2276,7 +2344,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 365--366
 
  []
 
-[83]
+[85]
 Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
@@ -2286,7 +2354,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
-<imagenes/bandas_bollinger.png, id=1075, 642.4pt x 481.8pt>
+<imagenes/bandas_bollinger.png, id=1105, 642.4pt x 481.8pt>
 File: imagenes/bandas_bollinger.png Graphic file (type png)
 <use imagenes/bandas_bollinger.png>
 Package pdftex.def Info: imagenes/bandas_bollinger.png  used on input line 372.
@@ -2297,12 +2365,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
-<imagenes/solo_bollinger.png, id=1077, 642.4pt x 481.8pt>
+<imagenes/solo_bollinger.png, id=1107, 642.4pt x 481.8pt>
 File: imagenes/solo_bollinger.png Graphic file (type png)
 <use imagenes/solo_bollinger.png>
 Package pdftex.def Info: imagenes/solo_bollinger.png  used on input line 380.
 (pdftex.def)             Requested size: 216.0022pt x 162.00131pt.
-<imagenes/diferencias_bollinger.png, id=1078, 607.26875pt x 455.7025pt>
+<imagenes/diferencias_bollinger.png, id=1108, 607.26875pt x 455.7025pt>
 File: imagenes/diferencias_bollinger.png Graphic file (type png)
 <use imagenes/diferencias_bollinger.png>
 Package pdftex.def Info: imagenes/diferencias_bollinger.png  used on input line
@@ -2318,7 +2386,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
-[84 <./imagenes/bandas_bollinger.png (PNG copy)>]
+[86 <./imagenes/bandas_bollinger.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 394--395
 
  []
@@ -2328,7 +2396,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
-<imagenes/intervalos_detectados.png, id=1084, 642.4pt x 481.8pt>
+<imagenes/intervalos_detectados.png, id=1114, 642.4pt x 481.8pt>
 File: imagenes/intervalos_detectados.png Graphic file (type png)
 <use imagenes/intervalos_detectados.png>
 Package pdftex.def Info: imagenes/intervalos_detectados.png  used on input line
@@ -2337,12 +2405,12 @@ Package pdftex.def Info: imagenes/intervalos_detectados.png  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/intervalos1.png, id=1085, 642.4pt x 481.8pt>
+<imagenes/intervalos1.png, id=1115, 642.4pt x 481.8pt>
 File: imagenes/intervalos1.png Graphic file (type png)
 <use imagenes/intervalos1.png>
 Package pdftex.def Info: imagenes/intervalos1.png  used on input line 405.
 (pdftex.def)             Requested size: 216.0022pt x 162.00131pt.
-<imagenes/intervalos2.png, id=1086, 607.26875pt x 455.7025pt>
+<imagenes/intervalos2.png, id=1116, 607.26875pt x 455.7025pt>
 File: imagenes/intervalos2.png Graphic file (type png)
 <use imagenes/intervalos2.png>
 Package pdftex.def Info: imagenes/intervalos2.png  used on input line 410.
@@ -2357,9 +2425,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
-[85 <./imagenes/solo_bollinger.png (PNG copy)> <./imagenes/diferencias_bollinge
-r.png>] [86 <./imagenes/intervalos_detectados.png (PNG copy)> <./imagenes/inter
-valos1.png (PNG copy)> <./imagenes/intervalos2.png>] [87]
+[87 <./imagenes/solo_bollinger.png (PNG copy)> <./imagenes/diferencias_bollinge
+r.png>] [88 <./imagenes/intervalos_detectados.png (PNG copy)> <./imagenes/inter
+valos1.png (PNG copy)> <./imagenes/intervalos2.png>] [89]
 Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
@@ -2389,7 +2457,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--455
 
  []
 
-[88]
+[90]
 Underfull \hbox (badness 10000) in paragraph at lines 456--457
 
  []
@@ -2432,7 +2500,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 474--475
 
 Underfull \vbox (badness 3525) has occurred while \output is active []
 
- [89]
+ [91]
 Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
@@ -2472,7 +2540,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
-[90]
+[92]
 Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
@@ -2507,7 +2575,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
-[91]
+[93]
 Underfull \hbox (badness 10000) in paragraph at lines 540--541
 
  []
@@ -2522,7 +2590,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
  []
 
-<imagenes/boton_trading_algoritmico.png, id=1144, 660.4675pt x 153.57375pt>
+<imagenes/boton_trading_algoritmico.png, id=1175, 660.4675pt x 153.57375pt>
 File: imagenes/boton_trading_algoritmico.png Graphic file (type png)
 <use imagenes/boton_trading_algoritmico.png>
 Package pdftex.def Info: imagenes/boton_trading_algoritmico.png  used on input 
@@ -2546,7 +2614,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
-[92 <./imagenes/boton_trading_algoritmico.png (PNG copy)>]
+[94 <./imagenes/boton_trading_algoritmico.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 568--569
 
  []
@@ -2564,7 +2632,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 605--606
 
 Underfull \vbox (badness 3536) has occurred while \output is active []
 
- [93]
+ [95]
 Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
  []
@@ -2599,13 +2667,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 621--622
 
  []
 
-<imagenes/diseno_final/pagina_principal.png, id=1183, 1445.4pt x 782.925pt>
+<imagenes/diseno_final/pagina_principal.png, id=1213, 1445.4pt x 782.925pt>
 File: imagenes/diseno_final/pagina_principal.png Graphic file (type png)
 <use imagenes/diseno_final/pagina_principal.png>
 Package pdftex.def Info: imagenes/diseno_final/pagina_principal.png  used on in
 put line 635.
 (pdftex.def)             Requested size: 431.9989pt x 233.99527pt.
-<imagenes/diseno_final/login.png, id=1184, 1445.4pt x 782.925pt>
+<imagenes/diseno_final/login.png, id=1214, 1445.4pt x 782.925pt>
 File: imagenes/diseno_final/login.png Graphic file (type png)
 <use imagenes/diseno_final/login.png>
 Package pdftex.def Info: imagenes/diseno_final/login.png  used on input line 63
@@ -2629,13 +2697,13 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 635--637
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/diseno_final/menu_principal.png, id=1186, 1445.4pt x 782.925pt>
+<imagenes/diseno_final/menu_principal.png, id=1216, 1445.4pt x 782.925pt>
 File: imagenes/diseno_final/menu_principal.png Graphic file (type png)
 <use imagenes/diseno_final/menu_principal.png>
 Package pdftex.def Info: imagenes/diseno_final/menu_principal.png  used on inpu
 t line 645.
 (pdftex.def)             Requested size: 431.9989pt x 233.99527pt.
-<imagenes/diseno_final/manual_usuario.png, id=1187, 1445.4pt x 782.925pt>
+<imagenes/diseno_final/manual_usuario.png, id=1217, 1445.4pt x 782.925pt>
 File: imagenes/diseno_final/manual_usuario.png Graphic file (type png)
 <use imagenes/diseno_final/manual_usuario.png>
 Package pdftex.def Info: imagenes/diseno_final/manual_usuario.png  used on inpu
@@ -2656,11 +2724,11 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 645--647
 [] 
  []
 
-[94]
+[96]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/diseno_final/menu_eleccion_estrategia.png, id=1194, 1445.4pt x 782.92
+<imagenes/diseno_final/menu_eleccion_estrategia.png, id=1224, 1445.4pt x 782.92
 5pt>
 File: imagenes/diseno_final/menu_eleccion_estrategia.png Graphic file (type png
 )
@@ -2668,7 +2736,7 @@ File: imagenes/diseno_final/menu_eleccion_estrategia.png Graphic file (type png
 Package pdftex.def Info: imagenes/diseno_final/menu_eleccion_estrategia.png  us
 ed on input line 655.
 (pdftex.def)             Requested size: 431.9989pt x 233.99527pt.
-<imagenes/diseno_final/menu_eleccion_estrategia_2.png, id=1195, 1445.4pt x 782.
+<imagenes/diseno_final/menu_eleccion_estrategia_2.png, id=1225, 1445.4pt x 782.
 925pt>
 File: imagenes/diseno_final/menu_eleccion_estrategia_2.png Graphic file (type p
 ng)
@@ -2694,13 +2762,13 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 655--657
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/diseno_final/menu_backtesting.png, id=1197, 1445.4pt x 782.925pt>
+<imagenes/diseno_final/menu_backtesting.png, id=1227, 1445.4pt x 782.925pt>
 File: imagenes/diseno_final/menu_backtesting.png Graphic file (type png)
 <use imagenes/diseno_final/menu_backtesting.png>
 Package pdftex.def Info: imagenes/diseno_final/menu_backtesting.png  used on in
 put line 665.
 (pdftex.def)             Requested size: 431.9989pt x 233.99527pt.
-<imagenes/diseno_final/menu_trading_tiempo_real.png, id=1198, 1445.4pt x 782.92
+<imagenes/diseno_final/menu_trading_tiempo_real.png, id=1228, 1445.4pt x 782.92
 5pt>
 File: imagenes/diseno_final/menu_trading_tiempo_real.png Graphic file (type png
 )
@@ -2726,13 +2794,13 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 665--667
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/diseno_final/menu_gestion_datos.png, id=1200, 1445.4pt x 782.925pt>
+<imagenes/diseno_final/menu_gestion_datos.png, id=1230, 1445.4pt x 782.925pt>
 File: imagenes/diseno_final/menu_gestion_datos.png Graphic file (type png)
 <use imagenes/diseno_final/menu_gestion_datos.png>
 Package pdftex.def Info: imagenes/diseno_final/menu_gestion_datos.png  used on 
 input line 675.
 (pdftex.def)             Requested size: 431.9989pt x 233.99527pt.
-<imagenes/diseno_final/menu_gestion_datos_borrados.png, id=1201, 1445.4pt x 782
+<imagenes/diseno_final/menu_gestion_datos_borrados.png, id=1231, 1445.4pt x 782
 .925pt>
 File: imagenes/diseno_final/menu_gestion_datos_borrados.png Graphic file (type 
 png)
@@ -2758,7 +2826,7 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 675--677
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/diseno_final/menu_visualizacion_datos.png, id=1204, 1445.4pt x 782.92
+<imagenes/diseno_final/menu_visualizacion_datos.png, id=1234, 1445.4pt x 782.92
 5pt>
 File: imagenes/diseno_final/menu_visualizacion_datos.png Graphic file (type png
 )
@@ -2766,7 +2834,7 @@ File: imagenes/diseno_final/menu_visualizacion_datos.png Graphic file (type png
 Package pdftex.def Info: imagenes/diseno_final/menu_visualizacion_datos.png  us
 ed on input line 685.
 (pdftex.def)             Requested size: 431.9989pt x 233.99527pt.
-<imagenes/diseno_final/menu_visualizacion_datos_antiguos.png, id=1205, 1445.4pt
+<imagenes/diseno_final/menu_visualizacion_datos_antiguos.png, id=1235, 1445.4pt
  x 782.925pt>
 File: imagenes/diseno_final/menu_visualizacion_datos_antiguos.png Graphic file 
 (type png)
@@ -2792,7 +2860,7 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 685--687
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/diseno_final/menu_visualizacion_datos_tpo_real.png, id=1206, 1445.4pt
+<imagenes/diseno_final/menu_visualizacion_datos_tpo_real.png, id=1236, 1445.4pt
  x 782.925pt>
 File: imagenes/diseno_final/menu_visualizacion_datos_tpo_real.png Graphic file 
 (type png)
@@ -2808,16 +2876,16 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 692--693
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (capitulos/07_Pruebas.tex [95] [96 <./imagenes/diseno_final/pagina_principal.
-png> <./imagenes/diseno_final/login.png>] [97 <./imagenes/diseno_final/menu_pri
-ncipal.png> <./imagenes/diseno_final/manual_usuario.png>] [98 <./imagenes/disen
-o_final/menu_eleccion_estrategia.png> <./imagenes/diseno_final/menu_eleccion_es
-trategia_2.png>] [99 <./imagenes/diseno_final/menu_backtesting.png> <./imagenes
-/diseno_final/menu_trading_tiempo_real.png>] [100 <./imagenes/diseno_final/menu
-_gestion_datos.png> <./imagenes/diseno_final/menu_gestion_datos_borrados.png>]
-[101 <./imagenes/diseno_final/menu_visualizacion_datos.png> <./imagenes/diseno_
-final/menu_visualizacion_datos_antiguos.png>] [102 <./imagenes/diseno_final/men
-u_visualizacion_datos_tpo_real.png>]
+) (capitulos/07_Pruebas.tex [97] [98 <./imagenes/diseno_final/pagina_principal.
+png> <./imagenes/diseno_final/login.png>] [99 <./imagenes/diseno_final/menu_pri
+ncipal.png> <./imagenes/diseno_final/manual_usuario.png>] [100 <./imagenes/dise
+no_final/menu_eleccion_estrategia.png> <./imagenes/diseno_final/menu_eleccion_e
+strategia_2.png>] [101 <./imagenes/diseno_final/menu_backtesting.png> <./imagen
+es/diseno_final/menu_trading_tiempo_real.png>] [102 <./imagenes/diseno_final/me
+nu_gestion_datos.png> <./imagenes/diseno_final/menu_gestion_datos_borrados.png>
+] [103 <./imagenes/diseno_final/menu_visualizacion_datos.png> <./imagenes/disen
+o_final/menu_visualizacion_datos_antiguos.png>] [104 <./imagenes/diseno_final/m
+enu_visualizacion_datos_tpo_real.png>]
 Cap\'{\i }tulo 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
@@ -2844,7 +2912,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-[103
+[105
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
@@ -2871,7 +2939,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-[104]
+[106]
 Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
@@ -2906,7 +2974,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-[105]
+[107]
 Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
@@ -2926,7 +2994,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-<imagenes/pruebas/EURUSD/min15_3dias.png, id=1269, 474.27188pt x 339.51843pt>
+<imagenes/pruebas/EURUSD/min15_3dias.png, id=1299, 474.27188pt x 339.51843pt>
 File: imagenes/pruebas/EURUSD/min15_3dias.png Graphic file (type png)
 <use imagenes/pruebas/EURUSD/min15_3dias.png>
 Package pdftex.def Info: imagenes/pruebas/EURUSD/min15_3dias.png  used on input
@@ -2935,7 +3003,7 @@ Package pdftex.def Info: imagenes/pruebas/EURUSD/min15_3dias.png  used on input
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/pruebas/EURUSD/min15_3dias_2.png, id=1270, 480.29437pt x 317.68687pt>
+<imagenes/pruebas/EURUSD/min15_3dias_2.png, id=1300, 480.29437pt x 317.68687pt>
 
 File: imagenes/pruebas/EURUSD/min15_3dias_2.png Graphic file (type png)
 <use imagenes/pruebas/EURUSD/min15_3dias_2.png>
@@ -2945,7 +3013,7 @@ ut line 95.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/pruebas/EURUSD/min15_3dias_3.png, id=1271, 499.8675pt x 341.77687pt>
+<imagenes/pruebas/EURUSD/min15_3dias_3.png, id=1301, 499.8675pt x 341.77687pt>
 File: imagenes/pruebas/EURUSD/min15_3dias_3.png Graphic file (type png)
 <use imagenes/pruebas/EURUSD/min15_3dias_3.png>
 Package pdftex.def Info: imagenes/pruebas/EURUSD/min15_3dias_3.png  used on inp
@@ -2985,7 +3053,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-[106]
+[108]
 Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
@@ -3010,7 +3078,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
-[107 <./imagenes/pruebas/EURUSD/min15_3dias.png>]
+[109 <./imagenes/pruebas/EURUSD/min15_3dias.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
@@ -3040,7 +3108,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
  []
 
-[108 <./imagenes/pruebas/EURUSD/min15_3dias_2.png>]
+[110 <./imagenes/pruebas/EURUSD/min15_3dias_2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
@@ -3060,7 +3128,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
-[109 <./imagenes/pruebas/EURUSD/min15_3dias_3.png>]
+[111 <./imagenes/pruebas/EURUSD/min15_3dias_3.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
@@ -3105,7 +3173,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
-[110]
+[112]
 Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
@@ -3150,7 +3218,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
-[111]
+[113]
 Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
@@ -3200,7 +3268,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
-[112]
+[114]
 Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
@@ -3245,7 +3313,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 435--436
 
  []
 
-[113]
+[115]
 Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
@@ -3286,7 +3354,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 468--469
 
  []
 
-) (capitulos/08_Conclusiones.tex [114]
+) (capitulos/08_Conclusiones.tex [116]
 Cap\'{\i }tulo 8.
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
@@ -3318,7 +3386,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-[115
+[117
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 20--21
@@ -3355,7 +3423,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
-[116]
+[118]
 Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
@@ -3365,7 +3433,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-[117]
+[119]
 Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
@@ -3385,7 +3453,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--1
 
  []
 
-[118]
+[120]
 Cap\'{\i }tulo 9.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -3469,7 +3537,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
 
-[119
+[121
 
 ]
 Overfull \hbox (13.79091pt too wide) in paragraph at lines 22--23
@@ -3529,7 +3597,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
-) (capitulos/10_Anexo.tex [120]
+) (capitulos/10_Anexo.tex [122]
 Cap\'{\i }tulo 10.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -3578,7 +3646,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[121
+[123
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
@@ -3600,26 +3668,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--229
 
  []
 
-[122] [123
+[124] [125
 
 ] (proyecto.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-
-Package rerunfilecheck Warning: File `proyecto.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proyecto.out':
-(rerunfilecheck)             Before: 3632B2AE5049A29AF1EE89BFB6379DBB;14779
-(rerunfilecheck)             After:  2AADE6081CA989A8BB460B2347E206B4;15070.
+Package rerunfilecheck Info: File `proyecto.out' has not changed.
+(rerunfilecheck)             Checksum: F7949B7AA2960F59A5D0731E8D644D9E;15554.
  ) 
 Here is how much of TeX's memory you used:
- 15506 strings out of 479173
- 245586 string characters out of 2854167
- 905553 words of memory out of 3000000
- 32360 multiletter control sequences out of 15000+600000
+ 15521 strings out of 479173
+ 246009 string characters out of 2854167
+ 905737 words of memory out of 3000000
+ 32370 multiletter control sequences out of 15000+600000
  411117 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,13n,77p,1141b,1458s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3638,9 +3700,9 @@ mtt10.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmtt8.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/eurosym/feybr10.pfb><C:/Users/masus/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/eurosym/feymr10.pfb>
-Output written on proyecto.pdf (127 pages, 7582259 bytes).
+Output written on proyecto.pdf (129 pages, 7608648 bytes).
 PDF statistics:
- 1577 PDF objects out of 1728 (max. 8388607)
- 427 named destinations out of 1000 (max. 500000)
- 897 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1605 PDF objects out of 1728 (max. 8388607)
+ 431 named destinations out of 1000 (max. 500000)
+ 926 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -16,42 +16,43 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de casos de uso referente a las funcionalidades de trading\relax }}{53}{figure.caption.31}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Arquitectura general del software.\relax }}{56}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de clases de la APP\relax }}{60}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{61}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{61}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de secuencia de login y logout de usuarios\relax }}{62}{figure.caption.36}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de secuencia de login y logout de usuarios en el bróker en MetaTrader5\relax }}{63}{figure.caption.37}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama de secuencia de visualización de datos antiguos y en tiempo real\relax }}{64}{figure.caption.38}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de secuencia de elección de algoritmos y trading automático y backtesting\relax }}{65}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Primer diseño del menú principal de la APP\relax }}{66}{figure.caption.40}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}\relax }}{66}{figure.caption.41}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) \relax }}{67}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de clases de la APP\relax }}{61}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de secuencia de inicio de la APP\relax }}{62}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de secuencia de la creación de usuarios\relax }}{62}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de secuencia de login y logout de usuarios\relax }}{63}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de secuencia de login y logout de usuarios en el bróker en MetaTrader5\relax }}{64}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama de secuencia gestión de datos\relax }}{65}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de secuencia de visualización de datos antiguos y en tiempo real\relax }}{66}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagrama de secuencia de elección de algoritmos y trading automático y backtesting\relax }}{67}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Primer diseño del menú principal de la APP\relax }}{68}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Primer diseño del formulario de login en \textit {MT5}\relax }}{68}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Primer diseño del menú principal (usuario identificado en \textit {MT5}) \relax }}{69}{figure.caption.43}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Logos de las principales herramientas usadas en el proyecto.\relax }}{70}{figure.caption.43}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces \textit {Issue} número 5, implementación de la estrategia de Wyckoff\relax }}{72}{figure.caption.44}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {Pull Request} referente a la issue \ref {issue}\relax }}{73}{figure.caption.45}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Guía de puntuación scrum\relax }}{75}{figure.caption.46}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Datos de mercados obtenidos en las fases previas al desarrollo\relax }}{77}{figure.caption.47}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Media móvil con ventana de 100 días (azul claro) contra ventana de 30 días (azul oscuro). Fuente: \href {https://www.investopedia.com/}{investopedia.com/}\relax }}{80}{figure.caption.51}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Creación de objetos para el modelo \textit {Mercado}\relax }}{81}{figure.caption.52}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Árbol de directorios del proyecto\relax }}{82}{figure.caption.53}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Bandas de Bollinger en un gráfico de precios\relax }}{84}{figure.caption.56}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Gráficos que representan bandas de Bollinger y diferencia de sus valores\relax }}{85}{figure.caption.57}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Intervalos detectados con el algoritmo de detección de tendencias\relax }}{86}{figure.caption.58}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Otros ejemplos de intervalos detectados con el algoritmo de detección de intervalos\relax }}{86}{figure.caption.59}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Código Python para extender el modelo de Django User\relax }}{91}{figure.caption.63}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Opción a habilitar para mandar órdenes de operaciones al terminal MT5.\relax }}{92}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Página principal y formulario de login, respectivamente.\relax }}{96}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Página principal y manual de usuario, respectivamente.\relax }}{97}{figure.caption.71}%
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Menús de elección de estrategia.\relax }}{98}{figure.caption.72}%
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Menú de backtesting y trading a tiempo real, respectivamente.\relax }}{99}{figure.caption.73}%
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Menús de gestión de datos, teniendo datos guardados y sin tenerlos, respectivamente.\relax }}{100}{figure.caption.74}%
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Menús de visualización de datos antiguos.\relax }}{101}{figure.caption.75}%
-\contentsline {figure}{\numberline {6.21}{\ignorespaces Menú de visualización de datos en tiempo real.\relax }}{102}{figure.caption.76}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Logos de las principales herramientas usadas en el proyecto.\relax }}{72}{figure.caption.44}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \textit {Issue} número 5, implementación de la estrategia de Wyckoff\relax }}{74}{figure.caption.45}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \textit {Pull Request} referente a la issue \ref {issue}\relax }}{75}{figure.caption.46}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Guía de puntuación scrum\relax }}{77}{figure.caption.47}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Datos de mercados obtenidos en las fases previas al desarrollo\relax }}{79}{figure.caption.48}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Media móvil con ventana de 100 días (azul claro) contra ventana de 30 días (azul oscuro). Fuente: \href {https://www.investopedia.com/}{investopedia.com/}\relax }}{82}{figure.caption.52}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Creación de objetos para el modelo \textit {Mercado}\relax }}{83}{figure.caption.53}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Árbol de directorios del proyecto\relax }}{84}{figure.caption.54}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Bandas de Bollinger en un gráfico de precios\relax }}{86}{figure.caption.57}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Gráficos que representan bandas de Bollinger y diferencia de sus valores\relax }}{87}{figure.caption.58}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Intervalos detectados con el algoritmo de detección de tendencias\relax }}{88}{figure.caption.59}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Otros ejemplos de intervalos detectados con el algoritmo de detección de intervalos\relax }}{88}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Código Python para extender el modelo de Django User\relax }}{93}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Opción a habilitar para mandar órdenes de operaciones al terminal MT5.\relax }}{94}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Página principal y formulario de login, respectivamente.\relax }}{98}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Página principal y manual de usuario, respectivamente.\relax }}{99}{figure.caption.72}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Menús de elección de estrategia.\relax }}{100}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Menú de backtesting y trading a tiempo real, respectivamente.\relax }}{101}{figure.caption.74}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Menús de gestión de datos, teniendo datos guardados y sin tenerlos, respectivamente.\relax }}{102}{figure.caption.75}%
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Menús de visualización de datos antiguos.\relax }}{103}{figure.caption.76}%
+\contentsline {figure}{\numberline {6.21}{\ignorespaces Menú de visualización de datos en tiempo real.\relax }}{104}{figure.caption.77}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces EURUSD, Min15 durante 3 días, operacion 1.\relax }}{107}{figure.caption.80}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces EURUSD, Min15 durante 3 días, operacion 2.\relax }}{108}{figure.caption.81}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces EURUSD, Min15 durante 3 días, operacion 3.\relax }}{109}{figure.caption.82}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces EURUSD, Min15 durante 3 días, operacion 1.\relax }}{109}{figure.caption.81}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces EURUSD, Min15 durante 3 días, operacion 2.\relax }}{110}{figure.caption.82}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces EURUSD, Min15 durante 3 días, operacion 3.\relax }}{111}{figure.caption.83}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
