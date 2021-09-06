@@ -1,7 +1,74 @@
-\begin{titlepage}
 
-\chapter{Introducción}
+\chapter{Introducción} \label{introduccion}
+
+\section{Motivación}
+
+El trading, los mercados financieros o invertir en bolsa son conceptos clásicos que hoy día están irrumpiendo más que nunca debido a los avances tecnológicos y sobre todo, gracias a la influencia de las activos digitales como las criptomonedas y otros avances de la tecnología que afectan directamente a la economía global y la centralización o no de los capitales. \newline
+
+En este proyecto trataremos concretamente el \textit{trading} o comercio o intercambio comercial en español. El trading consiste en especular sobre distintos mercados financieros comprando o vendiendo activos para obtener un beneficio a corto o largo plazo. Estos mercados pueden ser de acciones, divisas, materias primas, índices o criptomonedas. \newline
+
+El trading es un concepto clásico, ya que el comprar o vender algo que se puede revalorizar o devaluar para buscar beneficio económico es algo que ya se ha hecho desde las antiguas civilizaciones. En algunos documentos se habla de que la antigua civilización mesopotámica de Sumer, actual sur de Irak, fue una de las primeras en practicar el trading. Hacia el año 600 a.C., el oro y la plata ya eran las primeras monedas del mundo, antes de que se creasen los sistemas monetarios. \newline
+
+En la actualidad, debido a la velocidad del mundo en todos los ámbitos del día a día, sobre todo en la tecnología; los procesos de compras y ventas de acciones se realizan constantemente, buscando cada operador el mayor beneficio posible y ordenando dichas operaciones a la unidad más pequeña de tiempo posible. Por esto, el trading es algo bastante avanzado y que aprovecha al máximo los recursos y conocimientos sobre la computación e inteligencia artificial actuales ya que el proceso completo se realiza de manera digital. \newline
+
+Una de las aplicaciones de la informática en el ámbito del trading consiste en automatizar las compras y ventas de activos financieros para obtener beneficios a corto o largo plazo. Esta aplicación es la principal motivación para la realización de este trabajo de fin de grado. \newline
+
+El objetivo principal de este \textit{Trabajo de Fin de Grado} será desarrollar una aplicación que implemente un algoritmo para automatizar el proceso de comprar y vender activos para ganar dinero. El algoritmo a implementar estará basado en la estrategia clásica para operar de \textit{Richard Wyckoff}, escritor e inversor estadounidense cofundador de \textit{The Magazine of Wall Street}. Concretamente, a esto se le conoce como trading algorítmico. En pocas palabras, el trading algorítmico es implementar un sistema de trading que opere de forma automática. \newline
+
+	
+
+\section{Objetivos}
+
+El objetivo principal del proyecto es desarrollar una aplicación web para realizar trading algorítmico. El sistema implementará un algoritmo para operar basándose en técnicas de análisis de mercados financieros clásicas, en concreto, se basará en la estrategia o análisis de \textit{Richard Wyckoff}. \newline
+
+El desarrollo principal de la aplicación se encontrará en la capacidad para comprar y vender de forma automática usando una cuenta comercial real tal y como lo haría un usuario humano, a través de un bróker o plataforma comercial de trading. Estas operaciones se realizarán según lo indique el algoritmo que elijamos, dentro de una lista de algoritmos que encontramos en la propia aplicación. \newline
+
+La aplicación permitirá al usuario identificarse con su cuenta \textit{comercial} o \textit{demo} (de prueba) de \textit{MetaTrader5}, que será la aplicación externa que realizará las compras y ventas en el mercado financiero seleccionado. \textbf{Ref.: OBJ 1, OBJ 2.} \newline
+
+Una vez un usuario está identificado y ha iniciado sesión en \textit{MT5}, podrá escoger un algoritmo para realizar Trading automático en tiempo real o probar las técnicas a modo de Backtesting. La aplicación también proporcionará la posibilidad de ver el histórico de operaciones realizado y el balance actual de la cuenta de \textit{MT5} en la que se ha identificado el usuario. \textbf{Ref.: OBJ 5, OBJ 6, OBJ 7, OBJ 8.} \newline
+
+Además de poder realizar operaciones de manera automática, la aplicación dispondrá de una interfaz propia para ver los datos de mercado en tiempo real o antiguos, utilizando gráficas interactivas. \textbf{Ref.: OBJ 3, OBJ 4.}\newline
+
+Más formalmente, podemos definir los objetivos del producto software de la siguiente forma:
 
 
+\begin{itemize}
+	
+	\item \textbf{OBJ 1}: La aplicación tendrá un sistema de gestión de usuarios.	
+	\item \textbf{OBJ 2}: El sistema conectará con la cuenta del usuario de la plataforma de trading en cuestión.
+	\item \textbf{OBJ 3}: El sistema permitirá a los usuarios ver gráficos en tiempo real del mercado que se quiera visualizar.
+	\item \textbf{OBJ 4}: El sistema permitirá a los usuarios ver gráficos de datos antiguos de precios del mercado que se quiera visualizar.
+	\item \textbf{OBJ 5}: El sistema desarrollará varios algoritmos usados para predecir el comportamiento de los mercados y hacer compras o ventas. La aplicación permitirá a los usuarios elegir entre uno de estos algoritmos para ser usado en el resto de funciones de la APP.
+	\item \textbf{OBJ 6}: El sistema permitirá a los usuarios hacer operaciones de compra y venta de manera automatizada en un periodo de tiempo y mercado concretos, eligiendo los modelos de predicción mencionados.
+	\item \textbf{OBJ 7}: El sistema permitirá a los usuarios probar cada uno de los algoritmos en un periodo de tiempo fijo, a modo de backtesting.
+	\item \textbf{OBJ 8}: El sistema permitirá a los usuarios ver un histórico de operaciones realizadas así como el balance actual de la cuenta a la que se ha conectado.
+	
+\end{itemize}
 
-\end{titlepage}
+
+\section{Estructura del documento}
+
+Este documento sigue la siguiente estructura de capítulos con sus respectivas secciones:\newline \\
+
+\begin{enumerate}
+	\item \textbf{Introducción}:
+	Sección que incluye la motivación o justificación que lleva a la elección del tema para la elaboración del proyecto y los objetivos que se pretenden alcanzar con el mismo. 
+	\item \textbf{Contexto teórico}:
+	Este apartado incluye la explicación de los conceptos específicos usados a lo largo del desarrollo del proyecto. La sección habla de la teoría básica necesaria para entender ciertas decisiones y desarrollos realizados.
+	\item \textbf{Planificación}: 
+	Esta sección incluye cada una de las fases de la planificación temporal del proyecto, qué se ha hecho en cada fase, durante cuanto tiempo, etc. Esta planificación viene formalizada por medio de un diagrama de \textit{Gantt}. %Se incluye también en este apartado el presupuesto necesario para el desarrollo del proyecto.
+	\item \textbf{Análisis}: 
+	Este capítulo habla de la fase de análisis del proyecto. En esta fase se describen los implicados, los requerimientos del software a implementar y diagramas de casos de uso y comportamiento del producto.
+	\item \textbf{Diseño}: 
+	Este apartado incluye los principales diagramas \textit{UML} que conforman el diseño del software del proyecto. Concretamente, encontramos un diagrama de paquetes, el diseño de clases y diagramas de secuencia. Se describe también un primer diseño de la interfaz.
+	\item \textbf{Implementación}: 
+	En este capítulo se exponen las herramientas y software utilizado en el desarrollo del proyecto. Se habla de la metodología del trabajo, que en este caso es la metodología ágil \textit{scrum}; y del uso de issues y pull request de \textit{GitHub} y \textit{git flow}. Se describen también las fases del desarrollo y el diseño final de la interfaz.
+	\item \textbf{Pruebas}: 
+	Esta sección contiene la batería de pruebas realizada al producto software para comprobar su correcto funcionamiento, así como rendimiento y eficacia.
+	\item \textbf{Conclusiones}: 
+	En este capítulo, se describe un resumen final de lo que se ha conseguido en la realización del proyecto. En este apartado se habla de los resultados obtenidos y se expresan posibles mejoras o avances futuros.
+	\item \textbf{Bibliografía}: 
+	En este apartado se incluyen las referencias bibliográficas usadas a lo largo del proyecto.
+	\item \textbf{Anexo}: 
+	Incluye el manual de usuario de la aplicación.
+\end{enumerate}

@@ -3,7 +3,7 @@ import warnings
 
 from django.shortcuts import render, get_object_or_404
 
-from .backend import common, utils, login
+from .backend import common, utils, login, get_data_10_years
 from .models import AlgoritmoTrading, Sesion, Mercado
 from .strategies import moving_average, metodo_wyckoff
 
@@ -33,6 +33,12 @@ def clear_context_ver_grafico():
     context['horas'] = 0
     context['grafico'] = None
     context['marco_tiempo'] = None
+
+
+def clear_full_context(request):
+    for key in context.keys():
+        context[key] = None
+    add_sesion_to_context(request)
 
 
 # Vistas
@@ -79,64 +85,48 @@ def ver_datos_antiguos(request):
     add_sesion_to_context(request)
     # Si no estoy actualizando el grafico con los botones tras haber entrado aqui, limpio el contexto
     if 'actualizar_grafico' not in request.POST:
+        clear_full_context(request)
         clear_context_ver_grafico()
 
     if request.method == "POST":
         # Cojo las variables de la requests
-        if not context.get('mercado'):
-            nombre_mercado = request.POST["mercado"]
-            context['mercado'] = nombre_mercado
+        context['mercado'] = context['sesion'].datos_mercado
 
         if not context.get('fecha_inicio'):
             fecha_inicio = request.POST["fecha_inicio"]
             context['fecha_inicio'] = fecha_inicio
 
-        try:
-            if not context.get('fecha_fin'):
-                fecha_fin = request.POST["fecha_fin"]
-                context['fecha_fin'] = fecha_fin
-        except:
-            fecha_fin = ''
+        if not context.get('fecha_fin'):
+            fecha_fin = request.POST["fecha_fin"]
             context['fecha_fin'] = fecha_fin
-
-        try:
-            if not context.get('horas'):
-                horas = int(request.POST["horas"])
-                context['horas'] = horas
-        except:
-            horas = 0
-            context['horas'] = horas
 
         # Cojo el objeto de la clase Mercado
         mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=context.get('mercado')).id)
 
-        # Actualizar el contador de horas
+        marco_tiempo = context['sesion'].marco_tiempo
+
+        # Actualizar el contador de ticks
         if 'actualizar_grafico' in request.POST:
-            comparar = context['horas'] if context['horas'] else (utils.transform_date(
-                context['fecha_fin']) - utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
+            horas_totales = (utils.transform_date(context['fecha_fin']) -
+                             utils.transform_date(context['fecha_inicio'])).total_seconds() // 3600
+            velas_totales = horas_totales // int(marco_tiempo.replace('H', '')) if 'H' in marco_tiempo else \
+                horas_totales // (int(marco_tiempo.replace('D', '')) * 24) if 'D' in marco_tiempo else \
+                    int(horas_totales / (int(marco_tiempo.replace('Min', '')) / 60)) if 'Min' in marco_tiempo else 1
+
             valor_flag = int(request.POST.get('actualizar_grafico', 0))
 
-            if context['horas']:
-                # En el caso de horas, a la hora de comparar, el maximo es el
-                # numero de horas - 24 y - el numero de horas en fines de semana
-                lista_datetimes_por_hora = [
-                    (utils.transform_date(context['fecha_inicio']) + datetime.timedelta(hours=i)) for
-                    i
-                    in range(int(context['horas']))]
-                lista_dias_fin_semana = [dt for dt in lista_datetimes_por_hora if dt.weekday() in [5, 6]]
-                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24 - len(
-                    lista_dias_fin_semana) - 1
-            else:
-                condicion_comparar = 0 <= context['flag'] + valor_flag <= int(comparar) - 24
-
-            if condicion_comparar:
+            if 0 <= context['flag'] + valor_flag <= velas_totales - 24:
                 context['flag'] = context['flag'] + valor_flag
 
         # Genero el gráfico
         context["grafico"], context["exito"] = mercado.obtener_grafico_datos_antiguos(start=context.get('fecha_inicio'),
                                                                                       end=context.get('fecha_fin'),
-                                                                                      horas=context.get('horas'),
-                                                                                      flag=context.get('flag', 0))
+                                                                                      flag=context.get('flag', 0),
+                                                                                      marco_tiempo=
+                                                                                      context.get('sesion').
+                                                                                      marco_tiempo,
+                                                                                      data=
+                                                                                      context.get('sesion').raw_data)
 
     return render(request, "TradingAPP/ver_datos_antiguos.html", context)
 
@@ -194,12 +184,6 @@ def elegir_estrategia(request, algoritmo_id):
     return render(request, "TradingAPP/elegir_estrategia.html", context)
 
 
-def menu_operar(request):
-    add_sesion_to_context(request)
-    clear_context_status()
-    return render(request, "TradingAPP/menu_operar.html", context)
-
-
 def trading_auto(request):
     add_sesion_to_context(request)
     clear_context_status()
@@ -237,6 +221,7 @@ def operar_auto(request):
         # Se operará las horas especificadas, en el marco de tiempo y mercado indicados
 
         acciones = []
+        plots = []
         beneficios = 0.0
 
         if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
@@ -247,48 +232,40 @@ def operar_auto(request):
             # Recogida de datos del simbolo a tratar
             # en formato ohlc con columnas (USANDO MT5)
 
-            acciones = metodo_wyckoff.metodo_wyckoff_tiempo_real(mercado=mercado, time_trading_in_hours=horas,
-                                                                 marco_tiempo=marco_tiempo)
+            acciones, plots, decisiones = metodo_wyckoff.metodo_wyckoff_tiempo_real(mercado=mercado,
+                                                                                    time_trading_in_hours=horas,
+                                                                                    marco_tiempo=marco_tiempo)
 
-        context['acciones'] = acciones if acciones else [
+        context['acciones'] = utils.acciones_to_str(utils.anadir_beneficio_acciones(acciones)) if acciones else [
             'No se ha realizado ninguna operación en el tiempo transcurrido']
+        context['plots'] = plots if plots else ['']
+        beneficios = utils.calcular_balance(acciones)
         context['balance'] = beneficios
+        context['decisiones'] = decisiones
         return render(request, 'TradingAPP/operar_auto.html', context)
 
 
-def menu_backtesting(request):
-    add_sesion_to_context(request)
-    clear_context_status()
-    return render(request, "TradingAPP/menu_backtesting.html", context)
-
-
 def backtesting_auto(request):
+    clear_full_context(request)
     add_sesion_to_context(request)
-    clear_context_status()
     return render(request, "TradingAPP/backtesting_auto.html", context)
 
 
 def operar_backtesting(request):
+    clear_full_context(request)
     add_sesion_to_context(request)
-    clear_context_status()
     if request.method == "POST":
-        inicio = request.POST["fecha_inicio"]
-        fecha_inicio_datetime = utils.transform_date(inicio)
-        try:
-            horas = int(request.POST["horas"])
-        except ValueError:
-            horas = -1
+        # Cojo las variables de la requests
+        context['mercado'] = context['sesion'].datos_mercado
+        marco_tiempo = context['sesion'].marco_tiempo
 
-        # Compruebo que el número de horas es válido y que la fecha no cae en fin de semana y
-        # no sale del rango de datos disponible
-        if horas <= 0:
-            context['error'] = 'ERROR: selecciona un número de horas válido'
+        if not context.get('fecha_inicio'):
+            fecha_inicio = request.POST["fecha_inicio"]
+            context['fecha_inicio'] = fecha_inicio
 
-        if fecha_inicio_datetime + datetime.timedelta(hours=horas) >= datetime.datetime(2021, 6, 22, 20):
-            context['error'] = 'ERROR: selecciona un rango (fecha inicio + horas) dentro de los datos disponibles'
-
-        if fecha_inicio_datetime.weekday() >= 5:
-            context['error'] = 'ERROR: selecciona un día de inicio que sea sábado o domingo'
+        if not context.get('fecha_fin'):
+            fecha_fin = request.POST["fecha_fin"]
+            context['fecha_fin'] = fecha_fin
 
         try:
             if context['error']:
@@ -296,43 +273,105 @@ def operar_backtesting(request):
         except KeyError:
             pass
 
-        nombre_mercado = request.POST["mercado"]
+        nombre_mercado = context['mercado']
         mercado = get_object_or_404(Mercado, pk=Mercado.objects.get(nombre=nombre_mercado).id)
 
         # OPERAR BACKTESTING ENTRE INICIO Y FIN EN LA MONEDA mercado
-        # ESTO SE DEBE ACTUALIZAR PARA COGER LOS DATOS QUE INSERTA EL USUARIO
-        # Y GUARDAMOS EN BASE DE DATOS. AHORA MISMO COJO DATOS LOCALES
 
         acciones = []
-        beneficios = 0.0
+        plots = []
 
         if context['sesion'].algoritmo_elegido.id == 1:  # Medias moviles
             # Recogida de datos del simbolo a tratar
-            data = common.get_data(mercado)
-
-            ventana_pequena = int(request.POST["ventana_pequena"])
-            ventana_grande = int(request.POST["ventana_grande"])
-
-            # Moving average crossover
-            # Parametrizar con las ventanas pequeña y grande que se quiera (3 y 6 por ej)
-            # Ultimo parametro indica tiempo en horas que durará el trading
-
-            acciones, ultimo_precio = \
-                moving_average.moving_average(data, mercado, ventana_pequena, ventana_grande, backtesting=True,
-                                              backtesting_start_date=fecha_inicio_datetime,
-                                              time_trading_in_hours=horas)
-            beneficios = common.get_actions_results(acciones, ultimo_precio)
+            # data = common.get_data(mercado)
+            #
+            # ventana_pequena = int(request.POST["ventana_pequena"])
+            # ventana_grande = int(request.POST["ventana_grande"])
+            #
+            # # Moving average crossover
+            # # Parametrizar con las ventanas pequeña y grande que se quiera (3 y 6 por ej)
+            # # Ultimo parametro indica tiempo en horas que durará el trading
+            #
+            # acciones, ultimo_precio = \
+            #     moving_average.moving_average(data, mercado, ventana_pequena, ventana_grande, backtesting=True,
+            #                                   backtesting_start_date=fecha_inicio_datetime,
+            #                                   time_trading_in_hours=horas)
+            # beneficios = common.get_actions_results(acciones, ultimo_precio)
+            raise
 
         if context['sesion'].algoritmo_elegido.id == 2:  # Metodo Wyckoff
             # Recogida de datos del simbolo a tratar
             # en formato ohlc con columnas
             # time  ask_open  ask_high  ask_low  ask_close  bid_open  bid_high  bid_low  bid_close
-            data = common.get_data_ohlc(mercado)
+            data = common.get_data_ohlc_str(context['sesion'].raw_data)
 
-            acciones = metodo_wyckoff.metodo_wyckoff_backtesting(data, start_date=fecha_inicio_datetime,
-                                                                 time_trading_in_hours=horas)
+            fecha_inicio_datetime = utils.transform_date(context['fecha_inicio'])
 
-        context['acciones'] = acciones if acciones else [
+            horas_totales = (utils.transform_date(context['fecha_fin']) -
+                             fecha_inicio_datetime).total_seconds() // 3600
+
+            acciones, plots, decisiones = metodo_wyckoff.metodo_wyckoff_backtesting(data,
+                                                                                    start_date=fecha_inicio_datetime,
+                                                                                    horas_totales=horas_totales,
+                                                                                    marco_tiempo=marco_tiempo)
+
+        context['acciones'] = utils.acciones_to_str(utils.anadir_beneficio_acciones(acciones)) if acciones else [
             'No se ha realizado ninguna operación en el tiempo transcurrido']
+        context['plots'] = plots if plots else ['']
+        beneficios = utils.calcular_balance(acciones)
         context['balance'] = beneficios
+        context['decisiones'] = decisiones
+        print(decisiones)
         return render(request, 'TradingAPP/operar_backtesting.html', context)
+
+
+def gestion_datos(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    return render(request, "TradingAPP/menu_gestion_datos.html", context)
+
+
+def obtener_y_guardar_datos(request):
+    clear_full_context(request)
+    add_sesion_to_context(request)
+    if request.method == "POST":
+        if not context['sesion'].raw_data:
+            if not context.get('fecha_inicio'):
+                inicio = request.POST["fecha_inicio"]
+                context['fecha_inicio'] = inicio
+
+            if not context.get('mercado'):
+                nombre_mercado = request.POST["mercado"]
+                context['mercado'] = nombre_mercado
+
+            if not context.get('marco_tiempo'):
+                marco_tiempo = request.POST["marco_tiempo"]
+                context['marco_tiempo'] = marco_tiempo
+
+            # Tenemos nombre_mercado, marco_tiempo, año inicio, obtengo datos y los guardo
+            csv_text = get_data_10_years.get_data_csv_ohlc(context['fecha_inicio'], context['mercado'],
+                                                           context['marco_tiempo'])
+            context['sesion'].raw_data = csv_text
+            context['sesion'].datos_mercado = context['mercado']
+            context['sesion'].datos_inicio = context['fecha_inicio']
+            context['sesion'].marco_tiempo = context['marco_tiempo']
+            context['sesion'].save()
+
+        return render(request, 'TradingAPP/proceso_datos_exito.html', context)
+
+
+def borrar_datos(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    context['sesion'].raw_data = ''
+    context['sesion'].datos_mercado = ''
+    context['sesion'].datos_inicio = ''
+    context['sesion'].marco_tiempo = ''
+    context['sesion'].save()
+
+    return render(request, 'TradingAPP/proceso_datos_exito.html', context)
+
+def manual_uso(request):
+    add_sesion_to_context(request)
+    clear_context_status()
+    return render(request, "TradingAPP/manual_uso.html", context)

@@ -1,0 +1,67 @@
+{% extends "base_generic_login.html" %}
+
+{% block content %}
+
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
+
+<br>
+
+<body>
+
+<br><br>
+<b>Página principal de la aplicación:</b>
+
+<br><br>
+
+Página de inicio, se piden las credenciales del usuario para acceder a la aplicación.
+<br>
+Podemos acceder aquí con el usuario wyckoff y contraseña Trading2!.
+
+<br><br><br>
+<b>Menú principal de la aplicación:</b>
+
+<br><br>
+Aquí tenemos los siguientes botones:<br><br>
+
+<li>
+    Login MT5: para loguearnos en el bróker y poder utilizar la plataforma comercial externa. Este paso es necesario para usar el resto de la aplicación. Aquí se puede crear una cuenta en el bróker ICMarkets, que dispone de cuentas Demo con dinero falso para testing.
+
+    </li>
+
+    <li>Logout MT5: para cerrar sesión en MT5.
+</li>
+    <li>Gestión de datos: se usa para descargar a la base de datos los datos históricos del mercado financiero elegido que serán usados en el resto de funcionalidades de la APP. Se puede elegir el intervalo de datos y temporalidad.
+</li>
+    <li>Ver datos de mercados: se usa para ver gráficas en formato de velas japonesas de precios de mercados en tiempo real y antiguos. En el caso de mercados antiguos, el menú es interactivo y el usuario se puede desplazar por el gráfico. En el caso de tiempo real, se puede elegir la temporalidad.
+</li>
+    <li>Operar: se utiliza para lanzar el algoritmo de Wyckoff en tiempo real. Aquí se puede parametrizar el número de horas que estará funcionando, la temporalidad y el mercado a operar.
+</li>
+    <li>Estrategias de trading: se utiliza para elegir la estrategia de Trading usada para trading algoritmico.
+</li>
+    <li>Backtesting: se usa para probar los algoritmos en datos pasados de mercados financieros. Aquí se haría lo mismo que en tiempo real pero simulando el transcurso del tiempo.
+</li>
+
+
+<br><br>
+Durante todas las páginas de la aplicación encontramos a los lados izquierdo y derecho accesos directos a cada una de las funcionalidades.\newline
+
+<br><br><br>
+<br>
+
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+<br><br><br><br><br><br>
+
+
+</html>
+
+{% endblock %}

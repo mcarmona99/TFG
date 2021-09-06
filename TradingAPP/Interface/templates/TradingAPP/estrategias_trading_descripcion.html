@@ -14,7 +14,7 @@
 
 <title>TradingAPP</title>
 
-<H1 align="center">TradingAPP</H1>
+<H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
 
 <p align="left">
 
@@ -22,12 +22,6 @@
     {% if algoritmo.nombre %} <b>Nombre</b>: {{ algoritmo.nombre }}<br><br> {% endif %}
     {% if algoritmo.nombre %} <b>Descripcion</b>: {{ algoritmo.descripcion }}<br><br> {% endif %}
     {% if algoritmo.autor %} <b>Autor</b>: {{ algoritmo.autor }} <br><br> {% endif %}
-</p>
-<p>
-    {% if algoritmo.imagen %} <img src="{% static algoritmo.imagen %}" alt="Imagen desriptiva del algoritmo" width="700"
-                                   align="center">
-    {% endif %}
-
 </p>
 
 <body class="center">
@@ -38,7 +32,7 @@
     <input class="boton" type="submit" value="Elegir estrategia"/>
 </form>
 <br><br><br><br>
-<a class="boton" href="{% url 'Estrategias Trading'%}">Volver a elección de estrategias</a>
+<a class="boton" href="{% url 'Estrategias Tradiung'%}">Volver a elección de estrategias</a>
 <br><br><br><br>
 <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
 

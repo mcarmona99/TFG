@@ -11,9 +11,6 @@ from ..backend.operate import buy, sell
 
 def moving_average(data, symbol, short_window_size, long_window_size, backtesting=False,
                    backtesting_start_date=None, time_trading_in_hours=None):
-    """
-    TODO: Docstring
-    """
     # Variable inicial para controlar si estoy comprando o vendiendo
     current_order = 0  # 0 = nada, 1 = buy, 2 = sell
     # Variable a devolver, con accion, precio y tiempo al que la hicimos

@@ -6,9 +6,6 @@ import MetaTrader5 as mt5
 
 
 def send_request_to_mt5(symbol, action, lot, stop_lose, take_profit):
-    """
-    TODO: Docstring
-    """
     if not mt5.initialize():
         mt5.shutdown()
         return False
@@ -50,14 +47,8 @@ def send_request_to_mt5(symbol, action, lot, stop_lose, take_profit):
 
 
 def buy(symbol, lot=None, sl=None, tp=None):
-    """
-    TODO: Docstring
-    """
     return send_request_to_mt5(symbol, "BUY", lot=lot, take_profit=tp, stop_lose=sl)
 
 
 def sell(symbol, lot=None, sl=None, tp=None):
-    """
-    TODO: Docstring
-    """
     return send_request_to_mt5(symbol, "SELL", lot=lot, take_profit=tp, stop_lose=sl)

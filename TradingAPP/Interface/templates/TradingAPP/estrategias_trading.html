@@ -14,7 +14,7 @@
 
 <title>TradingAPP</title>
 
-<H1 align="center">TradingAPP</H1>
+<H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
 
 <br>
 
@@ -29,7 +29,9 @@ Haz click en "Elegir estrategia" para seleccionar la estrategia de trading algor
 {% if algoritmos %}
 
 {% for algoritmo in algoritmos %}
+{% if algoritmo.id != 1 %}
 <a href="{{ algoritmo.id }}">{{ algoritmo.nombre }}</a><br>
+{%endif%}
 {% endfor %}
 
 {% else %}

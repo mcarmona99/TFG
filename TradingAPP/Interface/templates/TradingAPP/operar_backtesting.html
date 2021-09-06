@@ -10,7 +10,7 @@
 
 <title>TradingAPP</title>
 
-<H1 align="center">TradingAPP</H1>
+<H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
 
 <H2 align="center">Backtesting Automático</H2>
 
@@ -31,7 +31,7 @@ ACCIONES REALIZADAS:
 {% for accion in acciones %}
 <p>{{ accion }}</p>
 {% endfor %}
-<br><br><br>
+<br><br>
 
 BALANCE OBTENIDO:
 <br><br>
@@ -40,6 +40,31 @@ BALANCE OBTENIDO:
 {% else %}
 <p style="color:#a50707">{{ balance }}</p>
 {% endif %}
+<br><br>
+
+<table align="center">
+    <tr>
+        <td>
+            PLOT DE CADA ACCION:
+            <br><br>
+            {% for plot in plots %}
+            <p>{{ plot | safe }}</p>
+            {% endfor %}
+            <br><br><br>
+        </td>
+        <td>
+            DECISIONES DE CADA ACCION:
+            <br><br>
+            {% for decision in decisiones %}
+            <p>{{ decision }}</p>
+            <br><br><br><br><br><br><br><br><br>
+            {% endfor %}
+            <br><br><br>
+        </td>
+    </tr>
+</table>
+<br><br>
+
 
 {% else %}
 

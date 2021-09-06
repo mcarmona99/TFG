@@ -1,0 +1,89 @@
+{% extends "base_generic_login.html" %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'TradingAPP/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<title>TradingAPP</title>
+
+<H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
+
+<br>
+
+<body class="center">
+
+Menú relativo a la gestión de datos.
+<br><br>
+Selecciona el mercado, fecha de origen y marco de tiempo para la obtención de datos.
+<br><br>
+Los datos se guardarán en la base de datos relativa a tu perfil.
+<br><br><br><br><br>
+
+{% if not sesion.marco_tiempo %}
+<form action="obtener_datos/" method="POST"> {% csrf_token %}
+
+    <p>Mercado a operar:
+        <label>
+            <select name="mercado">
+                <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
+                <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
+                <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
+                <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
+                <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
+            </select>
+        </label>
+    </p>
+    <p>Fecha inicio:     <input type="number" name="fecha_inicio" min="2010" max="2020" required/></p>
+    <p>Selecciona el marco de tiempo:
+        <select name="marco_tiempo">
+            <option value="1Min">1 Minuto</option>
+            <option value="3Min">3 Minutos</option>
+            <option value="5Min">5 Minutos</option>
+            <option value="15Min">15 Minutos</option>
+            <option value="30Min">30 Minutos</option>
+            <option value="45Min">45 Minutos</option>
+            <option value="1H">1 Hora</option>
+            <option value="2H">2 Horas</option>
+            <option value="3H">3 Horas</option>
+            <option value="4H">4 Horas</option>
+            <option value="1D">1 Dia</option>
+        </select>
+    </p>
+
+    <br>
+
+    <input class="boton" type="submit" value="Obtener datos"/>
+</form>
+
+</body>
+
+<br><br><br>
+
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+{% else %}
+
+<br><br><br>
+<p>El usuario ya tiene datos guardados, concretamente, datos de <b>{{ sesion.datos_mercado }}</b>, desde <b>{{ sesion.datos_inicio }}</b> y temporalidad <b>{{ sesion.marco_tiempo }}</b></p>
+<br><br><br>
+<p>¿Deseas borrar los datos?</p>
+<br><br>
+<a class="boton" href="{% url 'Borrar datos'%}">Borrar Datos</a>
+
+<br><br><br><br><br><br>
+
+
+<a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
+
+{% endif %}
+<br><br><br>
+{% if sesion.algoritmo_elegido %} <p>Algoritmo de trading elegido: {{ sesion.algoritmo_elegido }}</p>{% endif %}
+
+
+</html>
+
+{% endblock %}

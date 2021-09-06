@@ -32,19 +32,25 @@ urlpatterns = [
     path('estrategias/<int:algoritmo_id>/elegir_estrategia_trading', views.elegir_estrategia),
 
     # Urls de operar
-    path('trading/', views.menu_operar, name='Menu Trading'),
-    path('trading/automatico/', views.trading_auto, name='Trading Automatico'),
-    path('trading/automatico/operar_auto/', views.operar_auto, name='Operar Automatico'),
+    path('trading/', views.trading_auto, name='Trading Automatico'),
+    path('trading/operar_auto/', views.operar_auto, name='Operar Automatico'),
 
     # Urls de backtesting
-    path('backtesting/', views.menu_backtesting, name='Backtesting'),
-    path('backtesting/automatico/', views.backtesting_auto, name='Backtesting Automatico'),
-    path('backtesting/automatico/operar_backtesting/', views.operar_backtesting, name='Operar Backtesting'),
+    path('backtesting/', views.backtesting_auto, name='Backtesting Automatico'),
+    path('backtesting/operar_backtesting/', views.operar_backtesting, name='Operar Backtesting'),
 
     # Urls de ver datos de mercados
     path('mercados/', views.ver_datos_mercados, name="Menu Ver Datos"),
     path('mercados/ver_datos_antiguos/', views.ver_datos_antiguos, name="Ver Datos Antiguos"),
     path('mercados/ver_datos_tiempo_real/', views.ver_datos_tiempo_real, name="Ver Datos Tiempo Real"),
+
+    # Gestion de datos
+    path('datos/', views.gestion_datos, name="Gestion Datos"),
+    path('datos/obtener_datos/', views.obtener_y_guardar_datos, name="Datos obtenidos"),
+    path('datos/borrar_datos/', views.borrar_datos, name="Borrar datos"),
+
+    # Manual de uso
+    path('manual_uso/', views.manual_uso, name="Manual uso"),
 
     # Admin page
     path('admin/', admin.site.urls),

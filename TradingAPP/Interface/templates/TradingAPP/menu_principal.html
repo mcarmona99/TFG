@@ -23,41 +23,50 @@
 
     <tr>
         <td colspan="2">
-            <H1>TradingAPP</H1>
+            <H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
+
         </td>
 
     </tr>
-
-
+</table>
+<br><br>
+<table align="center">
     <tr>
         <td>
-            <br><br><br>
+            <br>
             {% if not sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Login'%}">LOGIN MT5</a>
             {% else %}
             <a class="boton_inhabilitado">LOGIN MT5</a>
             {% endif %}
+            <br><br><br>
         </td>
         <td>
-            <br><br><br>
+            <br>
             {% if sesion.logued_MT5 %}
             <a class="boton" href="{% url 'Menu Principal Logout'%}">LOGOUT MT5</a>
             {% else %}
             <a class="boton_inhabilitado">LOGOUT MT5</a>
             {% endif %}
+            <br><br><br>
         </td>
     </tr>
-    <tr>
+
+
+
+
+     <tr>
         <td colspan="2">
-            <br><br><br><a class="boton" href="{% url 'Menu Principal'%}">Gestion de datos</a>
+            {% if sesion.logued_MT5 %}
+            <a class="boton" href="{% url 'Gestion Datos'%}">Gestión de datos</a>
+            {% else %}
+            <a class="boton_inhabilitado">Gestión de datos</a>
+            {% endif %}
         </td>
 
     </tr>
-    <tr>
-        <td colspan="2">
-            <br><br><br><a class="boton" href="{% url 'Menu Principal'%}">Mi perfil</a>
-        </td>
-    </tr>
+
+
 
 
     <tr>
@@ -72,7 +81,7 @@
         <td style="text-align:center">
             <br><br><br>
             {% if sesion.logued_MT5 %}
-            <a class="boton" href="{% url 'Menu Trading'%}">Operar</a>
+            <a class="boton" href="{% url 'Trading Automatico'%}">Operar</a>
             {% else %}
             <a class="boton_inhabilitado">Operar</a>
             {% endif %}
@@ -93,7 +102,7 @@
         <td>
             <br><br><br>
             {% if sesion.logued_MT5 %}
-            <a class="boton" href="{% url 'Backtesting'%}">Backtesting</a>
+            <a class="boton" href="{% url 'Backtesting Automatico'%}">Backtesting</a>
             {% else %}
             <a class="boton_inhabilitado">Backtesting</a>
             {% endif %}
@@ -101,25 +110,6 @@
 
     </tr>
 
-    <tr>
-        <td>
-            <br><br><br>
-            {% if sesion.logued_MT5 %}
-            <a class="boton" href="{% url 'Menu Principal'%}">Histórico de operaciones</a>
-            {% else %}
-            <a class="boton_inhabilitado">Histórico de operaciones</a>
-            {% endif %}
-        </td>
-        <td>
-            <br><br><br>
-            {% if sesion.logued_MT5 %}
-            <a class="boton" href="{% url 'Menu Principal'%}">Balance y operaciones en curso</a>
-            {% else %}
-            <a class="boton_inhabilitado">Balance y operaciones en curso</a>
-            {% endif %}
-        </td>
-
-    </tr>
 
 
 </table>

@@ -10,7 +10,7 @@
 
 <title>TradingAPP</title>
 
-<H1 align="center">TradingAPP</H1>
+<H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
 
 <H2 align="center">Backtesting Automático</H2>
 
@@ -20,24 +20,36 @@ Algoritmo de trading elegido: <b> {{ sesion.algoritmo_elegido }} </b>
 
 <body class="center">
 
-Elige la fecha de inicio y de fin entre las que se quiere operar:<br>
+{% if sesion.datos_mercado%}
 
 <form action="operar_backtesting/" method="POST"> {% csrf_token %}
-    <p>Fecha inicio:     <input type="datetime-local" name="fecha_inicio"/></p>
-    <p>Horas durante las que se operará:     <input type="number" name="horas"/></p>
-    <p>Mercado a operar:
-        <label>
-            <select name="mercado">
-                <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
-                <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
-                <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
-                <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
-                <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
-            </select>
-        </label>
-    </p>
+        <p><b>Los datos que se usarán serán aquellos encontrados en el apartado de Gestión de Datos del menú principal.</b> <br> <br>
+        </p>
 
-    <br>
+        <!-- MERCADO -->
+        <p><b>El mercado a operar es: {{ sesion.datos_mercado }}</b> <br> <br>
+        </p>
+
+        <!-- TIMEFRAME -->
+        <p><b>El marco de tiempo de los datos es: {{ sesion.marco_tiempo }}</b> <br> <br>
+        </p>
+
+        <!-- DATOS -->
+        <p><b>Tenemos datos desde: {{ sesion.datos_inicio }}</b> <br> <br>
+        </p>
+
+
+        <!-- SELECCIONAR FECHA INICIO -->
+
+        <p><b>Fecha de inicio del backtesting:</b> <br> <br>
+            <input type="datetime-local" name="fecha_inicio" required/> <br> <br>
+        </p>
+
+        <!-- SELECCIONAR FECHA FIN O NUMERO HORAS-->
+
+        <p><b>Fecha de finalización del backtesting:</b> <br> <br>
+            <input type="datetime-local" name="fecha_fin" required/> <br> <br>
+        </p>
 
     {% if sesion.algoritmo_elegido.nombre == 'Medias moviles' %}
     <p>PARAMETROS</p>
@@ -50,17 +62,20 @@ Elige la fecha de inicio y de fin entre las que se quiere operar:<br>
     <input class="boton" type="submit" value="Operar"/>
 </form>
 
+{% else %}
+
+<br>
+        <p><b>Nada que mostrar, no hay datos guardados para este usuario. Visita el apartado de Gestión de Datos para descargarlos de MetaTrader5.</b> <br> <br>
+        </p>
+{% endif %}
 
 </body>
 
-<br><br><br><br>
-
-<a class="boton" href="{% url 'Backtesting'%}">Volver a elección de método de Backtesting</a>
 
 <br><br><br><br>
 
 <a class="boton" href="{% url 'Menu Principal'%}">Volver al menú</a>
-
+<br><br><br><br><br><br>
 
 </html>
 

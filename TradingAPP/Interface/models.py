@@ -19,6 +19,10 @@ class Sesion(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     algoritmo_elegido = models.ForeignKey('AlgoritmoTrading', on_delete=models.SET_NULL, null=True)
     logued_MT5 = models.BooleanField(default=False)
+    raw_data = models.TextField()
+    datos_mercado = models.CharField(max_length=100)
+    datos_inicio = models.CharField(max_length=100)
+    marco_tiempo = models.CharField(max_length=100)
 
     def __str__(self):
         return self.user.__str__()
@@ -73,6 +77,29 @@ class Mercado(models.Model):
 
         return df
 
+    def get_grafico_funcion_generica(self, marco_tiempo, data_array, titulo):
+        # Genero el plot con su personalización
+        # multiplicador es la variable para modificar width
+        multiplicador = int(marco_tiempo.replace('H', '')) if 'H' in marco_tiempo else \
+            int(marco_tiempo.replace('D', '')) * 24 if 'D' in marco_tiempo else \
+                int(marco_tiempo.replace('Min', '')) / 60 if 'Min' in marco_tiempo else 1
+
+        # Genero el plot con su personalización
+        fig, ax = plt.subplots()
+        fig.subplots_adjust(bottom=0.3, left=0.2)
+        candlestick_ohlc(ax, data_array, width=0.015 * multiplicador, colorup='green', colordown='red')
+        plt.setp(plt.gca().get_xticklabels(), rotation=30, horizontalalignment='right')
+        plt.title(f"{titulo} - {self.nombre} - {marco_tiempo}")
+        ax.xaxis.set_major_formatter(DateFormatter('%H:%M  %d-%m-%y'))
+        plt.ylabel("Precio de compra")
+
+        imgdata = StringIO()
+        fig.savefig(imgdata, format='svg')
+        imgdata.seek(0)
+        plt.close()
+
+        return imgdata.getvalue()
+
     def obtener_grafico_datos_tiempo_real(self, marco_tiempo='1H', titulo="Gráfico OHLC"):
         # Obtengo un rago de 2 meses, para que sea valido para todos los marcos de tiempo
         ahora = datetime.datetime.now()
@@ -101,59 +128,30 @@ class Mercado(models.Model):
         data_array = [[date2num(rev.time), rev['ask_open'], rev['ask_high'], rev['ask_low'], rev['ask_close']] for
                       index, rev in df.iterrows()]
 
-        # Genero el plot con su personalización
-        # multiplicador es la variable para modificar width
-        multiplicador = int(marco_tiempo.replace('H', '')) if 'H' in marco_tiempo else \
-            int(marco_tiempo.replace('D', '')) * 24 if 'D' in marco_tiempo else \
-                int(marco_tiempo.replace('Min', '')) / 60 if 'Min' in marco_tiempo else 1
+        grafico = self.get_grafico_funcion_generica(marco_tiempo, data_array, titulo)
 
-        fig, ax = plt.subplots()
-        fig.subplots_adjust(bottom=0.3, left=0.2)
-        candlestick_ohlc(ax, data_array, width=0.015 * multiplicador, colorup='green', colordown='red')
-        plt.setp(plt.gca().get_xticklabels(), rotation=30, horizontalalignment='right')
-        plt.title(f"{titulo} - {self.nombre} - {marco_tiempo}")
-        ax.xaxis.set_major_formatter(DateFormatter('%H:%M  %d-%m-%y'))
-        plt.ylabel("Precio de compra")
-
-        imgdata = StringIO()
-        fig.savefig(imgdata, format='svg')
-        imgdata.seek(0)
-
-        grafico = imgdata.getvalue()
         return grafico, f"Mostrando desde {df.at[0, 'time']} hasta {df.at[len(df) - 1, 'time']}\n" \
                         f"Actualizando gráfico en {marco_tiempo} ..."
 
-    def obtener_grafico_datos_antiguos(self, start="", end="", horas=0, titulo="Gráfico OHLC", flag=0):
+    def obtener_grafico_datos_antiguos(self, start="", end="", titulo="Gráfico OHLC", flag=0, marco_tiempo='1H',
+                                       data=""):
         start = utils.transform_date(start)
-        if end:
-            end = utils.transform_date(end)
+        end = utils.transform_date(end)
 
         # Obtener los datos en formato ohlc (velas)
-        data = common.get_data_ohlc(self.nombre)
+        data = common.get_data_ohlc_str(data)
         data = data[data.time.dt.weekday < 5]
 
         # Adaptamos los datos al rango que tenemos, df sera un dataframe de pandas con todas las horas desde start
         # hasta end o desde start hasta el numero horas dado
-        df = common.adapt_data_to_range(data, start, start + datetime.timedelta(
-            hours=horas)) if horas else common.adapt_data_to_range(data, start, end)
+        df = common.adapt_data_to_range(data, start, end)
+        df.reset_index(level=0, inplace=True)
 
         # Creo la variable necesaria para la funcion candlestick_ohlc
         data_array = [[date2num(rev.time), rev['ask_open'], rev['ask_high'], rev['ask_low'], rev['ask_close']] for
                       index, rev in df[flag:24 + flag].iterrows()]
 
-        # Genero el plot con su personalización
-        fig, ax = plt.subplots()
-        fig.subplots_adjust(bottom=0.3, left=0.2)
-        candlestick_ohlc(ax, data_array, width=0.015, colorup='green', colordown='red')
-        plt.setp(plt.gca().get_xticklabels(), rotation=30, horizontalalignment='right')
-        plt.title(f"{titulo} - {self.nombre}")
-        ax.xaxis.set_major_formatter(DateFormatter('%H:%M  %d-%m-%y'))
-        plt.ylabel("Precio de compra")
+        grafico = self.get_grafico_funcion_generica(marco_tiempo, data_array, titulo)
 
-        imgdata = StringIO()
-        fig.savefig(imgdata, format='svg')
-        imgdata.seek(0)
-
-        grafico = imgdata.getvalue()
         return grafico, f"Mostrando desde {start + datetime.timedelta(hours=flag)} hasta " \
                         f"{start + datetime.timedelta(hours=flag + 24)}"

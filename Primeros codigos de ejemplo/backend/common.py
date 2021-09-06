@@ -17,9 +17,6 @@ DATA_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'dat
 # FUNCIONES
 
 def find_files_regex(filename, search_path):
-    """
-    TODO: Docstring
-    """
     files_found = []
     regex = re.compile('.*{}.*'.format(filename))
     for root, dirs, files in os.walk(search_path):
@@ -31,18 +28,12 @@ def find_files_regex(filename, search_path):
 
 
 def get_hours_from_timedelta(td):
-    """
-    TODO: Docstring
-    """
     # Ignoro los minutos y segundos
     days, hours = td.days, td.seconds // 3600
     return hours + days * 24
 
 
 def get_data(symbol, data_path=DATA_PATH):
-    """
-    TODO: Docstring
-    """
     frames = []
     for file in find_files_regex(symbol, data_path):
         df_file = pd.read_csv(file)
@@ -58,16 +49,12 @@ def get_data(symbol, data_path=DATA_PATH):
         df = pd.concat(frames)
     except ValueError:
         print(f"No se han encontrado dataframes para {symbol} en {data_path}")
-        # TODO: Gestion de errores
         return None
 
     return df
 
 
 def update_data_to_realtime(old_dataframe, symbol):
-    """
-    TODO: Docstring
-    """
     if not mt5.initialize():
         print("initialize() failed")
         mt5.shutdown()
@@ -78,7 +65,6 @@ def update_data_to_realtime(old_dataframe, symbol):
 
     if ticks is None:
         print("No se pudo actualizar el dataframe a tiempo real")
-        # TODO: Gestion de errores
         return False
 
     ticks_df = ticks_to_df_with_time(ticks)
@@ -87,9 +73,6 @@ def update_data_to_realtime(old_dataframe, symbol):
 
 
 def adapt_data_to_backtesting(old_dataframe, end_data):
-    """
-    TODO: Docstring
-    """
     return old_dataframe[old_dataframe['time'] < end_data]
 
 

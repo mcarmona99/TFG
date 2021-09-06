@@ -10,7 +10,7 @@
 
 <title>TradingAPP</title>
 
-<H1 align="center">TradingAPP</H1>
+<H1 align="center"><img src="/static/TradingAPP/imagenes/logo.png" width="15%"/></br>TradingAPP</H1>
 
 <H2 align="center">Ver anteriores datos de mercado</H2>
 
@@ -18,53 +18,50 @@
 
 <body>
 
+{% if sesion.datos_mercado%}
+
 <div style="float: left; width: 45%;">
     <form action="./" method="POST"> {% csrf_token %}
 
-        <!-- SELECCIONAR MERCADO -->
         <br>
-        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccionar el mercado a operar:</b> <br> <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label>
-                <select name="mercado">
-                    <option value="XBRUSD">XBRUSD - Petroleo Brent vs US Dollar</option>
-                    <option value="XNGUSD">XNGUSD - Gas Natural vs US Dollar</option>
-                    <option value="XAGEUR">XAGEUR - Plata vs Euro</option>
-                    <option value="XAUUSD">XAUUSD - Oro vs US Dollar</option>
-                    <option value="EURUSD">EURUSD - Euro vs US Dollar</option>
-                </select>
-            </label> <br> <br>
+        <p><b>Los datos que se usarán serán aquellos encontrados en el apartado de Gestión de Datos del menú principal.</b> <br> <br>
         </p>
+
+        <!-- MERCADO -->
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El mercado a ver es: {{ sesion.datos_mercado }}</b> <br> <br>
+        </p>
+
+        <!-- TIMEFRAME -->
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El marco de tiempo de los datos es: {{ sesion.marco_tiempo }}</b> <br> <br>
+        </p>
+
+        <!-- DATOS -->
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tenemos datos desde: {{ sesion.datos_inicio }}</b> <br> <br>
+        </p>
+
 
         <!-- SELECCIONAR FECHA INICIO -->
 
         <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha inicio:</b> <br> <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="datetime-local" name="fecha_inicio"/> <br> <br>
+            <input type="datetime-local" name="fecha_inicio" required/> <br> <br>
         </p>
 
         <!-- SELECCIONAR FECHA FIN O NUMERO HORAS-->
 
-        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicar fecha de fin o número de horas:</b> <br> <br>
+        <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha fin:</b> <br> <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="horas_o_fecha" value="horas" id="ver_con_horas" checked> Horas
-            <input type="radio" name="horas_o_fecha" value="fecha" id="ver_con_fecha"> Fecha Fin
+            <input type="datetime-local" name="fecha_fin" required/> <br> <br>
         </p>
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Horas: <input type="number" name="horas" min="24" id="inputHoras"/>
-        <!-- El minimo es 24, equivalente a un dia completeo -->
 
-        <br> <br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha fin: <input type="datetime-local" name="fecha_fin" id="inputFecha" disabled/>
-
-
-        <br> <br> <br> <br> <br>
+        <br> <br> <br>
 
 
         <!-- BOTON FINAL -->
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="boton" type="submit" value="Ver gráfica"/>
+         <br> <br> <br> <br>
     </form>
 </div>
 <div style="float: left; width: 45%;">
@@ -96,6 +93,13 @@
     {%endif%}
     <br>
 </div>
+
+{% else %}
+
+<br>
+        <p><b>Nada que mostrar, no hay datos guardados para este usuario. Visita el apartado de Gestión de Datos para descargarlos de MetaTrader5.</b> <br> <br>
+        </p>
+{% endif %}
 
 <div style="float: right; width: 45%;">
     <br><br><br><br>

@@ -1,7 +1,71 @@
-\begin{titlepage}
+
 
 \chapter{Conclusiones}
 
+En este último capítulo destaco las conclusiones que podemos sacar de este trabajo de fin de grado.\newline
+
+Divido esta sección en conclusiones de las pruebas, conclusiones de los objetivos alcanzados y futuras mejoras.\newline
 
 
-\end{titlepage}
+\section{Conclusiones de las pruebas}
+
+En vista de las pruebas obtenidas en el backtesting realizado en el punto anterior, podemos sacar varias conclusiones sobre la eficacia de nuestro algoritmo.\newline
+
+El método de Wyckoff funciona de forma bastante irregular con los mercados financieros de metales y materias primas. Como hemos visto, de las pruebas realizadas en los 4 mercados: XAUUSD, XAGEUR, XBRUSD Y XNGUSD; sólo hemos obtenido un total de 9 operaciones. En otras palabras, al operar en estos mercados, la mayoría de veces mantendríamos el algoritmo funcionando sin que ordene operaciones de compra y venta. Este comportamiento puede deberse a la estabilidad quizás de dichos mercados financieros. Si comparamos estos mercados con los intercambios de divisas, tenemos mercados menos populares y que eso al final, afecta directamente al comportamiento de los precios. \newline
+
+Si un mercado es poco popular entre los operadores, esto supondrá spreads altos, ya que tendremos menos gente que compre al precio que piden los que venden. Spread alto indica menos liquidez. Ver punto 2 de la memoria, contexto teórico del proyecto. \newline
+
+Esto puede ser una justificación de que las operaciones sean malas en dichos mercados. Pero realmente lo que ocurre es que no se ordenan operaciones. \newline
+
+¿A qué puede deberse esto? Bien, la implementación del algoritmo de detección de tendencias, usado en el método de Wyckoff, usaba Bandas de Bollinger. Si volvemos al apartado de implementación, veremos que las Bandas de Bollinger son una medida de volatilidad del precio. Cuando tenemos tendencias bajistas y alcistas, hay más volatilidad en el mercado y es justo con esto con lo que tratamos en el algoritmo. ¿Qué ocurre en el caso de los mercados mencionados, que tienen más spread? Siempre habrá poca volatilidad. Es por esto que nuestro algoritmo tenderá a no encontrar tendencias como lo haría en divisas, donde hay más volatilidad.\newline
+
+
+Finalmente hablo de los resultados de la ejecución del método de Wyckoff en el mercado de divisas, EURUSD.\newline
+
+En este caso, obtenemos relativamente buenos resultados. En Min15 obtenemos resultados positivos, en H1 también. En la temporalidad de H4, cada 4 horas, hemos obtenido una pérdida; y en D1 hemos obtenido ganancias.\newline
+
+De aquí podemos sacar una conclusión clara, que tiene que ver con la gestión de riesgo. ¿Qué está ocurriendo en Min15 y H1 que no pasa en H4? Estamos aplicando más de una operación, mientras que en H4, sólo realizamos una. Aquí, como he dicho, entra en juego la gestión de riesgo. Cuando definimos el método de Wyckoff, describimos que para ordenar una operacion, el take profit, o valor en el que cerrábamos en ganancias la operación, debería de suponer el doble de ganancias que el stop lose, o valor en el que cerramos con pérdidas. Esto, a efectos teóricos, implica que si hemos realizado dos operaciones; una de ellas beneficiosa y otra con pérdidas; habremos obtenido ganancias en el recuento general.\newline
+
+Por esto, si en H4 se hubiese hecho alguna operación más, tendríamos quizás ganancias, debido a la gestión de riesgo mencionada.\newline
+
+Hablando de nuevo en general de todos los resultados de todos los mercados, no podemos mirar el balance como un número. Este balance debe ser visto como un acierto o una ganancia. ¿Por qué? A la hora de operar en la vida real, los operadores utilizan el lotaje para realizar las inversiones. El lotaje o lote, a efectos prácticos sería el tanto por ciento de activo que compras al invertir. Si compras más lote, tu balance final será el obtenido en estas presuntas situaciones por un multiplicador.\newline
+
+En el caso de la última prueba realizada durante 4 años en la divisa EURUSD en H1 (mencionado al final del capítulo anterior), aunque las ganancias sean pocas, si controlamos el número de lotes, podríamos obtener grandes beneficios. \newline
+
+Como conclusión final, el algoritmo resultante es bueno para operar con EURUSD u otras divisas. Con posibles mejoras, el algoritmo podría ser perfectamente usado por un operador humano en una operativa en tiempo real. En cuanto al resto de mercados financieros, no parece un algoritmo adecuado debido a los problemas antes mencionados. \newline
+
+\section{Objetivos alcanzados}
+
+En la introducción de esta memoria, se hablaba de una serie de objetivos propuestos en el proyecto. En esta sección estudiamos cada uno de ellos y si se ha realizado correctamente o no.\newline
+
+Se han completado todos los objetivos propuestos al inicio del trabajo:
+
+\begin{itemize}
+	\item Se ha implementado el sistema de gestión de usuarios
+	\item Se ha implementado la conexión con el bróker y plataforma de trading MT5.
+	\item Se ha implementado la funcionalidad de ver gráficos en tiempo real del mercado que se quiera visualizar a cualquier marco de tiempo.
+	\item Se ha implementado la funcionalidad de ver gráficos de datos antiguos, recogidos de una base de datos previamente guardada por el usuario, de forma automática.
+	\item Se ha implementado la estrategia o método de Wyckoff para trading algorítmico.
+	\item Se permite a los usuarios realizar operaciones de compra y venta de manera automatizada seleccionando algoritmo.
+	\item Se permite a los usuarios realizar backtesting, a modo de prueba de algoritmos.
+	\item Se permite a los usuarios ver las operaciones realizadas y balance.
+\end{itemize}
+
+También podemos destacar, que el desarrollo del sistema para trading algorítmico cumple con las ventajas expuestas en el apartado de trading algorítmico:
+
+\begin{itemize}
+	\item Diversificación: cumplimos con dicha ventaja. A pesar de la menor eficacia en los mercados financieros mencionados, el algoritmo puede ser usado para todos los mercados financieros. Como mencioné en dicha ventaja, existe la posibilidad de que en ciertos mercados obtengamos beneficios con una técnica que no obtenemos con otra.
+	\item Evaluación de técnicas: se puede realizar una evaluación numérica de los resultados obtenidos.
+	\item Evitamos las emociones.
+	\item Podemos desplegar el proyecto en la nube. En este caso, podríamos montar un servidor con Windows que levantase el proyecto y conectarnos a él via internet.
+\end{itemize}
+
+\section{Futuras mejoras}
+
+En esta sección propongo posibles futuras mejoras de la aplicación.\newline
+
+Como se ha propuesto en anteriores apartados, mejorar el método de Wyckoff podría ser una posible mejora. En este punto cabría destacar la creación de nuevos análisis de otro tipo de diagramas que Wyckoff expuso en sus enfoques, como bien podría ser el de Punto y Figura. Gracias a estos nuevos análisis, controlaríamos mejor los volúmenes de precios y ofera/demanda, esfuerzo/resultado, etc.\newline
+
+Otra mejora o ampliación sería la inclusión y estudio de nuevos métodos. Esto es sencillo ya que por construcción, la aplicación permite el desarrollo y uso de nuevos algoritmos.\newline
+
+También se podría cambiar o mejorar el sistema de gestión de datos, para poder guardar datos de distintos mercados simultáneamente. Actualmente sólo se permite un mercado con una temporalidad al mismo tiempo. En este punto entraría también la posibilidad de realizar un guardado de dichos datos en la nube.\newline

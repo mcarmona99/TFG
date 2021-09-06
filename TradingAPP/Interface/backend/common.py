@@ -31,9 +31,6 @@ def ticks_to_df_with_time(ticks):
 
 
 def find_files_regex(filename, search_path):
-    """
-    TODO: Docstring
-    """
     files_found = []
     regex = re.compile('.*{}.*'.format(filename))
     for root, dirs, files in os.walk(search_path):
@@ -45,18 +42,12 @@ def find_files_regex(filename, search_path):
 
 
 def get_hours_from_timedelta(td):
-    """
-    TODO: Docstring
-    """
     # Ignoro los minutos y segundos
     days, hours = td.days, td.seconds // 3600
     return hours + days * 24
 
 
 def get_data(symbol, data_path=DATA_PATH):
-    """
-    TODO: Docstring
-    """
     frames = []
     for file in find_files_regex(symbol, data_path):
         df_file = pd.read_csv(file)
@@ -72,13 +63,12 @@ def get_data(symbol, data_path=DATA_PATH):
         df = pd.concat(frames)
     except ValueError:
         print(f"No se han encontrado dataframes para {symbol} en {data_path}")
-        # TODO: Gestion de errores
         return None
 
     return df
 
 
-def transform_data_to_ohlc(data_frame, marco_tiempo='1H'):
+def transform_data_to_ohlc(data_frame, marco_tiempo='1H', from_app=False):
     # Uso la funcion ohlc de pandas para generar las velas, la salida sera similar a:
     #
     # time                  open    high    low     close
@@ -87,9 +77,13 @@ def transform_data_to_ohlc(data_frame, marco_tiempo='1H'):
     #
     # En este caso, velas de rango 1 hora por defecto
 
+    # Ajuste de indices
+    if from_app:
+        data_frame = data_frame.set_index('time')
+
     # Creo el df en ohld y renombro columnas
     data_ask = data_frame['ask'].resample(marco_tiempo).ohlc()
-    data_ask.columns = ['ask_open',  'ask_high', 'ask_low', 'ask_close']
+    data_ask.columns = ['ask_open', 'ask_high', 'ask_low', 'ask_close']
 
     data_bid = data_frame['bid'].resample(marco_tiempo).ohlc()
     data_bid.columns = ['bid_open', 'bid_high', 'bid_low', 'bid_close']
@@ -103,9 +97,6 @@ def transform_data_to_ohlc(data_frame, marco_tiempo='1H'):
 
 
 def get_data_ohlc(symbol, data_path=DATA_PATH_OHLC):
-    """
-    TODO: Docstring
-    """
     frames = []
     for file in find_files_regex(symbol, data_path):
         df_file = pd.read_csv(file, header=2)
@@ -123,16 +114,30 @@ def get_data_ohlc(symbol, data_path=DATA_PATH_OHLC):
         df = pd.concat(frames)
     except ValueError:
         print(f"No se han encontrado dataframes para {symbol} en {data_path}")
-        # TODO: Gestion de errores
         return None
 
     return df
 
 
+def get_data_ohlc_str(string_data):
+    from io import StringIO
+    data = StringIO(string_data)
+    df = pd.read_csv(data, sep=',')
+
+    # Remove duplciated column of axis
+    df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+
+    # Rename columns
+    df.columns = ['time',
+                  'ask_open', 'ask_high', 'ask_low', 'ask_close',
+                  'bid_open', 'bid_high', 'bid_low', 'bid_close']
+
+    df['time'] = pd.to_datetime(df['time'], dayfirst=False, yearfirst=True)
+
+    return df
+
+
 def update_data_to_realtime(old_dataframe, symbol):
-    """
-    TODO: Docstring
-    """
     if not mt5.initialize():
         print("initialize() failed")
         mt5.shutdown()
@@ -143,7 +148,6 @@ def update_data_to_realtime(old_dataframe, symbol):
 
     if ticks is None:
         print("No se pudo actualizar el dataframe a tiempo real")
-        # TODO: Gestion de errores
         return False
 
     ticks_df = ticks_to_df_with_time(ticks)
@@ -152,16 +156,10 @@ def update_data_to_realtime(old_dataframe, symbol):
 
 
 def adapt_data_to_backtesting(old_dataframe, end_data):
-    """
-    TODO: Docstring
-    """
     return old_dataframe[old_dataframe['time'] < end_data]
 
 
 def adapt_data_to_range(old_dataframe, start, end):
-    """
-    TODO: Docstring
-    """
     return old_dataframe[(old_dataframe['time'] < end) & (old_dataframe['time'] > start)]
 
 
