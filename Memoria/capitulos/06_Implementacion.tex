@@ -600,6 +600,99 @@ OrderSendResult(retcode=10027, deal=0, order=0, volume=0.0, price=0.0, bid=0.0, 
 
 Tras probar con el método de Wyckoff, conseguimos una operativa en tiempo real que funciona correctamente, realizamos compras y ventas según criterios en tiempo real.
 
+\subsection{Sprint 6: 30 agosto - 6 septiembre. Desarrollo de la gestión de datos y últimas correcciones}
+
+En este último sprint se realizan las últimas tareas del proyecto. Entre ellas, la gestión de datos que hasta ahora se hacía en local y algunas correcciones menores y mejoras de diseño. \newline
+
+\subsubsection{Issue 20: Última iteración del proyecto.}
+
+Esta issue realizar los últimos desarrollos y correcciones del trabajo.\newline
+
+En este punto se actualiza el estilo de la interfaz de la aplicación. Se añade un logo y colores para realizar una mejora en su diseño. \newline
+
+Se añade aquí el sistema de gestión de datos. Cada usuario podrá seleccionar mercado, fecha de inicio de datos históricos y marco de tiempo en el que se guardarán en el formato \textit{OHLC}. Estos datos se guardarán en la sesión del usuario, en un nuevo campo que será \textit{TextField} y tendrá guardados los datos en formato \textit{csv}. Esta variable o campo del modelo \textit{Sesion} será accedido por cada una de las funciones de la APP tales como visualización de datos o backtesting para hacer uso de los datos. \newline
+
+Se ha hecho también una actualización en la visualización de los datos antiguos para adaptar la funcionalidad a lo comentado en el párrafo anterior.\newline
+
+La funcionalidad de backtesting ha sido actualizada también. Ahora, existe la posibilidad de realizar backtesting con marco de tiempo. Antes esto estaba fijado al marco \textit{H1}.\newline
+
+Por último, en esta issue se mejora la salida de las gráficas de backtesting. Ahora tenemos más verbose en las gráficas y han sido formateadas.\newline
+
+Se añaden también las decisiones tomadas por el algoritmo en el modo de trading en tiempo real y backtesting.\newline
+
+
+
+
 \section{Diseño final de la interfaz}
 
+En esta última sección de la implementación, añado el diseño final de la interfaz de la aplicación web.
 
+\subsection{Página principal y formulario de Login}
+
+Diseño en la figura \ref{1}
+
+\begin{figure}[h]
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/pagina_principal.png}\newline \\
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/login.png}
+	
+	\caption{Página principal y formulario de login, respectivamente.} \label{1}
+\end{figure}
+
+\subsection{Menú principal y manual de usuario}
+Diseño en la figura \ref{2}
+
+\begin{figure}[h]
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_principal.png}\newline \\
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/manual_usuario.png}
+
+	\caption{Página principal y manual de usuario, respectivamente.}  \label{2}
+\end{figure}
+
+\subsection{Menús de elección de estrategia}
+Diseño en la figura \ref{3}
+
+\begin{figure}[h]
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_eleccion_estrategia.png}\newline \\
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_eleccion_estrategia_2.png}
+	
+	\caption{Menús de elección de estrategia.}  \label{3}
+\end{figure}
+
+\subsection{Menú de backtesting y operativa en tiempo real}
+Diseño en la figura \ref{4}
+
+\begin{figure}[h]
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_backtesting.png}\newline \\
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_trading_tiempo_real.png}
+	
+	\caption{Menú de backtesting y trading a tiempo real, respectivamente.}  \label{4}
+\end{figure}
+
+\subsection{Menú de gestión de datos}
+Diseño en la figura \ref{5}
+
+\begin{figure}[h]
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_gestion_datos.png}\newline \\
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_gestion_datos_borrados.png}
+	
+	\caption{Menús de gestión de datos, teniendo datos guardados y sin tenerlos, respectivamente.}  \label{5}
+\end{figure}
+
+\subsection{Menú de visualización de datos}
+Diseños en las figuras \ref{6} y \ref{7}.
+
+\begin{figure}[h]
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_visualizacion_datos.png}\newline \\
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_visualizacion_datos_antiguos.png}
+	
+	\caption{Menús de visualización de datos antiguos.}  \label{6}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[width=1.2\textwidth]{imagenes/diseno_final/menu_visualizacion_datos_tpo_real.png}
+	
+	\caption{Menú de visualización de datos en tiempo real.}  \label{7}
+\end{figure}
+
+
+	

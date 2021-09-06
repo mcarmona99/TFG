@@ -30,15 +30,17 @@ Descripción de los requisitos más importantes a nivel de funciones que debe in
 		\item \textbf{RF-2.3. El usuario podrá ver información de las operaciones} realizadas y de operaciones que en ese momento aún no se han cerrado.
 	\end{itemize}
 
-	\item \textbf{RF-3. Visualización de datos.} El usuario de la aplicación podrá ver información de precios de un mercado financiero específico.
+	\item \textbf{RF-3. Gestión de datos.} El usuario de la aplicación podrá elegir qué datos descargar y guardar en la base de datos. Estos datos históricos comenzarán desde cualquier fecha disponible hasta la actualidad. Los datos pertenecerán a un mercado financiero específico y tendrán una temporalidad específica, siguiendo el formato \textit{OHLC}.
+
+	\item \textbf{RF-4. Visualización de datos.} El usuario de la aplicación podrá ver información de precios de un mercado financiero específico.
 	\begin{itemize}
-		\item \textbf{RF-3.1. Ver datos de mercado en rango de tiempo específico.} El usuario de la aplicación podrá ver información de precios entre dos fechas específicas.
-		\item \textbf{RF-3.2. Ver datos de mercado con un marco de tiempo específico en tiempo real.} El usuario de la aplicación podrá ver información de precios en tiempo real con un marco de tiempo específico.
+		\item \textbf{RF-4.1. Ver datos de mercado en rango de tiempo específico.} El usuario de la aplicación podrá ver información de precios entre dos fechas específicas.
+		\item \textbf{RF-4.2. Ver datos de mercado con un marco de tiempo específico en tiempo real.} El usuario de la aplicación podrá ver información de precios en tiempo real con un marco de tiempo específico.
 	\end{itemize}
 
-	\item \textbf{RF-4. El usuario podrá elegir un modelo y realizar trading algorítmico.} También podrá parametrizarlo según modelo y elegir tiempo en el que quiere dejar haciendo las operaciones automáticas. 
+	\item \textbf{RF-5. El usuario podrá elegir un modelo y realizar trading algorítmico.} También podrá parametrizarlo según modelo y elegir tiempo en el que quiere dejar haciendo las operaciones automáticas. 
 
-	\item \textbf{RF-5. El usuario podrá elegir un modelo y realizar trading algorítmico a modo de backtesting.} De esta forma podrá probar cada uno de los modelos en un mercado y periodo de tiempo prefijados.
+	\item \textbf{RF-6. El usuario podrá elegir un modelo y realizar trading algorítmico a modo de backtesting.} De esta forma podrá probar cada uno de los modelos en un mercado y periodo de tiempo prefijados.
 	
 \end{itemize}
 
@@ -92,9 +94,9 @@ El usuario podrá ver el capital disponible y las operaciones realizadas y en cu
 	\caption{Diagrama de casos de uso referente a la gestión de la plataforma de trading (MT5)}  \label{cu2}
 \end{figure}
 
-\subsection{Visualización de datos}
+\subsection{Gestión y visualización de datos de mercados}
 
-El diagrama \ref{cu3} muestra los casos de uso referentes a la visualización de datos de mercados financieros. Dichos datos serán mostrados mediante un gráfico que muestra precios por medio de velas siguiendo el formato \textit{OHLC}. \newline
+El diagrama \ref{cu3} muestra los casos de uso referentes a la gesstión visualización de datos de mercados financieros. Dichos datos serán mostrados mediante un gráfico que muestra precios por medio de velas siguiendo el formato \textit{OHLC}. Para el insertado de dichos datos en el módulo, el usuario seleccionará los parámetros que estime oportunos para la recopilación de los datos históricos. \newline
 
 El usuario podrá ver datos históricos de mercado en un rango de tiempo específico. Este caso de uso interactúa con los datos proporcionados previamente por el usuario. \newline
 
@@ -102,7 +104,7 @@ El usuario de la APP podrá ver datos en tiempo real con un marco de tiempo espe
 
 
 \begin{figure}[h] 
-	\includegraphics[width=1\textwidth]{imagenes/diagramas_casos_de_uso/CU3-visualizacion_datos.png} 
+	\includegraphics[width=1\textwidth]{imagenes/diagramas_casos_de_uso/CU3-gestion_visualizacion_datos.png} 
 	\caption{Diagrama de casos de uso referente a la visualización de datos de mercados financieros} \label{cu3}
 \end{figure}
 
