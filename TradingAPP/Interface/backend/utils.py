@@ -50,5 +50,6 @@ def anadir_beneficio_acciones(acciones):
 def calcular_balance(acciones):
     balance = 0.0
     for accion in acciones:
-        balance += accion[-1]
+        if len(accion) >= 7:
+            balance += float(accion[-1])
     return balance
