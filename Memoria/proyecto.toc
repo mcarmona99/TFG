@@ -150,9 +150,13 @@
 \contentsline {subsubsection}{Temporalidad: \textit {D1}}{114}{section*.137}%
 \contentsline {paragraph}{3 meses}{114}{section*.138}%
 \contentsline {paragraph}{12 meses}{114}{section*.139}%
+\contentsline {paragraph}{Prueba final: EURUSD}{114}{section*.140}%
 \contentsline {chapter}{\numberline {8}Conclusiones}{115}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Bibliografía}{117}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Anexo}{119}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Manual de uso}{119}{section.10.1}%
-\contentsline {subsubsection}{Página principal de la aplicación:}{120}{section*.140}%
-\contentsline {subsubsection}{Menú principal de la aplicación:}{120}{section*.141}%
+\contentsline {section}{\numberline {8.1}Conclusiones de las pruebas}{115}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Objetivos alcanzados}{117}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Futuras mejoras}{118}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Bibliografía}{119}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Anexo}{121}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Manual de uso}{121}{section.10.1}%
+\contentsline {subsubsection}{Página principal de la aplicación:}{122}{section*.141}%
+\contentsline {subsubsection}{Menú principal de la aplicación:}{122}{section*.142}%
